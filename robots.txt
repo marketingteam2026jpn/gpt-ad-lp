@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ads.ikigaiinc.com/sitemap.xml
