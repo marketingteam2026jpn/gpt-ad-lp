@@ -467,6 +467,24 @@ ul{margin:0;padding:0;list-style:none;}
   .fgrid{grid-template-columns:1fr;gap:18px;}
 }
 
+/* ---------- Document request ---------- */
+.doc-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-top:48px;}
+.doc-cover{
+  background:var(--ink);border-radius:var(--r-lg);padding:40px 36px;color:#fff;
+  box-shadow:0 24px 60px rgba(0,0,0,.22);
+}
+.doc-cover .doc-tag{display:inline-block;background:var(--acc);color:#fff;font-size:12px;font-weight:800;padding:4px 10px;border-radius:4px;letter-spacing:.06em;}
+.doc-cover h3{font-size:clamp(22px,2.6vw,28px);line-height:1.4;margin-top:18px;letter-spacing:-.02em;color:#fff;}
+.doc-cover ul{list-style:none;margin-top:22px;display:flex;flex-direction:column;gap:12px;}
+.doc-cover li{font-size:15.5px;color:#C6CDD9;line-height:1.7;padding-left:22px;position:relative;}
+.doc-cover li::before{content:"";position:absolute;left:0;top:11px;width:10px;height:10px;border-radius:50%;background:var(--acc);}
+.doc-cover .doc-meta{margin-top:24px;font-size:13.5px;color:#8D96A6;}
+.form-card.light{margin:0;box-shadow:0 12px 40px rgba(20,24,33,.10);border:1px solid var(--line);}
+@media (max-width:860px){
+  .doc-grid{grid-template-columns:1fr;gap:28px;margin-top:36px;}
+  .doc-cover{padding:30px 24px;}
+}
+
 /* ---------- Footer ---------- */
 .ft{background:#05060A;color:#8D96A6;padding:64px 0 40px;font-size:14.5px;}
 .ft-top{display:grid;grid-template-columns:1.5fr 1fr 1.1fr 1.2fr;gap:40px;padding-bottom:40px;border-bottom:1px solid var(--line-dark);}
@@ -571,7 +589,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </p>
       <div class="cta-row">
         <a href="#cta" class="btn btn-primary btn-lg">30日トライアルを相談する<span class="btn-arrow">→</span></a>
-        <a href="#price" class="btn btn-ghost btn-lg">料金を見る</a>
+        <a href="#doc" class="btn btn-ghost btn-lg">事例集（PDF）を無料で受け取る</a>
       </div>
       <p class="cta-note">支援費12万円〜＋広告費10万円〜／初期費用なし／自動更新なし</p>
       <p class="hero-disc">
@@ -941,6 +959,66 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<!-- ============ DOCUMENT REQUEST ============ -->
+<section class="sec sec-alt" id="doc">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Free Document</span>
+      <h2 class="h2">まず事例を見てから判断したい方へ。</h2>
+      <p class="lead">国内外のChatGPT広告12事例をまとめたPDFを、登録いただいたメールアドレスへお送りします。相談の予約は不要です。</p>
+    </div>
+
+    <div class="doc-grid rv">
+      <div class="doc-cover">
+        <span class="doc-tag">PDF・無料</span>
+        <h3>【2026年9月最新版】<br>ChatGPT広告事例集｜国内外12事例</h3>
+        <ul>
+          <li>どんな業種・商材が、どんな会話の場面で表示されているか</li>
+          <li>検索広告・SNS広告と比べたときの、向き・不向き</li>
+          <li>30日トライアルで最初に確認すべき3つのポイント</li>
+        </ul>
+        <p class="doc-meta">株式会社Ikigai 作成／PDF形式／メールに添付してお送りします</p>
+      </div>
+
+      <div class="form-card light">
+        <div id="docWrap">
+          <h3>事例集を受け取る</h3>
+          <p class="fc-note">送信後、数分以内にPDFが届きます。届かない場合は迷惑メールフォルダをご確認ください。</p>
+          <form id="docForm" novalidate>
+            <div class="fgrid">
+              <div class="fld full">
+                <label for="d-company">会社名<span class="req">必須</span></label>
+                <input type="text" id="d-company" name="company" required autocomplete="organization" placeholder="株式会社サンプル">
+              </div>
+              <div class="fld full">
+                <label for="d-name">お名前<span class="req">必須</span></label>
+                <input type="text" id="d-name" name="name" required autocomplete="name" placeholder="山田 太郎">
+              </div>
+              <div class="fld full">
+                <label for="d-email">メールアドレス<span class="req">必須</span></label>
+                <input type="email" id="d-email" name="email" required autocomplete="email" placeholder="you@example.com">
+              </div>
+              <div class="fld full">
+                <label class="agree">
+                  <input type="checkbox" id="d-agree" name="agree" required>
+                  <span><a href="https://ikigaiinc.com/privacypolicy" target="_blank" rel="noopener">プライバシーポリシー</a>に同意します。資料の送付と、ChatGPT広告に関するご案内に使用します。</span>
+                </label>
+              </div>
+            </div>
+            <div class="fmsg" id="docMsg"></div>
+            <button type="submit" class="btn btn-primary btn-lg" id="docBtn">事例集を受け取る<span class="btn-arrow">→</span></button>
+          </form>
+        </div>
+        <div class="form-done" id="docDone">
+          <div class="fd-ico">✓</div>
+          <h3>お送りしました</h3>
+          <p>ご登録のメールアドレス宛に、<strong>news@ikigaiinc.com</strong> から事例集PDFをお送りしました。<br>数分経っても届かない場合は、迷惑メールフォルダをご確認ください。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ PROFILE ============ -->
 <section class="sec sec-dark">
   <div class="wrap">
@@ -1079,11 +1157,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="fgrid">
             <div class="fld">
               <label for="f-company">会社名<span class="req">必須</span></label>
-              <input type="text" id="f-company" name="company" required autocomplete="organization" placeholder="株式会社Ikigai">
+              <input type="text" id="f-company" name="company" required autocomplete="organization" placeholder="株式会社サンプル">
             </div>
             <div class="fld">
               <label for="f-name">お名前<span class="req">必須</span></label>
-              <input type="text" id="f-name" name="name" required autocomplete="name" placeholder="三神 勇治">
+              <input type="text" id="f-name" name="name" required autocomplete="name" placeholder="山田 太郎">
             </div>
             <div class="fld">
               <label for="f-email">メールアドレス<span class="req">必須</span></label>
@@ -1300,6 +1378,54 @@ var LEAD_ENDPOINT = "https://script.google.com/macros/s/AKfycbz6eKJ_JmCXvelbbRC2
       btn.disabled = false;
       btn.innerHTML = '無料相談を申し込む<span class="btn-arrow">→</span>';
       show('送信に失敗しました。お手数ですが news@ikigaiinc.com へ直接ご連絡ください。');
+    });
+  });
+})();
+
+(function(){
+  var form = document.getElementById('docForm');
+  if(!form) return;
+  var btn  = document.getElementById('docBtn');
+  var msg  = document.getElementById('docMsg');
+  var wrap = document.getElementById('docWrap');
+  var done = document.getElementById('docDone');
+  var UTM_KEYS = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+  var utm = {};
+  try{ utm = JSON.parse(sessionStorage.getItem('lp_utm') || '{}'); }catch(e){}
+  var q = new URLSearchParams(location.search);
+  UTM_KEYS.forEach(function(k){ if(q.get(k)) utm[k] = q.get(k); });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    msg.textContent = ''; msg.className = 'fmsg';
+    if(!form.checkValidity()){
+      var bad = form.querySelector(':invalid');
+      if(bad){ bad.focus(); }
+      msg.textContent = '未入力の必須項目があります。ご確認ください。'; msg.className = 'fmsg err';
+      return;
+    }
+    var d = { kind:'document' };
+    ['company','name','email'].forEach(function(k){ d[k] = form.elements[k].value.trim(); });
+    UTM_KEYS.forEach(function(k){ d[k] = utm[k] || ''; });
+    d.page = location.href; d.referrer = document.referrer || ''; d.userAgent = navigator.userAgent;
+
+    btn.disabled = true; btn.textContent = '送信中…';
+    if(!LEAD_ENDPOINT){
+      location.href = 'mailto:news@ikigaiinc.com?subject=' + encodeURIComponent('ChatGPT広告 事例集の請求')
+        + '&body=' + encodeURIComponent('会社名: ' + d.company + '\nお名前: ' + d.name + '\nメール: ' + d.email);
+      btn.disabled = false; btn.innerHTML = '事例集を受け取る<span class="btn-arrow">→</span>';
+      return;
+    }
+    fetch(LEAD_ENDPOINT, {
+      method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain;charset=utf-8'}, body: JSON.stringify(d)
+    }).then(function(){
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({event:'doc_request', utm_source:d.utm_source, utm_medium:d.utm_medium, utm_campaign:d.utm_campaign, utm_content:d.utm_content});
+      wrap.style.display = 'none'; done.style.display = 'block';
+      done.scrollIntoView({block:'center', behavior:'smooth'});
+    }).catch(function(){
+      btn.disabled = false; btn.innerHTML = '事例集を受け取る<span class="btn-arrow">→</span>';
+      msg.textContent = '送信に失敗しました。お手数ですが news@ikigaiinc.com へ直接ご連絡ください。'; msg.className = 'fmsg err';
     });
   });
 })();
