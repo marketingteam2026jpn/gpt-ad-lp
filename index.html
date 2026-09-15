@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W62G2NT3');</script>
+<!-- End Google Tag Manager -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ChatGPT広告 30日トライアル｜GPT広告専門店 by 株式会社Ikigai</title>
@@ -528,6 +535,10 @@ ul{margin:0;padding:0;list-style:none;}
 </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W62G2NT3"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <!-- ============ HEADER ============ -->
 <header class="hd">
@@ -1212,8 +1223,21 @@ var LEAD_ENDPOINT = "https://script.google.com/macros/s/AKfycbz6eKJ_JmCXvelbbRC2
   function show(t){ msg.textContent = t; msg.className = 'fmsg err'; }
   function clear(){ msg.textContent = ''; msg.className = 'fmsg'; }
 
+  var UTM_KEYS = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+  function readUtm(){
+    var q = new URLSearchParams(location.search), u = {}, any = false;
+    UTM_KEYS.forEach(function(k){ var v = q.get(k); if(v){ u[k] = v; any = true; } });
+    try{
+      if(any){ sessionStorage.setItem('lp_utm', JSON.stringify(u)); }
+      else { u = JSON.parse(sessionStorage.getItem('lp_utm') || '{}'); }
+    }catch(e){}
+    return u;
+  }
+  var utm = readUtm();
+
   function collect(){
     var d = {};
+    UTM_KEYS.forEach(function(k){ d[k] = utm[k] || ''; });
     ['company','name','email','tel','product','budget','plan','message'].forEach(function(k){
       var el = form.elements[k];
       d[k] = el ? el.value.trim() : '';
@@ -1266,6 +1290,9 @@ var LEAD_ENDPOINT = "https://script.google.com/macros/s/AKfycbz6eKJ_JmCXvelbbRC2
       headers: {'Content-Type':'text/plain;charset=utf-8'},
       body: JSON.stringify(data)
     }).then(function(){
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({event:'lead_submit', lead_plan:data.plan, lead_budget:data.budget,
+        utm_source:data.utm_source, utm_medium:data.utm_medium, utm_campaign:data.utm_campaign, utm_content:data.utm_content});
       wrap.style.display = 'none';
       done.style.display = 'block';
       done.scrollIntoView({block:'center', behavior:'smooth'});
