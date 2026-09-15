@@ -999,6 +999,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <input type="email" id="d-email" name="email" required autocomplete="email" placeholder="you@example.com">
               </div>
               <div class="fld full">
+                <label for="d-tel">電話番号<span class="opt-tag">任意</span></label>
+                <input type="tel" id="d-tel" name="tel" autocomplete="tel" placeholder="03-0000-0000">
+              </div>
+              <div class="fld full">
                 <label class="agree">
                   <input type="checkbox" id="d-agree" name="agree" required>
                   <span><a href="https://ikigaiinc.com/privacypolicy" target="_blank" rel="noopener">プライバシーポリシー</a>に同意します。資料の送付と、ChatGPT広告に関するご案内に使用します。</span>
@@ -1405,14 +1409,14 @@ var LEAD_ENDPOINT = "https://script.google.com/macros/s/AKfycbz6eKJ_JmCXvelbbRC2
       return;
     }
     var d = { kind:'document' };
-    ['company','name','email'].forEach(function(k){ d[k] = form.elements[k].value.trim(); });
+    ['company','name','email','tel'].forEach(function(k){ d[k] = form.elements[k].value.trim(); });
     UTM_KEYS.forEach(function(k){ d[k] = utm[k] || ''; });
     d.page = location.href; d.referrer = document.referrer || ''; d.userAgent = navigator.userAgent;
 
     btn.disabled = true; btn.textContent = '送信中…';
     if(!LEAD_ENDPOINT){
       location.href = 'mailto:news@ikigaiinc.com?subject=' + encodeURIComponent('ChatGPT広告 事例集の請求')
-        + '&body=' + encodeURIComponent('会社名: ' + d.company + '\nお名前: ' + d.name + '\nメール: ' + d.email);
+        + '&body=' + encodeURIComponent('会社名: ' + d.company + '\nお名前: ' + d.name + '\nメール: ' + d.email + '\n電話: ' + d.tel);
       btn.disabled = false; btn.innerHTML = '事例集を受け取る<span class="btn-arrow">→</span>';
       return;
     }
