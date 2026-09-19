@@ -20,13 +20,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </ul>
 <p>出稿は「アカウントの確認・請求設定→広告と計測の準備→審査→配信→成果の確認」の順で進めます。日本はセルフサービスの対象国ですが、請求を受ける広告主の所在国などの条件があります。アカウント登録だけで配信が始まるわけではありません。<a href="https://help.openai.com/en/articles/20001245-ads-manager-availability">出典：Ads Managerの提供国・利用条件</a></p>
 <p>ChatGPT広告の特徴は、ユーザーが会話で伝える用途や比較条件に関連する広告を届けられることです。たとえば「賃貸住宅の玄関を、壁に穴を開けずに片付けたい」という検討に、条件に合う収納家具を紹介する設計が考えられます。これは広告設計の例であり、表示を保証するものではありません。</p>
-<p>広告は回答と区別され、出稿しても回答を自社に有利に変更できません。また、Plus・Pro・Business・Enterprise・Eduは広告非表示です。ChatGPT全体の利用者数を、そのまま広告の到達人数と考えないようにしましょう。<a href="https://help.openai.com/ja-jp/articles/20001047-chatgpt-%E3%81%A7%E3%81%AE%E5%BA%83%E5%91%8A">出典：ChatGPTでの広告FAQ</a></p>
+<p>広告は回答と区別され、出稿しても回答を自社に有利に変更できません。表示の仕組みと対象ユーザーだけを先に押さえたい場合は、<a href="/articles/chatgpt-ads-basics/">ChatGPT広告とは</a>から読んでください。また、Plus・Pro・Business・Enterprise・Eduは広告非表示です。ChatGPT全体の利用者数を、そのまま広告の到達人数と考えないようにしましょう。<a href="https://help.openai.com/ja-jp/articles/20001047-chatgpt-%E3%81%A7%E3%81%AE%E5%BA%83%E5%91%8A">出典：ChatGPTでの広告FAQ</a></p>
 <figure><a aria-label="図を拡大する" href="/articles/assets/costs.png"><img alt="図1：最低日予算とCPCの違い。公式の予算規定と、国内2社の配信報告をもとに作成。" height="760" loading="lazy" src="/articles/assets/costs.svg" width="1200"/></a><figcaption>図1：最低日予算とCPCの違い。公式の予算規定と、国内2社の配信報告をもとに作成。</figcaption></figure>
 <h2 id="s2"><strong>費用は最低日予算2,500円から。検証総額は別に決める</strong></h2>
 <p>費用を考えるときは、媒体に支払う広告費と、制作・計測・運用の費用を分けます。まず目安になるのは、公式の最低日予算と、条件付きの公開実績です。</p>
 <p>国内で公表された平均CPCは、広告支援会社Cが79円（広告費10,000円・126クリック）、広告支援会社Dが435円（広告費100,000円・230クリック）でした。この2件では79〜435円ですが、業種別の相場や自社の見積額を示す範囲ではありません。商材・入札・配信期間が異なり、両社ともCV数は非開示です。<a href="https://shinker.co.jp/chatgptadsresult/">出典を確認（広告支援会社Cの配信結果）</a>、<a href="https://ppc-master.jp/labo/2026/07/chatgpt-ads.html">出典を確認（広告支援会社Dの実配信データ）</a>。</p>
 <h3 id="s3"><strong>日予算2,500円は平均額で、1日の厳密な上限ではない</strong></h3>
-<p>日本円のアカウントの最低日予算は、公式表で2,500円です。現在の日予算は7日間の平均として扱われます。<a href="https://help.openai.com/en/articles/20001210-create-campaigns-for-chatgpt-ads">出典：最低日予算の公式表</a></p>
+<p>日本円のアカウントの最低日予算は、公式表で2,500円です。広告費以外も含めた予算の組み方は<a href="/articles/chatgpt-ads-cost/">費用と検証予算の記事</a>で詳しく扱っています。現在の日予算は7日間の平均として扱われます。<a href="https://help.openai.com/en/articles/20001210-create-campaigns-for-chatgpt-ads">出典：最低日予算の公式表</a></p>
 <div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>確認する金額</strong></p>
 </th><th scope="col"><p><strong>日予算2,500円の場合</strong></p>
 </th><th scope="col"><p><strong>意味</strong></p>
@@ -83,7 +83,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </ul>
 <p>「クリックされたのに問い合わせがない」を改善するには、広告だけでなくLPも修正できる体制が必要です。<a href="https://help.openai.com/en/articles/20001212-create-ads-for-chatgpt">出典：広告とリンク先の一貫性</a></p>
 <h3 id="s9"><strong>4. 主要な成果を1つ決め、完了した行動を測れるようにする</strong></h3>
-<p>広告で目指す成果をコンバージョン（CV）と呼びます。クリックやページ閲覧と、購入・問い合わせの完了は分けて扱います。</p>
+<p>広告で目指す成果をコンバージョン（CV）と呼びます。Pixel・Conversions API・UTMの役割分担は<a href="/articles/chatgpt-ads-measurement/">効果測定の記事</a>にまとめています。クリックやページ閲覧と、購入・問い合わせの完了は分けて扱います。</p>
 <ul>
 <li>EC：購入完了を主要CVにし、売上も確認する。</li>
 <li>資料請求・問い合わせ：フォーム送信完了を主要CVにする。</li>
