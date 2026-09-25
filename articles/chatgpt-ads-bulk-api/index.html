@@ -1,0 +1,245 @@
+<!doctype html><html lang="ja"><head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W62G2NT3');</script>
+<!-- End Google Tag Manager -->
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>【2026年9月最新版】ChatGPT広告の一括入稿とAPI｜CSVの手順・APIでできること・注意点｜GPT広告専門店</title><meta name="description" content="ChatGPT広告は管理画面のほか、CSVの一括入稿・一括編集やAdvertiser APIでも作成・編集できます（ChatGPTからの操作は順次提供中）。CSVの手順と入稿前のチェック、重複や上書きを防ぐ方法、APIのキー・金額の単位（micros）・レポート取得の注意点を、公式ドキュメントをもとに整理します。"><link rel="canonical" href="https://ads.ikigaiinc.com/articles/chatgpt-ads-bulk-api/"><meta property="og:locale" content="ja_JP"><meta property="og:type" content="article"><meta property="og:site_name" content="GPT広告専門店"><meta property="og:title" content="【2026年9月最新版】ChatGPT広告の一括入稿とAPI｜CSVの手順・APIでできること・注意点"><meta property="og:description" content="ChatGPT広告は管理画面のほか、CSVの一括入稿・一括編集やAdvertiser APIでも作成・編集できます（ChatGPTからの操作は順次提供中）。CSVの手順と入稿前のチェック、重複や上書きを防ぐ方法、APIのキー・金額の単位（micros）・レポート取得の注意点を、公式ドキュメントをもとに整理します。"><meta property="og:url" content="https://ads.ikigaiinc.com/articles/chatgpt-ads-bulk-api/"><meta property="og:image" content="https://ads.ikigaiinc.com/articles/assets/bulk-edit-flow.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="760"><meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#10131A"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Noto+Sans+JP:wght@400;500;700;900&amp;display=swap" rel="stylesheet"><link rel="stylesheet" href="/articles/assets/style.css"><script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "【2026年9月最新版】ChatGPT広告の一括入稿とAPI｜CSVの手順・APIでできること・注意点", "description": "ChatGPT広告は管理画面のほか、CSVの一括入稿・一括編集やAdvertiser APIでも作成・編集できます（ChatGPTからの操作は順次提供中）。CSVの手順と入稿前のチェック、重複や上書きを防ぐ方法、APIのキー・金額の単位（micros）・レポート取得の注意点を、公式ドキュメントをもとに整理します。", "mainEntityOfPage": "https://ads.ikigaiinc.com/articles/chatgpt-ads-bulk-api/", "url": "https://ads.ikigaiinc.com/articles/chatgpt-ads-bulk-api/", "datePublished": "2026-09-26T00:00:00+09:00", "dateModified": "2026-09-26T00:00:00+09:00", "inLanguage": "ja", "author": {"@type": "Organization", "name": "GPT広告専門店（株式会社Ikigai）", "url": "https://ads.ikigaiinc.com/"}, "publisher": {"@type": "Organization", "name": "株式会社Ikigai", "url": "https://ikigaiinc.com"}, "image": "https://ads.ikigaiinc.com/articles/assets/bulk-edit-flow.png"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://ads.ikigaiinc.com/"}, {"@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://ads.ikigaiinc.com/articles/"}, {"@type": "ListItem", "position": 3, "name": "ChatGPT広告の一括入稿とAPI｜使い分けと、重複・上書きを防ぐ手順", "item": "https://ads.ikigaiinc.com/articles/chatgpt-ads-bulk-api/"}]}]}</script></head><body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W62G2NT3"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<a class="skip" href="#main">本文へ移動</a><header class="site-header"><div class="wrap header-inner"><a class="brand" href="/">GPT広告専門店<span>.</span><small>by 株式会社Ikigai</small></a><nav aria-label="メインナビゲーション"><a href="/articles/">記事一覧</a><a class="button small" href="/#cta">無料相談 <span aria-hidden="true">↗</span></a></nav></div></header><main id="main"><div class="wrap"><nav class="breadcrumbs" aria-label="パンくず"><a href="/">ホーム</a><span>/</span><a href="/articles/">記事一覧</a><span>/</span><span>一括入稿・API</span></nav><header class="article-heading"><p class="eyebrow">CHATGPT ADS GUIDE <span>30 / 一括入稿・API</span></p><p class="edition">2026年9月最新版</p><h1>ChatGPT広告の一括入稿とAPI｜使い分けと、重複・上書きを防ぐ手順</h1><div class="byline"><span>企画・編集：GPT広告専門店（株式会社Ikigai）</span><time datetime="2026-09-26">公開：2026年9月26日／情報確認：2026年9月25日</time></div><p class="lead">ChatGPT広告は管理画面のほか、CSVの一括入稿・一括編集やAdvertiser APIでも作成・編集できます（ChatGPTからの操作は順次提供中）。</p><p class="case-note">本記事は、OpenAIのヘルプセンター・開発者向けドキュメント・公式発表に基づいています。当社はAdvertiser APIとChatGPTからの操作の動作を確認しておらず、コードの例も載せていません。Ads Managerはベータ版で、仕様は変わる可能性があります。実行前に最新の公式ドキュメントを確認してください。</p></header><div class="reading-layout"><aside class="toc"><details open><summary>この記事の内容</summary><ol><li><a href="#s1">この記事の要点</a></li><li><a href="#s2">主な4つの操作方法と向いている場面</a></li><li><a href="#s3">CSVの一括入稿・一括編集の手順</a></li><li><a href="#s8">Advertiser APIで押さえること</a></li><li><a href="#s13">レポートを自動で取得するときの注意</a></li><li><a href="#s14">ChatGPTから操作するときの注意</a></li><li><a href="#s15">この記事で分からないこと</a></li><li><a href="#s16">運用ルールのひな型（当社の提案）</a></li><li><a href="#s17">よくある質問</a></li><li><a href="#s18">まとめ</a></li></ol></details><a class="toc-back" href="/articles/">← すべての記事を見る</a></aside><article class="prose" aria-label="記事本文"><h2 id="s1"><strong>この記事の要点</strong></h2>
+<ol>
+<li><strong>主な操作方法は4つあり、変更の量と頻度で選びます。</strong> 少数なら管理画面、多数や複数のキャンペーンにまたがる変更はCSVの一括入稿・一括編集、作成やレポート取得を自社の仕組みで繰り返すならAdvertiser APIです。ChatGPTから会話で操作する方法は、2026年9月16日に順次提供を始めたと発表された段階です。</li>
+<li><strong>一括編集とAPIで起きやすい事故は「重複」と「上書き」です。</strong> 一括編集はできるだけ毎回、最新の書き出し（Export for edit）から始め、処理後は行ごとの結果を照合してから、必要な行だけ送り直します。コンテキストヒントは追加ではなく置き換えになるため、残したいものも含めて全件を書きます。</li>
+<li><strong>APIでは停止状態で作り、確かめてから有効にします。</strong> APIキーは広告アカウントごとに発行し、サーバー側で保管します。予算と入札は「micros」という単位で指定し、レポートの金額は通常の通貨単位で返ります。自動で取得したレポートの直近の数字は、確定値として扱いません。</li>
+</ol>
+<p class="case-note"><strong>読んでほしい人</strong>：キャンペーンや広告の本数が増え、管理画面での1本ずつの作成・修正に手間がかかっている運用担当者。社内のシステムや代理店のツールからChatGPT広告を扱うことを検討している担当者。 <br><strong>この記事で扱わないこと</strong>：初めての開設と入稿の手順は<a href="/articles/chatgpt-ads-start/">始め方の記事</a>、PixelとConversions APIによる計測は<a href="/articles/chatgpt-ads-measurement/">効果測定の記事</a>、ShopifyとHubSpotからの操作はそれぞれ<a href="/articles/chatgpt-ads-shopify/">Shopifyの記事</a>と<a href="/articles/chatgpt-ads-hubspot/">HubSpotの記事</a>で扱います。</p>
+<h2 id="s2"><strong>主な4つの操作方法と向いている場面</strong></h2>
+<p>以下、広告の管理画面（Ads Manager）を「管理画面」と呼びます。</p>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>方法</strong></p>
+</th><th scope="col"><p><strong>できること（公式の記載）</strong></p>
+</th><th scope="col"><p><strong>向いている場面</strong></p>
+</th><th scope="col"><p><strong>注意点</strong></p>
+</th></tr>
+<tr><td><p>管理画面での作成・直接編集</p>
+</td><td><p>画面の案内に沿って1本ずつ作成。予算・広告文・画像の更新、停止、広告グループ・広告の追加</p>
+</td><td><p>作る数が少ない、数件の修正、急いで止めたい</p>
+</td><td><p>件数が増えると手間と入力ミスが増える</p>
+</td></tr>
+<tr><td><p>CSVの一括入稿・一括編集</p>
+</td><td><p>テンプレートでまとめて作成。書き出したファイルを編集・再アップロードしてまとめて更新</p>
+</td><td><p>多数の作成。コンテキストヒント・広告文・LPの大規模な変更</p>
+</td><td><p>商品フィードのキャンペーンは現時点では作れない。重複と上書きに注意</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">Advertiser</span> API</p>
+</td><td><p>キャンペーン・広告・商品フィード・計測の設定・レポートを自社の仕組みから扱う</p>
+</td><td><p>作成・更新・レポート取得を繰り返す。社内システムと連携する</p>
+</td><td><p>開発の担当者とキーの管理が必要</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">ChatGPT</span>からの操作</p>
+</td><td><p>会話でキャンペーンを作成・更新・分析する（9月16日に順次提供を始めたと発表）。ヘルプでは、対象の事業者がアカウント開設も始められると説明</p>
+</td><td><p>成果の読み取り、キャンペーン案の下書き</p>
+</td><td><p>使える操作は環境で異なる。日本での提供状況は未確認</p>
+</td></tr>
+</table></div>
+<p>ChatGPTからの操作は、発表では「Ads Managerプラグイン」、ヘルプセンターでは「ChatGPT Ads Manager」と呼ばれています。本記事では同じ機能として扱います（当社の解釈）。</p>
+<p>当社は、APIは「作成・更新が頻繁で、社内の台帳やシステムと数字をつなぎたい」「開発を担当できる人がいる」の両方がそろうときに選ぶものと考えています。管理画面のCSVの書き出し（累積・日別）で報告が足りるなら、レポートのためだけに導入しなくてもよいと考えます。</p>
+<h2 id="s3"><strong>CSVの一括入稿・一括編集の手順</strong></h2>
+<figure><a aria-label="図を拡大する" href="/articles/assets/bulk-edit-flow.png"><img alt="図1：一括編集で重複と上書きを防ぐ5つの手順。OpenAIのヘルプセンターと開発者向けドキュメントをもとに当社作成。" height="760" loading="lazy" src="/articles/assets/bulk-edit-flow.svg" width="1200"/></a><figcaption>図1：一括編集で重複と上書きを防ぐ5つの手順。OpenAIのヘルプセンターと開発者向けドキュメントをもとに当社作成。</figcaption></figure>
+<p>図1は、公式ヘルプの一括編集の3つの手順に、処理後の照合と送り直し（トラブル対応のヘルプの記載）を加えたものです。</p>
+<h3 id="s4"><strong>新しくまとめて作る（一括入稿）</strong></h3>
+<p>公式ヘルプが示す流れは次のとおりです。始める前に、広告主の名前とアイコンを設定しておきます。</p>
+<ol>
+<li>管理画面の「Create」から、入稿用のテンプレート（ad schema template）を入手する</li>
+<li>Campaigns・Ad Groups・Adsの各タブに、作るものを1行ずつ入力する。キャンペーン名と広告グループ名は、タブの間で完全に一致させる</li>
+<li>下の「アップロード前のチェック」で確認する</li>
+<li>「Create」から、入力したテンプレートをアップロードする</li>
+<li>エラーが出たらテンプレートを直し、行ごとの結果と作成済みの広告を照合してから、必要な行だけアップロードし直す</li>
+</ol>
+<p>広告グループのタブには、コンテキストヒントのほかに入札の上限（表示課金ならCPM、クリック課金ならCPC）も入力します。</p>
+<h3 id="s5"><strong>既存の設定をまとめて直す（最新の書き出しから）</strong></h3>
+<ol>
+<li>更新したいキャンペーン・広告グループ・広告を選び、「Export for edit」で書き出す</li>
+<li>書き出したファイルを直接編集する</li>
+<li>「Create」→「Bulk upload」を開き、対象の種類（Campaign・Ad Group・Ad）を指定してアップロードする</li>
+</ol>
+<p>既存のキャンペーンに広告グループや広告を足す場合は、新しい行に<strong>親のID（キャンペーンIDや広告グループID）を入れ、自分のIDは空欄</strong>にします。既存のものを更新する行は、そのIDを残します。</p>
+<p>公式ヘルプは、書き出したファイルには現在のIDと値が入っているため、<strong>編集の前にできるだけ毎回書き出し直す</strong>よう勧めています。ほかの人も同じアカウントを編集している場合は特に重要です。</p>
+<h3 id="s6"><strong>起きやすい失敗と防ぎ方</strong></h3>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>起きやすいこと</strong></p>
+</th><th scope="col"><p><strong>原因</strong></p>
+</th><th scope="col"><p><strong>防ぎ方</strong></p>
+</th></tr>
+<tr><td><p>同じ広告が2本できる</p>
+</td><td><p>成功した行を、広告のID（ad_id）が空欄のまま送り直した</p>
+</td><td><p>送り直す前に、行ごとの結果と作成済みの広告を照合する</p>
+</td></tr>
+<tr><td><p>ほかの人の変更が消える</p>
+</td><td><p>以前に書き出したファイルを使った</p>
+</td><td><p>編集のたびに新しく書き出す</p>
+</td></tr>
+<tr><td><p>コンテキストヒントが減る</p>
+</td><td><p>アップロードした一覧で置き換わる（追加ではない）</p>
+</td><td><p>残したいヒントも含め、全件をJSON形式の一覧で書く</p>
+</td></tr>
+<tr><td><p>広告が別の広告グループにできる</p>
+</td><td><p>親のID（ad_<span style="white-space:nowrap">group</span>_id）の誤り</p>
+</td><td><p>アップロードの前に、親のIDが意図した行き先か確かめる</p>
+</td></tr>
+<tr><td><p>一部の行だけ失敗している</p>
+</td><td><p>完了の表示を、全行の成功と受け取った</p>
+</td><td><p>行ごとの結果を読み、失敗した行だけ直して送る</p>
+</td></tr>
+</table></div>
+<p>キャンペーンの目的と予算の種類は、作成後に変えることを想定した項目ではありません。公式ヘルプは、間違えていた場合は正しい設定で新しいキャンペーンを作るよう案内しています。</p>
+<h3 id="s7"><strong>アップロード前のチェック（公式チェックリストから抜粋）</strong></h3>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>対象</strong></p>
+</th><th scope="col"><p><strong>確認すること</strong></p>
+</th></tr>
+<tr><td><p>ファイルの形</p>
+</td><td><p>タブ名（<span style="white-space:nowrap">campaigns</span>・ad <span style="white-space:nowrap">groups</span>・ads）と列の見出しを変えていない。セルを結合していない。列名の行を残している（その上に注記の行を足すのは可）</p>
+</td></tr>
+<tr><td><p>名前</p>
+</td><td><p>キャンペーン名・広告グループ名が重複せず、タブの間で完全に一致している</p>
+</td></tr>
+<tr><td><p>キャンペーン</p>
+</td><td><p>目的は「<span style="white-space:nowrap">Views</span>」か「<span style="white-space:nowrap">Clicks</span>」。日付はYYYY-MM-DD形式。予算を入力している。配信国はJSON形式</p>
+</td></tr>
+<tr><td><p>広告グループ</p>
+</td><td><p>正しいキャンペーンに紐づいている。コンテキストヒントはJSON形式（例：["<span style="white-space:nowrap">hint1</span>", "<span style="white-space:nowrap">hint2</span>"]）</p>
+</td></tr>
+<tr><td><p>広告</p>
+</td><td><p>タイトルは16〜24文字を推奨（最大50文字）、説明文は32〜48文字を推奨（最大100文字）。LPのURLが開ける</p>
+</td></tr>
+<tr><td><p>画像</p>
+</td><td><p>URLが公開されていて、ブラウザで画像そのものが開く。<span style="white-space:nowrap">Google</span>ドライブ、AWS（S3・<span style="white-space:nowrap">CloudFront</span>）、自社ドメインやCDNなどに置く。PNGかJPGの正方形で、最大1,200×1,200ピクセル</p>
+</td></tr>
+<tr><td><p>件数</p>
+</td><td><p>キャンペーン・広告グループ・広告は、それぞれ5,000件まで（1つの広告アカウントに置ける上限も同じ）</p>
+</td></tr>
+</table></div>
+<p>画像のURLがサインインを求める、プレビューのページへ転送される、クローラーを遮断している場合は、アップロード時の確認や審査で失敗することがあります。LPも、OpenAIの広告用クローラー（OAI-AdsBot）が読めることが条件です（<a href="/articles/chatgpt-ads-policy-review/">審査の記事</a>）。大量のアップロードでサイト側のアクセス制限やボット対策に止められる場合に備え、公式ヘルプは<strong>小さな単位に分けて時間をかけてアップロードする</strong>ことも選択肢に挙げています。</p>
+<h2 id="s8"><strong>Advertiser APIで押さえること</strong></h2>
+<p>キャンペーン→広告グループ→広告という構造は、APIでも管理画面や一括入稿と同じです。公式の説明では、予算・目的・配信対象を変えたいならキャンペーンを、入札・コンテキストヒント・商品を変えたいなら広告グループを分けます（分け方は<a href="/articles/chatgpt-ads-context-hints/">コンテキストヒントの記事</a>）。</p>
+<h3 id="s9"><strong>キーと権限</strong></h3>
+<ul>
+<li>APIキーは管理画面の設定画面で発行し、サーバー側で安全に保管します。<strong>1つのキーは1つの広告アカウントに紐づきます</strong>。代理店などのAPIパートナーは、クライアントの広告アカウントのキーを使います（<a href="/articles/chatgpt-ads-agency/">代理店の選び方の記事</a>）</li>
+<li>作成の前に、キーが意図した広告アカウントのものか（名前・通貨・タイムゾーン・審査の状態）を確かめます</li>
+<li>管理画面を使う人の役割（管理者・メンバー・閲覧者）は、広告アカウントごとに付与します。ChatGPTのワークスペースやAPI Platformの組織での役割は、広告の権限になりません（<a href="/articles/chatgpt-ads-inhouse-agency/">自社運用と代理店の分担の記事</a>）</li>
+</ul>
+<h3 id="s10"><strong>停止状態で作り、確かめてから有効にする</strong></h3>
+<p>APIの概要ページの手順例は、キャンペーン・広告グループ・広告を<strong>停止状態（paused）で作成</strong>し、プレビューと状態を確かめてから、広告・広告グループ・キャンペーンをそれぞれ有効にする流れです。</p>
+<ul>
+<li>広告を作成した時点で、内容は審査に提出されます。プレビューで分かるのは見た目だけで、配信できるかの確認にはなりません</li>
+<li>広告の内容を更新すると、審査がやり直されます</li>
+<li>「状態（有効・停止）」と「審査の結果」は別の項目です。有効でも審査中のことがあり、承認済みでも親のキャンペーンが停止していれば配信されません</li>
+<li>配信を妨げている理由は「serving issues」で確認できます。ただし、理由が表示されないからといって、広告が表示されるとは限りません</li>
+</ul>
+<p>配信が始まらないときの確認の順番は、<a href="/articles/chatgpt-ads-not-serving/">配信されないときの記事</a>でも扱っています。</p>
+<h3 id="s11"><strong>開発担当者と事前に確認すること</strong></h3>
+<p>細かな仕様は開発者向けドキュメントで確認してもらい、運用側では次の点を決めておきます。</p>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>項目</strong></p>
+</th><th scope="col"><p><strong>公式の記載</strong></p>
+</th><th scope="col"><p><strong>運用側で決めること（当社の提案）</strong></p>
+</th></tr>
+<tr><td><p>送り直しによる重複</p>
+</td><td><p>作成のリクエストに重複を防ぐキー（<span style="white-space:nowrap">Idempotency</span>-Key）を付けられる。通信が途切れて送り直すときは、同じキー・同じ内容で送る</p>
+</td><td><p>通信が途切れたときの送り直し方</p>
+</td></tr>
+<tr><td><p>URLのパラメーター</p>
+</td><td><p>UTMなどをキャンペーン・広告グループ・広告の単位で設定できる。重なったら、遷移先URLに書かれた値、次に下の階層の値が優先</p>
+</td><td><p>UTMの付け方（<a href="/articles/chatgpt-ads-measurement/">効果測定の記事</a>）</p>
+</td></tr>
+<tr><td><p>一覧で置き換わる項目</p>
+</td><td><p>コンテキストヒント・配信対象・成果イベントの一覧は、送った一覧で置き換わる</p>
+</td><td><p>更新前に現在の値を取得し、残したい値も含めて送る</p>
+</td></tr>
+<tr><td><p>APIの一括処理（bulk <span style="white-space:nowrap">mutation</span> job）</p>
+</td><td><p>1回に操作1,000件まで。反映せずに検証だけ行える。一部が失敗しても、成功した操作は取り消されない</p>
+</td><td><p>本番の前に検証だけを実行するか。失敗した操作の直し方</p>
+</td></tr>
+<tr><td><p>呼び出し回数の上限</p>
+</td><td><p>機能ごとに1分600回、全体で1分1,200回（広告アカウントとIPアドレスの両方に適用）</p>
+</td><td><p>上限にかかったら、返される案内に従って時間をおいて再試行する</p>
+</td></tr>
+</table></div>
+<h3 id="s12"><strong>金額の単位を取り違えない</strong></h3>
+<p>APIでは、予算と入札を<strong>micros（通貨の100万分の1の単位）</strong>で指定します。公式の例では、1日50ドルの予算を「50,000,000」と書きます。一方、レポートの消化額・CPC・CPMは通常の通貨単位（12.50ドルなら12.50）、CTRは比率（0.04なら4%）で返ります。桁を1つ誤ると予算が10倍になるため、送る前に換算を確かめます。</p>
+<h2 id="s13"><strong>レポートを自動で取得するときの注意</strong></h2>
+<p>APIのレポート（Insights）では、広告アカウントから広告までの単位で、1時間・1日・1か月・期間全体の区切りで、表示回数・クリック・消化額から成果・CPA・ROASまでを取得できます。国・端末などの内訳は1回に1つまでです。自動取得の設計で気をつけたいのは、次の4点です。</p>
+<ol>
+<li><strong>直近の数字は確定値ではありません。</strong> 管理画面のヘルプでは、表示回数・クリック・CTRは約15分ごとに更新、消化額は約7〜8時間遅れ、成果は24〜48時間かかることがあるとしています（目安）。APIのドキュメントも、成果は少なくとも1日待ち、直近の日付は取り直すよう勧めています。当社は、毎日取得する場合も直近の数日分を取り直して上書きする設計を勧めます</li>
+<li><strong>値がない（null）ことは0ではありません。</strong> 公式は、nullは取得・計算できないという意味だと説明しています。0として集計しないようにします</li>
+<li><strong>管理画面のCSVとは、成果の数え方が2点違います。</strong> APIの成果（conversions）にはビュースルー（広告の表示から1日以内の成果）が含まれませんが、管理画面の合計はビュースルーの期間を1日にしていれば含みます。また、APIの日別の成果は成果が起きた日、管理画面は初期設定では広告のクリックや表示の日で数えます。照合するときは、この2点をそろえます</li>
+<li><strong>日付とタイムゾーン、取得できる期間を決めておきます。</strong> 日付の区切りは、指定しなければ広告アカウントのタイムゾーンです（開設後は変えられません）。取得できるのは、1時間単位と商品のレポートで約30日、それ以外で直近365日です。長く比べたい数字は自社の台帳にも保存します</li>
+</ol>
+<h2 id="s14"><strong>ChatGPTから操作するときの注意</strong></h2>
+<p>OpenAIは2026年9月16日、ChatGPTの中で自然な言葉の指示によってキャンペーンを作成・更新・分析できる「Ads Managerプラグイン」の順次提供を始めたと発表しました。サイトや企画の概要からキャンペーンを作る、成果を理解する、次の打ち手の提案を受ける、といった使い方が紹介されています。ヘルプセンターは、使える操作とワークスペースでのアクセスは異なる場合があるとしています（提供段階の読み方は<a href="/articles/chatgpt-ads-formats-trends/">表示形式と最新動向の記事</a>）。押さえておきたい点は次の3つです。</p>
+<ul>
+<li><strong>ChatGPTからの開設は、事業者の広告主が対象です。</strong> 個人の広告主や、代理店がクライアントに代わって作ることには対応していません。代理店は、クライアントが作った後に招待を受けられます</li>
+<li><strong>国・通貨・タイムゾーンは後から変えられません。</strong> 確定の前に、広告主名・サイト・国・通貨・タイムゾーン・ロゴを確かめます</li>
+<li><strong>請求・支払い・税・本人確認などは管理画面で済ませます。</strong> 必要な設定と審査が終わるまで、配信されない場合があります</li>
+</ul>
+<p>当社は、会話で作った案や変更も、配信の前に管理画面で予算・配信地域・遷移先・状態を確かめ、判断の根拠にする数字は管理画面のCSVなどで確かめることを勧めます。</p>
+<h2 id="s15"><strong>この記事で分からないこと</strong></h2>
+<ul>
+<li><strong>日本の広告アカウントで、ChatGPTからの操作がどこまで使えるか。</strong> 発表とヘルプの記載は確認しましたが、提供状況、使えるChatGPTのプラン、操作の範囲は確認していません</li>
+<li><strong>一括入稿で、成果最適化のキャンペーンを作れるか。</strong> 公式チェックリストでは、目的は「Views」か「Clicks」と書かれています</li>
+<li><strong>APIの一括処理の詳しい入力形式。</strong> 本記事は開発者向けドキュメント7ページを確認しましたが、一括処理の詳しいガイド（Bulk API guide）は確認していません</li>
+<li><strong>実際の動作。</strong> 当社はAPIとChatGPTからの操作の動作を確認しておらず、エラーの出方や処理にかかる時間は分かりません</li>
+</ul>
+<h2 id="s16"><strong>運用ルールのひな型（当社の提案）</strong></h2>
+<p>一括編集やAPIを使い始める前に、次を決めておきます。</p>
+<ul>
+<li>[ ] 操作する人ごとに、広告アカウントの役割（管理者・メンバー・閲覧者）を決めた</li>
+<li>[ ] APIキーを発行した広告アカウント、保管場所、担当者を記録した</li>
+<li>[ ] 一括編集は毎回「Export for edit」から始め、アップロードしたファイルと行ごとの結果を保存することにした</li>
+<li>[ ] 送り直すときは、成功した行を除き、作成済みの広告と照合してから送ることにした</li>
+<li>[ ] APIでは停止状態で作成し、プレビューと審査・配信の状態を確かめてから有効にすることにした</li>
+<li>[ ] 予算・入札のmicrosの換算を送る前に2人で確かめ、レポートの直近の数日分は取り直すことにした</li>
+<li>[ ] 変更の記録（誰が・いつ・何を・なぜ）を残し、管理画面の設定画面にある変更履歴と合わせて確認することにした</li>
+</ul>
+<h2 id="s17"><strong>よくある質問</strong></h2>
+<p><strong>Q. 一括入稿で商品フィードの広告も作れますか。</strong> いいえ。公式ヘルプによると、CSVの一括入稿は現時点では商品フィードのキャンペーンの作成に対応していません。管理画面でフィードをアップロードして作る専用の手順があるほか、APIでも扱えます（Shopifyからの流れは<a href="/articles/chatgpt-ads-shopify/">Shopifyの記事</a>）。</p>
+<p><strong>Q. APIを使うのに申請は必要ですか。</strong> 公式の概要で必要とされているのは、広告アカウントとAPIキーの2つです（キーは管理画面の設定画面で発行）。ただし、パートナー向けの手順には、成果最適化のキャンペーンなど一部の機能はアカウントで有効になっていないとエラーになり、OpenAIの担当者への連絡が必要と書かれています。</p>
+<p><strong>Q. 1つのAPIキーで、複数の広告アカウントを操作できますか。</strong> できません。公式ドキュメントによると、キーは1つの広告アカウントに紐づきます。アカウントごとのキーを、取り違えないように管理します。</p>
+<p><strong>Q. 管理画面のCSVとAPIのレポートで、成果の数が合いません。</strong> 集計の条件が2点違うためです。ビュースルーの成果を含めるか（APIは含めない）と、日別の成果を何の日付で数えるか（APIは成果が起きた日、管理画面は初期設定で広告のクリックや表示の日）をそろえてから照合します。</p>
+<p><strong>Q. ChatGPTから広告を操作する機能は、日本でも使えますか。</strong> 公開情報からは確認できていません。9月16日の発表は順次提供の開始で、ヘルプセンターも、使える操作とアクセスは異なる場合があるとしています。使う場合も、配信の前に管理画面で内容を確かめます。</p>
+<h2 id="s18"><strong>まとめ</strong></h2>
+<ul>
+<li>主な操作方法は4つ。少数なら管理画面、多数なら一括入稿・一括編集、作成やレポート取得を繰り返すならAPI。ChatGPTからの操作は順次提供の段階</li>
+<li>一括編集は最新の書き出しから始め、行ごとの結果を照合してから必要な行だけ送り直す。コンテキストヒントは全件を書く</li>
+<li>APIは広告アカウントごとのキーで扱い、停止状態で作成し、確かめてから有効にする。予算・入札はmicros、レポートの金額は通常の通貨単位</li>
+<li>自動取得したレポートの直近の数字は確定値として扱わず、取り直して上書きする。管理画面のCSVとは成果の数え方が違う</li>
+</ul>
+<p>一括入稿・一括編集の運用ルールや、APIを導入するかどうかを整理したい場合は、現在のキャンペーン・広告グループ・広告の数と、変更の頻度をお手元に用意のうえ<a href="https://ads.ikigaiinc.com/#cta">20分の無料相談</a>をご利用ください。</p>
+<h3 id="s19"><strong>出典</strong></h3>
+<ul>
+<li><a href="https://help.openai.com/en/articles/20001215-edit-campaigns">Edit Campaigns</a>（直接編集と一括編集、書き出してから編集する理由、ID、コンテキストヒントの置き換え、目的と予算の種類）</li>
+<li><a href="https://help.openai.com/en/articles/20001218-bulk-upload-campaign-schema-checklist">Bulk Upload Campaign Schema Checklist</a>（入稿ファイルの確認項目、件数の上限、画像の置き場所）</li>
+<li><a href="https://help.openai.com/en/articles/20001209-launch-campaigns">Launch Campaigns</a>（一括入稿での新規作成の手順、アップロードエラーの対処、重複の防止）</li>
+<li><a href="https://help.openai.com/en/articles/20001217-troubleshooting-common-issues">Troubleshooting Common Issues</a>（行ごとの結果の照合、反映の時間）</li>
+<li><a href="https://help.openai.com/en/articles/20001206-ads-manager-beta-overview">Ads Manager Beta Overview</a>（一括入稿の対象、設定画面の項目）</li>
+<li><a href="https://help.openai.com/en/articles/20001213-ads-manager-beta-account-setup">Ads Manager Beta Account Setup</a>（ChatGPTからの開設、国・通貨・タイムゾーン）</li>
+<li><a href="https://help.openai.com/en/articles/20001268-create-campaigns-from-product-feeds">Create Campaigns from Product Feeds</a>（商品フィードのキャンペーンの作成手順）</li>
+<li><a href="https://help.openai.com/en/articles/20001243-advertiser-guidance-for-allowing-openai-web-crawlers">Advertiser Guidance for Allowing OpenAI Web Crawlers</a>（大量のアップロードとアクセス制限、OAI-AdsBot）</li>
+<li><a href="https://help.openai.com/en/articles/20001273-managing-identity-and-access-for-ads-manager">Managing identity and access for Ads Manager</a>（広告アカウントの役割）</li>
+<li><a href="https://help.openai.com/en/articles/20001214-measure-results">Measure Results</a>（CSVの書き出し、成果の反映の時間、ビュースルーと成果の日付）</li>
+<li>Advertiser API（OpenAI開発者向けドキュメント）：<a href="https://developers.openai.com/ads/api-overview">Overview</a>（構造、キー、停止状態での作成、重複を防ぐキー、回数の上限）、<a href="https://developers.openai.com/ads/campaign-management">Campaign Management</a>（更新の注意、一括処理、URLのパラメーター）、<a href="https://developers.openai.com/ads/api-reference/authentication">Authentication</a>（キーの範囲）、<a href="https://developers.openai.com/ads/reporting">Reporting</a>（指標と単位、反映の時間、取得できる期間）、<a href="https://developers.openai.com/ads/api-reference/insights">Insights</a>（取得の単位と内訳、タイムゾーン、ビュースルーの成果）、<a href="https://developers.openai.com/ads/troubleshooting">Troubleshooting</a>（状態と審査、エラー）、<a href="https://developers.openai.com/ads/api-partner-setup">API Partner Setup</a>（機能の有効化）</li>
+<li><a href="https://openai.com/index/reimagining-advertising-with-ai/">Reimagining advertising with AI</a>（Ads Managerプラグインの発表、2026年9月16日）</li>
+</ul>
+<p>いずれも2026年9月25日に本文を確認しています。</p>
+<h3 id="s20"><strong>変更履歴</strong></h3>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>日付</strong></p>
+</th><th scope="col"><p><strong>内容</strong></p>
+</th></tr>
+<tr><td><p>2026年9月25日</p>
+</td><td><p>初版。公式ヘルプ10本、開発者向けドキュメント7ページ、公式発表を本文確認</p>
+</td></tr>
+</table></div>
+<p><strong>次回確認予定：2026年9月28日。</strong> ChatGPTからの操作の提供状況と、Advertiser APIの変更履歴を確認します。</p>
+</article></div><section class="consult"><div><span class="eyebrow">NEXT STEP</span><h2>自社の商材なら、<br>何から試す？</h2></div><div><p>商材・主要な成果・検証予算から、準備することを整理します。<br>広告や計測のどこから手をつけるか、まずはご相談ください。</p><a href="/#cta" class="button">ChatGPT広告の出稿・運用を相談する <span aria-hidden="true">↗</span></a><p class="small-text">GPT広告専門店の20分無料相談</p></div></section><section class="related"><div class="section-top"><p class="eyebrow">RELATED ARTICLES</p><h2>次に読む記事</h2></div><div class="cards two"><a class="article-card" href="/articles/chatgpt-ads-start/"><div class="card-visual"><img src="/articles/assets/costs.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">01 / 始め方・費用</span><h3>ChatGPT広告の始め方｜費用・出稿方法・必要な準備</h3><p>ChatGPT広告は、日本の企業も自社で出稿を進められます。日本円の最低日予算は2,500円。まず1商材・主要な成果・検証予算を決め、広告と計測を準備するのが始め方の基本です。</p><span class="card-bottom">2026.09.20 <span>記事を読む ↗</span></span></div></a><a class="article-card" href="/articles/chatgpt-ads-measurement/"><div class="card-visual"><img src="/articles/assets/measurement-roles.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">10 / 効果測定</span><h3>ChatGPT広告の効果測定｜Pixel・UTM・GA4で何を確認するか</h3><p>ChatGPT広告で最も多いつまずきは、配信そのものではなく計測です。クリックは取れているのに、その先が分からない。イベントは飛んでいるのに管理画面では0のまま。数字がGA4と合わない。</p><span class="card-bottom">2026.09.20 <span>記事を読む ↗</span></span></div></a><a class="article-card" href="/articles/chatgpt-ads-context-hints/"><div class="card-visual"><img src="/articles/assets/hint-signals.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">09 / 文脈設計</span><h3>ChatGPT広告のコンテキストヒントの作り方｜顧客の相談場面から考える</h3><p>ChatGPT広告にはキーワードのマッチタイプがありません。代わりにあるのがコンテキストヒントです。広告グループ単位で、自社の商品・サービスが役に立ちそうな会話・トピック・キーワードを記述します。</p><span class="card-bottom">2026.09.20 <span>記事を読む ↗</span></span></div></a><a class="article-card" href="/articles/chatgpt-ads-not-serving/"><div class="card-visual"><img src="/articles/assets/serving-check.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">13 / トラブル対応</span><h3>ChatGPT広告が配信されないとき｜審査・予算・設定の確認順</h3><p>キャンペーンを作って有効にしたのに、表示回数が伸びない。消化額が0のまま。昨日まで動いていたのに止まった。</p><span class="card-bottom">2026.09.20 <span>記事を読む ↗</span></span></div></a><a class="article-card" href="/articles/chatgpt-ads-inhouse-agency/"><div class="card-visual"><img src="/articles/assets/roles-raci.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">27 / 運用体制</span><h3>ChatGPT広告の自社運用と代理店支援｜準備・運用・計測の分担</h3><p>ChatGPT広告の広告アカウントは、事業者の確認と請求を広告主の情報で行います。当社は広告主が作成して代理店を招待する形を勧めます。</p><span class="card-bottom">2026.09.26 <span>記事を読む ↗</span></span></div></a><a class="article-card" href="/articles/chatgpt-ads-formats-trends/"><div class="card-visual"><img src="/articles/assets/formats-status.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">24 / 表示形式・最新動向</span><h3>ChatGPT広告の表示形式と最新動向｜商品フィード広告・Sponsored Agentsの提供状況</h3><p>ChatGPT広告の表示形式を、今使える通常広告・商品フィード広告と、限定テスト中のSponsored Agentsに分けて整理します。</p><span class="card-bottom">2026.09.26 <span>記事を読む ↗</span></span></div></a></div></section></div></main><footer class="site-footer"><div class="wrap"><a class="brand" href="/">GPT広告専門店<span>.</span></a><p>運営：株式会社Ikigai<br>本サービスはOpenAIの公式・公認・提携サービスではありません。</p><div class="footer-links"><a href="/articles/">記事一覧</a><a href="/">サービス・料金</a><a href="https://ikigaiinc.com/privacypolicy">プライバシーポリシー</a><a href="https://ikigaiinc.com">会社情報</a></div><small>© 2026 株式会社Ikigai. ChatGPT・OpenAIは各権利者の商標です。</small></div></footer><script>(function(){var K=['utm_source','utm_medium','utm_campaign','utm_content','utm_term'],q=new URLSearchParams(location.search),u={},any=false;K.forEach(function(k){var v=q.get(k);if(v){u[k]=v;any=true;}});try{if(any){sessionStorage.setItem('lp_utm',JSON.stringify(u));}}catch(e){}})();</script></body></html>
