@@ -82,6 +82,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <li>用途を絞るなら、総合トップページより該当の商品・サービスページを検討する。</li>
 </ul>
 <p>「クリックされたのに問い合わせがない」を改善するには、広告だけでなくLPも修正できる体制が必要です。<a href="https://help.openai.com/en/articles/20001212-create-ads-for-chatgpt">出典：広告とリンク先の一貫性</a></p>
+<p>相談場面から広告文・画像・LPをそろえる手順と公開事例の結果は、<a href="/articles/chatgpt-ads-creative-lp/">広告文・画像・LPの作り方</a>で詳しく扱っています。</p>
 <h3 id="s9"><strong>4. 主要な成果を1つ決め、完了した行動を測れるようにする</strong></h3>
 <p>広告で目指す成果をコンバージョン（CV）と呼びます。Pixel・Conversions API・UTMの役割分担は<a href="/articles/chatgpt-ads-measurement/">効果測定の記事</a>にまとめています。クリックやページ閲覧と、購入・問い合わせの完了は分けて扱います。</p>
 <ul>
@@ -159,6 +160,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <li>LPが開き、広告で伝えた価格・条件・内容を確認できること。</li>
 </ul>
 <p>一括入稿では、画像URLを外部から取得できるかも確認します。<a href="https://help.openai.com/en/articles/20001209-launch-campaigns">出典：広告の入稿規定</a></p>
+<p>広告の本数が多いときの一括入稿・一括編集の手順と、重複や上書きを防ぐ方法は<a href="/articles/chatgpt-ads-bulk-api/">一括入稿とAPIの記事</a>で扱っています。</p>
 <h3 id="s16"><strong>手順5：成果イベントをテストし、審査後の配信を確認する</strong></h3>
 <p>購入や問い合わせを評価するなら、次の順で確認します。</p>
 <ul>
@@ -178,6 +180,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <li>今週の予算枠を先に使い切っていないか。予算週は日曜から土曜で、枠を早く使い切ると有効の表示のまま配信が止まり得る。</li>
 </ul>
 <p>広告文を変える前に、設定上の原因を除きます。<a href="https://help.openai.com/en/articles/20001224">出典：配信状態の確認</a></p>
+<p>審査で否認されたときの直し方は<a href="/articles/chatgpt-ads-policy-review/">審査の記事</a>で扱っています。</p>
 <h3 id="s19"><strong>CV0は、未獲得・未計測・集計待ちを分けて調べる</strong></h3>
 <p>同じCV0でも、必要な作業は異なります。次の切り分けは運用上の確認例です。</p>
 <div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>確認できた状況</strong></p>
@@ -198,6 +201,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </td></tr></table></div>
 <p>CVの反映には24〜48時間かかる場合があります。Conversionsの合計には複数イベントが含まれ得るため、主要CVはイベント別の列でも確認します。<a href="https://help.openai.com/en/articles/20001214-measure-results">出典：成果レポート</a></p>
 <p>Pixelは基本コードの設置だけでなく、成果の発生時にイベントを送る設定が必要です。サーバーから送るConversions APIを併用する場合は、同一のイベントID・Pixel ID・イベント名で重複を除く実装を確認します。<a href="https://developers.openai.com/ads/measurement-pixel">出典：Pixel</a>、<a href="https://developers.openai.com/ads/conversions-api">Conversions API</a></p>
+<p>クリックはあるのに成果が出ないときの確認順は、<a href="/articles/chatgpt-ads-no-conversions/">成果が出ないときの記事</a>にまとめています。</p>
 <h3 id="s20"><strong>問い合わせが増えても、有効性・商談・受注まで追う</strong></h3>
 <p>初期レポートでは、数字を3段階に分けます。</p>
 <ul>

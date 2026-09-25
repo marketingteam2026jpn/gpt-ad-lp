@@ -126,7 +126,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p><strong>優先順位は Ad URL &gt; Ad &gt; Ad Group &gt; Campaign</strong> で、細かいほうが勝ちます。広告URLにすでに同じパラメータがある場合、上位の設定では上書きされません。</p>
 <p><a href="https://help.openai.com/en/articles/20001214-measure-results">出典：Measure Results</a></p>
 <h3 id="s11"><strong>設計例（提案）</strong></h3>
-<pre><code>?utm_source=chatgpt&amp;utm_medium=cpc&amp;utm_campaign={campaign_id}&amp;utm_content={ad_id}</code></pre>
+<pre style="white-space:pre-wrap;word-break:break-all"><code>?utm_source=chatgpt&amp;utm_medium=cpc&amp;utm_campaign={campaign_id}&amp;utm_content={ad_id}</code></pre>
 <p>手入力の命名規則を維持したい場合は、<code>utm_campaign</code>は自分で書き、<code>utm_content</code>だけマクロにする形もあります。<strong>社内のレポートで使っている命名と噛み合うかを先に確認してください。</strong></p>
 <h2 id="s12"><strong>ステップ4：テスト送信して確認する</strong></h2>
 <p>入稿前に、実際に成果地点まで進んでイベントが届くかを確認します。</p>
@@ -193,6 +193,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </ul>
 <p>比較するときは、<strong>同じ日付範囲・同じタイムゾーン</strong>に揃え、CSVエクスポートでキャンペーン・広告単位の実績を確認します。</p>
 <p>差が出ること自体は異常ではありません。問題は、<strong>差の理由を説明できないまま数字を報告すること</strong>です。報告時には「媒体申告値」「GA4の値」「実際の受注」を分けて書きます。</p>
+<p>クリックはあるのに成果が出ないときの確認順は<a href="/articles/chatgpt-ads-no-conversions/">成果が出ないときの記事</a>で、HubSpotで商談・受注まで追う方法は<a href="/articles/chatgpt-ads-hubspot/">HubSpotの記事</a>で扱っています。</p>
 <h2 id="s18"><strong>実装担当への依頼表</strong></h2>
 <p>広告担当が実装担当へ渡す内容です。</p>
 <div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>項目</strong></p>
