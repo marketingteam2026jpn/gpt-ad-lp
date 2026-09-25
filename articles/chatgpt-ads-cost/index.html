@@ -13,7 +13,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <a class="skip" href="#main">本文へ移動</a><header class="site-header"><div class="wrap header-inner"><a class="brand" href="/">GPT広告専門店<span>.</span><small>by 株式会社Ikigai</small></a><nav aria-label="メインナビゲーション"><a href="/articles/">記事一覧</a><a class="button small" href="/#cta">無料相談 <span aria-hidden="true">↗</span></a></nav></div></header><main id="main"><div class="wrap"><nav class="breadcrumbs" aria-label="パンくず"><a href="/">ホーム</a><span>/</span><a href="/articles/">記事一覧</a><span>/</span><span>費用・予算</span></nav><header class="article-heading"><p class="eyebrow">CHATGPT ADS GUIDE <span>05 / 費用・予算</span></p><p class="edition">2026年9月最新版</p><h1>ChatGPT広告の費用はいくら？広告費・運用支援費・テスト予算の考え方</h1><div class="byline"><span>企画・編集：GPT広告専門店（株式会社Ikigai）</span><time datetime="2026-09-20">公開：2026年9月20日／更新：2026年9月25日</time></div><p class="lead">ChatGPT広告を少し試したい、と考えたときに最初に出てくる質問が「いくらかかるのか」です。日本円のアカウントの最低日予算は<strong>2,500円</strong>。ただし、この数字だけで見積もると足が出ます。</p><p class="case-note">掲載事例は他社の公開情報に基づくもので、当社の運用実績ではありません。事例からの示唆・検証案は、株式会社Ikigaiの見解です。</p></header><div class="reading-layout"><aside class="toc"><details open><summary>この記事の内容</summary><ol><li><a href="#s1">この記事の要点</a></li><li><a href="#s2">媒体に払う広告費：最低日予算は通貨ごとに決まっている</a></li><li><a href="#s7">広告費以外にかかる費用</a></li><li><a href="#s8">検証予算の組み方：日額ではなく、総額と判定日から決める</a></li><li><a href="#s12">費用に関するよくある質問</a></li><li><a href="#s13">まとめ</a></li></ol></details><a class="toc-back" href="/articles/">← すべての記事を見る</a></aside><article class="prose" aria-label="記事本文"><h2 id="s1"><strong>この記事の要点</strong></h2>
 <ol>
-<li><strong>最低日予算は2,500円。ただし上限ではない。</strong> 日予算は7日間の平均で、1日は最大5,000円、7日間は最大17,500円まで振れる。</li>
+<li><strong>最低日予算は2,500円。ただし上限ではない。</strong> 日予算は7日間の平均で、2,500円の設定を変えなければ、1日は最大5,000円、予算週は最大17,500円まで振れる。</li>
 <li><strong>この記事で比較した国内2社の平均CPCは79円と435円。</strong> 2社で5倍以上の差があるが、国内全体の範囲や業種別の相場ではない。公式の推奨初期上限入札は1クリック3〜5ドル。</li>
 <li><strong>決める順番は日額ではない。</strong> 確かめたいこと、必要な母数、検証の総額と判定日を先に決める。</li>
 </ol>
@@ -41,18 +41,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </td><td><p>25,000ウォン</p>
 </td></tr>
 </table></div>
-<p>全23通貨分が掲載されています。<a href="https://help.openai.com/en/articles/20001210-create-campaigns-for-chatgpt-ads">出典：Create Campaigns for ChatGPT Ads</a></p>
-<p>日本円のアカウントであれば、<strong>1日2,500円から出稿できる</strong>というのが事実です。ここまでは他の媒体の最低予算と大きく変わりません。</p>
+<p>このほかの通貨も、公式の通貨別表で確認できます。<a href="https://help.openai.com/en/articles/20001210-create-campaigns-for-chatgpt-ads">出典：Create Campaigns for ChatGPT Ads</a></p>
+<p>日本円の最低日予算は2,500円です。ただし、日予算と固定入札を使うキャンペーンでは、対象の広告グループの実効上限入札額（オーディエンスの入札調整を含む）も下回れません。この入札額による制約は、自動入札やキャンペーン総額予算には適用されません。実際に設定できる金額はAds Managerで確認します。</p>
 <h3 id="s3"><strong>日予算は「上限」ではなく「7日間の平均」</strong></h3>
 <p>見落としやすいのはここです。公式は次のように説明しています。</p>
 <ul>
 <li>日予算は、7日間にわたって1日あたりに使いたい<strong>平均額</strong></li>
-<li><strong>1日の消化上限は、日予算の2倍</strong></li>
-<li><strong>7日間の消化上限は、日予算の7倍</strong></li>
+<li><strong>予算を固定した場合、1日の消化上限は日予算の2倍</strong></li>
+<li><strong>予算を固定した場合、予算週の消化上限は日予算の7倍</strong></li>
 <li>予算週は、広告アカウントのタイムゾーンで<strong>日曜から土曜まで</strong></li>
 </ul>
 <p><a href="https://help.openai.com/en/articles/20001413-daily-budgets">出典：Daily Budgets</a></p>
-<p>つまり日予算2,500円で設定しても、<strong>1日で5,000円使われる日があり得ます</strong>。日次のレポートだけを見ていると「設定の倍使われている」と驚くことになりますが、週合計では17,500円を超えません。</p>
+<p>つまり日予算2,500円で設定しても、<strong>1日で5,000円使われる日があり得ます</strong>。日次のレポートだけを見ていると「設定の倍使われている」と驚くことになりますが、予算を変えなければ、予算週の合計は17,500円を超えません。</p>
 <p>もうひとつ、実務で効く挙動があります。週の前半に上限近くまで使う日が続くと、<strong>週の枠を先に使い切り、キャンペーンが「有効」と表示されたまま次の予算週まで配信が止まり得ます</strong>。公式ヘルプに明記されている動作です。</p>
 <p>日中に日予算を変更した日は、その日に有効だった最も高い金額の2倍がその日の上限になります。週の途中で変更した場合、7日間の上限は変更時点から次の日曜0時までで日割り計算されます。</p>
 <h3 id="s4"><strong>課金対象は表示かクリック。「成果1件いくら」ではない</strong></h3>
@@ -169,14 +169,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p>公開事例では、<strong>設定した期間と実際の配信時間がまったく違った例</strong>が複数あります。約1万円の予算が7時間ほどで消化された例、10万円が短時間で消化された例が報告されています。期間で区切ったつもりが、実際には数時間で終わっていることがあります。</p>
 <p>そのため記録するのは「総額」「予定した期間」「実際に配信されていた時間」の3つです。</p>
 <h2 id="s12"><strong>費用に関するよくある質問</strong></h2>
-<p><strong>Q. 最低日予算の2,500円だけで始められますか。</strong> 出稿はできます。ただし上の母数の話があるため、<strong>判断材料が得られるかは別問題</strong>です。操作と挙動の確認が目的なら十分です。</p>
+<p>Q. 最低日予算の2,500円だけで始められますか。 設定できる金額は入札方法などにもよります。日予算と固定入札の場合は、対象広告グループの実効上限入札額も下回れません。また、最低予算を満たしても、成果を判断できる母数が得られるとは限りません。操作確認と成果検証では必要な予算が変わります。</p>
 <p><strong>Q. 日予算を下げられないことがあります。</strong> 日予算と固定入札を使うキャンペーンでは、日予算が広告グループの実効入札額を下回れません。先に入札上限を下げてから日予算を変更します。公式は「これはプラットフォーム共通の最低額ではない」と明記しています。</p>
 <p><strong>Q. 消化額が0円のままです。課金されていないということですか。</strong> いいえ。公式ヘルプの目安では、表示・クリック・CTRは約15分ごとに更新され、消化額は約7〜8時間遅れて反映されます。<strong>消化額が0円でも、課金が発生していないとは限りません。</strong>平均CPC・CPMは消化額の確定に依存するため、さらに遅れる場合があります。コンバージョンは24〜48時間かかることがあります。いずれも目安で、処理の進行に伴い直近の数値は変わることがあります。</p>
 <p><strong>Q. 予算を使い切らずに配信が止まりました。</strong> 週の枠を前倒しで使い切っている可能性があります。予算週は日曜から土曜です。<a href="/articles/chatgpt-ads-not-serving/">配信されないときの確認順はこちら</a></p>
 <h2 id="s13"><strong>まとめ</strong></h2>
 <ul>
 <li>日本円の最低日予算は2,500円。通貨別の一覧が公式にある</li>
-<li>日予算は平均。<strong>1日は2倍、7日は7倍まで</strong>。予算週は日曜から土曜</li>
+<li>日予算は平均。予算を固定した場合は1日2倍、予算週7倍まで。予算週は日曜から土曜</li>
 <li>Conversion optimization目的でも<strong>成果報酬型ではない</strong>。課金はクリックか表示</li>
 <li>目的・課金方式・コンバージョンイベントは<strong>作成後に変更できない</strong></li>
 <li>CPCの推奨初期上限入札は3〜5ドル。最低日予算では1日数クリックの計算になる</li>
@@ -191,7 +191,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <li><a href="https://help.openai.com/en/articles/20001207-ads-in-chatgpt-the-basics">Ads in ChatGPT: The Basics</a>（推奨入札、オークション、反映時間）</li>
 <li><a href="https://help.openai.com/en/articles/20001214-measure-results">Measure Results</a>（表示・クリック・消化額・コンバージョンの反映時間）</li>
 </ul>
-<p>初版の公式本文確認は2026年9月19日です。2026年9月25日にMeasure ResultsとConversion-optimized Campaignsを再確認し、反映時間と課金・入札の説明を更新しました。出稿前にAds Managerでも確認してください。</p>
+<p>初版の公式本文確認は2026年9月19日です。2026年9月25日にMeasure ResultsとConversion-optimized Campaignsを再確認し、反映時間と課金・入札の説明を更新しました。同日にCreate Campaigns for ChatGPT Adsの通貨別表とDaily Budgetsも再確認し、固定入札時の最低額条件と予算変更時の扱いを明記しました。出稿前にAds Managerでも確認してください。</p>
 <h3 id="s15"><strong>変更履歴</strong></h3>
 <div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>日付</strong></p>
 </th><th scope="col"><p><strong>内容</strong></p>
@@ -204,4 +204,4 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </td></tr>
 </table></div>
 <p><strong>次回確認予定：2026年9月26日。</strong> 公式ヘルプは日単位で更新されるため、週1回の定点確認に合わせて見直します。</p>
-</article></div><section class="consult"><div><span class="eyebrow">NEXT STEP</span><h2>自社の商材なら、<br>何から試す？</h2></div><div><p>商材・主要な成果・検証予算から、準備することを整理します。<br>広告や計測のどこから手をつけるか、まずはご相談ください。</p><a href="/#cta" class="button">ChatGPT広告の出稿・運用を相談する <span aria-hidden="true">↗</span></a><p class="small-text">GPT広告専門店の20分無料相談</p></div></section><section class="related"><div class="section-top"><p class="eyebrow">RELATED ARTICLES</p><h2>次に読む記事</h2></div><div class="cards two"><a class="article-card" href="/articles/chatgpt-ads-basics/"><div class="card-visual"><img src="/articles/assets/ads-basics.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">04 / 基礎知識</span><h3>ChatGPT広告とは？表示の仕組み・対象ユーザー・出稿までの全体像</h3><p>「ChatGPT広告」という言葉は、2つの違うものを指して使われています。</p><span class="card-bottom">2026.09.20 <span>記事を読む ↗</span></span></div></a><a class="article-card" href="/articles/chatgpt-ads-fit/"><div class="card-visual"><img src="/articles/assets/fit-check.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">06 / 適合診断</span><h3>ChatGPT広告は自社に向く？商材・顧客・計測から考える相性</h3><p>「新しい媒体だから試したい」と「自社の商材で成果が出そうだ」は別の話です。ChatGPT広告は2026年3月の開始から半年ほどの媒体で、業種別の相場も、確立した勝ちパターンもまだありません。</p><span class="card-bottom">2026.09.20 <span>記事を読む ↗</span></span></div></a></div></section></div></main><footer class="site-footer"><div class="wrap"><a class="brand" href="/">GPT広告専門店<span>.</span></a><p>運営：株式会社Ikigai<br>本サービスはOpenAIの公式・公認・提携サービスではありません。</p><div class="footer-links"><a href="/articles/">記事一覧</a><a href="/">サービス・料金</a><a href="https://ikigaiinc.com/privacypolicy">プライバシーポリシー</a><a href="https://ikigaiinc.com">会社情報</a></div><small>© 2026 株式会社Ikigai. ChatGPT・OpenAIは各権利者の商標です。</small></div></footer><script>(function(){var K=['utm_source','utm_medium','utm_campaign','utm_content','utm_term'],q=new URLSearchParams(location.search),u={},any=false;K.forEach(function(k){var v=q.get(k);if(v){u[k]=v;any=true;}});try{if(any){sessionStorage.setItem('lp_utm',JSON.stringify(u));}}catch(e){}})();</script></body></html>
+</article></div><section class="consult"><div><span class="eyebrow">NEXT STEP</span><h2>自社の商材なら、<br>何から試す？</h2></div><div><p>商材・主要な成果・検証予算から、準備することを整理します。<br>広告や計測のどこから手をつけるか、まずはご相談ください。</p><a href="/#cta" class="button">ChatGPT広告の出稿・運用を相談する <span aria-hidden="true">↗</span></a><p class="small-text">GPT広告専門店の20分無料相談</p></div></section><section class="related"><div class="section-top"><p class="eyebrow">RELATED ARTICLES</p><h2>次に読む記事</h2></div><div class="cards two"><a class="article-card" href="/articles/chatgpt-ads-basics/"><div class="card-visual"><img src="/articles/assets/ads-basics.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">04 / 基礎知識</span><h3>ChatGPT広告とは？表示の仕組み・対象ユーザー・出稿までの全体像</h3><p>「ChatGPT広告」という言葉は、2つの違うものを指して使われています。</p><span class="card-bottom">2026.09.20 <span>記事を読む ↗</span></span></div></a><a class="article-card" href="/articles/chatgpt-ads-fit/"><div class="card-visual"><img src="/articles/assets/fit-check.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">06 / 適合診断</span><h3>ChatGPT広告は自社に向く？商材・顧客・計測から考える相性</h3><p>「新しい媒体だから試したい」と「自社の商材で成果が出そうだ」は別の話です。ChatGPT広告はまだ初期段階の媒体で、業種別の相場も、確立した勝ちパターンもまだありません。</p><span class="card-bottom">2026.09.20 <span>記事を読む ↗</span></span></div></a></div></section></div></main><footer class="site-footer"><div class="wrap"><a class="brand" href="/">GPT広告専門店<span>.</span></a><p>運営：株式会社Ikigai<br>本サービスはOpenAIの公式・公認・提携サービスではありません。</p><div class="footer-links"><a href="/articles/">記事一覧</a><a href="/">サービス・料金</a><a href="https://ikigaiinc.com/privacypolicy">プライバシーポリシー</a><a href="https://ikigaiinc.com">会社情報</a></div><small>© 2026 株式会社Ikigai. ChatGPT・OpenAIは各権利者の商標です。</small></div></footer><script>(function(){var K=['utm_source','utm_medium','utm_campaign','utm_content','utm_term'],q=new URLSearchParams(location.search),u={},any=false;K.forEach(function(k){var v=q.get(k);if(v){u[k]=v;any=true;}});try{if(any){sessionStorage.setItem('lp_utm',JSON.stringify(u));}}catch(e){}})();</script></body></html>
