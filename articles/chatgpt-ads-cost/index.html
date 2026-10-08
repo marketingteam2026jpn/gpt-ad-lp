@@ -88,7 +88,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p>公式は、CPCキャンペーンの初期の上限入札として<strong>1クリックあたり3〜5ドル</strong>から始めることを推奨しています。<a href="https://help.openai.com/en/articles/20001207-ads-in-chatgpt-the-basics">出典：Ads in ChatGPT: The Basics</a></p>
 <p>これはドル建ての推奨値で、日本円のアカウントにそのまま当てはまる保証はありません。ただし、<strong>仮にこの水準で落札されるなら、日予算2,500円で買えるのは1日あたり数クリック</strong>という計算になります。これは後述する「検証予算」の考え方に直結します。</p>
 <figure><a aria-label="図を拡大する" href="/articles/assets/budget-range.png"><img alt="図1：日予算2,500円で実際に動く金額。公式の予算規定と、国内2社の配信報告をもとに作成。" height="760" loading="lazy" src="/articles/assets/budget-range.svg" width="1200"/></a><figcaption>図1：日予算2,500円で実際に動く金額。公式の予算規定と、国内2社の配信報告をもとに作成。</figcaption></figure>
-<h3 id="s6"><strong>公開されているCPCの実測値（条件つき）</strong></h3>
+<p>入札方法の選び方（成果を最大化・上限入札・Bid Cap）と、入札を変えるときの判断は<a href="/articles/chatgpt-ads-bidding/">入札戦略の記事</a>で詳しく扱っています。</p><h3 id="s6"><strong>公開されているCPCの実測値（条件つき）</strong></h3>
 <p>「実際いくらのクリック単価になるのか」は、公式には示されていません。参考になるのは、運用者が条件つきで公表した実測値です。</p>
 <div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>公表元</strong></p>
 </th><th scope="col"><p><strong>商材・目的</strong></p>
@@ -122,7 +122,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p><strong>この記事で比較した国内2社の平均CPCは79円と435円で、5倍以上の開きがあります。</strong> この2社だけで国内全体の最小値・最大値は分からず、<strong>業種別の相場ではありません</strong>。商材・入札・配信期間がそれぞれ違い、両社ともCV数は非開示です。</p>
 <p><strong>読み取れること</strong>：日本円でも数十円台のクリックが出る場合があり、同時に数百円になる場合もある。 <strong>読み取れないこと</strong>：自社の商材でいくらになるか。CV率、獲得単価、収益性。</p>
 <p>自社の見積もりに使うなら、この幅の<strong>上側</strong>（435円）で置いてから、初週の実績で置き換えるのが安全です。迷ったときに低く見積もると、承認後に足が出ます。<a href="/articles/chatgpt-ads-cases/">国内・海外の事例7件はこちら</a></p>
-<h2 id="s7"><strong>広告費以外にかかる費用</strong></h2>
+<p>国内外の公開事例のCPC・CTRを、条件つきで一覧にした表は<a href="/articles/chatgpt-ads-cpc-ctr/">CPC・CTRの相場の記事</a>にあります。</p><h2 id="s7"><strong>広告費以外にかかる費用</strong></h2>
 <p>広告費だけを見て予算を組むと、社内の承認時に不足が出ます。ChatGPT広告に限らずですが、この媒体では<strong>計測の準備</strong>が特に効いてきます。</p>
 <div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>費目</strong></p>
 </th><th scope="col"><p><strong>何にかかるか</strong></p>
@@ -175,8 +175,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p><strong>Q. 日予算を下げられないことがあります。</strong> 日予算と固定入札を使うキャンペーンでは、日予算が広告グループの実効入札額を下回れません。先に入札上限を下げてから日予算を変更します。公式は「これはプラットフォーム共通の最低額ではない」と明記しています。</p>
 <p><strong>Q. 消化額が0円のままです。課金されていないということですか。</strong> いいえ。公式ヘルプの目安では、表示・クリック・CTRは約15分ごとに更新され、消化額は約7〜8時間遅れて反映されます。<strong>消化額が0円でも、課金が発生していないとは限りません。</strong>平均CPC・CPMは消化額の確定に依存するため、さらに遅れる場合があります。コンバージョンは24〜48時間かかることがあります。いずれも目安で、処理の進行に伴い直近の数値は変わることがあります。</p>
 <p><strong>Q. 予算を使い切らずに配信が止まりました。</strong> 週の枠を前倒しで使い切っている可能性があります。予算週は日曜から土曜です。<a href="/articles/chatgpt-ads-not-serving/">配信されないときの確認順はこちら</a></p>
-<p><strong>Q. 同じ金額の請求が何度も届きました。重複ですか。</strong> 重複とは限りません。カード払いのセルフサーブでは、未払いの広告費が支払いしきい値に達するたびに請求され、月末にも残高が請求されます。同じ金額の請求が複数回あっても、それぞれが追加の広告費です。しきい値以上の支払いが2回成功すると、しきい値が次の段階に上がることがあります（公式の米ドルの例：25ドル→50ドル→100ドル→200ドル。アカウントと通貨で異なり、保証ではありません）。しきい値が上がっても請求のタイミングが変わるだけで、<strong>キャンペーンの予算は増えません</strong>。しきい値は広告主もサポートも変更できません。</p>
-<h2 id="s13"><strong>まとめ</strong></h2>
+<p><strong>Q. 同じ金額の請求が何度も届きました。重複ですか。</strong> 重複とは限りません。カード払いのセルフサーブでは、未払いの広告費が支払いしきい値に達するたびに請求され、月末にも残高が請求されます。同じ金額の請求が複数回あっても、それぞれが追加の広告費です。しきい値以上の支払いが2回成功すると、しきい値が次の段階に上がることがあります（公式の米ドルの例：25ドル→50ドル→100ドル→200ドル。アカウントと通貨で異なり、保証ではありません）。しきい値が上がっても請求のタイミングが変わるだけで、<strong>キャンペーンの予算は増えません</strong>。しきい値は広告主が変えることはできず、サポートも手動では変更しません。</p>
+<p>支払いしきい値、領収書と税、支払いに失敗したときの対応など、請求の仕組み全体は<a href="/articles/chatgpt-ads-billing/">支払い方法と請求の記事</a>で扱っています。</p><h2 id="s13"><strong>まとめ</strong></h2>
 <ul>
 <li>日本円の最低日予算は2,500円。通貨別の一覧が公式にある</li>
 <li>日予算は平均。予算を固定した場合は1日2倍、予算週7倍まで。予算週は日曜から土曜</li>

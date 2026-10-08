@@ -105,7 +105,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <h3 id="s23"><strong>計測パートナーやMMPから送る場合</strong></h3>
 <p>アプリの計測ツール（MMP）や計測パートナーを既に使っている場合は、その連携から成果を送る方法もあります。2026年10月7日時点のヘルプで設定手順が案内されている連携先は、MMPがAdjust・Airbridge・AppsFlyer・Branch・Kochava・Singular・Tenjin、計測パートナーがFospha・Hightouch・INCRMNTAL・LiveRamp・Northbeam・Rockerbox・Triple Whale・WorkMagicです。成果の送信、帰属、消化額のレポート、増分効果の測定など、できることは連携先ごとに異なります。</p>
 <p>MMPを通したアプリの帰属はクリック基準です。また、<strong>連携先の帰属期間と、Ads Managerのレポートの帰属設定は別々に設定されます</strong>。連携先の画面とAds Managerの数字が違うことを前提に、どちらの数字を何の判断に使うかを先に決めておきます。</p>
-<h2 id="s9"><strong>ステップ3：UTMパラメータを設計する</strong></h2>
+<p>アプリのインストールを測る場合の準備（MMP連携とアプリのイベント）は<a href="/articles/chatgpt-ads-app/">アプリの記事</a>にまとめています。</p><h2 id="s9"><strong>ステップ3：UTMパラメータを設計する</strong></h2>
 <p>媒体のレポートとは別に、自社のアクセス解析で流入を識別します。公式も、遷移先URLに静的なトラッキングパラメータ（UTMなど）を付けられ、<strong>広告クリック時に保持される</strong>と書いています。</p>
 <h3 id="s10"><strong>動的パラメータのマクロが使える</strong></h3>
 <p>2026年10月7日時点で、Ads Managerには動的URLパラメータの機能があります。</p>
@@ -193,7 +193,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p>デフォルトの集計基準は<strong>広告イベント時刻</strong>（クレジットされたクリックまたは表示の時刻）です。成果が発生した時刻で見たい場合は「Conversions (by conv. time)」列を追加します。</p>
 <p>APIで数字を取る場合も、同じ設定にそろえます。Advertiser APIは2026年9月30日の変更で、実績を取得する4つのエンドポイント（GET Insights）で帰属期間と時刻の基準を選べるようになりました。指定しない場合は<strong>クリック30日・ビュー1日・広告イベント時刻</strong>で集計し、CV合計はクリック経由とビュー経由の合計です。このため、それより前に取得した数字と合わないことがあります（表示・クリック・消化額は変わりません）。自社のレポートや外部のツールでAPIの数字を使っている場合は、Ads Managerの画面と期間・帰属期間・時刻の基準がそろっているかを確認します。</p>
 <p>ただし、開発者向けのPixel・Conversions APIのページには、2026年10月7日時点でも「ビュー経由はキャンペーン単位の別の指標で、Conversionsの合計には含めない。最適化などはクリック経由のまま」という記述が残っており、公式資料の間で食い違いがあります。この記事はヘルプと日付のある変更履歴（9月30日）に合わせていますが、<strong>自社のAds Managerで帰属期間の設定と、クリック経由・ビュー経由の列の内訳を確かめてください</strong>。</p>
-<h2 id="s17"><strong>ステップ6：GA4と突き合わせる</strong></h2>
+<p>ビュー経由の成果を合計に入れるかどうかの設定と、数字の読み方は<a href="/articles/chatgpt-ads-view-through/">ビュースルーコンバージョンの記事</a>で詳しく扱っています。</p><h2 id="s17"><strong>ステップ6：GA4と突き合わせる</strong></h2>
 <p><strong>媒体の数字とGA4の数字は一致しません。</strong> 公式FAQも理由を列挙しています。</p>
 <ul>
 <li>ページ読み込みのタイミング、リダイレクト</li>
