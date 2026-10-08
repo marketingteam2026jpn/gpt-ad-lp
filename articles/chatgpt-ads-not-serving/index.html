@@ -43,14 +43,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <h2 id="s3"><strong>確認0：本当に配信されていないのか</strong></h2>
 <p>ここで止まる人が多い項目です。<strong>消化額の0は、課金が発生していないことを意味しません。</strong></p>
 <p>公式の記述です。</p>
-<p class="case-note">Impressions, clicks, and CTR can appear within minutes. Spend reporting can take longer, so a displayed spend of zero does not necessarily mean no charges have accrued. Reporting times can vary.</p>
-<p><a href="https://help.openai.com/en/articles/20001207-ads-in-chatgpt-the-basics">出典：Ads in ChatGPT: The Basics</a></p>
+<p class="case-note">Impressions, clicks, and CTR refresh approximately every 15 minutes. Spend insights may be delayed 7–8 hours, so a displayed spend of zero does not necessarily mean no charges have accrued. Reporting times can vary.</p>
+<p><a href="https://help.openai.com/en/articles/20001207-ads-in-chatgpt-the-basics">出典：Ads in ChatGPT: The Basics</a>、<a href="https://help.openai.com/en/articles/20001214-measure-results">Measure Results</a></p>
 <ul>
-<li><strong>表示・クリック・CTR</strong>：数分で出ることがある</li>
-<li><strong>消化額</strong>：遅れることがある。0でも課金は発生し得る</li>
+<li><strong>表示・クリック・CTR</strong>：約15分ごとに更新される</li>
+<li><strong>消化額</strong>：約7〜8時間遅れる。0でも課金は発生し得る。平均CPC・平均CPMは消化額が確定してから更新されるため、さらに後になる</li>
 <li><strong>コンバージョン</strong>：24〜48時間。直近分は後から変動する</li>
 </ul>
-<p><strong>配信初日に「0円だから回っていない」と判断するのは早すぎます。</strong> 表示回数が出ているかを先に見てください。表示が出ているなら配信されています。</p>
+<p><strong>配信初日に「0円だから回っていない」と判断するのは早すぎます。</strong> 表示回数が出ているかを先に見てください。表示が出ているなら配信されています。公開した直後で、審査や請求の明らかな問題が見当たらない場合、公式のトラブル対応ガイドは、配信ゼロとして問い合わせる前に、公開から少なくとも24時間待つよう案内しています。</p>
 <h2 id="s4"><strong>確認1：審査・アカウント・日付（公式のチェック項目）</strong></h2>
 <p>公式FAQは「キャンペーンが配信されないのはなぜか」に対し、次の確認を挙げています。</p>
 <p class="case-note">Confirm that your ad account verification and billing are complete, the campaign and ads are active, the campaign dates include today, and the ads have completed review.</p>
@@ -62,7 +62,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </td><td><p>アカウント設定</p>
 </td></tr>
 <tr><td><p><strong>請求設定が完了しているか</strong></p>
-</td><td><p>支払い方法</p>
+</td><td><p>支払い方法と請求プロファイル。支払いに失敗すると、解決するまで止まることがある</p>
 </td></tr>
 <tr><td><p>キャンペーンと広告がどちらも有効か</p>
 </td><td><p>階層ごとに確認。<strong>広告側が停止していることがある</strong></p>
@@ -73,26 +73,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <tr><td><p><strong>広告の審査が完了しているか</strong></p>
 </td><td><p>広告のステータス</p>
 </td></tr>
+<tr><td><p><strong>ブランド名・法人名を最近変えていないか</strong></p>
+</td><td><p>設定の「<span style="white-space:nowrap">General</span>」。変更後は審査が終わるまで配信が止まり得る</p>
+</td></tr>
 </table></div>
 <p><strong>キャンペーンが有効でも、その下の広告が審査中・否認だと配信されません。</strong> 階層を分けて見てください。</p>
+<p>表の最後の行は、2026年9月25日から3つの名前（アカウント名・ブランド名・法人名）を別々に変えられるようになったことに伴う確認です。ブランド名（広告に表示される名前）を変えると承認まで配信が止まり、法人名（請求と事業確認に使う登記名）を変えると事業確認がやり直しになり、配信が止まることがあります。アカウント名の変更は審査の対象外です。「昨日まで動いていたのに止まった」ときは、名前を変えていないかも確かめます。</p>
+<p>また、2026年10月7日時点のヘルプは、次の2点を案内しています。</p>
+<ul>
+<li><strong>初回のキャンペーンの日付</strong>：初回は公開前に開始日・終了日の項目が出ないことがあり、作成後の編集で設定します。公式は、日付を入れるためだけに公開しないよう注意しています（予定を決める前に配信が始まり得るため）。後から設定した開始日が先の日付になっていないかを確認します</li>
+<li><strong>登録の途中で作った広告</strong>：アカウント開設の途中でサイトのURLから作った広告は、審査の承認に加えて、請求・アカウントの準備・キャンペーンの設定がそろうまで配信されません。そろった時点で、配信と広告費の発生が始まり得ます</li>
+</ul>
 <h3 id="s5"><strong>審査で落ちている場合</strong></h3>
 <p>広告ポリシーは<strong>v1.6（2026年9月10日更新）</strong>です。審査対象は広告文だけではありません。</p>
 <p class="case-note">When an ad is uploaded, we review the title, copy, media, and landing page for compliance with our policies.</p>
 <p><strong>タイトル・説明文・画像・遷移先ページのすべて</strong>が審査されます。広告に問題がなくても、遷移先の内容で否認されることがあります。公式は「食品デリバリーの広告が酒類デリバリーへリンクする」例を挙げています。</p>
 <p>日本の広告主が該当しやすいもの：</p>
 <ul>
-<li>金融サービス、医療・健康サービス、法務サービスは<strong>米国外は原則禁止</strong></li>
+<li>金融サービス、医療・健康サービス、法務サービスは<strong>米国外では原則不可</strong>（国別表では、金融・医療向けのソフトウェアは可、預金口座・クレジットカードなど一部の金融は承認済みの広告主のみ）</li>
 <li><strong>個別の求人・住宅の掲載は禁止</strong>。求人・物件を扱うプラットフォームへのリンクは、広告文と遷移先が特定の掲載に触れない限り可</li>
 <li>根拠のない健康・ウェルネスの表示</li>
 </ul>
-<p><a href="https://openai.com/policies/ad-policies/">出典：OpenAI Ads Policies</a></p>
+<p><a href="https://openai.com/policies/ad-policies/">出典：OpenAI Ads Policies</a>、<a href="https://help.openai.com/en/articles/20001534-troubleshooting-common-onboarding-and-policy-issues">公式ヘルプの国別規制表</a></p>
 <p>また、<strong>事業そのものが制限・禁止カテゴリに該当する広告主は、そもそも出稿資格がない</strong>場合があると明記されています。金融サービスなど制限カテゴリでは、追加の広告主確認や手動審査が入ることもあります。</p>
 <p>否認されたときの直し方と、異議申し立ての順番は<a href="/articles/chatgpt-ads-policy-review/">審査の記事</a>で扱っています。</p>
 <h2 id="s6"><strong>確認2：予算の枠を使い切っていないか</strong></h2>
 <p><strong>ここが、この媒体で最も見落とされる原因です。</strong></p>
 <p>ChatGPT広告の日予算には、次の仕組みがあります。</p>
 <ul>
-<li>日予算は<strong>7日間の平均</strong></li>
+<li>日予算は<strong>予算週（日曜〜土曜）の1日あたりの平均</strong></li>
 <li>1日の消化上限は日予算の<strong>2倍</strong></li>
 <li>7日間の消化上限は日予算の<strong>7倍</strong></li>
 <li>予算週は、広告アカウントのタイムゾーンで<strong>日曜から土曜</strong></li>
@@ -100,7 +109,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p>そして公式に、こう書かれています。</p>
 <p class="case-note">If a campaign uses up its weekly allowance early, it may stop delivering until the next budget week even while marked active.</p>
 <p><strong>週の枠を早く使い切ると、「有効」と表示されたまま次の予算週まで配信が止まり得ます。</strong></p>
-<p><a href="https://help.openai.com/en/articles/20001210-create-campaigns-for-chatgpt-ads">出典：Create Campaigns for ChatGPT Ads</a></p>
+<p><a href="https://help.openai.com/en/articles/20001210-create-campaigns-for-chatgpt-ads">出典：Create Campaigns for ChatGPT Ads</a>、<a href="https://help.openai.com/en/articles/20001515-budget-pacing">Budget Pacing</a></p>
 <h3 id="s7"><strong>見分け方</strong></h3>
 <ul>
 <li>週の前半に、日予算を超える消化が続いていないか</li>
@@ -123,6 +132,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <ul>
 <li>公式はCPCキャンペーンの初期上限入札として<strong>1クリックあたり3〜5ドル</strong>を推奨しています</li>
 <li>Ads Managerが<strong>入札強度の目安</strong>（競争力があるか、配信が制限され得るか）を示す場合があります</li>
+<li>成果最適化（Conversion optimization）のキャンペーンでは、入札を<strong>クリックではなく、選んだ成果1件に対する額</strong>として設定しているか。成果最適化には公式の推奨入札額がなく、入札を上げても配信は保証されません</li>
 </ul>
 <p>広告の選択は<strong>関連性で重み付けした第二価格オークション</strong>です。入札額だけでなく、関連性も配信量に効きます。</p>
 <p><strong>ただし、入札は母数が溜まってから触ってください。</strong> 公式も「大きな変更をする前に、十分な量の実績を見る」ことを勧めています。</p>
@@ -133,6 +143,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <tr><td><p>地域</p>
 </td><td><p>指定が狭すぎないか。市・郵便番号まで絞ると母数が落ちる</p>
 </td></tr>
+<tr><td><p>地域の指定（想定外の国に出ているとき）</p>
+</td><td><p>配信されないのとは逆に、狙っていない国で表示や消化が出ている場合の確認。他の国を除外しただけでは、除外していない対象国にも配信され得る。米国だけに出したい場合は、米国を明示的に含める</p>
+</td></tr>
 <tr><td><p><strong>新規アカウントのホーム国制限</strong></p>
 </td><td><p><strong>他国を選んでも上書きされない</strong>。下記参照</p>
 </td></tr>
@@ -140,7 +153,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </td><td><p>5種のうち一部しか選んでいないと母数が減る</p>
 </td></tr>
 <tr><td><p>カスタムオーディエンス</p>
-</td><td><p>包含は<strong>25,000人の一致ユーザー</strong>が必要。下回ると配信されない</p>
+</td><td><p>包含には<strong>一致ユーザー25,000以上</strong>が必要。下回るオーディエンスは除外にしか使えない。除外と組み合わせる場合も、除外した後に25,000以上が必要</p>
 </td></tr>
 </table></div>
 <h3 id="s12"><strong>新規アカウントのホーム国制限</strong></h3>
@@ -170,18 +183,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <li><strong>この手順で原因が必ず特定できるとは限りません。</strong> 管理画面に表示されない要因もあり、切り分けられない場合はサポートへの問い合わせになります</li>
 <li><strong>審査の否認理由が細かく示されるとは限りません。</strong> ポリシーのどの項目かを自分で照合する作業が残ります</li>
 <li><strong>他社の事例から自社の原因を推定することはできません。</strong> 配信量・商材・設定が違います</li>
+<li><strong>ツールを使っても特定は保証されません。</strong> 公式ヘルプによると、ChatGPTやCodexから使うAds Managerのプラグインには、配信しない原因をアカウントから計測までたどる切り分けの機能があり、この診断は読み取りのみでアカウントを変更しません。ただし配信を保証するものではなく、審査や配信の判断を変えることもできません。日本のアカウントで使えるかは当社で未確認です</li>
 </ul>
 <p>分かるのは「<strong>どこまでは正常で、どこから先が分からないか</strong>」の線引きです。それだけでも、無駄な設定変更は止められます。</p>
 <h2 id="s16"><strong>確認チェックリスト</strong></h2>
 <p>上から順に。<strong>確定するまで下へ進まず、設定を変えない。</strong></p>
 <ul>
 <li>[ ] 0. 表示回数は出ているか（消化0は未課金を意味しない）</li>
-<li>[ ] 1. 本人確認・請求設定が完了しているか</li>
+<li>[ ] 1. 本人確認・請求設定が完了しているか（ブランド名・法人名を変えた直後なら、審査中でないか）</li>
 <li>[ ] 2. キャンペーンと<strong>広告の両方</strong>が有効か</li>
-<li>[ ] 3. キャンペーン期間に今日が含まれるか</li>
+<li>[ ] 3. キャンペーン期間に今日が含まれるか（初回のキャンペーンは、公開後に入れた日付も確認）</li>
 <li>[ ] 4. 広告の<strong>審査が完了</strong>しているか（遷移先も審査対象）</li>
 <li>[ ] 5. <strong>今週の予算枠を使い切っていないか</strong>（予算週は日曜〜土曜）</li>
-<li>[ ] 6. 入札が極端に低くないか（推奨は3〜5ドル／クリック）</li>
+<li>[ ] 6. 入札が極端に低くないか（クリック課金の推奨は3〜5ドル／クリック。成果最適化は成果1件に対する額か）</li>
 <li>[ ] 7. 地域・プラットフォーム・オーディエンスが狭すぎないか</li>
 <li>[ ] 8. <strong>新規アカウントのホーム国制限</strong>に当たっていないか</li>
 <li>[ ] 9. ヒント・広告文・遷移先が噛み合っているか</li>
@@ -201,13 +215,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <h2 id="s18"><strong>よくある質問</strong></h2>
 <p><strong>Q. 有効なのに表示0です。何を最初に見ますか。</strong> 広告の審査ステータスと、今週の予算消化です。この2つで多くが説明できます。</p>
 <p><strong>Q. 止まったので日予算を上げました。戻りません。</strong> 週の途中で増額しても、その週の上限は変更時点から次の日曜0時までで日割りされます。日曜を待ってください。</p>
-<p><strong>Q. キャンペーンの目的を変えれば直りますか。</strong> 目的・課金方式・コンバージョンイベントは<strong>作成後に変更できません</strong>。新しいキャンペーンを作ることになります。原因が特定できる前に作り直すのは勧めません。</p>
-<p><strong>Q. 表示はあるがクリックが0です。</strong> 広告文・画像・遷移先の噛み合わせを見ます。ただし表示が1,000回に届かないうちは、クリエイティブの良否を断定しないでください。</p>
+<p><strong>Q. キャンペーンの目的を変えれば直りますか。</strong> 目的・課金方式・コンバージョンイベントは<strong>作成後にその場では変更できません</strong>。変えるには、目的や課金方式を変えて複製するか、新しく作ります（どちらも新しいキャンペーンになり、同じ目的・課金のままの複製はできません）。原因が特定できる前に作り直すのは勧めません。</p>
+<p><strong>Q. 表示はあるがクリックが0です。</strong> 広告文・画像・遷移先の噛み合わせを見ます。ただし当社は目安として、比べる対象（広告や期間）ごとに、クリックが100件に届かないうちはCTR・CVRの優劣を、成果が10件に届かないうちは獲得単価の優劣を断定しないことを勧めています。表示が少ないうちのクリック0だけで、広告の良し悪しを決めないでください。</p>
 <h2 id="s19"><strong>まとめ</strong></h2>
 <ul>
 <li><strong>確定するまで設定を触らない。</strong> 変更が重なると原因が分からなくなる</li>
 <li><strong>消化額0は未課金を意味しない。</strong> まず表示回数を見る</li>
 <li>公式の確認順は、本人確認・請求 → キャンペーンと広告が有効 → 期間 → <strong>審査完了</strong></li>
+<li>ブランド名・法人名を変えると、審査が終わるまで配信が止まり得る</li>
 <li>審査は広告文・画像・<strong>遷移先ページ</strong>が対象。ポリシーはv1.6（2026年9月10日更新）</li>
 <li><strong>週の枠を早く使い切ると、有効のまま次の予算週まで止まり得る</strong>。予算週は日曜〜土曜</li>
 <li>新規アカウントは<strong>ホーム国のみ</strong>に制限されている場合がある</li>
@@ -216,13 +231,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p>配信状況の切り分けを一緒に確認したい場合は、発生日時・直前の変更・管理画面のCSVエクスポートをお手元に用意のうえ<a href="https://ads.ikigaiinc.com/#cta">20分の無料相談</a>をご利用ください。</p>
 <h3 id="s20"><strong>出典</strong></h3>
 <ul>
-<li><a href="https://help.openai.com/en/articles/20001210-create-campaigns-for-chatgpt-ads">Create Campaigns for ChatGPT Ads</a>（配信されない理由、予算週、ホーム国制限）</li>
+<li><a href="https://help.openai.com/en/articles/20001210-create-campaigns-for-chatgpt-ads">Create Campaigns for ChatGPT Ads</a>（配信されない理由、予算週、ホーム国制限、初回のキャンペーンの日付、米国だけに出す場合、複製の条件）</li>
 <li><a href="https://help.openai.com/en/articles/20001413-daily-budgets">Daily Budgets</a>（2倍・7倍、日割り、日予算を下げられない場合）</li>
+<li><a href="https://help.openai.com/en/articles/20001515-budget-pacing">Budget Pacing</a>（予算週の平均）</li>
 <li><a href="https://help.openai.com/en/articles/20001207-ads-in-chatgpt-the-basics">Ads in ChatGPT: The Basics</a>（反映時間、推奨入札、オークション、ヒント）</li>
 <li><a href="https://help.openai.com/en/articles/20001214-measure-results">Measure Results</a>（イベント不一致、反映時間）</li>
+<li><a href="https://help.openai.com/en/articles/20001217-troubleshooting-common-issues">Troubleshooting Common Issues</a>（公開後24時間の目安、成果最適化の入札、国の指定）</li>
+<li><a href="https://help.openai.com/en/articles/20001213-ads-manager-account-setup">Ads Manager Account Setup</a>（登録中に作る広告、3つの名前と変更時の審査）</li>
+<li><a href="https://help.openai.com/en/articles/20001216-billing-payment">Billing &amp; Payment</a>（支払いに失敗したときの停止）</li>
+<li><a href="https://help.openai.com/en/articles/20001412-conversion-optimized-campaigns">Conversion-optimized Campaigns</a>（大きな変更の前に十分な量を見る、推奨入札額がないこと）</li>
+<li><a href="https://help.openai.com/en/articles/20001346-set-up-custom-audiences-for-your-campaign">Set up Custom Audiences for your campaign</a>（一致ユーザー25,000の条件と除外）</li>
+<li><a href="https://help.openai.com/en/articles/20001558-use-the-chatgpt-ads-manager-plugin">Use the ChatGPT Ads Manager plugin</a>（配信の切り分け）</li>
 <li><a href="https://openai.com/policies/ad-policies/">OpenAI Ads Policies</a>（審査対象、禁止カテゴリ、広告主資格）</li>
+<li><a href="https://help.openai.com/en/articles/20001534-troubleshooting-common-onboarding-and-policy-issues">Troubleshooting Common Onboarding and Policy issues</a>（規制領域の国別表）</li>
 </ul>
-<p>いずれも2026年9月19日に本文を確認しています。</p>
+<p>いずれも2026年10月7日に本文を確認しています。</p>
 <h3 id="s21"><strong>変更履歴</strong></h3>
 <div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>日付</strong></p>
 </th><th scope="col"><p><strong>内容</strong></p>
@@ -230,6 +253,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <tr><td><p>2026年9月19日</p>
 </td><td><p>初版。公式ヘルプ4本と広告ポリシーv1.6を本文確認</p>
 </td></tr>
+<tr><td><p>2026年10月8日</p>
+</td><td><p>10月版に更新。反映時間を現行のヘルプ（表示・クリック・CTRは約15分ごと、消化額は約7〜8時間遅れ）に合わせ、配信が止まる原因にブランド名・法人名の変更、初回のキャンペーンの日付、登録中に作る広告と請求、国の除外を追記。予算週の平均、オーディエンスの条件、母数の目安を見直し</p>
+</td></tr>
 </table></div>
-<p><strong>次回確認予定：2026年9月26日。</strong> 公式ヘルプは日単位で更新されるため、週1回の定点確認に合わせて見直します。</p>
-</article></div><section class="consult"><div><span class="eyebrow">NEXT STEP</span><h2>自社の商材なら、<br>何から試す？</h2></div><div><p>商材・主要な成果・検証予算から、準備することを整理します。<br>広告や計測のどこから手をつけるか、まずはご相談ください。</p><a href="/#cta" class="button">ChatGPT広告の出稿・運用を相談する <span aria-hidden="true">↗</span></a><p class="small-text">GPT広告専門店の20分無料相談</p></div></section><section class="related"><div class="section-top"><p class="eyebrow">RELATED ARTICLES</p><h2>次に読む記事</h2></div><div class="cards two"><a class="article-card" href="/articles/chatgpt-ads-agency/"><div class="card-visual"><img src="/articles/assets/agency-scope.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">12 / 代理店選び</span><h3>ChatGPT広告代理店の選び方｜支援範囲・料金・計測を比較するポイント</h3><p>ChatGPT広告は2026年3月に始まった媒体です。「実績豊富」を掲げられる会社は、まだどこにもありません。 提供開始から半年ほどで、業種別の相場も確立していません。</p><span class="card-bottom">2026.09.20 <span>記事を読む ↗</span></span></div></a><a class="article-card" href="/articles/chatgpt-ads-basics/"><div class="card-visual"><img src="/articles/assets/ads-basics.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">04 / 基礎知識</span><h3>ChatGPT広告とは？表示の仕組み・対象ユーザー・出稿までの全体像</h3><p>「ChatGPT広告」という言葉は、2つの違うものを指して使われています。</p><span class="card-bottom">2026.09.20 <span>記事を読む ↗</span></span></div></a></div></section></div></main><footer class="site-footer"><div class="wrap"><a class="brand" href="/">GPT広告専門店<span>.</span></a><p>運営：株式会社Ikigai<br>本サービスはOpenAIの公式・公認・提携サービスではありません。</p><div class="footer-links"><a href="/articles/">記事一覧</a><a href="/">サービス・料金</a><a href="https://ikigaiinc.com/privacypolicy">プライバシーポリシー</a><a href="https://ikigaiinc.com">会社情報</a></div><small>© 2026 株式会社Ikigai. ChatGPT・OpenAIは各権利者の商標です。</small></div></footer><script>(function(){var K=['utm_source','utm_medium','utm_campaign','utm_content','utm_term'],q=new URLSearchParams(location.search),u={},any=false;K.forEach(function(k){var v=q.get(k);if(v){u[k]=v;any=true;}});try{if(any){sessionStorage.setItem('lp_utm',JSON.stringify(u));}}catch(e){}})();</script></body></html>
+<p><strong>次回確認予定：2026年11月上旬。</strong> 反映時間、予算の仕組み、配信が止まる条件の記載を確認します。公式ヘルプは随時更新されるため、月1回の定点確認で見直します。</p>
+</article></div><section class="consult"><div><span class="eyebrow">NEXT STEP</span><h2>自社の商材なら、<br>何から試す？</h2></div><div><p>商材・主要な成果・検証予算から、準備することを整理します。<br>広告や計測のどこから手をつけるか、まずはご相談ください。</p><a href="/#cta" class="button">ChatGPT広告の出稿・運用を相談する <span aria-hidden="true">↗</span></a><p class="small-text">GPT広告専門店の20分無料相談</p></div></section><section class="related"><div class="section-top"><p class="eyebrow">RELATED ARTICLES</p><h2>次に読む記事</h2></div><div class="cards two"><a class="article-card" href="/articles/chatgpt-ads-agency/"><div class="card-visual"><img src="/articles/assets/agency-scope.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">12 / 代理店選び</span><h3>ChatGPT広告代理店の選び方｜支援範囲・料金・計測を比較するポイント</h3><p>ChatGPT広告は、2026年2月9日に米国でテストが始まった媒体です。「実績豊富」を掲げられる会社は、まだどこにもありません。 日本での展開は2026年夏からで、業種別の相場も確立していません。</p><span class="card-bottom">2026.09.20 <span>記事を読む ↗</span></span></div></a><a class="article-card" href="/articles/chatgpt-ads-basics/"><div class="card-visual"><img src="/articles/assets/ads-basics.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">04 / 基礎知識</span><h3>ChatGPT広告とは？表示の仕組み・対象ユーザー・出稿までの全体像</h3><p>「ChatGPT広告」という言葉は、2つの違うものを指して使われています。</p><span class="card-bottom">2026.09.20 <span>記事を読む ↗</span></span></div></a></div></section></div></main><footer class="site-footer"><div class="wrap"><a class="brand" href="/">GPT広告専門店<span>.</span></a><p>運営：株式会社Ikigai<br>本サービスはOpenAIの公式・公認・提携サービスではありません。</p><div class="footer-links"><a href="/articles/">記事一覧</a><a href="/">サービス・料金</a><a href="https://ikigaiinc.com/privacypolicy">プライバシーポリシー</a><a href="https://ikigaiinc.com">会社情報</a></div><small>© 2026 株式会社Ikigai. ChatGPT・OpenAIは各権利者の商標です。</small></div></footer><script>(function(){var K=['utm_source','utm_medium','utm_campaign','utm_content','utm_term'],q=new URLSearchParams(location.search),u={},any=false;K.forEach(function(k){var v=q.get(k);if(v){u[k]=v;any=true;}});try{if(any){sessionStorage.setItem('lp_utm',JSON.stringify(u));}}catch(e){}})();</script></body></html>

@@ -15,11 +15,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <ol>
 <li><strong>地域は郵便番号まで指定できる。</strong> 国に加えて州・市・マーケット・郵便番号（国により可否が異なる）。</li>
 <li><strong>ただし商品フィードは国単位のみ。</strong> 新規キャンペーンでは下位地域を指定できない。</li>
-<li><strong>新規アカウントは当初ホーム国のみ。</strong> 他国を選んでも上書きされず、解放には本人確認と出稿実績が要る。</li>
+<li><strong>新規アカウントは当初ホーム国のみの場合がある。</strong> 他国を選んでも上書きされず、解放には本人確認と出稿実績が要る。</li>
 </ol>
 <p class="case-note"><strong>読んでほしい人</strong>：自社の商圏や顧客条件で、どこまで配信を絞れるか確認したい担当者。 <br><strong>この記事で扱わないこと</strong>：コンテキストヒントの書き方と計測。それぞれ<a href="/articles/chatgpt-ads-context-hints/">コンテキストヒントの作り方</a>と<a href="/articles/chatgpt-ads-measurement/">効果測定</a>で扱います。</p>
 <h2 id="s2"><strong>一覧：何を指定できるか</strong></h2>
-<p>この記事では、2026年9月19日時点で公式ドキュメントに記載されている設定項目を、<strong>指定できるもの／制約があるもの／広告主が制御できないもの</strong>に分けて整理します。</p>
+<p>この記事では、2026年10月7日時点で公式ドキュメントに記載されている設定項目を、<strong>指定できるもの／制約があるもの／広告主が制御できないもの</strong>に分けて整理します。</p>
 <p>先に注意点を1つ。この領域は<strong>最近仕様が変わっています</strong>。「地域は国単位のみ」「地域を指定しなければ全地域に配信される」といった記述は、現在の仕様と合いません。古い資料の記述をそのまま使わないでください。</p>
 <div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>項目</strong></p>
 </th><th scope="col"><p><strong>指定</strong></p>
@@ -59,7 +59,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </td></tr>
 <tr><td><p>会話そのものの指定</p>
 </td><td><p>×</p>
-</td><td><p>ヒントで方向づけるのみ</p>
+</td><td><p>ヒントで方向づけるのみ。除外フレーズは対象の広告主のみ（後述）</p>
 </td></tr>
 </table></div>
 <p><a href="https://help.openai.com/en/articles/20001210-create-campaigns-for-chatgpt-ads">出典：Create Campaigns for ChatGPT Ads</a></p>
@@ -70,6 +70,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p class="case-note">For other campaigns, yes. In addition to country targeting, you can target supported locations such as states or regions, cities, markets, and postal codes where available.</p>
 <p>国に加えて、<strong>州・地域、市、マーケット、郵便番号</strong>を指定できます。ただし対応状況は国によって異なり、キャンペーン設定時に地名を検索して選択肢を確認する形になります。</p>
 <p><strong>地域サービス（施工、修理、教室、店舗集客）では、ここが使えるかどうかで設計が変わります。</strong> 実際に自社の商圏の市区町村や郵便番号が候補に出るかは、Ads Managerの画面で確認してください。</p>
+<p>国は「含める国」として指定します。公式ヘルプは、米国だけに配信したい場合は配信地域に米国を明示的に含めるよう案内しており、<strong>他の国を除外するだけでは米国に限定されない</strong>としています。日本だけに配信したい場合も、日本を明示的に含めて指定するのが安全です（当社の解釈）。</p>
 <h3 id="s5"><strong>商品フィードキャンペーンだけ例外</strong></h3>
 <p class="case-note">New product-feed campaigns support geographic targeting and exclusions only at country level. Existing product-feed campaigns were not automatically changed, so earlier sub-national selections may remain, but new sub-national selections cannot be added.</p>
 <p><strong>新規の商品フィードキャンペーンは、地域の指定も除外も国単位のみ</strong>です。既存の商品フィードキャンペーンに設定済みの下位地域はそのまま残りますが、新しく追加することはできません。</p>
@@ -99,15 +100,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <h2 id="s8"><strong>3. カスタムオーディエンス：包含は25,000人から</strong></h2>
 <p>顧客リストをもとにしたオーディエンスを、包含・除外に使えます。</p>
 <ul>
-<li><strong>包含（インクルード）ターゲティングには、25,000人の一致ユーザーが必要</strong></li>
+<li><strong>包含（インクルード）ターゲティングには、25,000人の一致ユーザーが必要</strong>（公式は10万人以上を推奨）</li>
 <li><strong>除外（エクスクルード）はより小さいオーディエンスでも使える</strong></li>
+<li>広告グループの単位で、オーディエンスに当てはまる人への入札を0.1〜10倍に調整する設定もある。包含と違い、当てはまらない人も配信の対象に残る（こちらも25,000人以上が必要）</li>
 <li>オーディエンスのメンバーは、オーディエンスを作り直したりキャンペーンを設定し直したりせずに追加・削除・置換ができる</li>
 </ul>
-<p><a href="https://help.openai.com/en/articles/20001210-create-campaigns-for-chatgpt-ads">出典：Create Campaigns for ChatGPT Ads</a></p>
+<p>出典：<a href="https://help.openai.com/en/articles/20001210-create-campaigns-for-chatgpt-ads">Create Campaigns for ChatGPT Ads</a>、<a href="https://help.openai.com/en/articles/20001346-set-up-custom-audiences-for-your-campaign">Set up Custom Audiences for your Campaign</a></p>
 <p><strong>25,000人という閾値は、中小規模の事業者には高いハードルです。</strong> 一方で除外には閾値の制約が緩いため、「既存顧客を除外して新規に寄せる」用途のほうが現実的に使える場面が多いと考えられます。</p>
 <h3 id="s9"><strong>EEA・スイス向けの注意</strong></h3>
 <p class="case-note">For campaigns targeting the EEA or Switzerland, avoid custom audiences while ads personalization is unavailable there.</p>
-<p>EEA（欧州経済領域）・スイス向けのキャンペーンでは、広告のパーソナライズが利用できない間はカスタムオーディエンスを避けるよう案内されています。欧州向けの配信を計画している場合に効きます。</p>
+<p>EEA（欧州経済領域）・スイス向けのキャンペーンでは、広告のパーソナライズが利用できない間はカスタムオーディエンスを避けるよう案内されています。利用者向けのヘルプも、EEA・スイスではパーソナライズされた広告を当初は提供しないと説明しています。欧州向けの配信を計画している場合に効きます。</p>
 <h2 id="s10"><strong>4. コンテキストヒント：ターゲティングではなく「方向づけ」</strong></h2>
 <p>広告グループ単位で、自社の商品・サービスが役に立ちそうな会話・トピック・キーワードを記述します。ただし公式の位置づけは明確です。</p>
 <p class="case-note">These hints help guide ad matching, but they are not exact-match keywords and do not guarantee delivery in specific conversations.</p>
@@ -121,6 +123,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </ul>
 <p><a href="https://help.openai.com/en/articles/20001207-ads-in-chatgpt-the-basics">出典：Ads in ChatGPT: The Basics</a></p>
 <p><strong>遷移先ページと広告文が、配信先を決める材料そのものになっている</strong>点が重要です。ヒントだけを直して配信先が変わらない場合、広告文と遷移先を見直す必要があります。</p>
+<p>ヒントでは、地域・時間帯・除外も強制できません（公式ヘルプ）。除外については、2026年10月5日の発表で、ブランド独自の方針にもとづく配置の要件に対応する<strong>除外フレーズ（Negative Phrases）</strong>を、対象の広告主に提供し始めたとされています。10月7日時点でヘルプに設定手順のページはなく、すべてのアカウントで使えるとは限りません。自社のAds Managerに項目があるかを確認してください。</p>
 <p>ヒントの書き方は<a href="/articles/chatgpt-ads-context-hints/">コンテキストヒントの作り方</a>で手順化しています。</p>
 <p>検索広告のキーワード・除外キーワードとの違いは<a href="/articles/chatgpt-ads-hints-vs-keywords/">コンテキストヒントとキーワードの違い</a>で扱っています。</p>
 <h2 id="s11"><strong>5. 広告主が制御できないもの</strong></h2>
@@ -134,8 +137,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <tr><td><p>ChatGPTの回答内容への影響</p>
 </td><td><p>広告は回答と分けて表示される</p>
 </td></tr>
-<tr><td><p>有料プラン利用者への配信</p>
-</td><td><p>Plus・Pro・Business系には表示されない</p>
+<tr><td><p>Plus・Pro・<span style="white-space:nowrap">Business</span>・<span style="white-space:nowrap">Enterprise</span>・Eduの利用者への配信</p>
+</td><td><p>表示されない。表示され得るのはFreeとGo（Goは有料プランだが対象）</p>
 </td></tr>
 <tr><td><p>18歳未満への配信</p>
 </td><td><p>表示されない</p>
@@ -144,7 +147,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </td><td><p>センシティブな文脈には出ない設計</p>
 </td></tr>
 </table></div>
-<p><strong>表示対象の制限は母数の見積もりに直結します。</strong> ChatGPT全体の利用者数を、そのまま到達可能な見込み顧客数として社内に説明しないでください。</p>
+<p><strong>表示対象の制限は母数の見積もりに直結します。</strong> 広告は2026年2月9日に米国でテストが始まり、現在は一部の地域で、対象のFree・Goの利用者へ順次広げている段階です。ChatGPT全体の利用者数（2026年10月5日の発表では週間12億人）を、そのまま到達可能な見込み顧客数として社内に説明しないでください。</p>
 <p>表示されない条件と、広告主に渡る情報の範囲は<a href="/articles/chatgpt-ads-audience-privacy/">表示対象とプライバシーの記事</a>で整理しています。</p>
 <h2 id="s12"><strong>この記事で確定できないこと</strong></h2>
 <ul>
@@ -175,14 +178,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </ul>
 <h2 id="s17"><strong>よくある質問</strong></h2>
 <p><strong>Q. 年齢や性別で絞れますか。</strong> 設定項目として案内されていません。</p>
-<p><strong>Q. 地域を指定しないとどうなりますか。</strong> 新規アカウントの場合、ホーム国に制限されている可能性があります。また、意図せず広い範囲に配信されるリスクがあるため、指定することを勧めます。</p>
+<p><strong>Q. 地域を指定しないとどうなりますか。</strong> 新規アカウントの場合、ホーム国に制限されている可能性があります。また、意図せず広い範囲に配信されるリスクがあるため、指定することを勧めます。指定するときは、配信したい国を明示的に含めます。他の国を除外するだけでは、配信したい国に限定されません（公式ヘルプの米国の例）。</p>
 <p><strong>Q. ヒントを細かく書けば、狙った会話に出せますか。</strong> 出せません。公式が「保証しない」と明記しています。ヒントは方向づけで、広告文と遷移先も同じくらい配信に効きます。</p>
 <p><strong>Q. 一度設定した地域は変えられますか。</strong> 地域はキャンペーン設定で変更できます。変更できないのは目的・課金方式・コンバージョンイベントです。</p>
 <h2 id="s18"><strong>まとめ</strong></h2>
 <ul>
-<li>地域は<strong>国＋州・市・マーケット・郵便番号</strong>まで指定できる（国により可否が異なる）</li>
+<li>地域は<strong>国＋州・市・マーケット・郵便番号</strong>まで指定できる（国により可否が異なる）。配信したい国は明示的に含める</li>
 <li>ただし<strong>新規の商品フィードキャンペーンは国単位のみ</strong></li>
-<li><strong>新規セルフサーブアカウントは当初ホーム国のみ</strong>。他国を選んでも上書きされない</li>
+<li><strong>新規セルフサーブアカウントは当初ホーム国のみの場合がある</strong>。他国を選んでも上書きされない</li>
 <li>プラットフォームは5種。実績を見てから絞るのが安全</li>
 <li>カスタムオーディエンスの<strong>包含は25,000人の一致ユーザーが必要</strong>。除外のほうが使いやすい</li>
 <li>コンテキストヒントは<strong>完全一致でも配信保証でもない</strong></li>
@@ -190,10 +193,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p>自社の商圏・顧客条件でどこまで絞れるか確認したい場合は、対象エリアと現在の顧客リストの規模をお手元に用意のうえ<a href="https://ads.ikigaiinc.com/#cta">20分の無料相談</a>をご利用ください。</p>
 <h3 id="s19"><strong>出典</strong></h3>
 <ul>
-<li><a href="https://help.openai.com/en/articles/20001210-create-campaigns-for-chatgpt-ads">Create Campaigns for ChatGPT Ads</a>（地域、プラットフォーム、カスタムオーディエンス、ホーム国制限）</li>
-<li><a href="https://help.openai.com/en/articles/20001207-ads-in-chatgpt-the-basics">Ads in ChatGPT: The Basics</a>（コンテキストヒント、表示対象、ブランドセーフティ）</li>
+<li><a href="https://help.openai.com/en/articles/20001210-create-campaigns-for-chatgpt-ads">Create Campaigns for ChatGPT Ads</a>（地域、米国だけに配信する場合の指定、プラットフォーム、カスタムオーディエンス、ホーム国制限）</li>
+<li><a href="https://help.openai.com/en/articles/20001346-set-up-custom-audiences-for-your-campaign">Set up Custom Audiences for your Campaign</a>（推奨の規模、入札の調整）</li>
+<li><a href="https://help.openai.com/en/articles/20001207-ads-in-chatgpt-the-basics">Ads in ChatGPT: The Basics</a>（コンテキストヒント、ブランドセーフティ）</li>
+<li><a href="https://help.openai.com/en/articles/20001521-write-context-hints-for-chatgpt-ads">Write Context Hints for ChatGPT Ads</a>（ヒントで地域・時間帯・除外を強制できないこと）</li>
+<li><a href="https://help.openai.com/en/articles/20001047-ads-in-chatgpt">Ads in ChatGPT</a>（表示対象のプラン、提供の範囲、EEA・スイスのパーソナライズ）</li>
+<li><a href="https://openai.com/index/new-chatgpt-ads-format-and-measurement/">Building advertising for the way people use AI</a>（2026年10月5日。除外フレーズ、週間利用者数）</li>
 </ul>
-<p>いずれも2026年9月19日に本文を確認しています。この領域は更新が続いているため、出稿前にAds Managerの画面でも確認してください。</p>
+<p>いずれも2026年10月7日に本文を確認しています。この領域は更新が続いているため、出稿前にAds Managerの画面でも確認してください。</p>
 <h3 id="s20"><strong>変更履歴</strong></h3>
 <div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>日付</strong></p>
 </th><th scope="col"><p><strong>内容</strong></p>
@@ -201,6 +208,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <tr><td><p>2026年9月19日</p>
 </td><td><p>初版。公式ヘルプ（Create Campaigns／Basics）を本文確認</p>
 </td></tr>
+<tr><td><p>2026年10月8日</p>
+</td><td><p>10月版に更新。広告が表示され得るのはFreeとGo（Plus・Pro・<span style="white-space:nowrap">Business</span>・<span style="white-space:nowrap">Enterprise</span>・Eduは対象外）と訂正し、配信したい国を明示的に含める指定、カスタムオーディエンスの推奨規模と入札の調整、対象の広告主に提供が始まった除外フレーズ（<span style="white-space:nowrap">Negative</span> <span style="white-space:nowrap">Phrases</span>）を追記</p>
+</td></tr>
 </table></div>
-<p><strong>次回確認予定：2026年9月26日。</strong> 公式ヘルプは日単位で更新されるため、週1回の定点確認に合わせて見直します。</p>
+<p><strong>次回確認予定：2026年11月上旬。</strong> 除外フレーズ（Negative Phrases）のヘルプの公開と提供範囲、広告を表示する地域の広がりを確認します。公式ヘルプは随時更新されるため、月1回の定点確認で見直します。</p>
 </article></div><section class="consult"><div><span class="eyebrow">NEXT STEP</span><h2>自社の商材なら、<br>何から試す？</h2></div><div><p>商材・主要な成果・検証予算から、準備することを整理します。<br>広告や計測のどこから手をつけるか、まずはご相談ください。</p><a href="/#cta" class="button">ChatGPT広告の出稿・運用を相談する <span aria-hidden="true">↗</span></a><p class="small-text">GPT広告専門店の20分無料相談</p></div></section><section class="related"><div class="section-top"><p class="eyebrow">RELATED ARTICLES</p><h2>次に読む記事</h2></div><div class="cards two"><a class="article-card" href="/articles/chatgpt-ads-vs-google-meta/"><div class="card-visual"><img src="/articles/assets/media-scenes.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">07 / 媒体比較</span><h3>ChatGPT広告とGoogle・Meta広告の違い｜目的別の使い分けを考える</h3><p>ChatGPT広告を検討する担当者の多くは、すでにGoogle広告やMeta広告を運用しています。そこで出てくるのが「何が違うのか」「既存の予算を移すべきか」という問いです。</p><span class="card-bottom">2026.09.20 <span>記事を読む ↗</span></span></div></a><a class="article-card" href="/articles/chatgpt-ads-context-hints/"><div class="card-visual"><img src="/articles/assets/hint-signals.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">09 / 文脈設計</span><h3>ChatGPT広告のコンテキストヒントの作り方｜顧客の相談場面から考える</h3><p>ChatGPT広告にはキーワードのマッチタイプがありません。代わりにあるのがコンテキストヒントです。広告グループ単位で、自社の商品・サービスが役に立ちそうな会話・トピック・キーワードを記述します。</p><span class="card-bottom">2026.09.20 <span>記事を読む ↗</span></span></div></a></div></section></div></main><footer class="site-footer"><div class="wrap"><a class="brand" href="/">GPT広告専門店<span>.</span></a><p>運営：株式会社Ikigai<br>本サービスはOpenAIの公式・公認・提携サービスではありません。</p><div class="footer-links"><a href="/articles/">記事一覧</a><a href="/">サービス・料金</a><a href="https://ikigaiinc.com/privacypolicy">プライバシーポリシー</a><a href="https://ikigaiinc.com">会社情報</a></div><small>© 2026 株式会社Ikigai. ChatGPT・OpenAIは各権利者の商標です。</small></div></footer><script>(function(){var K=['utm_source','utm_medium','utm_campaign','utm_content','utm_term'],q=new URLSearchParams(location.search),u={},any=false;K.forEach(function(k){var v=q.get(k);if(v){u[k]=v;any=true;}});try{if(any){sessionStorage.setItem('lp_utm',JSON.stringify(u));}}catch(e){}})();</script></body></html>

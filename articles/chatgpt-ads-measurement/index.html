@@ -13,9 +13,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <a class="skip" href="#main">本文へ移動</a><header class="site-header"><div class="wrap header-inner"><a class="brand" href="/">GPT広告専門店<span>.</span><small>by 株式会社Ikigai</small></a><nav aria-label="メインナビゲーション"><a href="/articles/">記事一覧</a><a class="button small" href="/#cta">無料相談 <span aria-hidden="true">↗</span></a></nav></div></header><main id="main"><div class="wrap"><nav class="breadcrumbs" aria-label="パンくず"><a href="/">ホーム</a><span>/</span><a href="/articles/">記事一覧</a><span>/</span><span>効果測定</span></nav><header class="article-heading"><p class="eyebrow">CHATGPT ADS GUIDE <span>10 / 効果測定</span></p><p class="edition">2026年9月最新版</p><h1>ChatGPT広告の効果測定｜Pixel・UTM・GA4で何を確認するか</h1><div class="byline"><span>企画・編集：GPT広告専門店（株式会社Ikigai）</span><time datetime="2026-09-20">公開：2026年9月20日／情報確認：2026年9月19日</time></div><p class="lead">ChatGPT広告で最も多いつまずきは、配信そのものではなく<strong>計測</strong>です。クリックは取れているのに、その先が分からない。イベントは飛んでいるのに管理画面では0のまま。数字がGA4と合わない。</p><p class="case-note">仕様は公式ドキュメントで確認していますが、運用上の手順は株式会社Ikigaiの見解です。</p></header><div class="reading-layout"><aside class="toc"><details open><summary>この記事の内容</summary><ol><li><a href="#s1">この記事の要点</a></li><li><a href="#s2">全体像：3つを揃える</a></li><li><a href="#s3">ステップ1：成果地点を1つに決める</a></li><li><a href="#s5">ステップ2：Pixel か Conversions API を設置する</a></li><li><a href="#s9">ステップ3：UTMパラメータを設計する</a></li><li><a href="#s12">ステップ4：テスト送信して確認する</a></li><li><a href="#s13">ステップ5：配信後に見るもの</a></li><li><a href="#s17">ステップ6：GA4と突き合わせる</a></li><li><a href="#s18">実装担当への依頼表</a></li><li><a href="#s19">よくある質問</a></li><li><a href="#s20">まとめ</a></li></ol></details><a class="toc-back" href="/articles/">← すべての記事を見る</a></aside><article class="prose" aria-label="記事本文"><h2 id="s1"><strong>この記事の要点</strong></h2>
 <ol>
-<li><strong>成果地点は1つに絞る。</strong> コンバージョン最適化ではカスタムイベントを目標にできず、後から変更もできない。</li>
+<li><strong>成果地点は1つに絞る。</strong> 成果最適化ではカスタムイベントを目標にできず、後から変更もできない。</li>
 <li><strong>最も多い事故はイベント名の不一致。</strong> 受理されていても0のまま計上されず、直しても過去分は遡らない。</li>
-<li><strong>消化額の0は未課金を意味しない。</strong> 表示・クリックは数分、コンバージョンの反映は24〜48時間。</li>
+<li><strong>消化額の0は未課金を意味しない。</strong> 表示・クリックは約15分ごとに更新、消化額は約7〜8時間遅れ、コンバージョンの反映は24〜48時間。</li>
 </ol>
 <p class="case-note"><strong>読んでほしい人</strong>：出稿前に計測を用意する広告担当者と、実装担当へ依頼する立場の人。 <br><strong>この記事で扱わないこと</strong>：広告の入稿手順と予算の組み方。それぞれ<a href="/articles/chatgpt-ads-start/">始め方</a>と<a href="/articles/chatgpt-ads-cost/">費用</a>で扱います。</p>
 <h2 id="s2"><strong>全体像：3つを揃える</strong></h2>
@@ -66,10 +66,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </table></div>
 <p><strong>ここで重要な制約が2つあります。</strong></p>
 <ol>
-<li>コンバージョン最適化キャンペーン（Conversions目的）では、<strong>カスタムイベントを最適化の目標にできません</strong>。標準イベントから1つ選びます</li>
+<li>成果最適化（Conversion optimization）のキャンペーンでは、<strong>カスタムイベントを最適化の目標にできません</strong>。標準イベントから1つ選びます</li>
 <li>各キャンペーンで最適化できるコンバージョンイベントは<strong>1つだけ</strong>で、<strong>作成後に変更できません</strong></li>
 </ol>
-<p><a href="https://help.openai.com/en/articles/20001412-create-ocpc-campaigns">出典：Conversion-optimized Campaigns</a></p>
+<p><a href="https://help.openai.com/en/articles/20001412-conversion-optimized-campaigns">出典：Conversion-optimized Campaigns</a></p>
 <p>さらにレポート側の制約もあります。Ads Managerの「Order Created Sales」「Order Created ROAS」の列は、<strong><code>order_created</code>に紐づいた分のみから算出されます</strong>。他の標準イベントやカスタムイベントはこの列に寄与しません。</p>
 <p><strong>ECで売上とROASを見たいなら、購入完了で<code>order_created</code>を送る必要があります。</strong></p>
 <h2 id="s5"><strong>ステップ2：Pixel か Conversions API を設置する</strong></h2>
@@ -99,13 +99,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p>公式は、サーバー側でコンバージョンを送る場合、<strong>クリック参照値 <code>oppref</code> などを保持して送る</strong>よう案内しています。これが欠けると正しく紐づきません。</p>
 <p>Shopifyやヘッドレス構成の購入イベントも、ブラウザPixelとConversions APIで役割を分けて扱います。</p>
 <h3 id="s8"><strong>自動詳細マッチング</strong></h3>
-<p>公式は、コンバージョン最適化キャンペーンの最適化のヒントとして、<strong>サイトのPixelで自動詳細マッチング（automatic advanced matching）を有効にする</strong>ことを勧めています。</p>
+<p>公式は、成果最適化キャンペーンの最適化のヒントとして、<strong>サイトのPixelで自動詳細マッチング（automatic advanced matching）を有効にする</strong>ことを勧めています。</p>
 <p>これは、サイトのフォームに入力された顧客情報をブラウザ内でハッシュ化し、コンバージョンイベントとともに送る仕組みです。Pixelの実装変更は不要と説明されています。</p>
 <p><strong>ただし個人情報の取り扱いが関わります。</strong> 有効にするかは、プライバシーポリシーや同意取得の設計と合わせて判断してください。有効化しない選択も当然あり得ます。</p>
+<h3 id="s23"><strong>計測パートナーやMMPから送る場合</strong></h3>
+<p>アプリの計測ツール（MMP）や計測パートナーを既に使っている場合は、その連携から成果を送る方法もあります。2026年10月7日時点のヘルプで設定手順が案内されている連携先は、MMPがAdjust・Airbridge・AppsFlyer・Branch・Kochava・Singular・Tenjin、計測パートナーがFospha・Hightouch・INCRMNTAL・LiveRamp・Northbeam・Rockerbox・Triple Whale・WorkMagicです。成果の送信、帰属、消化額のレポート、増分効果の測定など、できることは連携先ごとに異なります。</p>
+<p>MMPを通したアプリの帰属はクリック基準です。また、<strong>連携先の帰属期間と、Ads Managerのレポートの帰属設定は別々に設定されます</strong>。連携先の画面とAds Managerの数字が違うことを前提に、どちらの数字を何の判断に使うかを先に決めておきます。</p>
 <h2 id="s9"><strong>ステップ3：UTMパラメータを設計する</strong></h2>
 <p>媒体のレポートとは別に、自社のアクセス解析で流入を識別します。公式も、遷移先URLに静的なトラッキングパラメータ（UTMなど）を付けられ、<strong>広告クリック時に保持される</strong>と書いています。</p>
 <h3 id="s10"><strong>動的パラメータのマクロが使える</strong></h3>
-<p>2026年9月時点で、Ads Managerには動的URLパラメータの機能があります。</p>
+<p>2026年10月7日時点で、Ads Managerには動的URLパラメータの機能があります。</p>
 <div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>マクロ</strong></p>
 </th><th scope="col"><p><strong>入る値</strong></p>
 </th></tr>
@@ -125,6 +128,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p>配信時に自動で埋まります。設定はキャンペーン・広告グループ・広告の各編集画面の「Landing page query parameters」から行います。</p>
 <p><strong>優先順位は Ad URL &gt; Ad &gt; Ad Group &gt; Campaign</strong> で、細かいほうが勝ちます。広告URLにすでに同じパラメータがある場合、上位の設定では上書きされません。</p>
 <p><a href="https://help.openai.com/en/articles/20001214-measure-results">出典：Measure Results</a></p>
+<p>開発者向けドキュメント（Campaign Management）は、これに加えて<strong>アカウントのトラッキング設定が既定値になる</strong>こと、同じキーが複数の階層にあれば優先度の高い階層の値が使われ、utm_* 以外の独自のキーも同じ扱いになることを説明しています。<strong>同じキーを複数の場所に重ねて設定せず、どの階層で付けるかを1つに決めておく</strong>のが安全です（当社の見解）。商品フィードの広告の扱いと移行の期限は<a href="/articles/chatgpt-ads-ec-case/">EC事例の記事</a>で扱っています。</p>
 <h3 id="s11"><strong>設計例（提案）</strong></h3>
 <pre style="white-space:pre-wrap;word-break:break-all"><code>?utm_source=chatgpt&amp;utm_medium=cpc&amp;utm_campaign={campaign_id}&amp;utm_content={ad_id}</code></pre>
 <p>手入力の命名規則を維持したい場合は、<code>utm_campaign</code>は自分で書き、<code>utm_content</code>だけマクロにする形もあります。<strong>社内のレポートで使っている命名と噛み合うかを先に確認してください。</strong></p>
@@ -133,12 +137,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <ul>
 <li>Pixelが正しいPixel IDで初期化されているか</li>
 <li>テスト時はデバッグモードを使う</li>
+<li>広告のリンクから開いたURLに、UTMなどのパラメータが付いているか</li>
 <li>送ったイベント名が、<strong>キャンペーンに設定したコンバージョンイベントと一致しているか</strong></li>
 </ul>
 <p>最後の項目が特に重要です。公式FAQにこうあります。</p>
 <p class="case-note">A conversion event can be firing or accepted and still show 0 in Ads Manager if it does not match the conversion event configured for the campaign.</p>
 <p><strong>イベントは受理されているのに、Ads Managerでは0のまま</strong>という状態が起きます。標準イベントなら設定した種類と送るイベントが一致していること、カスタムイベントなら「Event type: Custom」でイベント名が完全一致していることが必要です。表示名が合っているだけでは足りません。</p>
 <p>さらに、<strong>設定を直しても過去分は遡って計上されません。</strong> 配信開始前に正しいコンバージョンが紐づいているかを必ず確認してください。</p>
+<p>パラメータの確認にも注意点があります。ChatGPTのiOSアプリ内ブラウザで広告のリンクを確かめるときは、<strong>共有メニューからURL全体をコピーして</strong>パラメータを確認します。画面に出るホスト名だけでは、完全なURLは分かりません（公式ヘルプ Create Ads）。</p>
 <h2 id="s13"><strong>ステップ5：配信後に見るもの</strong></h2>
 <h3 id="s14"><strong>使える指標</strong></h3>
 <p>キャンペーン・広告グループ・広告のすべての階層で、次を追えます。</p>
@@ -157,18 +163,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </th><th scope="col"><p><strong>反映</strong></p>
 </th></tr>
 <tr><td><p>表示・クリック・CTR</p>
-</td><td><p>数分で出ることがある</p>
+</td><td><p>約15分ごとに更新される</p>
 </td></tr>
 <tr><td><p>消化額</p>
-</td><td><p><strong>遅れることがある。0の表示は課金が発生していないことを意味しない</strong></p>
+</td><td><p><strong>約7〜8時間遅れる。0の表示は課金が発生していないことを意味しない</strong></p>
+</td></tr>
+<tr><td><p>平均CPC・平均CPM</p>
+</td><td><p>確定した消化額をもとにするため、さらに後で更新されることがある</p>
 </td></tr>
 <tr><td><p>コンバージョン</p>
 </td><td><p><strong>24〜48時間</strong>。直近分は後から変動する</p>
 </td></tr>
 </table></div>
-<p>初日に「消化0円だから回っていない」と判断して設定を触ると、何が効いたのか切り分けられなくなります。</p>
+<p>いずれも目安で、直近の数字は処理が進むと変わることがあります（Measure Results）。初日に「消化0円だから回っていない」と判断して設定を触ると、何が効いたのか切り分けられなくなります。</p>
 <h3 id="s16"><strong>アトリビューション窓を先に固定する</strong></h3>
-<p>ここは2026年9月時点で選択式です。</p>
+<p>ここは2026年10月7日時点で選択式です。</p>
 <ul>
 <li>クリックスルー：<strong>7日／14日／30日</strong></li>
 <li>ビュースルー：<strong>0日（無効）／1日</strong></li>
@@ -182,6 +191,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p>同じ配信でも設定によって合計値が変わるため、<strong>社内で数字を共有する前に窓を揃えます</strong>。</p>
 <p>ビュースルーは、1日以内に成果が発生し、かつ同じ成果に対してクリックが紐づかない場合に計上されます。クリックと表示の両方が条件を満たす場合は<strong>クリックが優先</strong>されます。</p>
 <p>デフォルトの集計基準は<strong>広告イベント時刻</strong>（クレジットされたクリックまたは表示の時刻）です。成果が発生した時刻で見たい場合は「Conversions (by conv. time)」列を追加します。</p>
+<p>APIで数字を取る場合も、同じ設定にそろえます。Advertiser APIは2026年9月30日の変更で、実績を取得する4つのエンドポイント（GET Insights）で帰属期間と時刻の基準を選べるようになりました。指定しない場合は<strong>クリック30日・ビュー1日・広告イベント時刻</strong>で集計し、CV合計はクリック経由とビュー経由の合計です。このため、それより前に取得した数字と合わないことがあります（表示・クリック・消化額は変わりません）。自社のレポートや外部のツールでAPIの数字を使っている場合は、Ads Managerの画面と期間・帰属期間・時刻の基準がそろっているかを確認します。</p>
+<p>ただし、開発者向けのPixel・Conversions APIのページには、2026年10月7日時点でも「ビュー経由はキャンペーン単位の別の指標で、Conversionsの合計には含めない。最適化などはクリック経由のまま」という記述が残っており、公式資料の間で食い違いがあります。この記事はヘルプと日付のある変更履歴（9月30日）に合わせていますが、<strong>自社のAds Managerで帰属期間の設定と、クリック経由・ビュー経由の列の内訳を確かめてください</strong>。</p>
 <h2 id="s17"><strong>ステップ6：GA4と突き合わせる</strong></h2>
 <p><strong>媒体の数字とGA4の数字は一致しません。</strong> 公式FAQも理由を列挙しています。</p>
 <ul>
@@ -193,6 +204,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </ul>
 <p>比較するときは、<strong>同じ日付範囲・同じタイムゾーン</strong>に揃え、CSVエクスポートでキャンペーン・広告単位の実績を確認します。</p>
 <p>差が出ること自体は異常ではありません。問題は、<strong>差の理由を説明できないまま数字を報告すること</strong>です。報告時には「媒体申告値」「GA4の値」「実際の受注」を分けて書きます。</p>
+<p>なお、2026年10月7日時点のヘルプには、<strong>GA4のプロパティをAds Managerに接続する機能（ベータ）</strong>の説明が加わっています。早期アクセスはアカウントマネージャーへの依頼制で、今のベータは接続の設定までです。GA4のイベントをOpenAIのイベントに対応づける機能は、今後の提供とされています。接続後に表示されるイベントの合計は、<strong>プロパティ全体・全流入元の数で、ChatGPT広告に帰属した成果やROASではありません</strong>。日本のアカウントで使えるかは公開情報から確認できず、当社も接続していません。今のところは、上の手順でGA4とAds Managerの数字を突き合わせます。</p>
 <p>クリックはあるのに成果が出ないときの確認順は<a href="/articles/chatgpt-ads-no-conversions/">成果が出ないときの記事</a>で、HubSpotで商談・受注まで追う方法は<a href="/articles/chatgpt-ads-hubspot/">HubSpotの記事</a>で扱っています。</p>
 <h2 id="s18"><strong>実装担当への依頼表</strong></h2>
 <p>広告担当が実装担当へ渡す内容です。</p>
@@ -227,11 +239,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <h2 id="s19"><strong>よくある質問</strong></h2>
 <p><strong>Q. Pixelを入れれば自動でコンバージョンが出ますか。</strong> 出ません。イベントを送り、キャンペーンにそのコンバージョンを紐づける必要があります。</p>
 <p><strong>Q. イベントは飛んでいるのに0件です。</strong> キャンペーンに設定したコンバージョンイベントと、送っているイベントが一致していない可能性が高いです。直しても過去分は入りません。</p>
-<p><strong>Q. GA4だけで見てはいけませんか。</strong> 最適化には媒体側の計測が要ります。またGA4のセッションと広告のクリックは定義が違います。</p>
-<p><strong>Q. ビュースルーは入れたほうがよいですか。</strong> 目的によります。検討期間が長い商材では参考になりますが、合計値が膨らむため、社内の報告基準を先に決めてください。0日にすればクリックスルーのみになります。</p>
+<p><strong>Q. GA4だけで見てはいけませんか。</strong> 最適化には媒体側の計測が要ります。またGA4のセッションと広告のクリックは定義が違います。GA4をAds Managerに接続するベータもありますが、2026年10月7日時点では接続の設定までで、イベントの対応づけは今後の提供です。</p>
+<p><strong>Q. ビュースルーは入れたほうがよいですか。</strong> 目的によります。検討期間が長い商材では参考になりますが、合計値が膨らむため、社内の報告基準を先に決めてください。0日にすればクリックスルーのみになります。なお、成果最適化の配信は、クリック課金ならクリック後の成果に、表示課金なら表示とクリックの両方から生じる、より広い範囲の成果に向けて最適化されます。表示課金では、公式もクリック経由とビュー経由の両方の数字を見るよう勧めています。</p>
 <h2 id="s20"><strong>まとめ</strong></h2>
 <ul>
-<li>成果地点は1つに絞る。<strong>コンバージョン最適化ではカスタムイベントを目標にできない</strong></li>
+<li>成果地点は1つに絞る。<strong>成果最適化ではカスタムイベントを目標にできない</strong></li>
 <li><strong>最適化するイベントはキャンペーン作成後に変更できない</strong></li>
 <li>売上・ROASの列は<code>order_created</code>からのみ算出される</li>
 <li><strong>GTM経由のPixel設置は公式に可</strong>。初期化とイベント呼び出しを妨げないこと</li>
@@ -239,16 +251,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <li><strong>イベント不一致で0のまま</strong>になる。直しても遡らない</li>
 <li>消化額の0表示は未課金を意味しない。コンバージョン反映は24〜48時間</li>
 <li>アトリビューション窓は選択式。<strong>レポートにのみ影響し、ラストタッチ</strong></li>
+<li>APIで取る数字も、帰属期間（指定しなければクリック30日・ビュー1日）と時刻の基準をそろえて比べる</li>
 <li>媒体とGA4は一致しない。日付範囲とタイムゾーンを揃えて比較する</li>
 </ul>
 <p>計測環境と実装担当の分担を整理したい場合は、現在のタグ設置状況と成果地点のURLをお手元に用意のうえ<a href="https://ads.ikigaiinc.com/#cta">20分の無料相談</a>をご利用ください。</p>
 <h3 id="s21"><strong>出典</strong></h3>
 <ul>
 <li><a href="https://help.openai.com/en/articles/20001214-measure-results">Measure Results</a>（指標、反映時間、アトリビューション窓、動的パラメータ、GTM、GA4差異、イベント不一致）</li>
-<li><a href="https://help.openai.com/en/articles/20001412-create-ocpc-campaigns">Conversion-optimized Campaigns</a>（標準イベント、カスタムイベント非対応、変更不可、自動詳細マッチング）</li>
+<li><a href="https://help.openai.com/en/articles/20001412-conversion-optimized-campaigns">Conversion-optimized Campaigns</a>（標準イベント、カスタムイベント非対応、変更不可、自動詳細マッチング、表示課金の最適化）</li>
 <li><a href="https://help.openai.com/en/articles/20001207-ads-in-chatgpt-the-basics">Ads in ChatGPT: The Basics</a>（UTMの保持、反映時間）</li>
+<li><a href="https://help.openai.com/en/articles/20001212-create-ads-for-chatgpt-ads">Create Ads for ChatGPT Ads</a>（iOSアプリ内ブラウザでのUTMの確認）</li>
+<li><a href="https://help.openai.com/en/articles/20001416-set-up-measurement-partner-integrations">Set up Measurement Partner Integrations</a>、<a href="https://help.openai.com/en/articles/20001372-set-up-mobile-measurement-partner-integrations">Set up Mobile Measurement Partner Integrations</a>（連携先、帰属の設定）</li>
+<li><a href="https://help.openai.com/en/articles/20001562-connect-google-analytics-4-to-openai-ads-manager">Connect Google Analytics 4 to OpenAI Ads Manager</a>（GA4接続のベータ、イベント合計の意味）</li>
+<li><a href="https://developers.openai.com/ads/campaign-management">Campaign Management（開発者向け）</a>（パラメータの階層と優先順位）</li>
+<li><a href="https://developers.openai.com/ads/api-overview">Advertiser API Overview（開発者向け・変更履歴）</a>（2026年9月30日の帰属期間の変更）</li>
+<li><a href="https://developers.openai.com/ads/measurement-pixel">Measurement Pixel</a>、<a href="https://developers.openai.com/ads/conversions-api">Conversions API</a>（いずれも開発者向け。ビュー経由の扱いの記述がヘルプと異なる点）</li>
 </ul>
-<p>いずれも2026年9月19日に本文を確認しています。</p>
+<p>いずれも2026年10月7日に本文を確認しています。</p>
 <h3 id="s22"><strong>変更履歴</strong></h3>
 <div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>日付</strong></p>
 </th><th scope="col"><p><strong>内容</strong></p>
@@ -256,6 +275,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <tr><td><p>2026年9月19日</p>
 </td><td><p>初版。公式ヘルプ（Measure Results／Conversion-optimized Campaigns／Basics）を本文確認</p>
 </td></tr>
+<tr><td><p>2026年10月8日</p>
+</td><td><p>10月版に更新。反映時間の目安を現行のヘルプの記載（約15分・約7〜8時間・24〜48時間）に直し、パラメータの優先順位、計測パートナー、APIの帰属期間（9月30日の変更）、GA4接続のベータ、iOSでのUTMの確かめ方を追記</p>
+</td></tr>
 </table></div>
-<p><strong>次回確認予定：2026年9月26日。</strong> 公式ヘルプは日単位で更新されるため、週1回の定点確認に合わせて見直します。</p>
+<p><strong>次回確認予定：2026年11月上旬。</strong> GA4接続（ベータ）のイベントの対応づけと、帰属期間の既定値を確認します。公式ヘルプは随時更新されるため、月1回の定点確認で見直します。</p>
 </article></div><section class="consult"><div><span class="eyebrow">NEXT STEP</span><h2>自社の商材なら、<br>何から試す？</h2></div><div><p>商材・主要な成果・検証予算から、準備することを整理します。<br>広告や計測のどこから手をつけるか、まずはご相談ください。</p><a href="/#cta" class="button">ChatGPT広告の出稿・運用を相談する <span aria-hidden="true">↗</span></a><p class="small-text">GPT広告専門店の20分無料相談</p></div></section><section class="related"><div class="section-top"><p class="eyebrow">RELATED ARTICLES</p><h2>次に読む記事</h2></div><div class="cards two"><a class="article-card" href="/articles/chatgpt-ads-context-hints/"><div class="card-visual"><img src="/articles/assets/hint-signals.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">09 / 文脈設計</span><h3>ChatGPT広告のコンテキストヒントの作り方｜顧客の相談場面から考える</h3><p>ChatGPT広告にはキーワードのマッチタイプがありません。代わりにあるのがコンテキストヒントです。広告グループ単位で、自社の商品・サービスが役に立ちそうな会話・トピック・キーワードを記述します。</p><span class="card-bottom">2026.09.20 <span>記事を読む ↗</span></span></div></a><a class="article-card" href="/articles/chatgpt-ads-ec-case/"><div class="card-visual"><img src="/articles/assets/ec-structure.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">11 / EC・商品フィード</span><h3>ChatGPT広告のEC事例｜商品フィードとセール施策から学ぶ設計</h3><p>ChatGPT広告で公開されているEC事例のなかで、売上に対する成果まで公表されている数少ない例が、海外のPCパーツ・家電EC事業者のものです。</p><span class="card-bottom">2026.09.20 <span>記事を読む ↗</span></span></div></a></div></section></div></main><footer class="site-footer"><div class="wrap"><a class="brand" href="/">GPT広告専門店<span>.</span></a><p>運営：株式会社Ikigai<br>本サービスはOpenAIの公式・公認・提携サービスではありません。</p><div class="footer-links"><a href="/articles/">記事一覧</a><a href="/">サービス・料金</a><a href="https://ikigaiinc.com/privacypolicy">プライバシーポリシー</a><a href="https://ikigaiinc.com">会社情報</a></div><small>© 2026 株式会社Ikigai. ChatGPT・OpenAIは各権利者の商標です。</small></div></footer><script>(function(){var K=['utm_source','utm_medium','utm_campaign','utm_content','utm_term'],q=new URLSearchParams(location.search),u={},any=false;K.forEach(function(k){var v=q.get(k);if(v){u[k]=v;any=true;}});try{if(any){sessionStorage.setItem('lp_utm',JSON.stringify(u));}}catch(e){}})();</script></body></html>

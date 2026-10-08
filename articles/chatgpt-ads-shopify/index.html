@@ -39,7 +39,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </td><td><p><span style="white-space:nowrap">Shopify</span>を離れずに成果の確認とキャンペーンの管理を行う</p>
 </td></tr>
 </table></div>
-<p>アプリの料金は無料ですが、広告費は別にかかります。アプリの表示言語は、2026年9月25日時点の掲載で英語のみです。</p>
+<p>アプリの料金は無料ですが、広告費は別にかかります。アプリの表示言語は、2026年10月7日時点の掲載で英語のみです。</p>
 <p>OpenAIは2026年9月16日の発表で、米国のShopify事業者について「商品はShopify Catalogを通じて既に連携されているため、すぐに広告の配信と成果の確認を始められる」と説明しています。</p>
 <h2 id="s3"><strong>提供状況：米国で開始、9月23日から提供国へ拡大</strong></h2>
 <div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>日付</strong></p>
@@ -61,13 +61,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </table></div>
 <p>アプリストアの公開日と、OpenAIが利用開始を発表した日は異なります。</p>
 <p>日本はAds Managerの提供国一覧で「Available」です。当社は、発表の「ChatGPT広告が利用できる市場」に日本も含まれると解釈していますが、<strong>日本のストアでアプリの導入・接続・同期・配信が問題なく完了するかは、公開情報からは確認できません。</strong> 実際に試す前に、アプリの導入画面で表示される対応条件を確認してください。</p>
+<p>2026年10月7日時点で、OpenAIのAds Blogとヘルプセンターに、国際展開の開始を知らせる追加の案内は見当たりません。</p>
 <h2 id="s4"><strong>始める前に確認する5つのこと</strong></h2>
 <figure><a aria-label="図を拡大する" href="/articles/assets/shopify-setup.png"><img alt="図1：Shopifyで始める前に確認する5つのこと。OpenAIの発表・ヘルプセンター、Shopify App Storeの掲載をもとに当社作成。" height="760" loading="lazy" src="/articles/assets/shopify-setup.svg" width="1200"/></a><figcaption>図1：Shopifyで始める前に確認する5つのこと。OpenAIの発表・ヘルプセンター、Shopify App Storeの掲載をもとに当社作成。</figcaption></figure>
 <h3 id="s5"><strong>1. 広告アカウントの条件</strong></h3>
 <ul>
 <li>セルフサーブのAds Managerを使えるかは、<strong>広告を出して請求を受ける法人の所在国</strong>で決まります</li>
 <li>広告アカウントの国・通貨・タイムゾーンは、作成後に変更できません。アプリから新しく作る場合も、日本の法人・日本円・日本時間で作るかを先に決めておきます</li>
-<li>アカウント名とロゴを設定しないと、広告は配信されません</li>
+<li>配信の前に、Ads Managerで請求の設定と、ロゴ・名前の確認を済ませます。<strong>請求の設定が終わるまで、キャンペーンは配信されません</strong></li>
+<li>広告に表示される名前はブランド名（Brand Name）です。登録時に入れた広告主名が、アカウント名・ブランド名・登記名（Legal Name）の初期値になり、作成後に「設定→一般」で別々に変えられます（2026年9月25日から）。<strong>ブランド名の変更は審査が入り、承認まで配信が止まります</strong>。登記名の変更は事業の審査がやり直しになり、配信が止まることがあります</li>
 <li>アプリ経由で事業者の確認や広告の審査が省略されるという記載はありません。通常と同じ手続きが必要になると考えておきます</li>
 </ul>
 <h3 id="s6"><strong>2. 商品が審査の対象になるか</strong></h3>
@@ -105,7 +107,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </table></div>
 <p>OpenAIのヘルプは、成果のデータは法令と利用規約で認められる範囲で共有し、必要な場合は利用者への説明と同意を得てから送るよう求めています。導入前に、自社のプライバシーポリシーの記載と、社内の個人情報の取り扱いの承認を確認してください。利用者側で何が共有されないかは<a href="/articles/chatgpt-ads-audience-privacy/">表示対象とプライバシーの記事</a>で扱っています。</p>
 <h2 id="s10"><strong>商品フィード広告の配信の仕様</strong></h2>
-<p>アプリで作る広告も、Ads Managerの商品フィードキャンペーンの仕様に沿うと考えられます。ヘルプセンターに書かれている主な仕様です。</p>
+<p>アプリで作る広告も、Ads Managerの商品フィードキャンペーンの仕様に沿うと考えられます。ヘルプセンターと開発者向けドキュメントに書かれている主な仕様です。</p>
 <div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>仕様</strong></p>
 </th><th scope="col"><p><strong>内容</strong></p>
 </th></tr>
@@ -124,8 +126,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <tr><td><p>成果の表示</p>
 </td><td><p>「<span style="white-space:nowrap">Products</span>」タブは配信実績のある商品だけを表示する。最初の表示まで最大7時間</p>
 </td></tr>
+<tr><td><p>トラッキングパラメータ</p>
+</td><td><p>アカウント・キャンペーン・広告グループ・広告で設定した値が、商品URLにある同じキーを上書きする（新方式）。旧方式（<span style="white-space:nowrap">Legacy</span>）は商品URLの値が優先で、<strong>2026年11月5日までに新方式への移行が必要</strong></p>
+</td></tr>
 </table></div>
-<p>配送できる地域が限られるストアの設計は<a href="/articles/chatgpt-ads-ec-case/">EC事例の記事</a>で扱っています。</p>
+<p>配送できる地域が限られるストアの設計と、トラッキングの移行で気をつけることは<a href="/articles/chatgpt-ads-ec-case/">EC事例の記事</a>で扱っています。</p>
 <h2 id="s11"><strong>導入の流れ（公開情報からの想定）</strong></h2>
 <p>以下はアプリの掲載内容と公式ヘルプから想定した流れで、当社が日本のストアで操作して確かめたものではありません。</p>
 <ol>
@@ -153,13 +158,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </td></tr>
 </table></div>
 <p>公式は、取り込んだ商品は<strong>2週間で失効する</strong>ため、ホストURLかSFTPでの自動更新を勧めています。アプリで同期がうまくいかない場合の代わりの方法として知っておくと役立ちます。</p>
+<p>ChatGPTやCodexから使う「ChatGPT Ads Manager」のプラグインでも、既存の商品フィードからキャンペーン・広告グループ・広告テンプレートを作れます（2026年10月7日時点のヘルプ）。作成や更新の前に変更内容を示して承認を求め、実行後に読み戻して確認する仕組みです。請求・支払い・税・法的な本人情報はAds Managerで行います。また、プラグインは成果の価値を受け取らないため、売上やROASは扱いません。</p>
 <h2 id="s13"><strong>アプリストアの評価について</strong></h2>
-<p>2026年9月25日時点で、アプリの評価は5点満点中2.6（15件）でした。レビューには、接続時のエラー、商品の同期が通らない、地域を絞って配信できないといった投稿があります。表示されていた投稿はいずれも米国のストアからのもので、原因や日本のストアでも起きるかは分かりません。</p>
+<p>2026年10月7日時点で、アプリの評価は5点満点中2.4（19件）でした（9月25日時点は2.6・15件）。表示されている最新の投稿には、商品の同期が通らない、地域を絞って配信できない、画面が使いにくく費用が高いといった内容があります（9月25日時点の表示には、接続時のエラーの投稿もありました）。表示されていた投稿はいずれも米国のストアからのもので、原因や日本のストアでも起きるかは分かりません。</p>
 <p>当社は、始めて間もないアプリであることを踏まえ、<strong>最初は少ない商品・少ない予算で、同期と計測が動くかを確かめてから広げる</strong>ことを勧めます。</p>
 <h2 id="s14"><strong>この記事で分からないこと</strong></h2>
 <ul>
 <li><strong>日本のShopifyストアで、アプリの導入から配信まで完了するか。</strong> 公開情報からは確認できず、当社も操作していません</li>
-<li><strong>アプリで作る広告と、Ads Managerで作る商品フィード広告の細かな違い。</strong> アプリ専用のヘルプ記事は、2026年9月25日時点のヘルプセンターに見当たりませんでした</li>
+<li><strong>アプリで作る広告と、Ads Managerで作る商品フィード広告の細かな違い。</strong> アプリ専用のヘルプ記事は、2026年10月7日時点のヘルプセンターにも見当たりません</li>
 <li><strong>成果の水準。</strong> OpenAIは商品フィードの広告が「プログラムで最も成果の良い広告の1つ」と説明していますが、数値の基準は示していません</li>
 </ul>
 <h2 id="s15"><strong>導入前チェックリスト</strong></h2>
@@ -173,6 +179,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <li>[ ] 既存のOpenAIのPixelとの二重計測にならないか確認した</li>
 <li>[ ] アプリが扱う顧客データについて、プライバシーポリシーと社内承認を確認した</li>
 <li>[ ] 配信地域が国単位になることを了承した</li>
+<li>[ ] 商品フィードのトラッキングが旧方式（Legacy）か確認し、旧方式なら2026年11月5日までの切り替えを管理者に依頼した</li>
 <li>[ ] 少ない商品・少ない予算で、同期と計測の確認から始める計画にした</li>
 </ul>
 <h2 id="s16"><strong>よくある質問</strong></h2>
@@ -187,6 +194,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <li>米国から始まり、9月23日から提供市場へ広げると発表。日本のストアで完了するかは公開情報から確認できず（当社も未操作）、アプリは英語表示</li>
 <li>準備の中心は、商品データの品質、購入イベントの計測、顧客データの扱い</li>
 <li>登録した商品は広告にのみ使われ、通常の回答には表示されない</li>
+<li>商品フィードのトラッキングの旧方式は、2026年11月5日までに新方式への移行が必要</li>
 <li>少ない商品・少ない予算で、同期と計測を確かめてから広げる</li>
 </ul>
 <p>公開情報をもとに、Shopifyストアでどの商品から試すか、計測をどう組むかを整理したい場合は、ストアのURLと主力商品の一覧をお手元に用意のうえ<a href="https://ads.ikigaiinc.com/#cta">20分の無料相談</a>をご利用ください。</p>
@@ -199,10 +207,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <li><a href="https://help.openai.com/en/articles/20001243-advertiser-guidance-for-allowing-openai-web-crawlers">Advertiser Guidance for Allowing OpenAI Web Crawlers</a>（商品画像URLとOAI-SearchBot）</li>
 <li><a href="https://help.openai.com/en/articles/20001214-measure-results">Measure Results</a>（Shopifyやサーバー側の購入の計測、売上とROASの対象）</li>
 <li><a href="https://help.openai.com/en/articles/20001409-conversion-measurement">Conversion Measurement</a>（重複除外、データ共有と同意）</li>
-<li><a href="https://help.openai.com/en/articles/20001245-ads-manager-availability">Ads Manager Availability</a>、<a href="https://help.openai.com/en/articles/20001213-ads-manager-beta-account-setup">Ads Manager Beta Account Setup</a>、<a href="https://help.openai.com/en/articles/20001210-create-campaigns-for-chatgpt-ads">Create Campaigns for ChatGPT Ads</a>（地域の指定）</li>
+<li><a href="https://help.openai.com/en/articles/20001245-ads-manager-availability">Ads Manager Availability</a>、<a href="https://help.openai.com/en/articles/20001213-ads-manager-account-setup">Ads Manager Account Setup</a>、<a href="https://help.openai.com/en/articles/20001210-create-campaigns-for-chatgpt-ads">Create Campaigns for ChatGPT Ads</a>（提供国、アカウントの名前と請求、地域の指定）</li>
+<li><a href="https://developers.openai.com/ads/campaign-management">Campaign Management（開発者向け）</a>（商品URLのトラッキングパラメータ、旧方式の移行期限）</li>
+<li><a href="https://help.openai.com/en/articles/20001558-use-the-chatgpt-ads-manager-plugin">Use the ChatGPT Ads Manager plugin</a>（プラグインでの商品フィードのキャンペーン作成と制限）</li>
+<li><a href="https://ads.openai.com/blog">ChatGPT Ads Blog</a>、<a href="https://help.openai.com/en/collections/20001223-chatgpt-ads">ヘルプセンターのChatGPT Adsの記事一覧</a>（国際展開の追加の案内とアプリ専用ヘルプの有無）</li>
 <li><a href="https://openai.com/policies/ad-policies/">OpenAI Ads Policies</a>、<a href="https://help.openai.com/en/articles/20001534-troubleshooting-common-onboarding-and-policy-issues">Troubleshooting Common Onboarding and Policy issues</a>（対象外の商品、米国以外のサプリメント）</li>
 </ul>
-<p>いずれも2026年9月25日に本文を確認しています。</p>
+<p>いずれも2026年10月7日に本文を確認しています。</p>
 <h3 id="s19"><strong>変更履歴</strong></h3>
 <div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>日付</strong></p>
 </th><th scope="col"><p><strong>内容</strong></p>
@@ -210,6 +221,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <tr><td><p>2026年9月25日</p>
 </td><td><p>初版。公式発表、ヘルプセンター6本、開発者向け文書、<span style="white-space:nowrap">Shopify</span> App <span style="white-space:nowrap">Store</span>の掲載を本文確認</p>
 </td></tr>
+<tr><td><p>2026年10月8日</p>
+</td><td><p>10月版に更新。アプリの評価（2.4・19件）、アカウントの3つの名前と請求の扱い、商品フィードのトラッキングの移行期限（2026年11月5日）、プラグインからの作成を反映</p>
+</td></tr>
 </table></div>
-<p><strong>次回確認予定：2026年9月28日。</strong> 日本のストアでの提供状況、アプリ専用のヘルプの有無、アプリの掲載内容を確認します。</p>
-</article></div><section class="consult"><div><span class="eyebrow">NEXT STEP</span><h2>自社の商材なら、<br>何から試す？</h2></div><div><p>商材・主要な成果・検証予算から、準備することを整理します。<br>広告や計測のどこから手をつけるか、まずはご相談ください。</p><a href="/#cta" class="button">ChatGPT広告の出稿・運用を相談する <span aria-hidden="true">↗</span></a><p class="small-text">GPT広告専門店の20分無料相談</p></div></section><section class="related"><div class="section-top"><p class="eyebrow">RELATED ARTICLES</p><h2>次に読む記事</h2></div><div class="cards two"><a class="article-card" href="/articles/chatgpt-ads-ec-case/"><div class="card-visual"><img src="/articles/assets/ec-structure.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">11 / EC・商品フィード</span><h3>ChatGPT広告のEC事例｜商品フィードとセール施策から学ぶ設計</h3><p>ChatGPT広告で公開されているEC事例のなかで、売上に対する成果まで公表されている数少ない例が、海外のPCパーツ・家電EC事業者のものです。</p><span class="card-bottom">2026.09.20 <span>記事を読む ↗</span></span></div></a><a class="article-card" href="/articles/chatgpt-ads-measurement/"><div class="card-visual"><img src="/articles/assets/measurement-roles.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">10 / 効果測定</span><h3>ChatGPT広告の効果測定｜Pixel・UTM・GA4で何を確認するか</h3><p>ChatGPT広告で最も多いつまずきは、配信そのものではなく計測です。クリックは取れているのに、その先が分からない。イベントは飛んでいるのに管理画面では0のまま。数字がGA4と合わない。</p><span class="card-bottom">2026.09.20 <span>記事を読む ↗</span></span></div></a><a class="article-card" href="/articles/chatgpt-ads-japan/"><div class="card-visual"><img src="/articles/assets/optimization.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">03 / 提供条件・最新機能</span><h3>ChatGPT広告は日本で出稿できる？条件と使える機能を解説</h3><p>日本の企業も、条件を満たせばAds Managerから自社で出稿を進められます。成果最適化は、クリック課金のoCPCと表示課金のoCPMから選べます。</p><span class="card-bottom">2026.09.20 <span>記事を読む ↗</span></span></div></a><a class="article-card" href="/articles/chatgpt-ads-policy-review/"><div class="card-visual"><img src="/articles/assets/policy-review.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">14 / 審査・ポリシー</span><h3>ChatGPT広告の審査｜出稿できない業種・LPの条件と否認時の対処</h3><p>ChatGPT広告の審査は、事業者確認・業種・広告とLP・掲載面の4つを別々に見ます。日本の広告主が先に確認したい業種の表、広告文とLPの注意点、否認されたときの直し方と異議申し立ての順番を、公式ポリシーv1.6とヘルプをもとに整理します。</p><span class="card-bottom">2026.09.26 <span>記事を読む ↗</span></span></div></a></div></section></div></main><footer class="site-footer"><div class="wrap"><a class="brand" href="/">GPT広告専門店<span>.</span></a><p>運営：株式会社Ikigai<br>本サービスはOpenAIの公式・公認・提携サービスではありません。</p><div class="footer-links"><a href="/articles/">記事一覧</a><a href="/">サービス・料金</a><a href="https://ikigaiinc.com/privacypolicy">プライバシーポリシー</a><a href="https://ikigaiinc.com">会社情報</a></div><small>© 2026 株式会社Ikigai. ChatGPT・OpenAIは各権利者の商標です。</small></div></footer><script>(function(){var K=['utm_source','utm_medium','utm_campaign','utm_content','utm_term'],q=new URLSearchParams(location.search),u={},any=false;K.forEach(function(k){var v=q.get(k);if(v){u[k]=v;any=true;}});try{if(any){sessionStorage.setItem('lp_utm',JSON.stringify(u));}}catch(e){}})();</script></body></html>
+<p><strong>次回確認予定：2026年11月上旬。</strong> 日本のストアでの提供状況、アプリ専用のヘルプの有無、アプリの掲載内容、商品フィードのトラッキングの移行を確認します。</p>
+</article></div><section class="consult"><div><span class="eyebrow">NEXT STEP</span><h2>自社の商材なら、<br>何から試す？</h2></div><div><p>商材・主要な成果・検証予算から、準備することを整理します。<br>広告や計測のどこから手をつけるか、まずはご相談ください。</p><a href="/#cta" class="button">ChatGPT広告の出稿・運用を相談する <span aria-hidden="true">↗</span></a><p class="small-text">GPT広告専門店の20分無料相談</p></div></section><section class="related"><div class="section-top"><p class="eyebrow">RELATED ARTICLES</p><h2>次に読む記事</h2></div><div class="cards two"><a class="article-card" href="/articles/chatgpt-ads-ec-case/"><div class="card-visual"><img src="/articles/assets/ec-structure.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">11 / EC・商品フィード</span><h3>ChatGPT広告のEC事例｜商品フィードとセール施策から学ぶ設計</h3><p>ChatGPT広告で公開されているEC事例のなかで、売上に対する成果まで公表されている数少ない例が、海外のPCパーツ・家電EC事業者のものです。</p><span class="card-bottom">2026.09.20 <span>記事を読む ↗</span></span></div></a><a class="article-card" href="/articles/chatgpt-ads-measurement/"><div class="card-visual"><img src="/articles/assets/measurement-roles.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">10 / 効果測定</span><h3>ChatGPT広告の効果測定｜Pixel・UTM・GA4で何を確認するか</h3><p>ChatGPT広告で最も多いつまずきは、配信そのものではなく計測です。クリックは取れているのに、その先が分からない。イベントは飛んでいるのに管理画面では0のまま。数字がGA4と合わない。</p><span class="card-bottom">2026.09.20 <span>記事を読む ↗</span></span></div></a><a class="article-card" href="/articles/chatgpt-ads-japan/"><div class="card-visual"><img src="/articles/assets/optimization.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">03 / 提供条件・最新機能</span><h3>ChatGPT広告は日本で出稿できる？条件と使える機能を解説</h3><p>日本の企業も、条件を満たせばAds Managerから自社で出稿を進められます。成果最適化には、クリック課金（oCPC）と表示課金（oCPM）の2つの課金方式があります。</p><span class="card-bottom">2026.09.20 <span>記事を読む ↗</span></span></div></a><a class="article-card" href="/articles/chatgpt-ads-policy-review/"><div class="card-visual"><img src="/articles/assets/policy-review.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">14 / 審査・ポリシー</span><h3>ChatGPT広告の審査｜出稿できない業種・LPの条件と否認時の対処</h3><p>ChatGPT広告の審査は、事業者確認・業種・広告とLP・掲載面の4つを別々に見ます。日本の広告主が先に確認したい業種の表、広告文とLPの注意点、否認されたときの直し方と異議申し立ての順番を、公式ポリシーv1.6とヘルプをもとに整理します。</p><span class="card-bottom">2026.09.26 <span>記事を読む ↗</span></span></div></a></div></section></div></main><footer class="site-footer"><div class="wrap"><a class="brand" href="/">GPT広告専門店<span>.</span></a><p>運営：株式会社Ikigai<br>本サービスはOpenAIの公式・公認・提携サービスではありません。</p><div class="footer-links"><a href="/articles/">記事一覧</a><a href="/">サービス・料金</a><a href="https://ikigaiinc.com/privacypolicy">プライバシーポリシー</a><a href="https://ikigaiinc.com">会社情報</a></div><small>© 2026 株式会社Ikigai. ChatGPT・OpenAIは各権利者の商標です。</small></div></footer><script>(function(){var K=['utm_source','utm_medium','utm_campaign','utm_content','utm_term'],q=new URLSearchParams(location.search),u={},any=false;K.forEach(function(k){var v=q.get(k);if(v){u[k]=v;any=true;}});try{if(any){sessionStorage.setItem('lp_utm',JSON.stringify(u));}}catch(e){}})();</script></body></html>

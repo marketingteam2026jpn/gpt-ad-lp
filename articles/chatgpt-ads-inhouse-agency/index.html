@@ -13,51 +13,57 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <a class="skip" href="#main">本文へ移動</a><header class="site-header"><div class="wrap header-inner"><a class="brand" href="/">GPT広告専門店<span>.</span><small>by 株式会社Ikigai</small></a><nav aria-label="メインナビゲーション"><a href="/articles/">記事一覧</a><a class="button small" href="/#cta">無料相談 <span aria-hidden="true">↗</span></a></nav></div></header><main id="main"><div class="wrap"><nav class="breadcrumbs" aria-label="パンくず"><a href="/">ホーム</a><span>/</span><a href="/articles/">記事一覧</a><span>/</span><span>運用体制</span></nav><header class="article-heading"><p class="eyebrow">CHATGPT ADS GUIDE <span>27 / 運用体制</span></p><p class="edition">2026年9月最新版</p><h1>ChatGPT広告の自社運用と代理店支援｜準備・運用・計測の分担</h1><div class="byline"><span>企画・編集：GPT広告専門店（株式会社Ikigai）</span><time datetime="2026-09-26">公開：2026年9月26日／情報確認：2026年9月25日</time></div><p class="lead">ChatGPT広告の広告アカウントは、事業者の確認と請求を広告主の情報で行います。当社は広告主が作成して代理店を招待する形を勧めます。</p><p class="case-note">仕様はOpenAIのヘルプセンターで確認しています。分担の整理と提案は株式会社Ikigaiの見解です。</p></header><div class="reading-layout"><aside class="toc"><details open><summary>この記事の内容</summary><ol><li><a href="#s1">この記事の要点</a></li><li><a href="#s2">前提：アカウントは広告主が作り、代理店を招待する（当社の推奨）</a></li><li><a href="#s5">分担表：開設から契約終了まで</a></li><li><a href="#s7">権限の設計</a></li><li><a href="#s10">自社だけで運用する場合</a></li><li><a href="#s11">契約を終えるとき</a></li><li><a href="#s12">この記事で分からないこと</a></li><li><a href="#s13">分担を決めるテンプレート</a></li><li><a href="#s14">よくある質問</a></li><li><a href="#s15">まとめ</a></li></ol></details><a class="toc-back" href="/articles/">← すべての記事を見る</a></aside><article class="prose" aria-label="記事本文"><h2 id="s1"><strong>この記事の要点</strong></h2>
 <ol>
-<li><strong>広告アカウントは広告主の社員が所有者として作成し、代理店を招待する形を勧めます。</strong> 事業者の確認と請求は広告主の情報で行い、国・通貨・タイムゾーンは作成後に変えられないため、決める権限のある広告主が作るのが確実です。なお、ChatGPTの中の「ChatGPT Ads Manager」から開設する場合、代理店による代理の作成はサポート外と公式に明記されています。</li>
+<li><strong>広告アカウントは広告主の社員が作成し、代理店を招待する形を勧めます。</strong> 事業者の確認と請求は広告主の情報で行い、国・通貨・タイムゾーンは作成後に変えられないため、決める権限のある広告主が作るのが確実です。公式ヘルプ（2026年10月7日時点）も、1人がアカウントを作り、必要な人を招待する流れを案内しています。</li>
 <li><strong>社内に残る仕事があります。</strong> 価格や表現の事実確認、LPとサイトの変更、計測タグと同意の管理、有効なリードや受注の判定です。代理店に任せやすいのは、相談場面の設計、広告の制作、配信の監視、レポートです。</li>
 <li><strong>権限は役割ごとに最小限で渡します。</strong> 代理店には任せる範囲に応じて閲覧者・メンバー・管理者を使い分け、社内の管理者を必ず1人以上残します。契約終了時の権限の外し方と、社内のOpenAIの組織管理者が関わる場面も先に決めます。</li>
 </ol>
 <p class="case-note"><strong>読んでほしい人</strong>：ChatGPT広告を自社で運用するか代理店に依頼するかを決めた後、実際の役割分担を決める広告担当者。 <br><strong>この記事で扱わないこと</strong>：代理店の選び方と比較の観点は<a href="/articles/chatgpt-ads-agency/">代理店の選び方の記事</a>、出稿の手順そのものは<a href="/articles/chatgpt-ads-start/">始め方の記事</a>で扱います。</p>
 <h2 id="s2"><strong>前提：アカウントは広告主が作り、代理店を招待する（当社の推奨）</strong></h2>
-<p>公式ヘルプ（Ads Manager Beta Account Setup）によると、Ads Managerでのアカウントの開設は5つの段階で進みます。担当の列は当社が勧める形です。</p>
+<p>公式ヘルプ（Ads Manager Account Setup、2026年10月7日時点）によると、開設はサインイン、始め方の選択とアカウントの作成、Ads Managerでの残りの設定の順に進みます。担当の列は当社が勧める形です。</p>
 <div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>段階</strong></p>
 </th><th scope="col"><p><strong>内容</strong></p>
 </th><th scope="col"><p><strong>当社が勧める担当</strong></p>
 </th></tr>
-<tr><td><p>1. アカウントの作成</p>
-</td><td><p><span style="white-space:nowrap">OpenAI</span>のアカウントでAds <span style="white-space:nowrap">Manager</span>に登録</p>
+<tr><td><p>1. サインイン</p>
+</td><td><p><span style="white-space:nowrap">ads.openai.com</span>で、<span style="white-space:nowrap">ChatGPT</span>で使っている<span style="white-space:nowrap">OpenAI</span>のアカウントでサインイン（なければ作成）</p>
 </td><td><p>広告主</p>
 </td></tr>
-<tr><td><p>2. 事業者情報と確認</p>
-</td><td><p>事業者名・サイト・ロゴ・業種、国・通貨・タイムゾーン、確認用の質問（<span style="white-space:nowrap">Persona</span>）</p>
+<tr><td><p>2. 始め方の選択とアカウントの作成</p>
+</td><td><p>サイトのURLから最初の広告とキャンペーンを作りながら登録するか、その手順を省いて進むかを選ぶ。広告主名と、国・通貨・タイムゾーンなどを入力</p>
 </td><td><p>広告主</p>
 </td></tr>
-<tr><td><p>3. アカウント情報</p>
-</td><td><p>広告に表示される名前とロゴを設定</p>
+<tr><td><p>3. 請求の設定</p>
+</td><td><p>クレジットカードと請求プロファイル（事業者名・請求先住所・請求書の送付先メール）を登録。終わるまで配信されない</p>
+</td><td><p>広告主</p>
+</td></tr>
+<tr><td><p>4. ロゴと3つの名前の確認</p>
+</td><td><p>設定の「<span style="white-space:nowrap">General</span>」で、ロゴと、アカウント名・ブランド名・法人名を確認</p>
 </td><td><p>広告主（または管理者の権限を持つ担当者）</p>
 </td></tr>
-<tr><td><p>4. 請求と支払い</p>
-</td><td><p>請求先の情報とクレジットカードを登録</p>
+<tr><td><p>5. 利用者の招待</p>
+</td><td><p>設定の「<span style="white-space:nowrap">Users</span>」→「<span style="white-space:nowrap">Invite</span>」から、相手が<span style="white-space:nowrap">OpenAI</span>にサインインするメールアドレスで招待し、役割（管理者・メンバー・閲覧者）を選ぶ</p>
 </td><td><p>広告主</p>
 </td></tr>
-<tr><td><p>5. メンバーの招待</p>
-</td><td><p>設定の「<span style="white-space:nowrap">Users</span>」→「<span style="white-space:nowrap">Invite</span>」から、相手が<span style="white-space:nowrap">OpenAI</span>にサインインするメールアドレスで招待</p>
-</td><td><p>広告主</p>
+<tr><td><p>6. 最初のキャンペーンの確認</p>
+</td><td><p>登録中に作ったキャンペーンの状態・予算・日程を確認する。手順を省いた場合はここで作成</p>
+</td><td><p>広告主（代理店と確認）</p>
 </td></tr>
 </table></div>
+<p>代理店と運用する場合、開設の時点で広告を作る必要はありません。登録の途中でサイトのURLから作った広告は、審査を通り、請求などの条件がそろった時点で配信と広告費の発生が始まり得ます。広告の作成を代理店に任せる予定なら、その手順を省いてAds Managerへ進むか、作った場合はキャンペーンの状態を確認し、準備ができるまで一時停止しておくと安全です（当社の推奨）。</p>
 <p>公式ヘルプには、アカウントを作る人について次の記載があります。</p>
 <ul>
-<li>1つの事業者につき、アカウントの作成は1人の所有者が行い、所有者がチームのメンバーを招待する</li>
-<li>広告主ごとに別のアカウントが必要。複数の広告主を管理する場合は、広告主ごとに上の手順でアカウントを作る</li>
-<li>ChatGPTの中で使う「ChatGPT Ads Manager」から開設する場合は、代理店が広告主の代わりにアカウントを作ることはサポートされておらず、広告主がアカウントを作った後に代理店を招待する形と書かれている</li>
+<li>1人がアカウントを作り、アクセスが必要な人を招待する。自社のアカウントが既にある場合は、その管理者に招待してもらう</li>
+<li>広告主ごとに別のアカウントを作る。同じOpenAIのログインで、所属するアカウントを切り替えて使える</li>
+<li>既にあるアカウントに入るために、別のアカウントを作る必要はない。アカウントを追加で作っても、確認やアカウントの審査は省けない</li>
 </ul>
-<p>2つ目は、複数の広告主を扱う場合もアカウントを広告主ごとに分けるという記載で、誰が作成するかまでは書かれていません。</p>
-<p>Web版のAds Managerで、代理店が広告主の代わりに作成できるかについては、明確な記載は見当たりませんでした。当社は、事業者の確認と請求が広告主の情報で行われること、国・通貨・タイムゾーンを後から変えられないこと、契約終了後もアカウントを広告主の手元に残せることから、<strong>広告主がアカウントを作成し、代理店を招待する形</strong>を勧めています。</p>
+<p>どの記載も、代理店が広告主の代わりにアカウントを作れるかには触れていません。9月25日時点のヘルプにあった、ChatGPTの中から開設する場合の「代理店による代理の作成はサポートされない」という記述は、10月7日時点の手順のページにはありません。ChatGPTやCodexから使うAds Managerのプラグインのヘルプも、事業者が自社のアカウントを作る流れとして書かれています。</p>
+<p>当社は、法人名（登記名）が請求と事業確認に使われること、セルフサーブを使えるかが広告を出して請求を受ける法人の所在国で決まること、国・通貨・タイムゾーンを後から変えられないこと、契約終了後もアカウントを広告主の手元に残せることから、<strong>広告主がアカウントを作成し、代理店を招待する形</strong>を勧めています。</p>
 <h3 id="s3"><strong>作成時に決めること</strong></h3>
 <ul>
-<li><strong>国・通貨・タイムゾーンは、作成後に変更できません。</strong> 誤った場合は、アカウントを作り直すことになります</li>
-<li>請求の対象になる法人の名義で作成します</li>
-<li>アカウント名とロゴを設定しないと、広告は配信されません</li>
+<li><strong>国・通貨・タイムゾーンは、作成後に変更できません。</strong> 請求を受ける法人の国と通貨、レポートの基準にするタイムゾーンを、作成前に確かめます</li>
+<li>登録時に入力した広告主名が、アカウント名（Ads Manager内で使う名前）・ブランド名（広告に表示される名前）・法人名（請求と事業確認に使う登記名）の初期値になります。法人名には登記上の名称を使います</li>
+<li>3つの名前は、作成後に設定の「General」で別々に変えられます（2026年9月25日から）。アカウント名の変更は審査の対象外ですが、<strong>ブランド名を変えると承認まで配信が止まり、法人名を変えると事業確認がやり直しになり、配信が止まることがあります</strong>。代理店の社名を入れないよう、作成前に決めておきます（当社の推奨）</li>
+<li>ロゴとブランド名は、広告での見え方どおりかを配信前に確認します。ブランドの審査が承認されるまで、広告は配信されません</li>
 </ul>
 <h3 id="s4"><strong>社内にOpenAIの組織がある場合</strong></h3>
 <p>会社でChatGPT Businessなどを使っていて、OpenAIの組織（テナント）が既にある場合、アカウントの作成に「Ads Admin」の役割が必要になることがあります。公式のトラブル対応ガイドは、アカウントを作る権限がない場合、社内のIT担当や管理者に管理コンソールで「Ads Admin」の役割を付けてもらうよう案内しています。</p>
@@ -143,7 +149,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </th></tr>
 <tr><td><p>事業者の確認と請求</p>
 </td><td><p>経理・管理部門</p>
-</td><td><p>広告主の名義で行う手続き</p>
+</td><td><p>広告主の名義で行う手続き。カード払いでは、しきい値に達するたびに請求され、同じ金額の請求が続くことがある（重複ではなく、それぞれ追加の広告費）</p>
 </td></tr>
 <tr><td><p>表現の事実確認</p>
 </td><td><p>商品担当・法務</p>
@@ -221,7 +227,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </td><td><p>管理者</p>
 </td></tr>
 </table></div>
-<p>請求や事業者情報に関わる設定を広告主の側に残したい場合は、代理店を管理者にせず、メンバーで運用する方法が考えられます。メンバーが請求の設定を変更できるかなど、役割ごとの細かな操作範囲は公式ヘルプにないため、管理画面で確認してください。</p>
+<p>開設手順のヘルプは、招待するときの役割を、管理者は「すべての権限」、メンバーは「キャンペーンの作成と管理」、閲覧者は「閲覧のみ」と説明しています。トラブル対応のガイドにも、メンバーであるだけでは、アカウントの設定を終えるのに必要な管理者の役割にはならないとあります。請求や事業者情報に関わる設定を広告主の側に残したい場合は、代理店を管理者にせず、メンバーで運用する方法が考えられます。メンバーが請求の設定を変更できるかなど、役割ごとの細かな操作範囲は公式ヘルプにないため、管理画面で確認してください。</p>
+<p>ChatGPTやCodexからAds Managerを操作するプラグインを代理店が使う場合も、操作できるのは接続した利用者がアクセスできるアカウントと、その役割で許された範囲です。プラグインは、広告の作成や設定の変更の前に内容を示して承認を求め、定期的なレビューは推奨だけでアカウントを変更しません。請求・支払い方法・税・法的な本人情報・異議申し立てはAds Managerで行います。プラグインの承認は操作している本人に求められるため、予算の上限など広告主の確認が要る変更は、分担表で決めた手順で確認します（当社の推奨。日本のアカウントでプラグインを使えるかは当社で未確認です）。</p>
 <h2 id="s10"><strong>自社だけで運用する場合</strong></h2>
 <p>代理店を使わず自社で運用する場合も、分担表の「代理店」の欄の作業が社内に移るだけで、作業そのものは減りません。特に次の作業の時間を確保します。</p>
 <ul>
@@ -319,15 +326,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </td></tr>
 </table></div>
 <h2 id="s14"><strong>よくある質問</strong></h2>
-<p><strong>Q. 代理店に広告アカウントを作ってもらえますか。</strong> 勧めません。ChatGPTの中の「ChatGPT Ads Manager」から開設する場合、公式は代理店による代理の作成をサポートしていないと明記しています。Web版のAds Managerについては明確な記載が見当たりませんでした。事業者の確認と請求は広告主の情報で行われるため、当社は広告主が作成し、代理店を招待する形を勧めます。</p>
+<p><strong>Q. 代理店に広告アカウントを作ってもらえますか。</strong> 勧めません。2026年10月7日時点の公式ヘルプには、代理店が広告主の代わりにアカウントを作れるかの記載がありません（9月25日時点にあった、ChatGPTの中からの開設についての記述も現在はありません）。法人名（登記名）は請求と事業確認に使われ、国・通貨・タイムゾーンは後から変えられないため、当社は広告主が作成し、代理店を招待する形を勧めます。</p>
 <p><strong>Q. 代理店にはどの権限を渡せばよいですか。</strong> 任せる範囲によります。広告の作成・調整を任せるならメンバー、利用者の招待やアカウント設定まで任せるなら管理者、助言だけなら閲覧者が目安です。1つのアカウントに少なくとも1人の管理者が必要なので、社内の管理者を必ず残します。</p>
 <p><strong>Q. 支払いを代理店経由にできますか。</strong> 公式の開設手順では、広告主が請求先とクレジットカードを登録します。営業担当が管理する一部の広告主向けの後払いの記載はありますが、代理店が立て替える形などについて、公式の記載は確認できませんでした。契約の段階で代理店に確認してください。</p>
 <p><strong>Q. 複数の代理店や制作会社を招待できますか。</strong> できます。招待は相手のメールアドレスで1人ずつ行い、役割も1人ずつ付けます。なお、1人が10以上の広告アカウントに所属すると、その人は自分で新しいアカウントを作れなくなります（招待は受けられます）。複数の外部の担当者を招待する場合は、誰がどの範囲を変更できるかを分担表で決めておきます。</p>
-<p><strong>Q. 途中から自社運用に切り替えられますか。</strong> 広告主が所有者なら、代理店の役割を外すだけで切り替えられると当社は考えています（公式に手順の記載はありません）。設定や配信の履歴はアカウントに残ります。変更ログや設計資料の引き継ぎを契約に入れておくと安心です。</p>
+<p><strong>Q. 途中から自社運用に切り替えられますか。</strong> 広告主が作成したアカウントなら、代理店の役割を外すだけで切り替えられると当社は考えています（公式に手順の記載はありません）。設定や配信の履歴はアカウントに残ります。変更ログや設計資料の引き継ぎを契約に入れておくと安心です。</p>
 <h2 id="s15"><strong>まとめ</strong></h2>
 <ul>
-<li>アカウントは広告主の名義で作り、代理店を招待する形を勧める（ChatGPTの中からの開設では、代理店による代理の作成はサポート外と公式に明記）</li>
-<li>国・通貨・タイムゾーンは作成後に変更できない</li>
+<li>アカウントは広告主の名義で作り、代理店を招待する形を勧める（当社の推奨。公式ヘルプに代理店による作成の記載はない）</li>
+<li>国・通貨・タイムゾーンは作成後に変更できない。ブランド名・法人名を変えると審査が入り、配信が止まり得る</li>
 <li>表現の事実確認、LP、計測と同意、成果の判定、組織の管理は社内に残る</li>
 <li>代理店には任せる範囲に合わせて、閲覧者・メンバー・管理者を付ける。社内の管理者を必ず残す</li>
 <li>契約終了時は、役割とグループ、外部連携、キーを見直す</li>
@@ -335,16 +342,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p>社内と外部の分担を、自社の体制に合わせて整理したい場合は、関係部署の担当者一覧と、現在の広告運用の体制（社内・外部の分担）をお手元に用意のうえ<a href="https://ads.ikigaiinc.com/#cta">20分の無料相談</a>をご利用ください。</p>
 <h3 id="s16"><strong>出典</strong></h3>
 <ul>
-<li><a href="https://help.openai.com/en/articles/20001213-ads-manager-beta-account-setup">Ads Manager Beta Account Setup</a>（開設の5段階、複数の広告主を管理する場合、ChatGPTの中からの開設での代理店の扱い、変更できない項目、作成の上限）</li>
+<li><a href="https://help.openai.com/en/articles/20001213-ads-manager-account-setup">Ads Manager Account Setup</a>（開設の手順と2通りの始め方、3つの名前と変更時の審査、招待時の役割、複数の広告主を管理する場合、変更できない項目、作成の上限）</li>
 <li><a href="https://help.openai.com/en/articles/20001273-managing-identity-and-access-for-ads-manager">Managing identity and access for Ads Manager</a>（役割、グループ、管理者を残すこと）</li>
-<li><a href="https://help.openai.com/en/articles/20001217-troubleshooting-common-issues">Troubleshooting Common Issues</a>（Ads Adminの付与、アカウント作成の上限）</li>
+<li><a href="https://help.openai.com/en/articles/20001217-troubleshooting-common-issues">Troubleshooting Common Issues</a>（Ads Adminの付与、アカウント作成の上限、メンバーと管理者の役割）</li>
+<li><a href="https://help.openai.com/en/articles/20001558-use-the-chatgpt-ads-manager-plugin">Use the ChatGPT Ads Manager plugin</a>（プラグインの操作範囲と承認、Ads Managerで行う手続き、自社のアカウントの作成）</li>
+<li><a href="https://help.openai.com/en/articles/20001245-ads-manager-availability">Ads Manager Availability</a>（請求を受ける法人の所在国）</li>
+<li><a href="https://developers.openai.com/ads/api-partner-setup">API Partner Setup</a>（ブランドの審査が承認されるまで配信されないこと）</li>
 <li><a href="https://help.openai.com/en/articles/20001243-advertiser-guidance-for-allowing-openai-web-crawlers">Advertiser Guidance for Allowing OpenAI Web Crawlers</a>（審査用クローラー）</li>
 <li><a href="https://help.openai.com/en/articles/20001409-conversion-measurement">Conversion Measurement</a>（データ共有と同意）</li>
 <li><a href="https://help.openai.com/en/articles/20001522-setting-up-chatgpt-ads-in-hubspot">Setting up ChatGPT Ads in HubSpot</a>（外部アプリの組織承認）</li>
 <li><a href="https://help.openai.com/en/articles/20001220-frequently-asked-questions">Frequently asked questions</a>、<a href="https://help.openai.com/en/articles/20001210-create-campaigns-for-chatgpt-ads">Create Campaigns for ChatGPT Ads</a>（予算週）</li>
-<li><a href="https://help.openai.com/en/articles/20001216-billing-payment">Billing &amp; Payment</a>（後払いの記載）</li>
+<li><a href="https://help.openai.com/en/articles/20001216-billing-payment">Billing &amp; Payment</a>（後払いの記載、しきい値による請求）</li>
 </ul>
-<p>いずれも2026年9月25日に本文を確認しています。</p>
+<p>いずれも2026年10月7日に本文を確認しています。</p>
 <h3 id="s17"><strong>変更履歴</strong></h3>
 <div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>日付</strong></p>
 </th><th scope="col"><p><strong>内容</strong></p>
@@ -352,6 +362,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <tr><td><p>2026年9月25日</p>
 </td><td><p>初版。公式ヘルプ9本を本文確認</p>
 </td></tr>
+<tr><td><p>2026年10月8日</p>
+</td><td><p>10月版に更新。刷新された開設手順（始め方の2通り、3つの名前と変更時の審査、役割の3区分）に合わせて前提の表と説明を直し、10月7日時点のヘルプにない代理店についての記述を削除。プラグインを使う場合の権限と、カード払いのしきい値による請求を追記しました</p>
+</td></tr>
 </table></div>
-<p><strong>次回確認予定：2026年9月28日。</strong> アカウントの開設と権限の記載を確認します。</p>
-</article></div><section class="consult"><div><span class="eyebrow">NEXT STEP</span><h2>自社の商材なら、<br>何から試す？</h2></div><div><p>商材・主要な成果・検証予算から、準備することを整理します。<br>広告や計測のどこから手をつけるか、まずはご相談ください。</p><a href="/#cta" class="button">ChatGPT広告の出稿・運用を相談する <span aria-hidden="true">↗</span></a><p class="small-text">GPT広告専門店の20分無料相談</p></div></section><section class="related"><div class="section-top"><p class="eyebrow">RELATED ARTICLES</p><h2>次に読む記事</h2></div><div class="cards two"><a class="article-card" href="/articles/chatgpt-ads-agency/"><div class="card-visual"><img src="/articles/assets/agency-scope.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">12 / 代理店選び</span><h3>ChatGPT広告代理店の選び方｜支援範囲・料金・計測を比較するポイント</h3><p>ChatGPT広告は2026年3月に始まった媒体です。「実績豊富」を掲げられる会社は、まだどこにもありません。 提供開始から半年ほどで、業種別の相場も確立していません。</p><span class="card-bottom">2026.09.20 <span>記事を読む ↗</span></span></div></a><a class="article-card" href="/articles/chatgpt-ads-start/"><div class="card-visual"><img src="/articles/assets/costs.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">01 / 始め方・費用</span><h3>ChatGPT広告の始め方｜費用・出稿方法・必要な準備</h3><p>ChatGPT広告は、日本の企業も自社で出稿を進められます。日本円の最低日予算は2,500円。まず1商材・主要な成果・検証予算を決め、広告と計測を準備するのが始め方の基本です。</p><span class="card-bottom">2026.09.20 <span>記事を読む ↗</span></span></div></a><a class="article-card" href="/articles/chatgpt-ads-hubspot/"><div class="card-visual"><img src="/articles/assets/hubspot-flow.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">22 / HubSpot連携</span><h3>ChatGPT広告とHubSpotの連携｜広告から問い合わせ・受注まで追う方法</h3><p>OpenAIの公式連携で、HubSpotからChatGPT広告のアカウント接続・キャンペーン作成・成果確認ができます。</p><span class="card-bottom">2026.09.26 <span>記事を読む ↗</span></span></div></a><a class="article-card" href="/articles/chatgpt-ads-test-plan/"><div class="card-visual"><img src="/articles/assets/test-plan.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">16 / テスト運用</span><h3>ChatGPT広告のテスト運用｜続ける・直す・止める・保留の判断基準</h3><p>ChatGPT広告のテストは、配信・クリック後・事業成果の3段階に分けて判断します。開始前に決めること、判定日の置き方、母数が足りないときの「保留」の扱い、予算週や反映時間などテスト中に効く仕様を、公開事例とあわせて整理します。</p><span class="card-bottom">2026.09.26 <span>記事を読む ↗</span></span></div></a></div></section></div></main><footer class="site-footer"><div class="wrap"><a class="brand" href="/">GPT広告専門店<span>.</span></a><p>運営：株式会社Ikigai<br>本サービスはOpenAIの公式・公認・提携サービスではありません。</p><div class="footer-links"><a href="/articles/">記事一覧</a><a href="/">サービス・料金</a><a href="https://ikigaiinc.com/privacypolicy">プライバシーポリシー</a><a href="https://ikigaiinc.com">会社情報</a></div><small>© 2026 株式会社Ikigai. ChatGPT・OpenAIは各権利者の商標です。</small></div></footer><script>(function(){var K=['utm_source','utm_medium','utm_campaign','utm_content','utm_term'],q=new URLSearchParams(location.search),u={},any=false;K.forEach(function(k){var v=q.get(k);if(v){u[k]=v;any=true;}});try{if(any){sessionStorage.setItem('lp_utm',JSON.stringify(u));}}catch(e){}})();</script></body></html>
+<p><strong>次回確認予定：2026年11月上旬。</strong> アカウントの開設手順と役割、代理店についての記載、プラグインのヘルプを確認します。</p>
+</article></div><section class="consult"><div><span class="eyebrow">NEXT STEP</span><h2>自社の商材なら、<br>何から試す？</h2></div><div><p>商材・主要な成果・検証予算から、準備することを整理します。<br>広告や計測のどこから手をつけるか、まずはご相談ください。</p><a href="/#cta" class="button">ChatGPT広告の出稿・運用を相談する <span aria-hidden="true">↗</span></a><p class="small-text">GPT広告専門店の20分無料相談</p></div></section><section class="related"><div class="section-top"><p class="eyebrow">RELATED ARTICLES</p><h2>次に読む記事</h2></div><div class="cards two"><a class="article-card" href="/articles/chatgpt-ads-agency/"><div class="card-visual"><img src="/articles/assets/agency-scope.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">12 / 代理店選び</span><h3>ChatGPT広告代理店の選び方｜支援範囲・料金・計測を比較するポイント</h3><p>ChatGPT広告は、2026年2月9日に米国でテストが始まった媒体です。「実績豊富」を掲げられる会社は、まだどこにもありません。 日本での展開は2026年夏からで、業種別の相場も確立していません。</p><span class="card-bottom">2026.09.20 <span>記事を読む ↗</span></span></div></a><a class="article-card" href="/articles/chatgpt-ads-start/"><div class="card-visual"><img src="/articles/assets/costs.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">01 / 始め方・費用</span><h3>ChatGPT広告の始め方｜費用・出稿方法・必要な準備</h3><p>ChatGPT広告は、日本の企業も自社で出稿を進められます。日本円の最低日予算は2,500円。まず1商材・主要な成果・検証予算を決め、広告と計測を準備するのが始め方の基本です。</p><span class="card-bottom">2026.09.20 <span>記事を読む ↗</span></span></div></a><a class="article-card" href="/articles/chatgpt-ads-hubspot/"><div class="card-visual"><img src="/articles/assets/hubspot-flow.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">22 / HubSpot連携</span><h3>ChatGPT広告とHubSpotの連携｜広告から問い合わせ・受注まで追う方法</h3><p>OpenAIの公式連携で、HubSpotからChatGPT広告のアカウント接続・キャンペーン作成・成果確認ができます。</p><span class="card-bottom">2026.09.26 <span>記事を読む ↗</span></span></div></a><a class="article-card" href="/articles/chatgpt-ads-test-plan/"><div class="card-visual"><img src="/articles/assets/test-plan.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">16 / テスト運用</span><h3>ChatGPT広告のテスト運用｜続ける・直す・止める・保留の判断基準</h3><p>ChatGPT広告のテストは、配信・クリック後・事業成果の3段階に分けて判断します。開始前に決めること、判定日の置き方、母数が足りないときの「保留」の扱い、予算週や反映時間などテスト中に効く仕様を、公開事例とあわせて整理します。</p><span class="card-bottom">2026.09.26 <span>記事を読む ↗</span></span></div></a></div></section></div></main><footer class="site-footer"><div class="wrap"><a class="brand" href="/">GPT広告専門店<span>.</span></a><p>運営：株式会社Ikigai<br>本サービスはOpenAIの公式・公認・提携サービスではありません。</p><div class="footer-links"><a href="/articles/">記事一覧</a><a href="/">サービス・料金</a><a href="https://ikigaiinc.com/privacypolicy">プライバシーポリシー</a><a href="https://ikigaiinc.com">会社情報</a></div><small>© 2026 株式会社Ikigai. ChatGPT・OpenAIは各権利者の商標です。</small></div></footer><script>(function(){var K=['utm_source','utm_medium','utm_campaign','utm_content','utm_term'],q=new URLSearchParams(location.search),u={},any=false;K.forEach(function(k){var v=q.get(k);if(v){u[k]=v;any=true;}});try{if(any){sessionStorage.setItem('lp_utm',JSON.stringify(u));}}catch(e){}})();</script></body></html>
