@@ -1,0 +1,244 @@
+<!doctype html><html lang="ja"><head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W62G2NT3');</script>
+<!-- End Google Tag Manager -->
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>【2026年10月最新版】アプリのChatGPT広告｜インストール計測とMMP連携（AppsFlyer・Adjustなど7社）の準備｜GPT広告専門店</title><meta name="description" content="ChatGPT広告でアプリのインストールを測るには、MMP連携（AppsFlyer・Adjustなど7社）かConversions APIを使います。送れるイベント、7社のリンクの置き方、クリック基準の帰属、配信面の意味、日本向けに出せないアプリの区分を整理します。"><link rel="canonical" href="https://ads.ikigaiinc.com/articles/chatgpt-ads-app/"><meta property="og:locale" content="ja_JP"><meta property="og:type" content="article"><meta property="og:site_name" content="GPT広告専門店"><meta property="og:title" content="【2026年10月最新版】アプリのChatGPT広告｜インストール計測とMMP連携（AppsFlyer・Adjustなど7社）の準備"><meta property="og:description" content="ChatGPT広告でアプリのインストールを測るには、MMP連携（AppsFlyer・Adjustなど7社）かConversions APIを使います。送れるイベント、7社のリンクの置き方、クリック基準の帰属、配信面の意味、日本向けに出せないアプリの区分を整理します。"><meta property="og:url" content="https://ads.ikigaiinc.com/articles/chatgpt-ads-app/"><meta property="og:image" content="https://ads.ikigaiinc.com/articles/assets/app-measurement.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="760"><meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#10131A"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Noto+Sans+JP:wght@400;500;700;900&amp;display=swap" rel="stylesheet"><link rel="stylesheet" href="/articles/assets/style.css"><script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "【2026年10月最新版】アプリのChatGPT広告｜インストール計測とMMP連携（AppsFlyer・Adjustなど7社）の準備", "description": "ChatGPT広告でアプリのインストールを測るには、MMP連携（AppsFlyer・Adjustなど7社）かConversions APIを使います。送れるイベント、7社のリンクの置き方、クリック基準の帰属、配信面の意味、日本向けに出せないアプリの区分を整理します。", "mainEntityOfPage": "https://ads.ikigaiinc.com/articles/chatgpt-ads-app/", "url": "https://ads.ikigaiinc.com/articles/chatgpt-ads-app/", "datePublished": "2026-10-08T00:00:00+09:00", "dateModified": "2026-10-08T00:00:00+09:00", "inLanguage": "ja", "author": {"@type": "Organization", "name": "GPT広告専門店（株式会社Ikigai）", "url": "https://ads.ikigaiinc.com/"}, "publisher": {"@type": "Organization", "name": "株式会社Ikigai", "url": "https://ikigaiinc.com"}, "image": "https://ads.ikigaiinc.com/articles/assets/app-measurement.png"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://ads.ikigaiinc.com/"}, {"@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://ads.ikigaiinc.com/articles/"}, {"@type": "ListItem", "position": 3, "name": "アプリのChatGPT広告｜インストール計測とMMP連携（AppsFlyer・Adjustなど7社）の準備", "item": "https://ads.ikigaiinc.com/articles/chatgpt-ads-app/"}]}]}</script></head><body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W62G2NT3"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<a class="skip" href="#main">本文へ移動</a><header class="site-header"><div class="wrap header-inner"><a class="brand" href="/">GPT広告専門店<span>.</span><small>by 株式会社Ikigai</small></a><nav aria-label="メインナビゲーション"><a href="/articles/">記事一覧</a><a class="button small" href="/#cta">無料相談 <span aria-hidden="true">↗</span></a></nav></div></header><main id="main"><div class="wrap"><nav class="breadcrumbs" aria-label="パンくず"><a href="/">ホーム</a><span>/</span><a href="/articles/">記事一覧</a><span>/</span><span>アプリ</span></nav><header class="article-heading"><p class="eyebrow">CHATGPT ADS GUIDE <span>40 / アプリ</span></p><p class="edition">2026年10月最新版</p><h1>アプリのChatGPT広告｜インストール計測とMMP連携（AppsFlyer・Adjustなど7社）の準備</h1><div class="byline"><span>企画・編集：GPT広告専門店（株式会社Ikigai）</span><time datetime="2026-10-08">公開：2026年10月8日／情報確認：2026年10月8日</time></div><p class="lead">ChatGPT広告でアプリのインストールを測るには、MMP連携（AppsFlyer・Adjustなど7社）かConversions APIを使います。</p><p class="case-note">本記事は、OpenAIのヘルプセンター・開発者向けドキュメント・広告ポリシー（いずれも2026年10月7日に本文を確認）に基づいています。当社はMMP連携の動作を確認していません。手順の要点は各ヘルプの記載をまとめたもので、MMP側の画面は変わることがあります。整理と提案は株式会社Ikigaiの見解です。</p></header><div class="reading-layout"><aside class="toc"><details open><summary>この記事の内容</summary><ol><li><a href="#s1">この記事の要点</a></li><li><a href="#s2">全体像：広告はChatGPTの中、成果はアプリの中</a></li><li><a href="#s3">送れるアプリのイベントと送り方</a></li><li><a href="#s4">MMP連携の準備と、7社のリンクの置き方</a></li><li><a href="#s8">帰属はクリック基準：MMPとAds Managerの数字の違い</a></li><li><a href="#s9">配信面の「iOSアプリ」「Androidアプリ」はChatGPTのアプリ</a></li><li><a href="#s10">日本向けに出せる・出せないアプリの区分</a></li><li><a href="#s11">Webに送る設計も選べる：公式事例の計測の条件</a></li><li><a href="#s12">この記事で分からないこと</a></li><li><a href="#s13">MMP連携のチェックリスト</a></li><li><a href="#s14">よくある質問</a></li><li><a href="#s15">まとめ</a></li></ol></details><a class="toc-back" href="/articles/">← すべての記事を見る</a></aside><article class="prose" aria-label="記事本文"><h2 id="s1"><strong>この記事の要点</strong></h2>
+<ol>
+<li><strong>アプリのインストールと起動は、MMP連携かConversions APIで送ります。</strong> ブラウザのPixelでは送れません。アプリ用のSDKやモバイルのデータソースは未対応で、Webのデータソースの Pixel ID を使います。対応するMMP（アプリの計測ツール）は、Adjust・Airbridge・AppsFlyer・Branch・Kochava・Singular・Tenjinの7社です。</li>
+<li><strong>アプリの帰属はクリック基準で、MMPとAds Managerの帰属期間は別々に設定されます。</strong> 2つの画面の数字は一致しない前提で、どちらを何の判断に使うかを先に決めます。iOSの広告ID（IDFA）は送れません。</li>
+<li><strong>リンク先には、MMPで作ったクリックURLを使います。</strong> 一方で、アプリストアへのリンクは審査に必要な内容が読めないことがあるとクローラーのヘルプは書いています。審査の前にリンクの転送先を確かめ、消費者向けの医療系アプリなど、日本向けに出せない区分に当たらないかも確認します。</li>
+</ol>
+<p class="case-note"><strong>読んでほしい人</strong>：スマートフォンアプリを提供していて、ChatGPT広告でインストールや登録を測りたい広告担当者・マーケティング担当者・開発者。 <br><strong>この記事で扱わないこと</strong>：Webサイトの計測（Pixel・UTM・GA4）は<a href="/articles/chatgpt-ads-measurement/">効果測定の記事</a>、ビュー経由の成果の数え方は<a href="/articles/chatgpt-ads-view-through/">ビュースルーの記事</a>で扱います。</p>
+<h2 id="s2"><strong>全体像：広告はChatGPTの中、成果はアプリの中</strong></h2>
+<p>アプリの広告では、広告が表示される場所と、成果が起きる場所が別です。</p>
+<ol>
+<li>利用者が、ChatGPTのアプリやブラウザで広告を見てクリックする</li>
+<li>広告のリンク先に設定したMMPのクリックURLを経由して、アプリの入手先（アプリストアなど）へ進む</li>
+<li>アプリをインストールし、起動する</li>
+<li>MMPが、OpenAIの Pixel ID と Conversions API のキーを使って、インストールなどのイベントを送る</li>
+<li>Ads Managerの「Conversions（成果）」の指標に計上される（MMPのヘルプによると、反映まで24〜48時間）</li>
+</ol>
+<figure><a aria-label="図を拡大する" href="/articles/assets/app-measurement.png"><img alt="図1：アプリのインストール計測の流れ。OpenAIのヘルプセンターと開発者向けドキュメントをもとに当社作成。" height="760" loading="lazy" src="/articles/assets/app-measurement.svg" width="1200"/></a><figcaption>図1：アプリのインストール計測の流れ。OpenAIのヘルプセンターと開発者向けドキュメントをもとに当社作成。</figcaption></figure>
+<h2 id="s3"><strong>送れるアプリのイベントと送り方</strong></h2>
+<p>開発者向けの対応イベントの一覧には、アプリ専用のイベントが2つあります。</p>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>イベント名</strong></p>
+</th><th scope="col"><p><strong>内容</strong></p>
+</th><th scope="col"><p><strong>送り方</strong></p>
+</th></tr>
+<tr><td><p>app_<span style="white-space:nowrap">installed</span></p>
+</td><td><p>アプリのインストール</p>
+</td><td><p><span style="white-space:nowrap">Conversions</span> APIのみ。<span style="white-space:nowrap">action</span>_<span style="white-space:nowrap">source</span> を <span style="white-space:nowrap">mobile</span>_app にする</p>
+</td></tr>
+<tr><td><p>app_<span style="white-space:nowrap">opened</span></p>
+</td><td><p>アプリの起動</p>
+</td><td><p>同上</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">registration</span>_<span style="white-space:nowrap">completed</span> など他の標準イベント</p>
+</td><td><p>登録・体験開始・購入など</p>
+</td><td><p>MMPでアプリ内のイベントを対応づけて送る（標準イベントかカスタムイベント）</p>
+</td></tr>
+</table></div>
+<p>開発者向けの Conversions API・対応イベント・Measurement Pixel の説明には、次の4点が書かれています。</p>
+<ul>
+<li><strong>app_installed と app_opened は、ブラウザのPixelでは送れません。</strong> サーバーから Conversions API で送ります</li>
+<li><strong>Pixel ID は、既存のWebのデータソースのものを使います。</strong> アプリ用のSDKの設定と、モバイルのデータソースは現在サポートされていません。アプリだけを提供する事業者でも、Ads Managerの成果（Conversions）の画面でWebのデータソースを作り、Pixel ID を用意することになります（当社の解釈）</li>
+<li><strong>Androidの広告ID（GAID）は送れますが、iOSの広告ID（IDFA）は対応していません。</strong> 一致に使える情報として、ハッシュ化したメールアドレスや電話番号なども送れます</li>
+<li><strong>送るイベントの時刻は、直近7日以内である必要があります</strong></li>
+</ul>
+<p>もう1つ、OpenAIのヘルプは、成果のデータは法令と利用規約で認められる範囲で送り、サイトやアプリで集めるデータを利用者に分かりやすく説明し、法令で必要な同意を得てから送るよう求めています。アプリの計測で外部にデータを送る前に、自社のプライバシーポリシーと同意の設計を確認します。</p>
+<h2 id="s4"><strong>MMP連携の準備と、7社のリンクの置き方</strong></h2>
+<h3 id="s5"><strong>準備するもの</strong></h3>
+<p>MMPのヘルプが挙げる準備は次のとおりです。</p>
+<ul>
+<li>有効なAds Managerのアカウント</li>
+<li>Webのデータソースの Pixel ID と、Conversions API のキー（どちらもAds Managerの成果の画面で発行）</li>
+<li>MMP側で、アプリまたはWebサイトの設定が済んでいること</li>
+<li>MMP側で連携を設定できる権限</li>
+<li>ChatGPT広告に送る標準イベント・カスタムイベントの一覧</li>
+</ul>
+<h3 id="s6"><strong>7社ごとの手順の要点</strong></h3>
+<p>連携の手順はMMPごとに違います。特に間違えやすいのは、MMPで作ったリンクをAds Managerのどこに置くかです。ヘルプの記載を、リンクの扱いを中心にまとめました。</p>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>MMP</strong></p>
+</th><th scope="col"><p><strong>MMP側で行うこと（要点）</strong></p>
+</th><th scope="col"><p><strong>広告に使うリンクと置き方</strong></p>
+</th></tr>
+<tr><td><p><span style="white-space:nowrap">Adjust</span></p>
+</td><td><p><span style="white-space:nowrap">Campaign</span> Lab で <span style="white-space:nowrap">ChatGPT</span> Ads を追加。<span style="white-space:nowrap">Pixel</span> ID・APIキー・インストールのイベント名を入れ、<span style="white-space:nowrap">Action</span> <span style="white-space:nowrap">Source</span> を <span style="white-space:nowrap">Mobile</span> App に</p>
+</td><td><p>作成したクリックURLを該当のキャンペーンで使う</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">Airbridge</span></p>
+</td><td><p>Ad <span style="white-space:nowrap">Channel</span> <span style="white-space:nowrap">Integration</span> で <span style="white-space:nowrap">ChatGPT</span> Ads を選び、<span style="white-space:nowrap">Postback</span> Keys に <span style="white-space:nowrap">Pixel</span> ID・APIキー</p>
+</td><td><p>トラッキングリンクを「?」で分け、前半を <span style="white-space:nowrap">Default</span> Ad <span style="white-space:nowrap">Destination</span> URL、後半を <span style="white-space:nowrap">Tracking</span> <span style="white-space:nowrap">parameters</span> の欄へ</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">AppsFlyer</span></p>
+</td><td><p><span style="white-space:nowrap">Partner</span> <span style="white-space:nowrap">Integrations</span> の <span style="white-space:nowrap">Marketplace</span> で <span style="white-space:nowrap">ChatGPT</span> Ads (<span style="white-space:nowrap">OpenAI</span>) を連携。アプリ内イベントのポストバックを対応づけ</p>
+</td><td><p>帰属リンク（<span style="white-space:nowrap">attribution</span> link）を使い、動的パラメータは <span style="white-space:nowrap">Tracking</span> <span style="white-space:nowrap">parameters</span> の欄に残す</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">Branch</span></p>
+</td><td><p><span style="white-space:nowrap">Performance</span> <span style="white-space:nowrap">Product</span> の有効化が前提。<span style="white-space:nowrap">OpenAI</span> Ads の連携で <span style="white-space:nowrap">Pixel</span> ID・APIキー、全イベントの送信を有効に</p>
+</td><td><p><span style="white-space:nowrap">Branch</span> Ad Link をリンク先URLに使い、マクロは <span style="white-space:nowrap">Landing</span> page <span style="white-space:nowrap">query</span> <span style="white-space:nowrap">parameters</span> の欄へ。送るイベントごとにAds <span style="white-space:nowrap">Manager</span>で成果イベントを作り、キャンペーンに紐づける</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">Kochava</span></p>
+</td><td><p><span style="white-space:nowrap">Campaign</span> <span style="white-space:nowrap">Manager</span> でトラッカーを作り、メディアパートナーを <span style="white-space:nowrap">ChatGPT</span> Ads（iOS／<span style="white-space:nowrap">Android</span>／Web）から選ぶ。イベントごとに <span style="white-space:nowrap">Pixel</span> ID・APIキー</p>
+</td><td><p>トラッカーの <span style="white-space:nowrap">Click</span> URL を広告のリンク先に使う</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">Singular</span></p>
+</td><td><p><span style="white-space:nowrap">Partner</span> <span style="white-space:nowrap">Configuration</span> で <span style="white-space:nowrap">OpenAI</span> Ads (<span style="white-space:nowrap">ChatGPT</span>) を追加し、<span style="white-space:nowrap">Pixel</span> ID・APIキー、イベントを対応づけ</p>
+</td><td><p><span style="white-space:nowrap">Partner</span> 型のリンクを作り、<span style="white-space:nowrap">Click</span>-<span style="white-space:nowrap">through</span> <span style="white-space:nowrap">Tracking</span> Link を該当のキャンペーンで使う</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">Tenjin</span></p>
+</td><td><p><span style="white-space:nowrap">OpenAI</span> Ads のチャネルとコールバックを設定。APIキーは「<span style="white-space:nowrap">Bearer</span>」と半角スペースに続けて入力し、インストールのコールバックを有効に</p>
+</td><td><p><span style="white-space:nowrap">Click</span> <span style="white-space:nowrap">Tracking</span> URL の全体を広告の「Link」欄に貼り、保存の前に「Move to <span style="white-space:nowrap">tracking</span> <span style="white-space:nowrap">parameters</span>」を押す。広告ごとに繰り返す</p>
+</td></tr>
+</table></div>
+<p>AppsFlyerは、Webサイトについては Web SDK から Conversions API へイベントを転送する設定も案内しています。</p>
+<p>欄の名前は、ヘルプの中でも「Tracking parameters」（AppsFlyer・Airbridge・Tenjin）と「Landing page query parameters」（Branch）の2通りで書かれています。Ads Managerの効果測定のヘルプは、キャンペーン・広告グループ・広告の編集画面の「Landing page query parameters」でパラメータを付けると説明しています。自社の画面で欄の名前と位置を確かめてください。</p>
+<p>同じキーのパラメータを、リンク先URLとキャンペーンなど複数の場所に重ねて設定しないことも大切です。ヘルプでは、広告のURLに書いた値が最も優先され、広告・広告グループ・キャンペーンの設定はそれを上書きしません。</p>
+<h3 id="s7"><strong>リンク先がアプリストアに転送される場合</strong></h3>
+<p>MMPのヘルプは、MMPで作ったリンクを広告のリンク先に使うよう案内しています。一方、クローラーのヘルプには次の記述があります。</p>
+<p class="case-note">Use a directly reachable web landing page whenever possible. App-store links, deep links, documents, or destinations that require an app, login, region-specific access, or unsupported redirects may not provide enough crawlable content for validation or review.</p>
+<p>当社訳は「可能な限り、直接開けるWebのLPを使ってください。アプリストアへのリンク、ディープリンク、文書、アプリやログイン・特定の地域からのアクセスが必要なリンク先、対応していない転送は、検証や審査に必要な内容を読み取れないことがあります」です。MMPのリンクの転送先がアプリストアの場合に審査でどう扱われるかは、どちらのヘルプにも書かれていません。</p>
+<p>当社は、審査に出す前に次を確かめることを勧めます。</p>
+<ul>
+<li>リンクを開いたとき、最終的にどのページへ着くか（Webの紹介ページか、ストアか）</li>
+<li>MMP側で、転送先や、ストア以外の環境で開いたときの行き先を設定できるか（MMPのドキュメントで確認）</li>
+<li>否認された場合の否認理由（Ads Managerで「Not serving」の広告にカーソルを合わせる）</li>
+</ul>
+<p>ChatGPTのiOSアプリ内のブラウザで広告のリンクを確かめるときは、共有からURL全体をコピーしてパラメータを確認します。画面に出るホスト名だけでは、完全なURLは分かりません。</p>
+<h2 id="s8"><strong>帰属はクリック基準：MMPとAds Managerの数字の違い</strong></h2>
+<p>MMPのヘルプは「この連携によるモバイルアプリの帰属はクリック基準」と明記しています。開発者向けの Conversions API の説明も、アプリのイベントとMMP連携の帰属はクリック基準のままだとしています。Ads Managerではビュー経由（広告を見て、クリックせずに起きた成果）の計上もありますが、アプリのイベントには当てはまらないと読めます（当社の解釈）。</p>
+<p>なお、Webのビュー経由を成果の合計（Conversions）に含めるかは、開発者向けのPixel・Conversions APIのページとヘルプの記述が食い違っています。Webとアプリの両方を測る場合は、自社のAds Managerで帰属期間の設定と、クリック経由・ビュー経由の内訳を確かめてください（<a href="/articles/chatgpt-ads-view-through/">ビュースルーの記事</a>）。</p>
+<p>数字が合わない主な理由は次の3つです。</p>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>理由</strong></p>
+</th><th scope="col"><p><strong>内容</strong></p>
+</th></tr>
+<tr><td><p>帰属期間が別</p>
+</td><td><p>MMPの帰属期間とイベント共有の設定はMMP側で行い、Ads <span style="white-space:nowrap">Manager</span>は自身の帰属設定（クリック7・14・30日）でレポートする</p>
+</td></tr>
+<tr><td><p>反映の時間</p>
+</td><td><p>Ads <span style="white-space:nowrap">Manager</span>への反映は24〜48時間。直近の数字は後から変わる</p>
+</td></tr>
+<tr><td><p>数える対象</p>
+</td><td><p>MMPは、自社が使う他の広告媒体もまとめて帰属を判定するため、<span style="white-space:nowrap">ChatGPT</span>広告に割り当てる件数がAds <span style="white-space:nowrap">Manager</span>と変わり得る（当社の見方。各MMPの設定による）</p>
+</td></tr>
+</table></div>
+<p>当社は、媒体の最適化と配信の調整にはAds Managerの数字を、他の媒体との比較や予算配分にはMMPの数字を使うといった形で、判断ごとに使う数字を先に決めることを勧めます。</p>
+<p>連携がうまくいかないときの確認順も、ヘルプに挙がっています。連携が有効か、Pixel ID とAPIキーが正しいか、イベント名の対応づけが正しいか、キャンペーンに正しいリンクを使っているか、成果イベントがキャンペーンに紐づいているか、を確かめます。テストは新しい広告のクリックで行い、反映を24〜48時間待ちます。</p>
+<h2 id="s9"><strong>配信面の「iOSアプリ」「Androidアプリ」はChatGPTのアプリ</strong></h2>
+<p>キャンペーンの配信面（プラットフォーム）は、Ads Managerで Android app・Android web・Desktop web・iOS app・iOS web の5つから選べます。開発者向けの説明では、これは「キャンペーンを配信できるChatGPTの面」で、iOS app はChatGPTのiOSアプリ、Android app はChatGPTのAndroidアプリを指します。広告主のアプリの対応OSを選ぶ設定ではありません。iPhoneのブラウザでChatGPTを使う人は、アプリではなくWebの面に入ります。</p>
+<p>iOS版しかないアプリでも、ChatGPTを使う端末を配信面で選ぶことはできます。例えば、iOS app と iOS web に絞れば、Androidの端末でChatGPTを使う人への配信を避けられます（当社の提案）。配信面を絞ると母数も減るため、最初は広めにして、Insightsの Platform 別の数字を見てから絞る方法もあります。指定できる条件の一覧は<a href="/articles/chatgpt-ads-targeting/">ターゲティングの記事</a>で扱っています。</p>
+<p>既存のユーザーを除外したい場合は、カスタムオーディエンスを使えます。メールアドレス・電話番号（ハッシュ化も可）・GAIDのリストから作れ、除外なら一致したユーザーが2万5,000人未満でも使えます。ヘルプが挙げる識別子に、IDFAは含まれていません。</p>
+<h2 id="s10"><strong>日本向けに出せる・出せないアプリの区分</strong></h2>
+<p>アプリも、広告ポリシーと規制領域の国別表の対象です。日本の広告主が特に確認したい区分を抜き出しました。アプリの機能と表の区分の対応は原文に書かれていないため、左の列の当てはめは当社の見方です。</p>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>アプリの種類（例）</strong></p>
+</th><th scope="col"><p><strong>原文の扱い（日本を含む米国以外）</strong></p>
+</th></tr>
+<tr><td><p>消費者向けの医療・健康管理アプリ</p>
+</td><td><p>国別表「消費者向けの医療機器・ウェアラブル・アプリ」は不可。医療的な主張のない運動・ウェルネスのアプリが当たるかは書かれていない</p>
+</td></tr>
+<tr><td><p>医療機関向けのソフトウェア</p>
+</td><td><p>国別表「ヘルスケア向けのソフトウェア・基盤」は可</p>
+</td></tr>
+<tr><td><p>出会い系アプリ、成人向けのコンパニオンアプリ</p>
+</td><td><p>ポリシー本文で不可</p>
+</td></tr>
+<tr><td><p>性的な画像を生成・加工するツール</p>
+</td><td><p>ポリシー本文で不可</p>
+</td></tr>
+<tr><td><p>現金の賭けや賞金があるゲーム</p>
+</td><td><p>ポリシー本文で不可（ギャンブル）</p>
+</td></tr>
+<tr><td><p>現金の賭けや賞金がないゲーム</p>
+</td><td><p>ポリシー本文で「認められる場合がある」</p>
+</td></tr>
+<tr><td><p>家計簿など、金融商品を勧めない金融ソフト</p>
+</td><td><p>国別表「金融ソフトウェア」は可</p>
+</td></tr>
+<tr><td><p>決済・送金アプリ</p>
+</td><td><p>国別表「決済・送金」は不可</p>
+</td></tr>
+<tr><td><p>暗号資産のアプリ</p>
+</td><td><p>国別表「暗号資産」は不可</p>
+</td></tr>
+<tr><td><p>投資・証券のアプリ</p>
+</td><td><p>国別表で承認済みの広告主のみ</p>
+</td></tr>
+<tr><td><p>学習・語学アプリ</p>
+</td><td><p>「デジタル製品・教育」は初期の中心領域の1つ</p>
+</td></tr>
+</table></div>
+<p>医療的な主張のない運動・ウェルネスのアプリも、当社は国別表の「不可」を前提に計画することを勧めます。試す場合は、医療的な主張をしない広告とLPで審査に出し、結果を記録します。健康・美容分野の区分の詳しい読み方は<a href="/articles/chatgpt-ads-health-beauty/">美容・健康・医療の記事</a>、審査の進め方は<a href="/articles/chatgpt-ads-policy-review/">審査の記事</a>で扱っています。</p>
+<h2 id="s11"><strong>Webに送る設計も選べる：公式事例の計測の条件</strong></h2>
+<p>アプリを持っていても、インストールを成果にする必要はありません。公式事例のAI語学学習アプリP（AIと会話して言語を練習できるアプリ。Web・モバイルで提供）は、広告からWebサイトへ送り、無料体験を始められるようにしたと書いています。同社が公表した数字は、どちらもWebキャンペーンの広告主の社内推計です。ROASは比較相手のチャネルと同じUTMのラストクリック計測、体験開始の単価はPixelとConversions APIで記録したイベントによるもので、MMPでインストールを測った事例ではありません（数字と条件は<a href="/articles/chatgpt-ads-education-case/">教育・語学事例の記事</a>）。</p>
+<p>Webで体験や登録を始められるサービスなら、Pixel・Conversions API・UTMという、Webサイトと同じ計測で始める方が準備は少なく済みます（当社の見解）。一方、アプリでしか使えないサービスや、インストール後の行動で価値が決まるサービスでは、MMP連携でインストールとアプリ内のイベントを送る設計になります。どちらにするかは、「どこで最初の成果が起きるか」で決めます。</p>
+<h2 id="s12"><strong>この記事で分からないこと</strong></h2>
+<ul>
+<li><strong>MMPのリンクの転送先がアプリストアの場合に、審査でどう扱われるか。</strong> MMPのヘルプとクローラーのヘルプの両方に記載がありません</li>
+<li><strong>app_installed を成果最適化（Conversion optimization）の目標に選べるか。</strong> 標準イベントの一覧にはありますが、成果最適化のヘルプにアプリのイベントの例は書かれていません。Ads Managerの画面で確かめます</li>
+<li><strong>ChatGPTのアプリで広告をクリックしたとき、ストアがどう開くか。</strong> iOSアプリ内のブラウザで開くことは分かりますが、ストアへの遷移の挙動は書かれていません</li>
+<li><strong>日本のアカウントで7社の連携がすべて使えるか。</strong> 当社は連携を操作していません</li>
+</ul>
+<h2 id="s13"><strong>MMP連携のチェックリスト</strong></h2>
+<ul>
+<li>[ ] アプリの種類が、日本向けに出せない区分に当たらないか確かめた</li>
+<li>[ ] Webのデータソースの Pixel ID と、Conversions API のキーを用意した</li>
+<li>[ ] MMP側で ChatGPT Ads（OpenAI Ads）の連携を有効にし、Pixel ID とキーを入れた</li>
+<li>[ ] 送るイベント（インストール・登録・購入など）を、標準イベントかカスタムイベントに対応づけた</li>
+<li>[ ] Ads Managerで成果イベントを作り、キャンペーンに紐づけた</li>
+<li>[ ] MMPのリンクを、ヘルプどおりの欄に置いた（動的パラメータの欄を含む）</li>
+<li>[ ] 同じキーのパラメータを複数の場所に重ねていない</li>
+<li>[ ] リンクの最終的な転送先と、審査の結果を確かめた</li>
+<li>[ ] 新しい広告のクリックでテストし、24〜48時間後にAds ManagerとMMPの両方で確かめた</li>
+<li>[ ] 判断ごとに、Ads ManagerとMMPのどちらの数字を使うかを決めた</li>
+<li>[ ] アプリで集めるデータの説明と同意を、プライバシーポリシーで確認した</li>
+</ul>
+<h2 id="s14"><strong>よくある質問</strong></h2>
+<p><strong>Q. アプリのSDKを入れれば、ChatGPT広告のインストールを測れますか。</strong> OpenAIのアプリ用SDKは現在サポートされていません。MMP連携を使うか、自社のサーバーから Conversions API で app_installed を送ります。どちらの場合も、Webのデータソースの Pixel ID を使います。</p>
+<p><strong>Q. 対応しているMMPはどこですか。</strong> 2026年10月7日時点のヘルプで対応しているのは、Adjust・Airbridge・AppsFlyer・Branch・Kochava・Singular・Tenjinの7社です。ヘルプは、対応先が増えたら更新するとしています。</p>
+<p><strong>Q. アプリのインストールを成果最適化の目標にできますか。</strong> app_installed は対応イベントの一覧にあり、開発者向けドキュメントは標準イベントを成果最適化の目標に使えると説明しています。ただし成果最適化のヘルプにはアプリのイベントについての記載がなく、選べるかは書かれていません。Ads Managerの設定画面で確かめてください。選べない場合も、目的を「クリック」にしたキャンペーンで成果を計測できると、開発者向けドキュメントは説明しています。</p>
+<p><strong>Q. 配信面で「iOS app」を選べば、iPhoneユーザーにアプリを宣伝できますか。</strong> 「iOS app」は、ChatGPTのiOSアプリでの表示を指します。iPhoneのブラウザでChatGPTを使う人は「iOS web」です。iOS版のアプリを宣伝するなら、iOS app と iOS web を選ぶとChatGPTをiPhoneで使う人に絞れます（当社の提案）。</p>
+<p><strong>Q. iOSのインストールも、Androidと同じように測れますか。</strong> MMPのヘルプには、KochavaでChatGPT Ads – iOSのパートナーを選ぶ手順のように、iOS向けの設定も含まれています。ただし帰属はクリック基準で、Conversions API で送れる広告IDはAndroidのGAIDだけです。iOSのIDFAは対応していません。iOSでどこまで一致させられるかは、MMP側の仕組みにもよります。</p>
+<h2 id="s15"><strong>まとめ</strong></h2>
+<ul>
+<li>アプリのインストール・起動は、MMP連携（7社）か Conversions API で送る。Pixelは非対応</li>
+<li>アプリ用SDKとモバイルのデータソースは未対応。Webのデータソースの Pixel ID を使う</li>
+<li>帰属はクリック基準。MMPとAds Managerの帰属期間は別で、数字は一致しない前提で使い分ける</li>
+<li>MMPのリンクは、7社それぞれのヘルプどおりの欄に置く。転送先と審査の結果を確かめる</li>
+<li>配信面の iOS app・Android app はChatGPTのアプリのこと</li>
+<li>消費者向けの医療系アプリ・決済・暗号資産・出会い系などは日本向けに出せない区分。Webで体験できるならWebに送る設計も選べる</li>
+</ul>
+<p>自社のアプリでMMP連携とWebのどちらから始めるかを整理したい場合は、使っているMMPの名前と、最初の成果にしたい行動（インストール・登録・体験開始など）をお手元に用意のうえ<a href="https://ads.ikigaiinc.com/#cta">20分の無料相談</a>をご利用ください。</p>
+<h3 id="s16"><strong>出典</strong></h3>
+<ul>
+<li><a href="https://help.openai.com/en/articles/20001372-set-up-mobile-measurement-partner-integrations">Set up Mobile Measurement Partner Integrations</a>（対応7社、準備、各社の手順、クリック基準、帰属期間は別、Conversionsへの反映と24〜48時間、確認順）</li>
+<li><a href="https://developers.openai.com/ads/conversions-api">Conversions API</a>、<a href="https://developers.openai.com/ads/supported-events">Supported Events</a>、<a href="https://developers.openai.com/ads/measurement-pixel">Measurement Pixel</a>（いずれも開発者向け。app_installed・app_opened、mobile_app、Webのデータソースの Pixel ID、SDK未対応、GAIDとIDFA、直近7日以内、アプリのイベントのクリック基準、Pixelの非対応、Webのビュー経由を成果の合計に含めないという記述）</li>
+<li><a href="https://developers.openai.com/ads/conversion-tracking">Conversion Tracking（開発者向け）</a>、<a href="https://help.openai.com/en/articles/20001412-conversion-optimized-campaigns">Conversion-optimized Campaigns</a>（標準イベントを成果最適化の目標に使えること、クリック・表示のキャンペーンでの成果の計測、成果最適化のヘルプの対象イベント）</li>
+<li><a href="https://developers.openai.com/ads/campaign-targeting">Targeting（開発者向け）</a>、<a href="https://help.openai.com/en/articles/20001210-create-campaigns-for-chatgpt-ads">Create Campaigns for ChatGPT Ads</a>（配信面の意味と5つの選択肢、Platform別のレポート）</li>
+<li><a href="https://help.openai.com/en/articles/20001243-advertiser-guidance-for-allowing-openai-web-crawlers">Advertiser Guidance for Allowing OpenAI Web Crawlers</a>（アプリストアへのリンク・ディープリンク）</li>
+<li><a href="https://help.openai.com/en/articles/20001214-measure-results">Measure Results</a>、<a href="https://help.openai.com/en/articles/20001212-create-ads-for-chatgpt-ads">Create Ads for ChatGPT Ads</a>（パラメータの欄と優先順位、帰属期間と成果の合計へのビュー経由の算入、iOSアプリ内ブラウザでのURLの確認）</li>
+<li><a href="https://help.openai.com/en/articles/20001409-conversion-measurement">Conversion Measurement</a>（成果のデータの共有と同意）</li>
+<li><a href="https://help.openai.com/en/articles/20001346-set-up-custom-audiences-for-your-campaign">Set up Custom Audiences for your Campaign</a>（使える識別子、除外の規模）</li>
+<li><a href="https://help.openai.com/en/articles/20001217-troubleshooting-common-issues">Troubleshooting Common Issues</a>（否認理由の確認）</li>
+<li><a href="https://openai.com/policies/ad-policies/">OpenAI Ads Policies</a>、<a href="https://help.openai.com/en/articles/20001534-troubleshooting-common-onboarding-and-policy-issues">Troubleshooting Common Onboarding and Policy issues</a>（アプリに関わる区分、国別表）</li>
+<li>事例：<a href="https://ads.openai.com/customers/talkpal">AI語学学習アプリP</a>（広告の遷移先と計測の条件）</li>
+</ul>
+<p>いずれも2026年10月7日に本文を確認しています。事例の数値は各社が公表した条件での結果です。</p>
+<h3 id="s17"><strong>変更履歴</strong></h3>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>日付</strong></p>
+</th><th scope="col"><p><strong>内容</strong></p>
+</th></tr>
+<tr><td><p>2026年10月8日</p>
+</td><td><p>初版。ヘルプセンター10本、開発者向け文書5本、広告ポリシーv1.6、公式事例1件を本文確認</p>
+</td></tr>
+</table></div>
+<p><strong>次回確認予定：2026年11月上旬。</strong> 対応するMMPの追加、アプリ用SDK・モバイルのデータソースの対応、アプリストアへのリンクの審査の扱いを確認します。</p>
+</article></div><section class="consult"><div><span class="eyebrow">NEXT STEP</span><h2>自社の商材なら、<br>何から試す？</h2></div><div><p>商材・主要な成果・検証予算から、準備することを整理します。<br>広告や計測のどこから手をつけるか、まずはご相談ください。</p><a href="/#cta" class="button">ChatGPT広告の出稿・運用を相談する <span aria-hidden="true">↗</span></a><p class="small-text">GPT広告専門店の20分無料相談</p></div></section><section class="related"><div class="section-top"><p class="eyebrow">RELATED ARTICLES</p><h2>次に読む記事</h2></div><div class="cards two"><a class="article-card" href="/articles/chatgpt-ads-measurement/"><div class="card-visual"><img src="/articles/assets/measurement-roles.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">10 / 効果測定</span><h3>ChatGPT広告の効果測定｜Pixel・UTM・GA4で何を確認するか</h3><p>ChatGPT広告で最も多いつまずきは、配信そのものではなく計測です。クリックは取れているのに、その先が分からない。イベントは飛んでいるのに管理画面では0のまま。数字がGA4と合わない。</p><span class="card-bottom">2026.09.20 <span>記事を読む ↗</span></span></div></a><a class="article-card" href="/articles/chatgpt-ads-targeting/"><div class="card-visual"><img src="/articles/assets/targeting-scope.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">08 / ターゲティング</span><h3>ChatGPT広告のターゲティング｜指定できる条件と確認すべき制約</h3><p>ChatGPT広告には、検索広告のキーワードも、SNS広告の詳細な興味関心ターゲティングもありません。そのぶん、何をどこまで絞れるのかが分かりにくい媒体です。</p><span class="card-bottom">2026.09.20 <span>記事を読む ↗</span></span></div></a><a class="article-card" href="/articles/chatgpt-ads-education-case/"><div class="card-visual"><img src="/articles/assets/education-case.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">17 / 教育・語学事例</span><h3>ChatGPT広告の教育・語学事例｜無料体験と講座申込の結果をどう読むか</h3><p>ChatGPT広告の教育分野の公開事例2件を、成果の定義・期間・比較相手から読み解きます。語学学習アプリの体験開始単価が約51%低いという報告と、語学学校の1週間テストで成果1件という結果がなぜ同じ物差しで比べられないのか、日本の教育事業者が試すときの設計とあわせて整理します。</p><span class="card-bottom">2026.09.26 <span>記事を読む ↗</span></span></div></a><a class="article-card" href="/articles/chatgpt-ads-health-beauty/"><div class="card-visual"><img src="/articles/assets/health-beauty.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">38 / 美容・健康・医療</span><h3>美容・健康・医療はChatGPT広告に出せる？日本で可・不可の業種と表現の注意</h3><p>ChatGPT広告の規制領域の国別表では、日本を含む米国以外で「可」の健康分野はヘルスケア向けソフトウェアだけです。</p><span class="card-bottom">2026.10.08 <span>記事を読む ↗</span></span></div></a></div></section></div></main><footer class="site-footer"><div class="wrap"><a class="brand" href="/">GPT広告専門店<span>.</span></a><p>運営：株式会社Ikigai<br>本サービスはOpenAIの公式・公認・提携サービスではありません。</p><div class="footer-links"><a href="/articles/">記事一覧</a><a href="/">サービス・料金</a><a href="https://ikigaiinc.com/privacypolicy">プライバシーポリシー</a><a href="https://ikigaiinc.com">会社情報</a></div><small>© 2026 株式会社Ikigai. ChatGPT・OpenAIは各権利者の商標です。</small></div></footer><script>(function(){var K=['utm_source','utm_medium','utm_campaign','utm_content','utm_term'],q=new URLSearchParams(location.search),u={},any=false;K.forEach(function(k){var v=q.get(k);if(v){u[k]=v;any=true;}});try{if(any){sessionStorage.setItem('lp_utm',JSON.stringify(u));}}catch(e){}})();</script></body></html>
