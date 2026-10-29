@@ -1,0 +1,286 @@
+<!doctype html><html lang="ja"><head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W62G2NT3');</script>
+<!-- End Google Tag Manager -->
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>【2026年10月最新版】ChatGPT広告のPixel設置方法｜GTM・直接設置・イベントの選び方と動作確認｜GPT広告専門店</title><meta name="description" content="ChatGPT広告のPixelは、ページに入れるだけでは成果が計上されません。Pixel IDの作成、設置、成果の地点でのイベント送信、成果イベントの設定とキャンペーンへの紐づけの4つの手順と、GTMで設置する条件、イベントの選び方、動作確認の順番、同意・CSPの注意を公式資料をもとに整理します。"><link rel="canonical" href="https://ads.ikigaiinc.com/articles/chatgpt-ads-pixel/"><meta property="og:locale" content="ja_JP"><meta property="og:type" content="article"><meta property="og:site_name" content="GPT広告専門店"><meta property="og:title" content="【2026年10月最新版】ChatGPT広告のPixel設置方法｜GTM・直接設置・イベントの選び方と動作確認"><meta property="og:description" content="ChatGPT広告のPixelは、ページに入れるだけでは成果が計上されません。Pixel IDの作成、設置、成果の地点でのイベント送信、成果イベントの設定とキャンペーンへの紐づけの4つの手順と、GTMで設置する条件、イベントの選び方、動作確認の順番、同意・CSPの注意を公式資料をもとに整理します。"><meta property="og:url" content="https://ads.ikigaiinc.com/articles/chatgpt-ads-pixel/"><meta property="og:image" content="https://ads.ikigaiinc.com/articles/assets/pixel.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="760"><meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#10131A"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Noto+Sans+JP:wght@400;500;700;900&amp;display=swap" rel="stylesheet"><link rel="stylesheet" href="/articles/assets/style.css"><script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "【2026年10月最新版】ChatGPT広告のPixel設置方法｜GTM・直接設置・イベントの選び方と動作確認", "description": "ChatGPT広告のPixelは、ページに入れるだけでは成果が計上されません。Pixel IDの作成、設置、成果の地点でのイベント送信、成果イベントの設定とキャンペーンへの紐づけの4つの手順と、GTMで設置する条件、イベントの選び方、動作確認の順番、同意・CSPの注意を公式資料をもとに整理します。", "mainEntityOfPage": "https://ads.ikigaiinc.com/articles/chatgpt-ads-pixel/", "url": "https://ads.ikigaiinc.com/articles/chatgpt-ads-pixel/", "datePublished": "2026-10-29T00:00:00+09:00", "dateModified": "2026-10-29T00:00:00+09:00", "inLanguage": "ja", "author": {"@type": "Organization", "name": "GPT広告専門店（株式会社Ikigai）", "url": "https://ads.ikigaiinc.com/"}, "publisher": {"@type": "Organization", "name": "株式会社Ikigai", "url": "https://ikigaiinc.com"}, "image": "https://ads.ikigaiinc.com/articles/assets/pixel.png"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://ads.ikigaiinc.com/"}, {"@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://ads.ikigaiinc.com/articles/"}, {"@type": "ListItem", "position": 3, "name": "ChatGPT広告のPixel設置方法｜GTM・直接設置・イベントの選び方と動作確認", "item": "https://ads.ikigaiinc.com/articles/chatgpt-ads-pixel/"}]}]}</script></head><body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W62G2NT3"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<a class="skip" href="#main">本文へ移動</a><header class="site-header"><div class="wrap header-inner"><a class="brand" href="/">GPT広告専門店<span>.</span><small>by 株式会社Ikigai</small></a><nav aria-label="メインナビゲーション"><a href="/articles/">記事一覧</a><a class="button small" href="/#cta">無料相談 <span aria-hidden="true">↗</span></a></nav></div></header><main id="main"><div class="wrap"><nav class="breadcrumbs" aria-label="パンくず"><a href="/">ホーム</a><span>/</span><a href="/articles/">記事一覧</a><span>/</span><span>Pixelの設置</span></nav><header class="article-heading"><p class="eyebrow">CHATGPT ADS GUIDE <span>48 / Pixelの設置</span></p><p class="edition">2026年10月最新版</p><h1>ChatGPT広告のPixel設置方法｜GTM・直接設置・イベントの選び方と動作確認</h1><div class="byline"><span>企画・編集：GPT広告専門店（株式会社Ikigai）</span><time datetime="2026-10-29">公開：2026年10月29日／情報確認：2026年10月29日</time></div><p class="lead">ChatGPT広告のPixelは、ページに入れるだけでは成果が計上されません。Pixel IDの作成、設置、成果の地点でのイベント送信、成果イベントの設定とキャンペーンへの紐づけの4つの手順と、GTMで設置する条件、イベントの選び方、動作確認の順番、同意・CSPの注意を公式資料をもとに整理します。</p><p class="case-note">本記事は、OpenAIのヘルプセンターと開発者向けドキュメント（いずれも2026年10月29日に本文を確認）に基づいています。コードは開発者向けドキュメントの例をそのまま引用しています。設置方法の選び方と確認の順番は株式会社Ikigaiの見解です。</p></header><div class="reading-layout"><aside class="toc"><details open><summary>この記事の内容</summary><ol><li><a href="#s1">この記事の要点</a></li><li><a href="#s2">Pixelで成果が計上されるまでの4つの手順</a></li><li><a href="#s3">設置の方法を選ぶ：直接・GTM・画像タグ・Shopifyアプリ</a></li><li><a href="#s6">イベントの選び方と、金額の送り方</a></li><li><a href="#s8">成果イベントの設定とキャンペーンへの紐づけ</a></li><li><a href="#s9">同意（Cookie）・CSP・顧客情報の扱い</a></li><li><a href="#s13">動作確認の手順</a></li><li><a href="#s14">よくある失敗と確かめること</a></li><li><a href="#s15">この記事で分からないこと</a></li><li><a href="#s16">実装担当に渡すチェックリスト</a></li><li><a href="#s17">よくある質問</a></li><li><a href="#s18">まとめ</a></li></ol></details><a class="toc-back" href="/articles/">← すべての記事を見る</a></aside><article class="prose" aria-label="記事本文"><h2 id="s1"><strong>この記事の要点</strong></h2>
+<ol>
+<li><strong>Pixelは、読み込まれるだけでは成果になりません。</strong> データソース（Pixel ID）を作り、ページに設置し、購入や問い合わせが完了した場所でイベントを送り、そのイベントを成果イベントとして設定してキャンペーンに紐づけるまでが1セットです。公式のトラブル対応のヘルプも、Pixelが読み込まれていても、購入や問い合わせのイベントが送られていないことがあると書いています。</li>
+<li><strong>Google タグマネージャー（GTM）での設置は公式に認められていますが、条件があります。</strong> 正しいページで読み込み、初期化とイベントの呼び出しを妨げたり順番を入れ替えたりしないことです。OpenAIのヘルプにGTMの設定手順はなく、タグマネージャーの「発火した」という表示だけでは送信の確認になりません。</li>
+<li><strong>動作確認は、実際の成果を1件起こし、「送られた→受け取られた→計上された」を順に確かめます。</strong> debugモードのテストも集計から外れないため、テストの時刻・イベント名・イベントIDを記録します。広告に帰属した成果がレポートに載るまでは、24〜48時間ほど見込みます。</li>
+</ol>
+<p class="case-note"><strong>読んでほしい人</strong>：ChatGPT広告の成果の計測を準備する広告担当者と、Pixelを設置する開発者・タグの管理者。 <br><strong>この記事で扱わないこと</strong>：計測の全体像とUTMの設計は<a href="/articles/chatgpt-ads-measurement/">効果測定の記事</a>、サーバーから成果を送る方法は<a href="/articles/chatgpt-ads-conversions-api/">Conversions APIの記事</a>、GA4との接続は<a href="/articles/chatgpt-ads-ga4/">GA4連携の記事</a>、ビュー経由の成果の数え方は<a href="/articles/chatgpt-ads-view-through/">ビュースルーの記事</a>で扱います。</p>
+<h2 id="s2"><strong>Pixelで成果が計上されるまでの4つの手順</strong></h2>
+<p>ChatGPT広告のPixel（Measurement Pixel）は、Webサイトで起きた行動を、利用者のブラウザからOpenAIへ送る仕組みです。サーバーから送るConversions API（CAPI）と並ぶ計測の方法で、両方を併用することもできます。</p>
+<figure><a aria-label="図を拡大する" href="/articles/assets/pixel.png"><img alt="図1：Pixelで成果が計上されるまでの4つの手順。OpenAIのヘルプセンターと開発者向けドキュメントをもとに当社作成。" height="760" loading="lazy" src="/articles/assets/pixel.svg" width="1200"/></a><figcaption>図1：Pixelで成果が計上されるまでの4つの手順。OpenAIのヘルプセンターと開発者向けドキュメントをもとに当社作成。</figcaption></figure>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>手順</strong></p>
+</th><th scope="col"><p><strong>すること</strong></p>
+</th><th scope="col"><p><strong>主な担当（当社の見解）</strong></p>
+</th></tr>
+<tr><td><p>1. <span style="white-space:nowrap">Pixel</span> IDを作る</p>
+</td><td><p>Ads <span style="white-space:nowrap">Manager</span>の成果（<span style="white-space:nowrap">Conversions</span>）の画面でデータソースを作り、<span style="white-space:nowrap">Pixel</span> IDを得る</p>
+</td><td><p>広告担当</p>
+</td></tr>
+<tr><td><p>2. ページに設置する</p>
+</td><td><p>成果を測るページの&lt;head&gt;の上部にスニペットを置き、<span style="white-space:nowrap">Pixel</span> IDで初期化（init）する</p>
+</td><td><p>開発者・タグの管理者</p>
+</td></tr>
+<tr><td><p>3. 成果のイベントを送る</p>
+</td><td><p>購入完了・問い合わせ完了などの時点で <span style="white-space:nowrap">measure</span> を呼ぶ</p>
+</td><td><p>開発者</p>
+</td></tr>
+<tr><td><p>4. 確認して紐づける</p>
+</td><td><p>届いたかを確かめ、そのイベントを成果イベントとして設定し、配信前にキャンペーンへ紐づける</p>
+</td><td><p>広告担当と開発者</p>
+</td></tr>
+</table></div>
+<p>Pixel IDはデータソースを見分ける識別子で、PixelとConversions APIの両方で使います。同じWebサイトで両方を使う場合は、データソースを使い回します。ブラウザ側にAPIキーは不要で、ページのコードからConversions APIを直接呼ばないよう明記されています（開発者向けドキュメント）。</p>
+<p>手順3と4は別の作業です。成果イベントの設定はイベントを送りはしないため、どちらかが抜けると、Pixelが動いていても成果は0のままです。</p>
+<h2 id="s3"><strong>設置の方法を選ぶ：直接・GTM・画像タグ・Shopifyアプリ</strong></h2>
+<p>公式資料に出てくる入れ方を、5つに分けて比べます。</p>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>方法</strong></p>
+</th><th scope="col"><p><strong>向く場面</strong></p>
+</th><th scope="col"><p><strong>公式の記載</strong></p>
+</th><th scope="col"><p><strong>注意</strong></p>
+</th></tr>
+<tr><td><p>直接設置</p>
+</td><td><p>サイトのテンプレートを編集できる</p>
+</td><td><p>成果を測る各ページの&lt;head&gt;の上部に置く。上部に置くと、読み込みの途中で成果を取りこぼしにくい</p>
+</td><td><p>成果のイベントは別にコードで送る</p>
+</td></tr>
+<tr><td><p>GTM</p>
+</td><td><p>タグをGTMでまとめて管理している</p>
+</td><td><p>正しいページで読み込み、初期化とイベントの呼び出しを妨げず、順番も変えなければ可</p>
+</td><td><p><span style="white-space:nowrap">OpenAI</span>のヘルプにGTMの手順はない</p>
+</td></tr>
+<tr><td><p>画像タグ</p>
+</td><td><p><span style="white-space:nowrap">JavaScript</span>を実行しないページ、<span style="white-space:nowrap">JavaScript</span>の<span style="white-space:nowrap">Pixel</span>の予備</p>
+</td><td><p>&lt;body&gt;に非表示の1×1の画像を置き、1回の読み込みで1つのイベントを送る</p>
+</td><td><p>読み込みの後のクリックやフォーム送信は測れない</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">Shopify</span>の公式アプリ</p>
+</td><td><p><span style="white-space:nowrap">Shopify</span>のストア</p>
+</td><td><p><span style="white-space:nowrap">OpenAI</span> <span style="white-space:nowrap">Pixel</span> for <span style="white-space:nowrap">Shopify</span>を選ぶか作って接続すると、対象のコマースイベントが送られる</p>
+</td><td><p>2026年10月29日時点のヘルプでは米国の<span style="white-space:nowrap">Shopify</span>事業者に提供中（<a href="/articles/chatgpt-ads-shopify/"><span style="white-space:nowrap">Shopify</span>の記事</a>）</p>
+</td></tr>
+<tr><td><p>計測パートナー・実装ツール</p>
+</td><td><p>顧客データの基盤や計測ツールから送る</p>
+</td><td><p>できることと手順はパートナーごとに違う</p>
+</td><td><p>各社のドキュメントで確かめる</p>
+</td></tr>
+</table></div>
+<h3 id="s4"><strong>GTMで設置するとき</strong></h3>
+<p>ヘルプ（Measure Results）は、GTMで確実に読み込めない場合は直接設置かサーバー側の計測を使うよう案内しています。GTMのタグの種類やトリガーの設定手順は、確認した範囲のOpenAIのヘルプにも開発者向けドキュメントにも書かれていません。一方、2026年10月29日時点の計測パートナーのヘルプには、第三者のStapeがPixelとConversions APIのGTMテンプレートを提供していると載っています（10月7日時点のヘルプにはなかった記載です）。開発と保守は第三者が行い、手順はStapeのガイドを見るよう案内されています。</p>
+<p>GTMで入れる場合に当社が確かめるのは、次の5点です。</p>
+<ul>
+<li>初期化（init）が、成果のイベントを送る呼び出しより先に動いている</li>
+<li>成果のイベントは、完了ページや送信完了のときにだけ動き、再読み込みで重ならない</li>
+<li>同意の管理ツールと連動させている場合、同意の前にPixelが送信しない</li>
+<li>トリガーを、広告からの訪問（URLにopprefがあるとき）だけに絞っていない。2026年10月29日時点のヘルプは、opprefの付いた成果に限らず、送ってよい成果はすべて送るよう書いている</li>
+<li>GTMのプレビューの「発火」だけで終わらせず、ブラウザのコンソールと通信まで確かめる（ヘルプも、タグマネージャーの「fired」の表示だけでは送信の確認にならないとしている）</li>
+</ul>
+<h3 id="s5"><strong>画像タグ：JavaScriptを使わない送り方</strong></h3>
+<p>画像タグは、Pixel ID・イベント名・データの種類をURLのパラメータに入れた非表示の画像で、ページの読み込み時に1つのイベントを送ります。同意が必要なサイトでは、同意を得てから画像を出します。opprefは自動で取らず、顧客情報も送れません。開発者向けドキュメントは、個人のデータ、セッションID、顧客ID、注文IDなどをどのパラメータにも入れないよう書いています。イベントIDもパラメータの1つなので、JavaScriptのPixelの例のように注文番号をそのままイベントIDにはしません（当社の読み）。</p>
+<h2 id="s6"><strong>イベントの選び方と、金額の送り方</strong></h2>
+<p>送るイベントは、標準イベントから選ぶのが基本です。開発者向けドキュメントは、標準イベントで表せない行動にだけカスタムイベントを使うよう書いています。標準イベントは12種類で、そのうちアプリのインストールと起動（app_installed・app_opened）はPixelでは送れず、Conversions APIだけで送ります。</p>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>事業の型（例）</strong></p>
+</th><th scope="col"><p><strong>主な成果のイベント</strong></p>
+</th><th scope="col"><p><strong>途中の行動のイベント</strong></p>
+</th></tr>
+<tr><td><p>EC・通販</p>
+</td><td><p><span style="white-space:nowrap">order</span>_<span style="white-space:nowrap">created</span>（購入完了）</p>
+</td><td><p><span style="white-space:nowrap">contents</span>_<span style="white-space:nowrap">viewed</span>（商品の閲覧）、<span style="white-space:nowrap">items</span>_<span style="white-space:nowrap">added</span>（カートへの追加）、<span style="white-space:nowrap">checkout</span>_<span style="white-space:nowrap">started</span>（購入手続きの開始）</p>
+</td></tr>
+<tr><td><p>問い合わせ・資料請求</p>
+</td><td><p>lead_<span style="white-space:nowrap">created</span>（フォーム送信・連絡の依頼）</p>
+</td><td><p>page_<span style="white-space:nowrap">viewed</span>（料金ページなど重要なページの閲覧）</p>
+</td></tr>
+<tr><td><p>来店・面談・商談の予約</p>
+</td><td><p><span style="white-space:nowrap">appointment</span>_<span style="white-space:nowrap">scheduled</span>（会議・デモ・相談の予約）</p>
+</td><td><p>lead_<span style="white-space:nowrap">created</span>、page_<span style="white-space:nowrap">viewed</span></p>
+</td></tr>
+<tr><td><p>会員登録・イベントの申込</p>
+</td><td><p><span style="white-space:nowrap">registration</span>_<span style="white-space:nowrap">completed</span>（アカウントやイベントの登録完了）</p>
+</td><td><p>page_<span style="white-space:nowrap">viewed</span></p>
+</td></tr>
+<tr><td><p>サブスク・SaaS</p>
+</td><td><p><span style="white-space:nowrap">trial</span>_<span style="white-space:nowrap">started</span>（無料体験の開始）、<span style="white-space:nowrap">subscription</span>_<span style="white-space:nowrap">created</span>（有料契約の開始）</p>
+</td><td><p>page_<span style="white-space:nowrap">viewed</span>、lead_<span style="white-space:nowrap">created</span></p>
+</td></tr>
+<tr><td><p>アプリ</p>
+</td><td><p>app_<span style="white-space:nowrap">installed</span>、app_<span style="white-space:nowrap">opened</span></p>
+</td><td><p>（どちらも<span style="white-space:nowrap">Pixel</span>では送れない。<span style="white-space:nowrap">Conversions</span> APIかMMPで送る）</p>
+</td></tr>
+</table></div>
+<p>イベント名と用途は開発者向けドキュメント（Supported Events）の記載で、事業の型への当てはめは当社の提案です。アプリの計測は<a href="/articles/chatgpt-ads-app/">アプリの記事</a>で扱っています。</p>
+<p>主な成果は標準イベントにしておくことを、当社は勧めます。理由は3つです。成果最適化（Conversion optimization）のキャンペーンで目標にできるのは標準イベント1つだけで（カスタムイベントは現在対象外）、作成後に変更できません。売上とROASの列（Order Created Sales・Order Created ROAS）は、order_created からだけ計算されます。イベント品質の評価には、閲覧・途中の行動・完了の各段階に標準イベントが届いているかを見る項目があり、この項目ではカスタムイベントは数えられません。ただしヘルプは、警告を消すために実際にない段階を作らないよう求めています。送るのは、実在する途中の行動だけです。</p>
+<p>ページの読み込みには page_viewed を、特定の商品や記事の閲覧には contents_viewed を使います。contents_viewed は、ページの読み込みの後に起きた閲覧にも使えます。</p>
+<p>カスタムイベントの名前は1〜64文字の英数字・アンダースコア・ハイフンで、英数字で始まって終わり、標準イベントと同じ名前は使えません（小文字が推奨）。Ads Managerの成果イベントの設定では種類を「Custom」にし、名前を送るイベントと完全に一致させます。表示名の一致では足りません。</p>
+<h3 id="s7"><strong>金額は「通貨の最小単位の整数」で送る</strong></h3>
+<p>金額（amount）は、ISO 4217にもとづく通貨の最小単位の整数で送り、金額を送るときは通貨（currency）も付けます。開発者向けドキュメントの例では、89.00米ドルは8900、8,900円も8900です。円はそのままの数になり、米ドルの例をまねて100倍にすると、売上が100倍で記録されます（当社の注意）。公式の購入の例は次のとおりです（Conversion Tracking。89.00米ドルの購入を、注文IDをイベントIDにして送る）。</p>
+<pre class="case-note" style="white-space:pre-wrap;overflow-wrap:anywhere;font-family:inherit;font-size:14px;line-height:1.9;margin:24px 0">oaiq(
+  "measure",
+  "order_created",
+  {
+    type: "contents",
+    amount: 8900,
+    currency: "USD",
+  },
+  { event_id: "order_12345" }
+);</pre>
+<p>商品ごとの金額（contents の amount）は1単位の価格で、数量は quantity で別に送ります。イベントの amount は、イベント全体の金額です。1個3,000円の商品を2個だけ買い、値引きや送料などの調整がない注文なら、商品ごとの amount は3000、quantity は2、イベントの amount は6000です（当社の当てはめ）。2026年10月7日時点の説明は「商品ごとの金額（item-level monetary value）」で、10月29日時点で「1単位の価格。数量は別に送る」と明記され、計算例も加わりました（当社が保存した本文の比較）。単価×数量を入れていた実装は見直します（当社の見解）。</p>
+<p>ヘルプは、売上を比べるときに税・送料・割引・手数料の扱いを確かめ、ブラウザとサーバーで同じ注文金額を送るよう書いています。どこまでを売上に含めるかは、先に社内で決めておきます（当社の提案）。</p>
+<h2 id="s8"><strong>成果イベントの設定とキャンペーンへの紐づけ</strong></h2>
+<p>成果イベントの設定（conversion event setting）は、どのデータソースのどのイベントを成果として数えるかを決めるもので、1つの設定で選べるデータソースは1つです。イベントが送られて受け付けられていても、キャンペーンに設定した成果イベントと一致しなければ、Ads Managerでは0と表示されます。正しい成果イベントは配信を始める前にキャンペーンへ紐づけ、設定を直しても過去のイベントは遡って計上されません（ヘルプ。<a href="/articles/chatgpt-ads-measurement/">効果測定の記事</a>でも扱っています）。</p>
+<p>開発者向けドキュメントは、クリックや表示（impressions）のキャンペーンでも、目的を変えずに成果イベントの設定を紐づけて計測できると書いています（APIの例。管理画面での紐づけ方はヘルプに見当たりません）。成果最適化のキャンペーンは作成時に標準イベントを1つ選び、後から変えられないため、目標にする行動はキャンペーンを作る前に決めます。</p>
+<h2 id="s9"><strong>同意（Cookie）・CSP・顧客情報の扱い</strong></h2>
+<h3 id="s10"><strong>同意が必要なサイトでは、初期化の前に止める</strong></h3>
+<p>OpenAIのヘルプは、集めるデータを利用者に分かりやすく説明し、法令で必要な同意を得たうえで成果のデータを送るよう求めています。計測の数を増やすために同意の仕組みを外さないことも明記しています。Pixelには同意の機能があり、初期化の前に「同意なし」にして、同意を得てから「同意あり」に切り替えます。</p>
+<pre class="case-note" style="white-space:pre-wrap;overflow-wrap:anywhere;font-family:inherit;font-size:14px;line-height:1.9;margin:24px 0">oaiq("consent", false);
+oaiq("init", {
+  pixelId: "&lt;YOUR-PIXEL-ID&gt;",
+});
+// Call this after the user grants measurement consent.
+oaiq("consent", true);</pre>
+<p>同意の状態は、false にしない限り、または保存された拒否がない限り、初期設定で true です。false の間はイベントを送らず、止めていた間のイベントは後から送り直されません。同意のバナーを出すサイトでは、同意しなかった人や同意の前の成果は計測されない前提で数字を読みます（当社の見解）。国内の法令（個人情報や外部への送信の扱い）への対応は、OpenAIの説明とは別に、自社のプライバシーポリシーと合わせて確かめます。</p>
+<p>なお、イベントの opt_out は将来の利用者ごとのパーソナライズから外す項目で、計測は止めません（OpenAIは現在、Pixelのデータをこの用途に使っていないとしています）。</p>
+<h3 id="s11"><strong>PixelのCookieとCSP</strong></h3>
+<p>同意がある場合、Pixelはサイトのファーストパーティ Cookie を2つ使います。参照値（oppref）を入れる __oppref は30日で、URLのopprefを受け取るたびに30日に戻ります。ランダムに作るブラウザの参照値を入れる __obref は作成から365日です。consent を false にすると両方が削除されます。この保存期間は、成果の帰属期間やデータの保管期間とは別です。</p>
+<p>CSP（コンテンツセキュリティポリシー）を設定しているサイトでは、次の送信先を既存のポリシーに足します。Pixelのためだけに 'unsafe-inline' を足さず、nonceかハッシュで許可するよう書かれています。</p>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>項目</strong></p>
+</th><th scope="col"><p><strong>送信先</strong></p>
+</th><th scope="col"><p><strong>用途</strong></p>
+</th></tr>
+<tr><td><p><span style="white-space:nowrap">script</span>-src</p>
+</td><td><p><span style="white-space:nowrap">https</span>://<span style="white-space:nowrap">bzrcdn</span>.<span style="white-space:nowrap">openai</span>.com</p>
+</td><td><p><span style="white-space:nowrap">Pixel</span>のSDKの読み込み</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">connect</span>-src</p>
+</td><td><p><span style="white-space:nowrap">https</span>://bzr.<span style="white-space:nowrap">openai</span>.com</p>
+</td><td><p>イベントの送信</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">connect</span>-src</p>
+</td><td><p><span style="white-space:nowrap">https</span>://<span style="white-space:nowrap">bzrcdn</span>.<span style="white-space:nowrap">openai</span>.com</p>
+</td><td><p><span style="white-space:nowrap">Pixel</span>ごとの設定の取得</p>
+</td></tr>
+<tr><td><p>img-src</p>
+</td><td><p><span style="white-space:nowrap">https</span>://bzr.<span style="white-space:nowrap">openai</span>.com</p>
+</td><td><p>画像のリクエストでの送信（予備）</p>
+</td></tr>
+</table></div>
+<h3 id="s12"><strong>顧客情報：自動詳細マッチングと手動の送信</strong></h3>
+<p>自動詳細マッチング（automatic advanced matching）は、広告のクリックの識別子が得られないときに、成果を広告に結びつけるための仕組みです。サイトのフォームなどから対応する顧客情報をPixelが見つけ、ブラウザの中で正規化してSHA-256でハッシュ化し、成果のイベントに添えます。元の顧客情報はこの仕組みでは送られず、実装の変更も不要です。成果最適化のヘルプは有効にするよう勧め、開発者向けドキュメントはAPIで作ったWebのPixelは自動で使うとしていますが、管理画面での設定の場所はヘルプに見当たりません。</p>
+<p>顧客情報を自分で送る場合は、初期化（init）に user の項目を付けます。メールアドレス・電話番号・氏名・自社の顧客IDは正規化してからハッシュ化し、国・都道府県・市区町村・郵便番号はハッシュ化せずに送ります。正規化とハッシュ化の規則はConversions APIと同じで、<a href="/articles/chatgpt-ads-conversions-api/">Conversions APIの記事</a>で扱っています。どちらの方法も、プライバシーポリシーと同意の設計に照らして使うかを決めます（当社の見解）。</p>
+<h2 id="s13"><strong>動作確認の手順</strong></h2>
+<p>計測のトラブル対応のヘルプは、完了した購入や問い合わせを1件起こし、何がいつ起きたかを記録してから確かめるよう勧めています。当社は次の順番で確かめます。</p>
+<ol>
+<li><strong>記録を作る。</strong> テストする行動、時刻（タイムゾーンも）、イベント名、イベントIDを記録し、テストであることを社内の記録に残す</li>
+<li><strong>送信を確かめる。</strong> テスト中は init に debug: true を加え、ブラウザのコンソールでPixelの動きを、通信（ネットワーク）でイベントのリクエストが出ているかを見る</li>
+<li><strong>受信を確かめる。</strong> 開発者は、利用できる場合、Advertiser APIで直近のイベント（recent events）を取り、イベントの種類・データソース・経路（ブラウザからは pixel_sdk）を確かめる。直近およそ15分の見本で、履歴や帰属の結果ではない</li>
+<li><strong>計上を確かめる。</strong> 24〜48時間ほど後に、Ads Managerの「Edit columns」で成果イベントの列を足し、広告のクリック（または対象の表示）の後に起きた成果が載るかを見る。広告を経ていないテストの成果は、届いていても計上されない</li>
+<li><strong>イベント品質を見る。</strong> データソースのイベント品質の警告を確かめる。直近の7日分（暦日）をもとに毎日更新され、設定を直した後の改善はゆっくり表れる。スコアが低い・出ないだけでは、計測が壊れているとは言えない</li>
+</ol>
+<p>ヘルプは、Pixelのdebugモードは動きを記録するだけで、テストのイベントを集計から外さないと書いています。架空の購入を作ったり、時刻を変えて結果を合わせたりしないことも求めています。実装のテストが成功しても、広告に計上されるとは限りません。計上されるのは、キャンペーンの成果イベントと一致し、帰属期間の中で、対象となる広告のクリック（ビュー経由では表示）と結びつけられたときです。</p>
+<h2 id="s14"><strong>よくある失敗と確かめること</strong></h2>
+<p>計測のトラブル対応のヘルプ（2026年10月7日時点にはなかった新しいページ）から、Pixelの設置で起きやすいものを抜き出しました。</p>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>症状</strong></p>
+</th><th scope="col"><p><strong>よくある原因</strong></p>
+</th><th scope="col"><p><strong>確かめること</strong></p>
+</th></tr>
+<tr><td><p><span style="white-space:nowrap">Pixel</span>は入っているのに、購入や問い合わせが出ない</p>
+</td><td><p>成果のイベントを送っていない。ページの閲覧は購入の完了ではない</p>
+</td><td><p>完了ページや送信完了の処理で <span style="white-space:nowrap">measure</span> が呼ばれているか</p>
+</td></tr>
+<tr><td><p>タグマネージャーでは動いているのに届かない</p>
+</td><td><p>初期化より先にイベントを呼んでいる。同意の選択・ブラウザのブロック・CSPで止まっている</p>
+</td><td><p>コンソールと通信、CSPの許可先</p>
+</td></tr>
+<tr><td><p>LPでは動くのに成果が出ない</p>
+</td><td><p>決済・予約サイト・埋め込みフォーム・ログイン後のページ・転送先にイベントがない。転送やLP内の移動で<span style="white-space:nowrap">oppref</span>が落ちている</p>
+</td><td><p>成果が起きるページごとの送信と、URLの<span style="white-space:nowrap">oppref</span>の引き継ぎ</p>
+</td></tr>
+<tr><td><p>受け取られているのに成果が0</p>
+</td><td><p>成果イベントの設定とイベントが一致しない。紐づけが確かめたい行動の後だった。広告のクリックや表示の後の成果ではない</p>
+</td><td><p>種類とカスタムイベントの名前の完全一致、紐づけた時期、帰属期間、見ている列・期間</p>
+</td></tr>
+<tr><td><p>同じ購入が2回送られる</p>
+</td><td><p>タグの重複、再読み込み、処理の呼び直し、<span style="white-space:nowrap">Shopify</span>のアプリなど別の連携が同じイベントを送っている</p>
+</td><td><p>同じ行動に同じイベントID、重複したタグの削除</p>
+</td></tr>
+</table></div>
+<p>ヘルプは、送信のリクエストが出ていないならレポートを待っても直らないと書いています。まず送信を直し、別の連携を足す前にPixelのトラブル対応の手順を試すよう勧めています。</p>
+<h2 id="s15"><strong>この記事で分からないこと</strong></h2>
+<ul>
+<li><strong>管理画面でPixel IDと成果イベントを作る具体的な操作。</strong> ヘルプには「成果（Conversions）の画面」「Data Sources」までしか書かれていません</li>
+<li><strong>クリック・表示のキャンペーンに、管理画面で成果イベントを紐づける場所。</strong> 開発者向けドキュメントにAPIでの方法があるだけです</li>
+<li><strong>自動詳細マッチングを管理画面でオン・オフする場所と、管理画面で作ったPixelの初期の状態。</strong></li>
+<li><strong>Pixelを初期化しただけで、ページの閲覧（page_viewed）が自動で送られるか。</strong> 記載がないため、必要なら measure で送る前提で設計します</li>
+<li><strong>OpenAIが用意したGTMのテンプレートや設定手順。</strong> 確認した範囲にはなく、第三者のStapeのテンプレートが紹介されています</li>
+<li><strong>日本のShopifyストアで、公式アプリのPixelが使えるか。</strong> 2026年10月29日時点のヘルプは、米国の全Shopify事業者に提供中で、ChatGPT広告の提供地域でもまもなく使えるようになると書いており、時期は書かれていません</li>
+<li><strong>成果の合計にビュー経由を含めるか。</strong> ヘルプと開発者向けのPixelのページで記述が分かれています（よくある質問を参照）</li>
+</ul>
+<h2 id="s16"><strong>実装担当に渡すチェックリスト</strong></h2>
+<ul>
+<li>[ ] 成果の地点（URLまたは操作）と送る標準イベントを決めた。カスタムイベントは標準イベントで表せない場合だけにした</li>
+<li>[ ] 同じサイトで使うデータソース（Pixel ID）を1つにした</li>
+<li>[ ] 成果を測るすべてのページ（決済・予約・ログイン後・転送先を含む）の&lt;head&gt;の上部にPixelを置いた</li>
+<li>[ ] GTMで入れる場合、初期化がイベントより先に動き、成果のイベントが完了のときだけ動くことを確かめた</li>
+<li>[ ] 同意が必要なサイトでは、初期化の前に consent を false にし、同意を得てから true にしている</li>
+<li>[ ] CSPを使うサイトでは、必要な送信先をポリシーに足した</li>
+<li>[ ] 転送やLP内の移動で、URLのopprefを落としていない</li>
+<li>[ ] 金額は円の整数（8,900円なら8900）で送り、税・送料・割引を含めるかを決めた</li>
+<li>[ ] 同じ行動には同じイベントIDを、別の行動には別のイベントIDを使う</li>
+<li>[ ] 成果イベントを設定し、配信を始める前にキャンペーンへ紐づけた</li>
+<li>[ ] テストの時刻・イベント名・イベントIDを記録し、送信・受信・計上を順に確かめた</li>
+</ul>
+<h2 id="s17"><strong>よくある質問</strong></h2>
+<p><strong>Q. Pixelを入れると、何が自動で行われますか。</strong> 開発者向けドキュメントによると、LPのURLから参照値（oppref）を取ってCookieに保存すること、イベントに送信元のページのオリジンと時刻を付けること、近い時間のイベントをまとめて送ることです。自動詳細マッチングが有効なら、フォームなどの顧客情報のハッシュ化も自動で行われます。購入や問い合わせのイベントは自動では送られないため、完了したときに measure で送ります。</p>
+<p><strong>Q. 1つのサイトで、複数の広告主やブランドの成果を測れますか。</strong> 測れます。開発者向けドキュメントによると、SDKを1回だけ読み込み、Pixel IDごとに初期化します。measure は初期化済みのすべてのPixel IDに送られ、measureSingle を使うと1つのPixel IDだけに送れます。後から初期化したPixel IDは、それより前のイベントを受け取りません。</p>
+<p><strong>Q. 問い合わせフォームが外部のサービスで、完了ページにタグを置けません。</strong> ヘルプは、予約サイトや埋め込みのフォームでは、LPのPixelが動いていても計測できているとは限らないと書いています。まず、そのサービスが計測タグの設置に対応しているかを確かめます。対応していなければ、受け付けたデータをサーバーや顧客管理の仕組みから、Conversions APIや計測パートナーで送る方法を検討します。その場合、広告のクリックの参照値（oppref）をどう受け渡すかを設計に含めます（当社の提案）。</p>
+<p><strong>Q. テストの購入は、本番の数字に入りますか。</strong> 入る可能性があります。ヘルプは、Pixelのdebugモードはテストのイベントを集計から外さないと書いています。テストの時刻・イベント名・イベントIDを記録しておきます。画像タグの開発者向けドキュメントは、テストの送信にはできればテスト用のPixel IDを使うよう書いています。サーバーから送る場合は、保存せずに検証だけを行う validate_only が使えます（<a href="/articles/chatgpt-ads-conversions-api/">Conversions APIの記事</a>）。</p>
+<p><strong>Q. ビュー経由の成果を測るために、Pixelを変える必要はありますか。</strong> 必要ありません。同じイベントがクリック経由とビュー経由の両方に使われます。ただし、成果の合計（Conversions）にビュー経由を含めるかは、2026年10月29日時点でも記述が分かれています。ヘルプ（Measure Results、計測のトラブル対応）は「ビューの帰属期間が1日なら含める」、開発者向けのMeasurement Pixelのページは「キャンペーン単位の別の指標で、合計には含めない」です。自社のAds Managerで帰属期間の設定と内訳を確かめてください（<a href="/articles/chatgpt-ads-view-through/">ビュースルーの記事</a>）。</p>
+<h2 id="s18"><strong>まとめ</strong></h2>
+<ul>
+<li>Pixelは、Pixel IDの作成、ページへの設置と初期化、成果の地点でのイベント送信、成果イベントの設定と紐づけ、の4つがそろって成果が計上される</li>
+<li>GTMでの設置は公式に可。初期化とイベントの呼び出しを妨げず、順番を変えないこと。確かめるのはブラウザの通信</li>
+<li>主な成果は標準イベントにする。成果最適化の目標・売上の列・イベント品質の評価が標準イベントを前提にしている</li>
+<li>金額は通貨の最小単位の整数。8,900円なら8900。商品ごとの amount は1単位の価格</li>
+<li>同意が必要なサイトは初期化の前に止め、同意の後に再開する。止めていた間のイベントは送り直されない</li>
+<li>テストは実際の成果1件で、送信・受信・計上を順に確かめる。debugモードのテストも集計から外れない</li>
+</ul>
+<p>Pixelの設置箇所とイベントの設計を一緒に確かめたい場合は、成果の地点のURL、現在のタグの設置状況（GTMの利用の有無など）、同意バナーの仕様をお手元に用意のうえ<a href="https://ads.ikigaiinc.com/#cta">20分の無料相談</a>をご利用ください。</p>
+<h3 id="s19"><strong>出典</strong></h3>
+<ul>
+<li><a href="https://help.openai.com/en/articles/20001409-conversion-measurement">Conversion Measurement</a>（データソースとPixel・CAPI、成果が計上される条件、opprefとCookie、opprefの付かない成果も送ること、自動詳細マッチング、同意）</li>
+<li><a href="https://help.openai.com/en/articles/20001604-troubleshooting-conversion-tracking-for-chatgpt-ads">Troubleshooting conversion tracking for ChatGPT Ads</a>（Pixelが読み込まれても成果のイベントが送られない例、タグマネージャーの表示、確かめるページ、テストとdebugモード、同意、重複、売上の比較）</li>
+<li><a href="https://help.openai.com/en/articles/20001214-measure-results">Measure Results</a>（GTMでの設置の条件、イベント不一致で0・遡らないこと、成果の列の追加、売上とROASの列、反映時間、ビュー経由の合計）</li>
+<li><a href="https://help.openai.com/en/articles/20001513-understanding-and-improving-event-quality">Understanding and improving event quality</a>（評価の期間と更新、イベントの段階の評価、実際にない段階を作らない）</li>
+<li><a href="https://help.openai.com/en/articles/20001412-conversion-optimized-campaigns">Conversion-optimized Campaigns</a>（標準イベントのみ、作成後に変更不可、自動詳細マッチングの推奨）</li>
+<li><a href="https://help.openai.com/en/articles/20001416-set-up-measurement-partner-integrations">Set up Measurement Partner Integrations</a>（StapeのGTMテンプレート、計測パートナー）</li>
+<li><a href="https://help.openai.com/en/articles/20001523-set-up-chatgpt-ads-for-shopify">Set up ChatGPT Ads for Shopify</a>（OpenAI Pixel for Shopify、提供地域）</li>
+<li><a href="https://developers.openai.com/ads/measurement-pixel">Measurement Pixel</a>（スニペットの置き場所、debug、同意、CSP、user、自動詳細マッチング、カスタムイベントの名前、自動で行う処理、Cookie、ビュー経由の記述）</li>
+<li><a href="https://developers.openai.com/ads/multiple-pixels">Multiple Pixel IDs</a>（複数のPixel ID、measureSingle）</li>
+<li><a href="https://developers.openai.com/ads/image-tag">Image Tag</a>（画像タグの置き方・制約・テスト用のPixel ID）</li>
+<li><a href="https://developers.openai.com/ads/supported-events">Supported Events</a>（標準イベント、Pixelで送れないイベント、データの形、金額の単位、1単位の価格と合計）</li>
+<li><a href="https://developers.openai.com/ads/conversion-tracking">Conversion Tracking</a>（データソース・成果イベントの設定・キャンペーンの関係、円の金額の例、購入の例、直近のイベントの確認、目的を変えない計測）</li>
+<li><a href="https://developers.openai.com/ads/api-partner-setup">API Partner Setup</a>（APIで作ったWebのPixelは自動詳細マッチングを使う）</li>
+</ul>
+<p>いずれも2026年10月29日に本文を確認しています。2026年10月7日時点との比較は、当社が同日に保存した本文との比較です。</p>
+<h3 id="s20"><strong>変更履歴</strong></h3>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>日付</strong></p>
+</th><th scope="col"><p><strong>内容</strong></p>
+</th></tr>
+<tr><td><p>2026年10月29日</p>
+</td><td><p>初版。ヘルプセンター7本、開発者向けドキュメント6本の本文を確認</p>
+</td></tr>
+</table></div>
+<p><strong>次回確認予定：2026年11月上旬。</strong> 管理画面での成果イベントの紐づけ方と自動詳細マッチングの設定の場所、GTMでの設置の案内、ビュー経由の記述の食い違い、Shopifyのアプリの提供地域を確認します。</p>
+</article></div><section class="consult"><div><span class="eyebrow">NEXT STEP</span><h2>自社の商材なら、<br>何から試す？</h2></div><div><p>商材・主要な成果・検証予算から、準備することを整理します。<br>広告や計測のどこから手をつけるか、まずはご相談ください。</p><a href="/#cta" class="button">ChatGPT広告の出稿・運用を相談する <span aria-hidden="true">↗</span></a><p class="small-text">GPT広告専門店の20分無料相談</p></div></section><section class="related"><div class="section-top"><p class="eyebrow">RELATED ARTICLES</p><h2>次に読む記事</h2></div><div class="cards two"><a class="article-card" href="/articles/chatgpt-ads-measurement/"><div class="card-visual"><img src="/articles/assets/measurement-roles.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">10 / 効果測定</span><h3>ChatGPT広告の効果測定｜Pixel・UTM・GA4で何を確認するか</h3><p>ChatGPT広告で最も多いつまずきは、配信そのものではなく計測です。クリックは取れているのに、その先が分からない。イベントは飛んでいるのに管理画面では0のまま。数字がGA4と合わない。</p><span class="card-bottom">2026.09.20 <span>記事を読む ↗</span></span></div></a><a class="article-card" href="/articles/chatgpt-ads-no-conversions/"><div class="card-visual"><img src="/articles/assets/no-conversions.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">20 / 成果改善</span><h3>ChatGPT広告で成果が出ないとき｜計測・導線・母数の確認順</h3><p>ChatGPT広告でクリックはあるのに問い合わせや購入が出ないときは、計測、サイト到達、LPの導線、母数、相談場面の順に確認します。</p><span class="card-bottom">2026.09.26 <span>記事を読む ↗</span></span></div></a><a class="article-card" href="/articles/chatgpt-ads-conversions-api/"><div class="card-visual"><img src="/articles/assets/conversions-api.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">49 / Conversions API</span><h3>ChatGPT広告のConversions API｜Pixelとの併用・重複の防ぎ方・実装前の準備</h3><p>ChatGPT広告のConversions API（CAPI）は、注文の確定などをサーバーから送る計測の方法です。</p><span class="card-bottom">2026.10.29 <span>記事を読む ↗</span></span></div></a><a class="article-card" href="/articles/chatgpt-ads-ga4/"><div class="card-visual"><img src="/articles/assets/ga4.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">50 / GA4連携</span><h3>ChatGPT広告とGA4の連携｜接続手順・ベータの条件・数字が合わない理由</h3><p>ChatGPT広告のAds ManagerにはGA4を接続する機能（ベータ）があります。2026年10月29日時点のヘルプをもとに、提供の条件、必要な権限と社内の承認、接続とイベントの対応づけの手順、取り込まれるデータの意味、Ads ManagerとGA4の数字が合わない理由と比べ方を整理します。</p><span class="card-bottom">2026.10.29 <span>記事を読む ↗</span></span></div></a></div></section></div></main><footer class="site-footer"><div class="wrap"><a class="brand" href="/">GPT広告専門店<span>.</span></a><p>運営：株式会社Ikigai<br>本サービスはOpenAIの公式・公認・提携サービスではありません。</p><div class="footer-links"><a href="/articles/">記事一覧</a><a href="/">サービス・料金</a><a href="https://ikigaiinc.com/privacypolicy">プライバシーポリシー</a><a href="https://ikigaiinc.com">会社情報</a></div><small>© 2026 株式会社Ikigai. ChatGPT・OpenAIは各権利者の商標です。</small></div></footer><script>(function(){var K=['utm_source','utm_medium','utm_campaign','utm_content','utm_term'],q=new URLSearchParams(location.search),u={},any=false;K.forEach(function(k){var v=q.get(k);if(v){u[k]=v;any=true;}});try{if(any){sessionStorage.setItem('lp_utm',JSON.stringify(u));}}catch(e){}})();</script></body></html>
