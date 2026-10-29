@@ -1,0 +1,242 @@
+<!doctype html><html lang="ja"><head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W62G2NT3');</script>
+<!-- End Google Tag Manager -->
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>【2026年10月最新版】ChatGPT広告のクローラー許可｜OAI-AdsBotを止めない設定と、LPが読めないときの対処｜GPT広告専門店</title><meta name="description" content="ChatGPT広告の審査では、OpenAIのクローラーOAI-AdsBotがリンク先を読めることが必須です。2026年10月29日時点のヘルプで変わった確認の手順、robots.txtで見落としやすい点、WAF・CDN・ボット対策・地域の制限の確認、応答コード別の直し方、直した後の再審査の流れを整理します。"><link rel="canonical" href="https://ads.ikigaiinc.com/articles/chatgpt-ads-crawler/"><meta property="og:locale" content="ja_JP"><meta property="og:type" content="article"><meta property="og:site_name" content="GPT広告専門店"><meta property="og:title" content="【2026年10月最新版】ChatGPT広告のクローラー許可｜OAI-AdsBotを止めない設定と、LPが読めないときの対処"><meta property="og:description" content="ChatGPT広告の審査では、OpenAIのクローラーOAI-AdsBotがリンク先を読めることが必須です。2026年10月29日時点のヘルプで変わった確認の手順、robots.txtで見落としやすい点、WAF・CDN・ボット対策・地域の制限の確認、応答コード別の直し方、直した後の再審査の流れを整理します。"><meta property="og:url" content="https://ads.ikigaiinc.com/articles/chatgpt-ads-crawler/"><meta property="og:image" content="https://ads.ikigaiinc.com/articles/assets/crawler.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="760"><meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#10131A"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Noto+Sans+JP:wght@400;500;700;900&amp;display=swap" rel="stylesheet"><link rel="stylesheet" href="/articles/assets/style.css"><script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "【2026年10月最新版】ChatGPT広告のクローラー許可｜OAI-AdsBotを止めない設定と、LPが読めないときの対処", "description": "ChatGPT広告の審査では、OpenAIのクローラーOAI-AdsBotがリンク先を読めることが必須です。2026年10月29日時点のヘルプで変わった確認の手順、robots.txtで見落としやすい点、WAF・CDN・ボット対策・地域の制限の確認、応答コード別の直し方、直した後の再審査の流れを整理します。", "mainEntityOfPage": "https://ads.ikigaiinc.com/articles/chatgpt-ads-crawler/", "url": "https://ads.ikigaiinc.com/articles/chatgpt-ads-crawler/", "datePublished": "2026-10-29T00:00:00+09:00", "dateModified": "2026-10-29T00:00:00+09:00", "inLanguage": "ja", "author": {"@type": "Organization", "name": "GPT広告専門店（株式会社Ikigai）", "url": "https://ads.ikigaiinc.com/"}, "publisher": {"@type": "Organization", "name": "株式会社Ikigai", "url": "https://ikigaiinc.com"}, "image": "https://ads.ikigaiinc.com/articles/assets/crawler.png"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://ads.ikigaiinc.com/"}, {"@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://ads.ikigaiinc.com/articles/"}, {"@type": "ListItem", "position": 3, "name": "ChatGPT広告のクローラー許可｜OAI-AdsBotを止めない設定と、LPが読めないときの対処", "item": "https://ads.ikigaiinc.com/articles/chatgpt-ads-crawler/"}]}]}</script></head><body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W62G2NT3"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<a class="skip" href="#main">本文へ移動</a><header class="site-header"><div class="wrap header-inner"><a class="brand" href="/">GPT広告専門店<span>.</span><small>by 株式会社Ikigai</small></a><nav aria-label="メインナビゲーション"><a href="/articles/">記事一覧</a><a class="button small" href="/#cta">無料相談 <span aria-hidden="true">↗</span></a></nav></div></header><main id="main"><div class="wrap"><nav class="breadcrumbs" aria-label="パンくず"><a href="/">ホーム</a><span>/</span><a href="/articles/">記事一覧</a><span>/</span><span>クローラー許可</span></nav><header class="article-heading"><p class="eyebrow">CHATGPT ADS GUIDE <span>57 / クローラー許可</span></p><p class="edition">2026年10月最新版</p><h1>ChatGPT広告のクローラー許可｜OAI-AdsBotを止めない設定と、LPが読めないときの対処</h1><div class="byline"><span>企画・編集：GPT広告専門店（株式会社Ikigai）</span><time datetime="2026-10-29">公開：2026年10月29日／情報確認：2026年10月29日</time></div><p class="lead">ChatGPT広告の審査では、OpenAIのクローラーOAI-AdsBotがリンク先を読めることが必須です。</p><p class="case-note">本記事は、OpenAIのヘルプセンター・開発者向けドキュメント・広告ポリシーと、robots.txtの標準（RFC 9309）に基づいています（いずれも2026年10月29日に本文を確認）。確認の順番の整理、確かめ方の手順と提案は株式会社Ikigaiの見解です。</p></header><div class="reading-layout"><aside class="toc"><details open><summary>この記事の内容</summary><ol><li><a href="#s1">この記事の要点</a></li><li><a href="#s2">OpenAIのクローラーの種類と、広告で許可するもの</a></li><li><a href="#s3">2026年10月29日時点のヘルプで変わったこと</a></li><li><a href="#s4">入稿前と変更後に確かめる5つのこと</a></li><li><a href="#s5">robots.txtの確かめ方</a></li><li><a href="#s6">ファイアウォール・CDN・ボット対策・地域の制限</a></li><li><a href="#s7">クローラーが受け取るページと、応答別の直し方</a></li><li><a href="#s8">到達できないときに起きることと、直した後の手順</a></li><li><a href="#s9">この記事で分からないこと</a></li><li><a href="#s10">Web担当・セキュリティ担当に渡すチェックリスト</a></li><li><a href="#s11">よくある質問</a></li><li><a href="#s12">まとめ</a></li></ol></details><a class="toc-back" href="/articles/">← すべての記事を見る</a></aside><article class="prose" aria-label="記事本文"><h2 id="s1"><strong>この記事の要点</strong></h2>
+<ol>
+<li><strong>広告のリンク先（LP）は、OpenAIのクローラー「OAI-AdsBot」が読めることが必須です。</strong> OAI-SearchBotの許可も推奨されています。AIの学習に使うGPTBotとは別のクローラーなので、GPTBotを止める方針のままでも、OAI-AdsBotは個別に許可できると当社は考えます。</li>
+<li><strong>確かめるのはrobots.txtだけではありません。</strong> 2026年10月29日時点のヘルプは、広告に入れる完全なURLと転送先、robots.txt、ファイアウォール・CDN・ボット対策、クローラーが実際に受け取るページ、直した後の再確認、の5つを順に確かめるよう書き直されました。ブラウザで開けても、クローラーが同じページを受け取るとは限りません。</li>
+<li><strong>直したら、状態が変わったかを確かめ、変わらなければ再提出や再審査を依頼します。</strong> クローラーが読めるようになっても、審査の承認は保証されません。サポートに個別に通してもらう前提にもしません。</li>
+</ol>
+<p class="case-note"><strong>読んでほしい人</strong>：ChatGPT広告のLPを用意する広告担当者と、サイトの管理・セキュリティ・CDNを担当する技術者。 <br><strong>この記事で扱わないこと</strong>：LPの内容の審査基準は<a href="/articles/chatgpt-ads-policy-review/">審査の記事</a>、リンク先URLの文字数やパラメータの置き場所は<a href="/articles/chatgpt-ads-ad-specs/">入稿規定の記事</a>、アプリストアへのリンクは<a href="/articles/chatgpt-ads-app/">アプリの記事</a>で扱います。</p>
+<h2 id="s2"><strong>OpenAIのクローラーの種類と、広告で許可するもの</strong></h2>
+<p>OpenAIは、広告として提出されたWebページが安全かを確かめるためにクローラーを使います。広告を提出すると、ポリシーに合っているかを確かめるためにLPを訪れることがあり、LPの内容を、広告を出すのに適した場面の判断に使うこともあるとヘルプは書いています。広告ポリシーも、システムで審査・評価できない広告やLPは配信の対象にならないとしています。</p>
+<p>OpenAIの開発者向けドキュメントの「OpenAI Crawlers」には、4つの名前が載っています。</p>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>名前</strong></p>
+</th><th scope="col"><p><strong>用途（公式の説明）</strong></p>
+</th><th scope="col"><p><strong>広告での扱い</strong></p>
+</th></tr>
+<tr><td><p>OAI-<span style="white-space:nowrap">AdsBot</span></p>
+</td><td><p>広告として提出されたページの安全性を確かめる。広告として提出されたページだけを訪れ、集めたデータは生成AIの基盤モデルの学習に使わない</p>
+</td><td><p>審査に必須</p>
+</td></tr>
+<tr><td><p>OAI-<span style="white-space:nowrap">SearchBot</span></p>
+</td><td><p><span style="white-space:nowrap">ChatGPT</span>の検索機能でサイトを表示するため。止めると検索の回答には出ない（案内のリンクとしては出得る）</p>
+</td><td><p>許可を推奨。商品フィードでは商品画像のURLを読む</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">GPTBot</span></p>
+</td><td><p>生成AIの基盤モデルの学習に使い得る内容を集める。止めると学習に使わないという意思表示になる</p>
+</td><td><p>広告の審査に関する記載なし</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">ChatGPT</span>-User</p>
+</td><td><p>利用者の操作に応じてページを開く。自動の巡回には使わず、<span style="white-space:nowrap">robots</span>.txtが当てはまらないことがある</p>
+</td><td><p>広告の審査に関する記載なし</p>
+</td></tr>
+</table></div>
+<p>作成ガイド（Creating ads）は「OAI-AdsBotとOAI-SearchBotを止めない」ことをLPの条件に挙げ、クローラーのヘルプは「OAI-AdsBotは必須、OAI-SearchBotは推奨」と書いています。当社は、広告のLPでは両方を許可することを勧めます。</p>
+<p>AIの学習に使われないように、AI関連のクローラーをまとめて止めているサイトでは注意が必要です。OpenAIの説明では、OAI-SearchBotとGPTBotの設定は互いに独立しており、OAI-AdsBotは別の名前のクローラーです。robots.txtは名前ごとに規則を分けられるため、GPTBotを止めたまま、OAI-AdsBotを広告のLPで許可できると当社は考えます。方針を変えるときは、広告・サイト・LLMO（AIの回答への露出）の担当でそろえます（<a href="/articles/chatgpt-ads-vs-llmo/">LLMO・GEOとの違いの記事</a>）。</p>
+<h2 id="s3"><strong>2026年10月29日時点のヘルプで変わったこと</strong></h2>
+<p>クローラーのヘルプ（Advertiser Guidance for Allowing OpenAI Web Crawlers）は、2026年10月7日時点から構成が大きく変わりました。当社が10月7日に保存した本文と比べた結果です。</p>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>項目</strong></p>
+</th><th scope="col"><p><strong>2026年10月7日時点</strong></p>
+</th><th scope="col"><p><strong>2026年10月29日時点</strong></p>
+</th></tr>
+<tr><td><p>構成</p>
+</td><td><p>読めないときに確かめる3つの層（<span style="white-space:nowrap">robots</span>.txt、Webの保護とボット対策、人の確認とボット対策の仕組み）</p>
+</td><td><p>入稿前とサイト変更後に確かめる5つの手順、応答ごとの表、サポートへの連絡</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">robots</span>.txt</p>
+</td><td><p><span style="white-space:nowrap">OpenAI</span>のクローラーは規則に従い、不許可なら巡回をすぐ止めると説明。OAI-<span style="white-space:nowrap">SearchBot</span>とOAI-<span style="white-space:nowrap">AdsBot</span>を許可する例を掲載</p>
+</td><td><p>LPと必要な素材の規則を、転送に関わる各ホストで確かめるよう求める。例と「規則に従う」の説明はない</p>
+</td></tr>
+<tr><td><p>Webの保護</p>
+</td><td><p><span style="white-space:nowrap">Cloudflare</span>・<span style="white-space:nowrap">Akamai</span>などを例に、正当なクローラーを誤って止めることがあり、多くは403を返すと説明。できればクローラーのユーザーエージェントで許可リストに入れる</p>
+</td><td><p>検証済みの<span style="white-space:nowrap">OpenAI</span>のクローラーの要求が、サインイン・<span style="white-space:nowrap">CAPTCHA</span>・ブラウザの確認なしに届くかを確かめる。設定には最新のクローラーの資料と公開IP範囲を使う</p>
+</td></tr>
+<tr><td><p>新しい確認</p>
+</td><td><p>なし</p>
+</td><td><p>広告の完全なURLと転送先、端末や地域での振り分け、応答コード別の表、失敗の時刻とリクエストID、代表のURLからの再確認、承認は保証されないこと</p>
+</td></tr>
+</table></div>
+<p>robots.txtの説明と例は消えましたが、robots.txtの規則を確かめることは手順2に、robots.txtなどによる遮断を直してOAI-AdsBotが読める状態にすることはよくある質問に、10月29日時点も書かれています。必須・推奨のクローラー、商品画像とOAI-SearchBot、安定したIP範囲、レート制限、Cloudflareの扱い、よくある質問は、10月7日時点と同じ内容です。既存の<a href="/articles/chatgpt-ads-policy-review/">審査の記事</a>は10月7日時点の3つの層で整理しています。層の中身は今も確かめる対象ですが、本稿では10月29日時点の手順に沿って説明します。</p>
+<h2 id="s4"><strong>入稿前と変更後に確かめる5つのこと</strong></h2>
+<p>ヘルプは、広告を提出する前と、Webサイトを変えた後に次の5つを確かめるよう勧めています。サイトを外部に任せている場合は、この確認の一覧を制作会社・ホスティング会社・セキュリティの担当に共有するよう書いています。</p>
+<figure><a aria-label="図を拡大する" href="/articles/assets/crawler.png"><img alt="図1：審査クローラーに読ませる5つの確認。OpenAIのヘルプセンターをもとに当社作成。" height="760" loading="lazy" src="/articles/assets/crawler.svg" width="1200"/></a><figcaption>図1：審査クローラーに読ませる5つの確認。OpenAIのヘルプセンターをもとに当社作成。</figcaption></figure>
+<ol>
+<li><strong>広告に入れる完全なURLを開く。</strong> 計測用のパラメータを含めたURLを開き、転送を最後までたどって、最終的なページに広告の商品やサービスが出るかを確かめます。計測用の転送リンクを使う場合は、端末や地域によってどこへ送られるかも確かめます。トップページが開けても、広告のリンクが動く確認にはなりません。</li>
+<li><strong>OpenAIのクローラーを許可する。</strong> LPと必要な素材のrobots.txtの規則を確かめます。転送に関わる各ホスト（サブドメインや外部のサービスを含む）も確かめます。設定には、最新のクローラーの資料と公開されたIP範囲を使います。</li>
+<li><strong>サイトのセキュリティの設定を確かめる。</strong> robots.txtだけでは足りないことがあります。ファイアウォール、CDN、ボット対策のサービスが、別に制限していることがあります。</li>
+<li><strong>クローラーが受け取るページを確かめる。</strong> ブラウザで開けても、クローラーが同じ内容を受け取るとは限りません。クローラーの要求への応答を確かめます。</li>
+<li><strong>直した後にもう一度確かめる。</strong> 何をいつ変えたかを記録し、広告のURLと転送を再び確かめます。LP・計測用のリンク・転送・ホスティング・セキュリティの設定を変えたときも、確認をやり直します。</li>
+</ol>
+<p>当社は、1と2の「転送先」を特に確かめることを勧めます。外部の予約・フォームのサービス、LP作成ツールのドメイン、計測ツールの転送用URLを挟むと、自社のサーバーとは別のホストでクローラーが止まることがあります。海外からのアクセスを英語のサイトへ振り分ける設定があると、クローラーが広告と違うページを受け取ることも考えられます。</p>
+<h2 id="s5"><strong>robots.txtの確かめ方</strong></h2>
+<p>10月29日時点のヘルプは、robots.txtの例を載せていません。10月7日時点のヘルプには、次の例がありました（原文では1行に続けて書かれていたものを、当社が改行して示しています）。</p>
+<pre class="case-note" style="white-space:pre-wrap;overflow-wrap:anywhere;font-family:inherit;font-size:14px;line-height:1.9;margin:24px 0">User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: OAI-AdsBot
+Allow: /</pre>
+<p>例が消えた理由は書かれていません。今のヘルプは、LPと必要な素材についてrobots.txtの規則を、転送に関わる各ホストで確かめるよう求めています。</p>
+<p>robots.txtの標準（RFC 9309、2022年）には、広告のLPに関係する次の規定があります。OpenAIの資料は、OAI-AdsBotがこの標準のどこまでに従うかを書いていません。設定した後は、次の節のとおり、実際のリクエストへの応答で確かめます（当社の見解）。</p>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>規定（RFC 9309）</strong></p>
+</th><th scope="col"><p><strong>標準どおりに扱われる場合に広告のLPで起きること（当社の見解）</strong></p>
+</th></tr>
+<tr><td><p>クローラーは自分の名前に一致するグループに従い、一致するものがないときだけ「User-<span style="white-space:nowrap">agent</span>: *」のグループに従う</p>
+</td><td><p>「*」で全体を止めていて、OAI-<span style="white-space:nowrap">AdsBot</span>のグループがなければ、OAI-<span style="white-space:nowrap">AdsBot</span>にも「*」の不許可が当たる。逆にOAI-<span style="white-space:nowrap">AdsBot</span>のグループを作ると、「*」の規則はOAI-<span style="white-space:nowrap">AdsBot</span>には当たらない</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">robots</span>.txtはホストごとに、そのホストの最上位に置く</p>
+</td><td><p>転送先のサブドメインや外部のサービスでは、それぞれのホストの<span style="white-space:nowrap">robots</span>.txtで判断される</p>
+</td></tr>
+<tr><td><p>許可と不許可は、パスに最も長く一致する規則を使う</p>
+</td><td><p>「/lp」を不許可にしていても、「/lp/<span style="white-space:nowrap">chatgpt</span>/」を許可すれば、そのパスは許可になる</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">robots</span>.txtがサーバーエラー（5xx）などで取れないとき、クローラーは全体を不許可とみなす</p>
+</td><td><p><span style="white-space:nowrap">robots</span>.txt自体へのアクセスが、WAFやサーバーの不調でエラーになっていないかも確かめる</p>
+</td></tr>
+<tr><td><p>取得した<span style="white-space:nowrap">robots</span>.txtは、原則として24時間を超えて使い回さない</p>
+</td><td><p>直した直後に反映されるとは限らない</p>
+</td></tr>
+</table></div>
+<p>なお、OpenAIのクローラーの資料にある「robots.txtの更新から約24時間」は、ChatGPTの検索結果の調整についての説明で、広告の審査への反映時間は書かれていません。</p>
+<h2 id="s6"><strong>ファイアウォール・CDN・ボット対策・地域の制限</strong></h2>
+<p>ヘルプは、検証済みのOpenAIのクローラーの要求が、サインイン、CAPTCHA、ブラウザの確認（JavaScriptの確認画面など）を経ずに、LPと必要な内容に届くかを確かめるよう求めています。開始のドメインだけでなく、転送先のホストも確かめます。技術担当がまず確かめることとして、OAI-AdsBotに正常な応答を返しているか、robots.txtで該当のパスを許可しているか、WAF・CDN・ボット対策・JavaScriptの確認・CAPTCHA・認証・地域の規則が自動のアクセスを止めていないか、を挙げています。</p>
+<p>IPアドレスで許可する場合の注意も書かれています。クローラーの仕組みは変わり得るため、ログで一時的に見えたIPアドレスだけに頼らず、ユーザーエージェント、対応している場合の検証済みボットの仕組み、ファイアウォールの許可リスト、robots.txtでの挙動、提供会社のボット検証を組み合わせて確かめるよう勧めています。安定したIP範囲の一覧が必要なら、OpenAIが公開している次のファイルを参照します。</p>
+<ul>
+<li>OAI-AdsBot：https://openai.com/adsbot.json</li>
+<li>OAI-SearchBot：https://openai.com/searchbot.json</li>
+</ul>
+<p>当社が2026年10月29日に取得したadsbot.jsonには、作成日時（2026年5月12日）とIPv4の範囲が2つ載っていました。値は変わり得るため、設定の資料に書き写して固定せず、設定や見直しのたびに公開元を参照する運用を勧めます（当社の提案）。ユーザーエージェントは名乗るだけで送れるため、ユーザーエージェントだけで例外を作る設定は避け、IP範囲やCDNのボット検証と組み合わせます（当社の見解）。</p>
+<p>地域でアクセスを制限しているサイトも注意が必要です。ヘルプは、地域の規則がクローラーを止めていないかを確かめる対象に挙げ、特定の地域からしか開けないページは審査に十分な内容を読めないことがあると書いています。公開されたIP範囲がどの国のものかは、資料に書かれていません。</p>
+<p>大量の広告を一括で入稿したときや、クローラーの訪問が急に増えたときは、レート制限やボット対策が働くことがあります。ヘルプは、429 Too Many Requests などの応答コード、ファイアウォールやCDNのログ、ボット対策の記録、アクセスの制限の規則を、クローラーが訪れた時刻の前後で確かめ、広告を小さなまとまりに分けて時間をかけて入稿することも検討するよう書いています。一括入稿の進め方は<a href="/articles/chatgpt-ads-bulk-api/">一括入稿とAPIの記事</a>で扱っています。</p>
+<h2 id="s7"><strong>クローラーが受け取るページと、応答別の直し方</strong></h2>
+<p>ヘルプは、クローラーの要求への応答ごとに、確かめることを表にしています。</p>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>応答</strong></p>
+</th><th scope="col"><p><strong>確かめること・直すこと（ヘルプの記載）</strong></p>
+</th></tr>
+<tr><td><p>403（アクセス拒否）</p>
+</td><td><p>拒否したホストのセキュリティの規則を見直す。元のサイトではなく、転送先のサブドメインのことがある</p>
+</td></tr>
+<tr><td><p>404（ページがない）</p>
+</td><td><p>ページか転送先を直す。計測用のリンクでは、端末や地域ごとに選ばれる転送先を確かめる</p>
+</td></tr>
+<tr><td><p>429（要求が多すぎる）</p>
+</td><td><p>レート制限とボット対策の記録を見直す。大量の入稿では、小さなまとまりに分けると改善することがある</p>
+</td></tr>
+<tr><td><p>空白・不完全・ログイン・確認画面</p>
+</td><td><p>意図したページの内容と必要な素材をクローラーが読めるようにする。正常な応答（200など）だけでは、内容が読み込まれた確認にならない</p>
+</td></tr>
+</table></div>
+<p>アクセスが拒否されたときは、失敗した要求の時刻と、ある場合はリクエストIDを使って、サイトやセキュリティのログから該当の記録を探します。</p>
+<p>当社は、技術担当に次の順で確かめてもらうことを勧めます。</p>
+<ol>
+<li>ログインしていないブラウザで、広告に入れる完全なURLをPCとスマートフォンで開き、最後のページのURLと内容を確かめる</li>
+<li>OAI-AdsBotのユーザーエージェントを指定した要求を送り、応答コードと最後のURLを見る（例は下）</li>
+<li>WAF・CDNのログで、実際のOAI-AdsBotの要求にどう応答したかを見る</li>
+</ol>
+<pre class="case-note" style="white-space:pre-wrap;overflow-wrap:anywhere;font-family:inherit;font-size:14px;line-height:1.9;margin:24px 0">curl -s -L -o /dev/null -w "%{http_code} %{url_effective}\n" -A "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-AdsBot/1.0; +https://openai.com/adsbot" "https://example.com/lp/?utm_source=chatgpt"</pre>
+<p>ユーザーエージェントの文字列は、OpenAIのクローラーの資料にある完全な文字列です。2の方法で分かるのは、ユーザーエージェントで振り分ける規則の影響だけです。IPアドレスやCDNの検証で判断する規則は再現できず、名前だけを名乗る要求として止められるなど、実際のクローラーと違う応答になることもあるため、最後は3のログで確かめます（当社の見解）。</p>
+<h2 id="s8"><strong>到達できないときに起きることと、直した後の手順</strong></h2>
+<p>ヘルプのトラブル対応によると、Ads Managerの「Ads」タブで広告の状態が「Not serving」なら、広告にカーソルを合わせると理由が表示されます。よくある原因として、ポリシーに合わない広告文やLPと並んで、OpenAIのユーザーエージェントやIPアドレスを止めているLPが挙げられています。一括入稿のチェックリストは、画像のURLがクローラーを遮断していると、アップロード時の確認や審査で失敗することがあると書き、LPや画像のURLが確認に失敗したときはOpenAIのクローラーが届くかを確かめるよう求めています。商品フィードでは、商品画像のホストがOAI-SearchBotに403を返すと、フィードの処理が止まることがあります。</p>
+<p>似た症状でも、原因がクローラーではない場合があります。</p>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>症状</strong></p>
+</th><th scope="col"><p><strong>原因の例（ヘルプの記載）</strong></p>
+</th><th scope="col"><p><strong>読む記事</strong></p>
+</th></tr>
+<tr><td><p>ドメインが承認されない</p>
+</td><td><p>広告主の情報と入力したドメインが一致すると確かめられない</p>
+</td><td><p><a href="/articles/chatgpt-ads-policy-review/">審査の記事</a></p>
+</td></tr>
+<tr><td><p>別のドメインのリンク先で広告を保存できない</p>
+</td><td><p>確認が必要なセルフサーブのアカウントでは、別のドメインのリンク先を使うと、アカウントの確認（<span style="white-space:nowrap">verification</span>）の承認が先に要ることがある</p>
+</td><td><p><a href="/articles/chatgpt-ads-policy-review/">審査の記事</a></p>
+</td></tr>
+<tr><td><p>審査は通ったが、選んだ国で配信できない</p>
+</td><td><p>ポリシーの区分と国の制限</p>
+</td><td><p><a href="/articles/chatgpt-ads-policy-review/">審査の記事</a></p>
+</td></tr>
+<tr><td><p>LPは開けるのに成果が計測されない</p>
+</td><td><p>イベントの送信や成果イベントの設定で止まっていることがある</p>
+</td><td><p><a href="/articles/chatgpt-ads-tracking-troubleshooting/">計測のトラブル対応の記事</a></p>
+</td></tr>
+</table></div>
+<p>クローラーの問題を直した後は、ヘルプの手順に沿って進めます。</p>
+<ol>
+<li>何をいつ変えたかを記録し、広告の完全なURLと転送をもう一度確かめる。広告が多い場合は、代表的な数本のURLで確かめてから広く当てはめる</li>
+<li>Ads Managerで、対象の広告の状態を確かめる</li>
+<li>状態が自動で変わらなければ、再提出か再審査の手順を取る。一括入稿した広告は、小さなまとまりで入稿し直すと、レート制限やボット対策に当たりにくくなることがある</li>
+<li>それでも解決しなければ、サポートに連絡する</li>
+</ol>
+<p>サポートには、対象の広告アカウントと広告のID、広告に入れた完全なURLと最終的な転送先、エラーの文面かスクリーンショット、失敗した日時（タイムゾーンつき）、サイトの担当が何をいつ確かめ・変えたかを伝えます。サポートから失敗の時刻やリクエストIDを受け取ったら、サイトの担当に渡してログを探してもらいます。</p>
+<h2 id="s9"><strong>この記事で分からないこと</strong></h2>
+<ul>
+<li><strong>クローラーが読めなかったときに、Ads Managerに表示される理由の文言。</strong> ヘルプには、理由を確かめる場所はありますが、具体的な文言は書かれていません</li>
+<li><strong>OAI-AdsBotがrobots.txtの規則をどう解釈するか。</strong> 10月7日時点の「規則に従い、不許可なら巡回を止める」という説明は、10月29日時点のヘルプにはありません。今のヘルプも規則を確かめて遮断を直すよう求めていますが、標準のどこまでに従うかは書かれていません。開発者向けのクローラーの資料が robots.txt で管理する例として挙げるのは OAI-SearchBot と GPTBot です</li>
+<li><strong>robots.txtやWAFを直してから、審査に反映されるまでの時間。</strong> 検索結果の約24時間は書かれていますが、広告については書かれていません</li>
+<li><strong>OAI-AdsBotが訪れる時期と頻度。</strong> 提出したときのほか、配信中にも訪れるかは書かれていません</li>
+<li><strong>OAI-SearchBotを止めた場合の、広告の審査や配信への影響。</strong> 作成ガイドは止めないこと、クローラーのヘルプは許可を推奨としており、止めたときの扱いは書かれていません</li>
+<li><strong>公開IP範囲の変更の通知方法と、IP範囲の地域。</strong> 一覧のファイルに作成日時はありますが、変更の知らせ方は書かれていません</li>
+</ul>
+<h2 id="s10"><strong>Web担当・セキュリティ担当に渡すチェックリスト</strong></h2>
+<ul>
+<li>[ ] 広告に入れる完全なURL（計測用のパラメータを含む）を共有した</li>
+<li>[ ] 転送に関わるすべてのホスト（サブドメイン、外部の予約・フォームのサービス、計測用の転送URL）を書き出した</li>
+<li>[ ] 各ホストのrobots.txtで、LPと必要な素材のパスがOAI-AdsBotに許可されている（OAI-SearchBotの許可も推奨）</li>
+<li>[ ] 「User-agent: *」で全体を止めている場合、OAI-AdsBotのグループを設けた</li>
+<li>[ ] robots.txt自体が正常に返り、サーバーエラーになっていない</li>
+<li>[ ] WAF・CDN・ボット対策で、OAI-AdsBotの要求がサインイン・CAPTCHA・ブラウザの確認なしにLPと必要な素材に届く</li>
+<li>[ ] IPで許可する場合は adsbot.json・searchbot.json を参照し、ログで見たIPアドレスだけに頼っていない</li>
+<li>[ ] 地域の制限や、端末・地域による転送の振り分けで、広告と違うページにならない</li>
+<li>[ ] 大量に入稿する前に、レート制限の設定を確かめ、小さなまとまりで入稿する予定にした</li>
+<li>[ ] 商品フィードを使う場合、商品画像のホストがOAI-SearchBotに403を返さない</li>
+<li>[ ] 変更の内容と日時を記録し、代表のURLで再確認する手順を決めた</li>
+<li>[ ] LP・計測用のリンク・転送・ホスティング・セキュリティの設定を変えたら、確認をやり直す</li>
+</ul>
+<h2 id="s11"><strong>よくある質問</strong></h2>
+<p><strong>Q. LPを会員限定やパスワード付きのページにしたまま出稿できますか。</strong> 勧めません。ヘルプは、クローラーがサインインやCAPTCHAなしにLPへ届くことを確かめるよう求め、ログインが必要な遷移先は審査に十分な内容を読めないことがあると書いています。会員向けのサービスでも、広告のLPは誰でも開ける紹介のページにし、ログインはその先に置く設計を勧めます（当社の提案）。</p>
+<p><strong>Q. サポートに頼めば、クローラーの確認を手動で通してもらえますか。</strong> ヘルプのよくある質問は、手動で回避してもらうことに頼らないよう書いています。robots.txt、WAF、CDN、ボット対策、認証、レート制限による遮断を直し、OAI-AdsBotが読める状態にします。読めるようになった後は、広告の再アップロードや再審査の依頼が必要になることがあります。</p>
+<p><strong>Q. Cloudflareを使っていれば、設定は要りませんか。</strong> ヘルプには、OAI-AdsBotはCloudflareで正式に検証され、許可リストに入っていると書かれています。一方でヘルプは一般に、robots.txtとは別にファイアウォール・CDN・ボット対策が制限することがあるとし、転送先のホストも確かめるよう書いています。Cloudflareを使っていても、自社で追加したWAFの規則、robots.txt、転送先の別のホストで止まっていないかは確かめます（当社の見解）。</p>
+<p><strong>Q. LPが制作会社や外部のフォームサービスのドメインにあります。何を確かめますか。</strong> クローラーのヘルプは、転送に関わる各ホストのrobots.txtとセキュリティの設定を、外部の遷移先も含めて確かめるよう書いています。外部のサービスの設定は自社で変えられないことが多いため、提供元に確かめます。また、アカウントの確認（verification）が必要なセルフサーブのアカウントでは、別のドメインのリンク先を使う広告を保存する前に、確認の承認が要ることがあります（オンボーディングのトラブル対応のヘルプ）。</p>
+<p><strong>Q. 審査のクローラーの訪問は、クリックとして課金されたり、アクセス解析に出たりしますか。</strong> 課金はされません。2026年10月29日時点の基本ガイド（Ads in ChatGPT: The Basics。10月7日時点にはなかった記載）は、審査のクローラーが計測用のパラメータ付きのLPを訪れることがあり、他社のアクセス解析がその訪問を有料の流入に分類することがあるが、課金されるクリックではないと書いています。広告のクリック数とアクセス解析のセッション数を比べるときは、この訪問を考えに入れます（<a href="/articles/chatgpt-ads-ga4/">GA4連携の記事</a>）。</p>
+<h2 id="s12"><strong>まとめ</strong></h2>
+<ul>
+<li>審査に必須なのはOAI-AdsBot。OAI-SearchBotも推奨。GPTBot（学習）とは別に設定できる</li>
+<li>2026年10月29日時点のヘルプは、完全なURL→robots.txt→セキュリティ→受け取るページ→再確認の5つの手順に変わった</li>
+<li>robots.txtは転送先の各ホストで確かめる。「*」のグループ、最も長く一致する規則、robots.txt自体のエラーに注意する</li>
+<li>WAF・CDN・ボット対策・地域の制限は、検証済みの要求が確認画面なしに届くかで見る。IPは公開の一覧を参照する</li>
+<li>直したら代表のURLで確かめ、状態が変わらなければ再提出・再審査。承認は保証されない</li>
+</ul>
+<p>LPがクローラーから読めるかを一緒に確かめたい場合は、広告に入れる予定のURL、使っているCDN・WAFの名前、robots.txtの内容をお手元に用意のうえ<a href="https://ads.ikigaiinc.com/#cta">20分の無料相談</a>をご利用ください。</p>
+<h3 id="s13"><strong>出典</strong></h3>
+<ul>
+<li><a href="https://help.openai.com/en/articles/20001243-advertiser-guidance-for-allowing-openai-web-crawlers">Advertiser Guidance for Allowing OpenAI Web Crawlers</a>（クローラーを使う理由、必須・推奨のクローラー、5つの確認、応答別の表、サポートへの連絡、安定したIP範囲、レート制限、Cloudflare、よくある質問。2026年10月7日時点の本文との比較）</li>
+<li><a href="https://developers.openai.com/api/docs/bots">Overview of OpenAI Crawlers</a>（OAI-AdsBot・OAI-SearchBot・GPTBot・ChatGPT-Userの用途、ユーザーエージェントの文字列、公開IPの一覧、検索結果への反映の目安）</li>
+<li><a href="https://openai.com/adsbot.json">adsbot.json</a>・<a href="https://openai.com/searchbot.json">searchbot.json</a>（公開IP範囲の形式と作成日時）</li>
+<li><a href="https://help.openai.com/en/articles/20001212-creating-ads-for-chatgpt-ads">Creating ads for ChatGPT Ads</a>（LPはOAI-AdsBotとOAI-SearchBotを止めない）</li>
+<li><a href="https://help.openai.com/en/articles/20001217-troubleshooting-common-issues">Troubleshooting Common Issues</a>（Not servingの理由の確かめ方、OpenAIのユーザーエージェントやIPを止めているLP、再提出と再審査）</li>
+<li><a href="https://help.openai.com/en/articles/20001534-troubleshooting-common-onboarding-and-policy-issues">Troubleshooting Common Onboarding and Policy Issues</a>（ドメインの承認、別のドメインのリンク先とアカウントの確認、審査を通っても国で配信できない場合）</li>
+<li><a href="https://help.openai.com/en/articles/20001218-bulk-upload-campaign-schema-checklist">Bulk upload campaign schema checklist</a>（画像のURLとクローラー、LP・画像のURLが確認に失敗したとき）</li>
+<li><a href="https://help.openai.com/en/articles/20001207-ads-in-chatgpt-the-basics">Ads in ChatGPT: The Basics</a>（審査のクローラーの訪問と分析ツール、課金されないこと）</li>
+<li><a href="https://openai.com/policies/ad-policies/">Ad Policies</a>（審査・評価できない広告やLPは配信の対象外）</li>
+<li><a href="https://www.rfc-editor.org/rfc/rfc9309.html">RFC 9309: Robots Exclusion Protocol</a>（グループの選び方、ホストごとのファイル、最も長く一致する規則、取得できないときの扱い、キャッシュ）</li>
+</ul>
+<p>いずれも2026年10月29日に本文を確認しています。2026年10月7日時点との比較は、当社が同日に保存した本文との比較です。</p>
+<h3 id="s14"><strong>変更履歴</strong></h3>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>日付</strong></p>
+</th><th scope="col"><p><strong>内容</strong></p>
+</th></tr>
+<tr><td><p>2026年10月29日</p>
+</td><td><p>初版。ヘルプセンター6本、開発者向けドキュメント1本と公開IPの一覧2件、広告ポリシー、RFC 9309の本文を確認</p>
+</td></tr>
+</table></div>
+<p><strong>次回確認予定：2026年11月上旬。</strong> クローラーのヘルプの手順とrobots.txtの説明、OpenAIのクローラーの資料、公開IP範囲の一覧の更新を確認します。</p>
+</article></div><section class="consult"><div><span class="eyebrow">NEXT STEP</span><h2>自社の商材なら、<br>何から試す？</h2></div><div><p>商材・主要な成果・検証予算から、準備することを整理します。<br>広告や計測のどこから手をつけるか、まずはご相談ください。</p><a href="/#cta" class="button">ChatGPT広告の出稿・運用を相談する <span aria-hidden="true">↗</span></a><p class="small-text">GPT広告専門店の20分無料相談</p></div></section><section class="related"><div class="section-top"><p class="eyebrow">RELATED ARTICLES</p><h2>次に読む記事</h2></div><div class="cards two"><a class="article-card" href="/articles/chatgpt-ads-policy-review/"><div class="card-visual"><img src="/articles/assets/policy-review.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">14 / 審査・ポリシー</span><h3>ChatGPT広告の審査｜出稿できない業種・LPの条件と否認時の対処</h3><p>ChatGPT広告の審査は、事業者確認・業種・広告とLP・掲載面の4つを別々に見ます。日本の広告主が先に確認したい業種の表、広告文とLPの注意点、否認されたときの直し方と異議申し立ての順番を、公式ポリシーv1.6とヘルプをもとに整理します。</p><span class="card-bottom">2026.09.26 <span>記事を読む ↗</span></span></div></a><a class="article-card" href="/articles/chatgpt-ads-ad-specs/"><div class="card-visual"><img src="/articles/assets/ad-specs.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">33 / 入稿規定</span><h3>ChatGPT広告の入稿規定｜見出し・説明文の文字数、画像サイズ、リンク先の条件</h3><p>ChatGPT広告の入稿規定を早見表にまとめました。タイトル（見出し）は上限50文字（推奨16〜24文字）、説明文は上限100文字（推奨32〜48文字）、画像は正方形のPNG・JPGで1200×1200以下です。</p><span class="card-bottom">2026.10.08 <span>記事を読む ↗</span></span></div></a><a class="article-card" href="/articles/chatgpt-ads-vs-llmo/"><div class="card-visual"><img src="/articles/assets/paid-vs-organic.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">29 / LLMO・GEO</span><h3>ChatGPT広告とLLMO・GEOの違い｜有料広告とAI回答からの流入の役割を整理</h3><p>ChatGPT広告は回答の下に表示される有料の枠で、LLMO・GEOは回答の中で自社が言及されることを目指す取り組みです。</p><span class="card-bottom">2026.09.26 <span>記事を読む ↗</span></span></div></a><a class="article-card" href="/articles/chatgpt-ads-bulk-api/"><div class="card-visual"><img src="/articles/assets/bulk-edit-flow.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">30 / 一括入稿・API</span><h3>ChatGPT広告の一括入稿とAPI｜使い分けと、重複・上書きを防ぐ手順</h3><p>ChatGPT広告は管理画面のほか、CSVの一括入稿・一括編集やAdvertiser APIでも作成・編集できます（ChatGPTからの操作は順次提供中）。</p><span class="card-bottom">2026.09.26 <span>記事を読む ↗</span></span></div></a></div></section></div></main><footer class="site-footer"><div class="wrap"><a class="brand" href="/">GPT広告専門店<span>.</span></a><p>運営：株式会社Ikigai<br>本サービスはOpenAIの公式・公認・提携サービスではありません。</p><div class="footer-links"><a href="/articles/">記事一覧</a><a href="/">サービス・料金</a><a href="https://ikigaiinc.com/privacypolicy">プライバシーポリシー</a><a href="https://ikigaiinc.com">会社情報</a></div><small>© 2026 株式会社Ikigai. ChatGPT・OpenAIは各権利者の商標です。</small></div></footer><script>(function(){var K=['utm_source','utm_medium','utm_campaign','utm_content','utm_term'],q=new URLSearchParams(location.search),u={},any=false;K.forEach(function(k){var v=q.get(k);if(v){u[k]=v;any=true;}});try{if(any){sessionStorage.setItem('lp_utm',JSON.stringify(u));}}catch(e){}})();</script></body></html>

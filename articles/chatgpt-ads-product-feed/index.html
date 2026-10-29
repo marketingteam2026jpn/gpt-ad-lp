@@ -1,0 +1,291 @@
+<!doctype html><html lang="ja"><head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W62G2NT3');</script>
+<!-- End Google Tag Manager -->
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>【2026年10月最新版】ChatGPT広告の商品フィードの作り方｜必須項目・アップロード・フィード広告の作成手順｜GPT広告専門店</title><meta name="description" content="ChatGPT広告の商品フィード広告（ベータ）は、商品ファイルを取り込んでから、キャンペーン・広告グループ・テンプレートを作ります。必須の9項目、CSV・ホストURL・SFTPでの取り込みと2週間の失効、件数の読み方、商品の絞り込み、価格・在庫の更新を、公式ヘルプと開発者向けの仕様から整理します。"><link rel="canonical" href="https://ads.ikigaiinc.com/articles/chatgpt-ads-product-feed/"><meta property="og:locale" content="ja_JP"><meta property="og:type" content="article"><meta property="og:site_name" content="GPT広告専門店"><meta property="og:title" content="【2026年10月最新版】ChatGPT広告の商品フィードの作り方｜必須項目・アップロード・フィード広告の作成手順"><meta property="og:description" content="ChatGPT広告の商品フィード広告（ベータ）は、商品ファイルを取り込んでから、キャンペーン・広告グループ・テンプレートを作ります。必須の9項目、CSV・ホストURL・SFTPでの取り込みと2週間の失効、件数の読み方、商品の絞り込み、価格・在庫の更新を、公式ヘルプと開発者向けの仕様から整理します。"><meta property="og:url" content="https://ads.ikigaiinc.com/articles/chatgpt-ads-product-feed/"><meta property="og:image" content="https://ads.ikigaiinc.com/articles/assets/product-feed.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="760"><meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#10131A"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Noto+Sans+JP:wght@400;500;700;900&amp;display=swap" rel="stylesheet"><link rel="stylesheet" href="/articles/assets/style.css"><script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "【2026年10月最新版】ChatGPT広告の商品フィードの作り方｜必須項目・アップロード・フィード広告の作成手順", "description": "ChatGPT広告の商品フィード広告（ベータ）は、商品ファイルを取り込んでから、キャンペーン・広告グループ・テンプレートを作ります。必須の9項目、CSV・ホストURL・SFTPでの取り込みと2週間の失効、件数の読み方、商品の絞り込み、価格・在庫の更新を、公式ヘルプと開発者向けの仕様から整理します。", "mainEntityOfPage": "https://ads.ikigaiinc.com/articles/chatgpt-ads-product-feed/", "url": "https://ads.ikigaiinc.com/articles/chatgpt-ads-product-feed/", "datePublished": "2026-10-29T00:00:00+09:00", "dateModified": "2026-10-29T00:00:00+09:00", "inLanguage": "ja", "author": {"@type": "Organization", "name": "GPT広告専門店（株式会社Ikigai）", "url": "https://ads.ikigaiinc.com/"}, "publisher": {"@type": "Organization", "name": "株式会社Ikigai", "url": "https://ikigaiinc.com"}, "image": "https://ads.ikigaiinc.com/articles/assets/product-feed.png"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://ads.ikigaiinc.com/"}, {"@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://ads.ikigaiinc.com/articles/"}, {"@type": "ListItem", "position": 3, "name": "ChatGPT広告の商品フィードの作り方｜必須項目・アップロード・フィード広告の作成手順", "item": "https://ads.ikigaiinc.com/articles/chatgpt-ads-product-feed/"}]}]}</script></head><body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W62G2NT3"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<a class="skip" href="#main">本文へ移動</a><header class="site-header"><div class="wrap header-inner"><a class="brand" href="/">GPT広告専門店<span>.</span><small>by 株式会社Ikigai</small></a><nav aria-label="メインナビゲーション"><a href="/articles/">記事一覧</a><a class="button small" href="/#cta">無料相談 <span aria-hidden="true">↗</span></a></nav></div></header><main id="main"><div class="wrap"><nav class="breadcrumbs" aria-label="パンくず"><a href="/">ホーム</a><span>/</span><a href="/articles/">記事一覧</a><span>/</span><span>商品フィード</span></nav><header class="article-heading"><p class="eyebrow">CHATGPT ADS GUIDE <span>53 / 商品フィード</span></p><p class="edition">2026年10月最新版</p><h1>ChatGPT広告の商品フィードの作り方｜必須項目・アップロード・フィード広告の作成手順</h1><div class="byline"><span>企画・編集：GPT広告専門店（株式会社Ikigai）</span><time datetime="2026-10-29">公開：2026年10月29日／情報確認：2026年10月29日</time></div><p class="lead">ChatGPT広告の商品フィード広告（ベータ）は、商品ファイルを取り込んでから、キャンペーン・広告グループ・テンプレートを作ります。</p><p class="case-note">本記事は、OpenAIの公式ヘルプと開発者向けドキュメント（Product Feeds、商品ファイルの仕様、Delta Feeds API ほか。いずれも2026年10月29日に取得）に基づいています。当社は日本のアカウントで商品フィードを作成・配信して確かめてはいません。手順の整理と提案は、株式会社Ikigaiの見解です。</p></header><div class="reading-layout"><aside class="toc"><details open><summary>この記事の内容</summary><ol><li><a href="#s1">この記事の要点</a></li><li><a href="#s2">商品フィード広告とは：提供の段階と、日本で確かめること</a></li><li><a href="#s3">始める前に決める4つのこと（当社の提案）</a></li><li><a href="#s8">商品ファイルの作り方：必須の9項目と、広告用の項目</a></li><li><a href="#s9">取り込みの方法と、2週間の失効</a></li><li><a href="#s10">取り込みの確認：件数の読み方と、よくある不備</a></li><li><a href="#s11">キャンペーン・広告グループ・テンプレートの作り方</a></li><li><a href="#s15">価格・在庫の変更とセール</a></li><li><a href="#s16">この記事で分からないこと</a></li><li><a href="#s17">商品フィード作成のチェックリスト</a></li><li><a href="#s18">よくある質問</a></li><li><a href="#s19">まとめ</a></li></ol></details><a class="toc-back" href="/articles/">← すべての記事を見る</a></aside><article class="prose" aria-label="記事本文"><h2 id="s1"><strong>この記事の要点</strong></h2>
+<ol>
+<li><strong>商品フィードは「ファイルを作る→取り込む→件数を確かめる→広告グループで商品を絞る→テンプレートを作る」の順で作ります。</strong> 商品ファイルは1行に1つの商品（色・サイズ違いは別の行）で、必須は9項目です。取り込んだ商品は2週間で失効するため、公式はホストURLかSFTPでの自動更新を勧めています。</li>
+<li><strong>取り込みの成功と、広告に出せることは別です。</strong> 2026年10月29日時点のヘルプは、フィードの4つの件数は商品ではなくオファーの記録の数で、差し引いても足りない商品の数にはならないと書いています。Productsタブは配信の実績がある商品だけを表示します。</li>
+<li><strong>価格と在庫は、変わったときに送り直します。</strong> セール期間の日付を入れても価格は自動で切り替わらず、行を消した商品も最大14日残り得ます。販売を止める商品は在庫切れ（out_of_stock）と明示します。日本のアカウント・日本円のカタログで使えるかは、原典に明記がありません。</li>
+</ol>
+<p class="case-note"><strong>読んでほしい人</strong>：商品点数の多いEC・小売で、ChatGPT広告の商品フィード広告を試したい広告担当者と、フィードを作る技術担当者。 <br><strong>この記事で扱わないこと</strong>：公開事例の施策の読み方は<a href="/articles/chatgpt-ads-ec-case/">EC事例の記事</a>、Shopifyの公式アプリは<a href="/articles/chatgpt-ads-shopify/">Shopifyの記事</a>、年末の販促の準備は<a href="/articles/chatgpt-ads-holiday/">年末商戦の記事</a>で扱います。</p>
+<h2 id="s2"><strong>商品フィード広告とは：提供の段階と、日本で確かめること</strong></h2>
+<p>商品フィード広告は、小売の広告主が商品カタログ（フィード）をAds Managerに取り込み、その商品情報から広告を作る仕組みです。ヘルプは、商品が多い、または頻繁に変わる小売の広告主向けと説明しています。</p>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>項目</strong></p>
+</th><th scope="col"><p><strong>原典の記載</strong></p>
+</th><th scope="col"><p><strong>広告主にとっての意味</strong></p>
+</th></tr>
+<tr><td><p>提供の段階</p>
+</td><td><p>ベータ。フィードの商品はベータ期間中、広告にだけ使われ、<span style="white-space:nowrap">ChatGPT</span>の通常の会話には出ない</p>
+</td><td><p>商品を登録しても、回答の中で紹介される機会が増えるわけではない</p>
+</td></tr>
+<tr><td><p>表示される内容</p>
+</td><td><p>商品画像・タイトル・星・価格・セール価格・ブランドなど</p>
+</td><td><p>価格とセール価格が広告に出得る。LPとずれない運用が要る</p>
+</td></tr>
+<tr><td><p>配信地域</p>
+</td><td><p>新しい商品フィードのキャンペーンは、地域の指定・除外が国単位だけ</p>
+</td><td><p>都道府県や市区町村には絞れない</p>
+</td></tr>
+<tr><td><p>広告の作り方</p>
+</td><td><p>広告グループで商品を絞り、テンプレート1つから広告を作る</p>
+</td><td><p>商品ごとに広告を作らなくてよい</p>
+</td></tr>
+</table></div>
+<p>日本で使えるかは、原典に明記がありません。手がかりは次の3つです。</p>
+<ul>
+<li><strong>商品ファイルの仕様。</strong> ChatGPTの商品検索と広告で共有する文書は「標準の形式のアップロードは現在米国向け」と書き、行ごとの国の列や通貨を書いてもこの既定は変わらず、他の市場はOpenAIが連携と使える国・通貨を確認してから使うとしています。一方、広告向けの開発者ドキュメントは、例を米国のカタログと米ドルとしたうえで「カタログと広告アカウントに合う国・商品情報・通貨を使う」と書いています。</li>
+<li><strong>他の国の例。</strong> OpenAIの公式事例（2026年10月26日掲載）では、耳栓ブランドAVが市場ごとに言語・通貨・価格を合わせたフィードを用意し、EUで商品フィードのキャンペーンを運用しています。日本の例ではありません。</li>
+<li><strong>Shopifyアプリ。</strong> 2026年10月29日時点のヘルプでは、使えるのは米国のShopify事業者です（「よくある質問」）。</li>
+</ul>
+<p>当社は、Ads Managerの「Tools」タブに「Feeds」があるか、作成の案内で日本を選べるかを、最初に画面で確かめることを勧めます。</p>
+<h2 id="s3"><strong>始める前に決める4つのこと（当社の提案）</strong></h2>
+<h3 id="s4"><strong>1. 広告に出す商品</strong></h3>
+<p>全商品を一度に入れる必要はありません。ファイルの共通の手引きは、最初に100件ほどの少ない見本で検証し、最初の全件の取り込みを点検してから自動化するよう勧めています。</p>
+<p>広告ポリシーで出せない商品は、最初から対象外にします。例えば酒類（アルコール0.5%超）とたばこは現在不可で、サプリメントは国別の表で「米国以外は不可」です。対象外の商品は、広告用の項目 is_ads_eligible を false にします（審査は<a href="/articles/chatgpt-ads-policy-review/">審査の記事</a>）。</p>
+<h3 id="s5"><strong>2. 市場と通貨</strong></h3>
+<p>フィードは、対応する国と通貨を決めて作ります（APIでは作成時に国を指定します）。複数の国へ出すなら、国ごとに言語・通貨・価格を合わせたフィードを用意する前提で設計します（耳栓ブランドAVの事例と同じ考え方）。</p>
+<h3 id="s6"><strong>3. 更新の方式と担当</strong></h3>
+<p>商品は2週間で失効するため、手作業のアップロードだけでは、更新を忘れた商品から広告に使えなくなります。誰が、何時に、どの方式で送り直すかを決めます。</p>
+<h3 id="s7"><strong>4. 商品ページと画像を外部から開けるか</strong></h3>
+<p>商品ページと画像は、公開されたHTTPSのURLである必要があります。商品フィードでは、OAI-AdsBotに加えてOAI-SearchBotが商品画像のURLを読めるようにし、画像のホストが403を返すとフィードの処理が止まることがあると書かれています（<a href="/articles/chatgpt-ads-crawler/">リンク先のクローラー許可の記事</a>）。</p>
+<h2 id="s8"><strong>商品ファイルの作り方：必須の9項目と、広告用の項目</strong></h2>
+<figure><a aria-label="図を拡大する" href="/articles/assets/product-feed.png"><img alt="図1：商品フィード広告ができるまでの5つの手順。OpenAIのヘルプセンターと開発者向けドキュメントをもとに当社作成。" height="760" loading="lazy" src="/articles/assets/product-feed.svg" width="1200"/></a><figcaption>図1：商品フィード広告ができるまでの5つの手順。OpenAIのヘルプセンターと開発者向けドキュメントをもとに当社作成。</figcaption></figure>
+<p>商品ファイルは、UTF-8の文字コードで、1行に1つの商品（購入できる単位）を書きます。色やサイズの違いは別の行にします。必須の項目は次の9つです。</p>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>項目名</strong></p>
+</th><th scope="col"><p><strong>内容</strong></p>
+</th><th scope="col"><p><strong>注意</strong></p>
+</th></tr>
+<tr><td><p>item_id</p>
+</td><td><p>商品（バリエーション）ごとの固定のID</p>
+</td><td><p>別の商品に使い回さない。先頭の0を残すため文字列で扱う</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">title</span></p>
+</td><td><p>商品名。バリエーションがあれば色・サイズも含める</p>
+</td><td><p>150文字以内が目安</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">description</span></p>
+</td><td><p>商品の事実の説明</p>
+</td><td><p>プレーンテキストで5,000文字以内が目安</p>
+</td></tr>
+<tr><td><p>url</p>
+</td><td><p>商品の詳細ページ</p>
+</td><td><p>できればバリエーションを選んだ状態のURL</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">brand</span></p>
+</td><td><p>商品ページに書かれたブランド名</p>
+</td><td><p>仮の値を入れない</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">seller</span>_name</p>
+</td><td><p>販売者の名前</p>
+</td><td><p>仮の値を入れない</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">image</span>_url</p>
+</td><td><p>そのバリエーションの主な画像</p>
+</td><td><p>JPEG・PNGなど画像そのもののURL</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">availability</span></p>
+</td><td><p>在庫の状態</p>
+</td><td><p>in_<span style="white-space:nowrap">stock</span>・out_of_<span style="white-space:nowrap">stock</span>・pre_<span style="white-space:nowrap">order</span>・<span style="white-space:nowrap">backorder</span>・<span style="white-space:nowrap">unknown</span> のどれか。空や不明な値は行ごと取り込まれない</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">price</span></p>
+</td><td><p>通常の価格</p>
+</td><td><p>金額・半角スペース・通貨コード。例：79.99 USD</p>
+</td></tr>
+</table></div>
+<p>価格は「金額＋半角スペース＋3文字の通貨コード」で、桁区切りのカンマを入れず、通貨が持つ桁より細かい小数を書きません。日本円なら「2980 JPY」の形になります（当社の当てはめ）。ただし仕様は、通貨や商品URLを書いても配信先の市場は決まらないとしています。日本円のフィードを使えるかは前の節のとおり未確認です。</p>
+<p>任意の項目のうち、商品広告の見え方や運用に関わるものは次のとおりです。</p>
+<ul>
+<li><strong>sale_price</strong>：セール価格。通常の価格より低く、同じ通貨であること。条件に合わない値は使われません</li>
+<li><strong>group_id・listing_has_variations・variant_dict</strong>：バリエーションをまとめる項目。同じ商品の色・サイズ違いに同じ group_id を付けます</li>
+<li><strong>gtin・mpn</strong>：GTIN（8・12・13・14桁の商品コード）と型番。割り当てがなければ空にし、値を作りません</li>
+<li><strong>review_count・star_rating</strong>：商品の口コミの件数と平均（0〜5）。ストアの評価と混ぜません。広告の「星」にどの項目が使われるかは書かれていません</li>
+</ul>
+<p>広告に使うための項目は2つです。</p>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>項目名</strong></p>
+</th><th scope="col"><p><strong>内容</strong></p>
+</th></tr>
+<tr><td><p>is_ads_<span style="white-space:nowrap">eligible</span></p>
+</td><td><p>true で広告の処理の対象、<span style="white-space:nowrap">false</span> で対象外。Ads <span style="white-space:nowrap">Manager</span>で作ったフィードは、<span style="white-space:nowrap">false</span> と明示した商品を除いて既定で対象になる（ヘルプ）</p>
+</td></tr>
+<tr><td><p>ads_<span style="white-space:nowrap">metadata</span></p>
+</td><td><p>広告グループで商品を絞るための独自の値。例：{"<span style="white-space:nowrap">custom</span>_<span style="white-space:nowrap">label</span>_0":"<span style="white-space:nowrap">summer</span>"}。CSVのセルにはJSONの形で入れる</p>
+</td></tr>
+</table></div>
+<p>不明な任意の項目は空にし、「null」「n/a」のような仮の文字を入れません（在庫の unknown は例外）。カンマや引用符を含むセルは二重引用符で囲み、中の引用符は2つ重ねます。当社は、既定に頼らず is_ads_eligible を全行に明示することを勧めます。出している商品をファイルで確かめられるからです。</p>
+<h2 id="s9"><strong>取り込みの方法と、2週間の失効</strong></h2>
+<p>フィードは、Ads Managerの「Tools」タブ→「Feeds」→「Create Feed」から作ります。取り込みはフィードの行の「…」（三点）メニューから選びます。</p>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>方法</strong></p>
+</th><th scope="col"><p><strong>ヘルプが挙げる向いている場面</strong></p>
+</th><th scope="col"><p><strong>運用の注意（当社の見解）</strong></p>
+</th></tr>
+<tr><td><p>CSV・TXTのアップロード</p>
+</td><td><p>始めるとき、たまに手で更新するとき</p>
+</td><td><p>2週間で失効するため、検証用と考える</p>
+</td></tr>
+<tr><td><p>ホストURL</p>
+</td><td><p>商品カタログが固定の<span style="white-space:nowrap">HTTPS</span>のURLで公開されているとき</p>
+</td><td><p>URLを変えない。認証やボット対策で止めない</p>
+</td></tr>
+<tr><td><p>SFTP</p>
+</td><td><p>技術チームがサーバー間の送信を自動化するとき</p>
+</td><td><p>接続の情報（パスワードか鍵）を社内で管理する</p>
+</td></tr>
+</table></div>
+<p>ヘルプは、商品が2週間で失効するため、ホストURLか自動のSFTPを勧めています。処理には、フィードの大きさにより数分から数時間かかり、結果は「Upload History」で確かめます。</p>
+<p>SFTPで送る場合、開発者向けドキュメントには次の決まりがあります。</p>
+<ul>
+<li>ファイルはSFTPの最上位のフォルダに直接置き、フォルダを入れ子にしない</li>
+<li>複数のファイルに分けるときは、全体で1つのカタログになるようにし、同じ商品を2回入れない</li>
+<li>既存のファイルを置き換え、古いファイルは消す（同じファイル名を使い回すと管理しやすい）</li>
+<li>送るたびに、在庫切れにする商品も含めた全件を送る</li>
+</ul>
+<p>ファイルの共通の手引きは、全件の送り直しを少なくとも1日1回と勧めています。全件のファイルから消えた商品も、最後に処理した記録が最大14日残るため、販売を止めた商品は行を消さず在庫切れ（out_of_stock）として送ります。</p>
+<p>APIには、10月7日時点の文書になかった「全件の送信でカタログを置き換える」設定が、10月29日時点で載っています。有効にすると、以後の全件のファイルに無い商品は1日以内に削除され、設定を戻しても削除済みの商品は戻りません。毎回全件を送れる仕組みが先に要ります。</p>
+<h2 id="s10"><strong>取り込みの確認：件数の読み方と、よくある不備</strong></h2>
+<p>取り込みのエラーが出たら、ヘルプは個々の行の値を仕様と照らすよう書いています。見るのは、必須の項目の抜け、仕様と違う項目名、形式の違う値の3つです。エラーの文言がホストURLに触れていても、CSVの中身を確かめます。</p>
+<p>2026年10月29日時点のヘルプには、件数の読み方が加わりました（10月7日時点にはなし）。「Items in Feed Connection」の横の情報のツールチップで、4つの件数を見られます。</p>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>件数</strong></p>
+</th><th scope="col"><p><strong>読むときの注意（ヘルプの記載）</strong></p>
+</th></tr>
+<tr><td><p><span style="white-space:nowrap">Ingested</span>・<span style="white-space:nowrap">Processed</span>・Not <span style="white-space:nowrap">approved</span>・<span style="white-space:nowrap">Ready</span></p>
+</td><td><p>商品ではなくオファーの記録の数。件数ごとに対象の範囲が違うため、差し引いても足りない商品の数にはならない</p>
+</td></tr>
+<tr><td><p>Not <span style="white-space:nowrap">approved</span></p>
+</td><td><p>合計の数だけ。対象の商品の一覧や、商品ごとの理由は出ない</p>
+</td></tr>
+<tr><td><p>審査・<span style="white-space:nowrap">Products</span>タブとの関係</p>
+</td><td><p>ポリシーで承認されても配信の準備ができたとは限らない。<span style="white-space:nowrap">Products</span>タブ（配信の実績がある商品）とは別に読む</p>
+</td></tr>
+</table></div>
+<p>APIでは、処理の状態と診断のコードが返ります。処理が終わっても、すべての商品を配信できるとは限りません。開発者向けドキュメントにある主な診断と対処は次のとおりです。</p>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>症状</strong></p>
+</th><th scope="col"><p><strong>確かめること</strong></p>
+</th></tr>
+<tr><td><p>必須の列が無い（<span style="white-space:nowrap">missing</span>_<span style="white-space:nowrap">required</span>_<span style="white-space:nowrap">column</span>）</p>
+</td><td><p>列の名前を仕様と照らし、足りない必須の列を足す</p>
+</td></tr>
+<tr><td><p>値が不正（<span style="white-space:nowrap">invalid</span>_<span style="white-space:nowrap">value</span>）</p>
+</td><td><p>指摘された項目の形式。例：価格の金額と通貨コード</p>
+</td></tr>
+<tr><td><p>フォルダの構成の誤り（<span style="white-space:nowrap">invalid</span>_sftp_<span style="white-space:nowrap">directory</span>_<span style="white-space:nowrap">layout</span>）</p>
+</td><td><p>ファイルを最上位に置き、入れ子のフォルダを消す</p>
+</td></tr>
+<tr><td><p>広告グループの商品数が0</p>
+</td><td><p>絞り込みを外して数を見る。外しても0なら取り込みの履歴を見る</p>
+</td></tr>
+</table></div>
+<p>Productsタブは、配信前なら空や少なくても想定どおりのことがあり、配信が始まってから最初の行が出るまで最大7時間かかります。商品が全部あるかの確認には使えないため、配信前は広告グループを作る画面の商品数で確かめます。配信後も商品が出ないままなら、ヘルプは広告アカウントID、フィードID、キャンペーンと広告グループの名前、期間とタイムゾーン、商品IDの例、Productsタブの画面を添えてサポートへ連絡するよう書いています。</p>
+<h2 id="s11"><strong>キャンペーン・広告グループ・テンプレートの作り方</strong></h2>
+<p>ヘルプの手順を、決めることごとに分けると次のとおりです。</p>
+<ol>
+<li><strong>キャンペーン</strong>：「Campaigns」タブで新しいキャンペーンを作り、キャンペーンの種類で「Product feed」を選ぶ。ほかの設定は通常のキャンペーンの作成のヘルプに従う。地域は国単位だけ</li>
+<li><strong>広告グループ</strong>：使うフィードを選び、商品の絞り込み（フィルター）をかけ、画面の商品数で対象の数を確かめる。入札の方法は、対象の新しい広告グループでは「Maximize results」（成果を最大化）が既定</li>
+<li><strong>テンプレート</strong>：広告グループに1つ作る。現在テンプレートで選べるのは画像の項目だけ。見本の商品のプレビューで、タイトルと説明の見え方を確かめる</li>
+<li><strong>公開前の確認</strong>：フィード、商品数、商品の表示とリンク先、プレビュー、予算・入札・地域を見てから審査に出す</li>
+</ol>
+<h3 id="s12"><strong>絞り込みと独自のラベル</strong></h3>
+<p>絞り込みには、ブランド・カテゴリ・価格・商品IDなどを使えます。開発者向けの説明では、複数の条件はすべてを満たす商品だけが選ばれます。条件に合っても表示が保証されるわけではありません。</p>
+<p>足りなければ、商品ファイルの ads_metadata に独自の値を入れて絞ります。ヘルプは bidding_tier（入札の段階）や product_line（商品の系統）のような値の例を挙げています。開発者向けの仕様は「連携で設定されたキーを使い、ターゲティング用のキーを作り出さない」としているため、使えるキーは設定の時点で確かめます。</p>
+<p><strong>ラベルで配信地域は絞れません。</strong> ヘルプの例では、custom_label_0 に「WA」（ワシントン州）と入れても、その商品が選ばれるだけで、ワシントン州の人に配信が限られるわけではありません。</p>
+<h3 id="s13"><strong>入札と目的</strong></h3>
+<p>開発者向けドキュメントでは、商品フィードのキャンペーンも表示・クリック・成果（コンバージョン）の目的を使えます。成果の目的はクリック課金で、作成時に標準の成果イベントを1つだけ付けます。キャンペーンの種類・目的・つないだフィードは作成後に変えられません（APIの記載。管理画面で同じかはヘルプに記載なし）。購入の計測は<a href="/articles/chatgpt-ads-pixel/">Pixelの記事</a>を参照してください。</p>
+<h3 id="s14"><strong>商品URLのトラッキング：旧方式は2026年11月5日までに移行</strong></h3>
+<p>商品フィードの広告では、個々の商品に設定できる広告がなく、広告に設定したトラッキングのパラメータが各商品のURLに付きます。開発者向けドキュメントによると、新しい方式では、アカウント・キャンペーン・広告グループ・広告で設定した値が、商品URLにある同じキーを上書きします。商品URLの値が優先される旧方式（Legacy）のアカウントは2026年11月5日までに移る必要があります。切り替えは、アカウントの管理者がAds Managerの「Feed tracking is changing」の案内で「Switch now」を選びます（管理者以外は選べません）。切り替えの影響は<a href="/articles/chatgpt-ads-ec-case/">EC事例の記事</a>で扱っています。</p>
+<p>既にある商品フィードから、ChatGPTやCodexのプラグインでキャンペーンを作ることもできます（<a href="/articles/chatgpt-ads-plugin/">Ads Managerプラグインの記事</a>）。</p>
+<h2 id="s15"><strong>価格・在庫の変更とセール</strong></h2>
+<p>商品ファイルの仕様は、セールの期間や在庫の予定日を入れても、価格や在庫は自動で切り替わらないと明記しています。セールの開始と終了のときに、その時点の価格を送り直します。</p>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>変えたいこと</strong></p>
+</th><th scope="col"><p><strong>方法（原典の記載）</strong></p>
+</th></tr>
+<tr><td><p>セール価格を始める・終える</p>
+</td><td><p>sale_<span style="white-space:nowrap">price</span> を入れる・外して送り直す</p>
+</td></tr>
+<tr><td><p>売り切れ・再入荷</p>
+</td><td><p><span style="white-space:nowrap">availability</span> を out_of_<span style="white-space:nowrap">stock</span>・in_<span style="white-space:nowrap">stock</span> にする。在庫切れの商品は、変更が反映されると配信の対象から外れる</p>
+</td></tr>
+<tr><td><p>新しい商品を足す・画像や説明を変える</p>
+</td><td><p>全件のファイルを送り直す</p>
+</td></tr>
+<tr><td><p>既存の商品の題名・価格・在庫だけを変える</p>
+</td><td><p>APIの<span style="white-space:nowrap">Delta</span> <span style="white-space:nowrap">Feeds</span> APIも使える（広告アカウントごとに有効化が必要）</p>
+</td></tr>
+</table></div>
+<p>Delta Feeds APIは、変わった項目だけを送る仕組みです。応答の accepted: true は受け付けたという意味で、配信の対象まで更新されたことは示しません。価格は通貨の最小単位の整数で送ります（日本円は 7999 が7,999円という記載。日本円のフィードを使えるかは未確認）。送った変更は元のカタログにも反映し、次の全件の送信に意図した値が入るようにします。</p>
+<p>フィードの価格と商品ページの価格は、同じ時点でそろえます（当社の提案）。広告ポリシーは、価格についての根拠のない主張を含む誤解を招く広告を禁じ、リンク先が広告の商品を正確に表すことを求めています。2026年10月30日から新規・既存のキャンペーンで自動的に有効になるクリエイティブ強化について、ヘルプは広告とLPの価格・販促・在庫を最新に保つよう書いていますが、商品フィードのキャンペーンに適用されるかは書いていません（<a href="/articles/chatgpt-ads-creative-enhancements/">クリエイティブ強化の記事</a>）。</p>
+<h2 id="s16"><strong>この記事で分からないこと</strong></h2>
+<ul>
+<li><strong>日本のアカウント・日本円のカタログで、商品フィードを作って配信できるか</strong>（冒頭の節を参照）</li>
+<li><strong>日本語の商品名・説明の扱い。</strong> 文字コードはUTF-8と書かれていますが、言語の記載はありません</li>
+<li><strong>広告の見え方の細部。</strong> 1つの広告に商品がいくつ、どの順で並ぶかは書かれていません</li>
+<li><strong>星の表示に使われる項目と、Not approved の商品ごとの理由</strong></li>
+<li><strong>管理画面のホストURLの自動の取り込みの頻度</strong></li>
+<li><strong>クリエイティブ強化が商品フィードの広告に適用されるか</strong></li>
+</ul>
+<h2 id="s17"><strong>商品フィード作成のチェックリスト</strong></h2>
+<ul>
+<li>[ ] Ads Managerで「Tools」→「Feeds」が使えるか、作成の案内で日本を選べるかを確かめた</li>
+<li>[ ] 酒類・たばこ・米国以外で不可の商品（サプリメントなど）を is_ads_eligible=false にした</li>
+<li>[ ] 必須の9項目を全行に入れ、価格を「金額＋半角スペース＋通貨コード」で書いた</li>
+<li>[ ] 色・サイズ違いを別の行にし、group_id でまとめた</li>
+<li>[ ] 商品ページと画像のURLが外部から開け、OAI-AdsBot・OAI-SearchBotを止めていない</li>
+<li>[ ] 100件ほどの見本で取り込みを試し、Upload History のエラーを直した</li>
+<li>[ ] 4つの件数を差し引きで読まず、広告グループの商品数で対象を確かめた</li>
+<li>[ ] 全件を1日1回以上送り直す方式・担当・時刻と、セールの開始・終了の送り直しを決めた</li>
+<li>[ ] 販売を止める商品は行を消さず out_of_stock で送る手順にした</li>
+<li>[ ] 商品URLのトラッキングが旧方式なら、2026年11月5日までの切り替えを管理者に依頼した</li>
+</ul>
+<h2 id="s18"><strong>よくある質問</strong></h2>
+<p><strong>Q. Google向けの商品フィードを、そのまま使えますか。</strong> 原典はGoogleのフィードとの互換を説明していません。仕様には、item_id の別名として id や sku、group_id の別名として item_group_id を受け付けるという記載があります。ただし seller_name のような必須の項目の抜けや値の形式の違いは取り込みの失敗の原因になるため、項目名と値を仕様と照らしてから使います（当社の見解）。</p>
+<p><strong>Q. 商品ごとに入札額を変えられますか。</strong> 開発者向けドキュメントの表では、入札は広告グループで設定する項目で、商品ごとの入札の項目は書かれていません。ヘルプは、独自の値（例：bidding_tier）を ads_metadata に入れて広告グループを組み分ける例を示しています。入札を変えたい商品群にラベルを付け、広告グループを分けます（当社の提案）。</p>
+<p><strong>Q. 楽天市場やAmazonの店舗の商品ページを、リンク先にできますか。</strong> 原典はこの点に直接答えていません。商品ファイルの仕様では、モールの商品は seller_name に販売者、marketplace_seller に購入するモールを書きますが、後者は設定が要るとされています。広告ポリシーは、リンク先が広告主と広告の商品に明確に関係することを求め、ヘルプには、別のドメインのリンク先を使うと事業者の確認の承認が先に要る場合があるとあります。当社は、自社サイトの商品ページで始めることを勧めます。</p>
+<p><strong>Q. 商品が数千点あります。広告グループはいくつに分ければよいですか。</strong> 原典に数の目安はありません。当社は、入札や訴求を変えたい単位（例：主力の商品群とそれ以外）で2〜3の広告グループから始め、商品ごとの実績を見てから分けることを勧めます。分けすぎると、それぞれの実績が少なく判断しにくくなります（<a href="/articles/chatgpt-ads-account-structure/">アカウント構成の記事</a>）。</p>
+<p><strong>Q. Shopifyアプリと、Ads Managerへの直接の取り込みのどちらを使えばよいですか。</strong> 2026年10月29日時点のヘルプでは、Shopifyアプリは現在、米国のすべてのShopify事業者が使え、ChatGPT広告の提供地域へは「近く」広げるとされています（時期の記載なし）。10月8日時点の<a href="/articles/chatgpt-ads-shopify/">Shopifyの記事</a>で紹介した「9月23日から国際展開」の一文は、9月16日の発表のページから10月29日までに削除されました。日本のストアでアプリを使えない場合は、Shopifyから書き出した商品データを仕様に合わせてAds Managerに取り込みます（当社の見解）。</p>
+<h2 id="s19"><strong>まとめ</strong></h2>
+<ul>
+<li>必須は9項目。is_ads_eligible で広告の対象を決め、独自のラベルで商品を選ぶ（配信地域は国単位から絞れない）</li>
+<li>取り込んだ商品は2週間で失効する。ホストURLかSFTPで、全件を1日1回以上送り直す</li>
+<li>4つの件数は差し引きで読まない。Productsタブは配信の実績がある商品だけ</li>
+<li>セールの日付では価格は切り替わらない。販売を止める商品は out_of_stock で送る</li>
+<li>日本のアカウント・日本円のカタログで使えるかは、原典に明記がない</li>
+</ul>
+<p>自社の商品データで商品フィード広告を試せるか整理したい場合は、主力商品の一覧と、現在お使いの商品フィード（他の媒体向けのものでも可）をお手元に用意のうえ<a href="https://ads.ikigaiinc.com/#cta">20分の無料相談</a>をご利用ください。</p>
+<h3 id="s20"><strong>出典</strong></h3>
+<ul>
+<li><a href="https://help.openai.com/en/articles/20001268-create-campaigns-from-product-feeds">Create Campaigns from Product Feeds</a>（提供の段階、表示される内容、作成の手順、取り込みの3つの方法、2週間の失効、既定の広告の対象、アップロードの失敗、4つの件数、国単位、絞り込みと独自のラベル、テンプレート、Productsタブ）</li>
+<li><a href="https://developers.openai.com/ads/product-feeds">Product Feeds（開発者向け）</a>（SFTPの決まり、取り込みの状態と診断、カタログの置き換え、Delta APIの使い分け、日本円の金額、絞り込み、目的と変えられない設定、テンプレートのマクロ、トラッキング）</li>
+<li><a href="https://developers.openai.com/commerce/specs/file-upload/products">Products（商品ファイルの仕様、開発者向け）</a>（必須の9項目、価格の書き方、任意の項目、is_ads_eligible・ads_metadata、米国向けの既定、日付で切り替わらないこと、別名）</li>
+<li><a href="https://developers.openai.com/commerce/specs/file-upload/overview">File upload overview（開発者向け）</a>（全件の送信、1日1回以上、最大14日の保持、100件ほどの見本での検証）</li>
+<li><a href="https://developers.openai.com/ads/delta-feeds">Delta Feeds API（開発者向け）</a>（更新できる項目、アカウントごとの有効化、受け付けの意味）</li>
+<li><a href="https://developers.openai.com/ads/campaign-management">Campaign Management（開発者向け）</a>（商品URLのパラメータの優先順位、旧方式の移行期限）</li>
+<li><a href="https://developers.openai.com/ads/troubleshooting">Troubleshooting（開発者向け）</a>（フィードの診断のコード）</li>
+<li><a href="https://help.openai.com/en/articles/20001217-troubleshooting-common-issues">Troubleshooting Common Issues</a>（アップロードの失敗、Productsタブが空のとき）</li>
+<li><a href="https://help.openai.com/en/articles/20001243-advertiser-guidance-for-allowing-openai-web-crawlers">Advertiser Guidance for Allowing OpenAI Web Crawlers</a>（商品画像のURLとOAI-SearchBot、403）</li>
+<li><a href="https://help.openai.com/en/articles/20001210-creating-campaigns-for-chatgpt-ads">Creating campaigns for ChatGPT Ads</a>（商品フィードのキャンペーンの地域指定）</li>
+<li><a href="https://help.openai.com/en/articles/20001523-set-up-chatgpt-ads-for-shopify">Set up ChatGPT Ads for Shopify</a>（アプリの提供地域）</li>
+<li><a href="https://openai.com/index/reimagining-advertising-with-ai/">Reimagining advertising with AI</a>（2026年9月16日の発表。国際展開の一文の削除）</li>
+<li><a href="https://help.openai.com/en/articles/20001558-use-the-chatgpt-ads-manager-plugin">Use the ChatGPT Ads Manager plugin</a>（既存のフィードからのキャンペーン作成）</li>
+<li><a href="https://help.openai.com/en/articles/20001614-creative-enhancements-for-chatgpt-ads">Creative enhancements for ChatGPT Ads</a>（2026年10月30日からの自動の有効化、広告とLPを最新に保つ）</li>
+<li><a href="https://openai.com/policies/ad-policies/">OpenAI Ads Policies</a>・<a href="https://help.openai.com/en/articles/20001534-troubleshooting-common-onboarding-and-policy-issues">Troubleshooting Common Onboarding and Policy Issues</a>（酒類・たばこ、誤解を招く価格の表示、サプリメントの国別の扱い）</li>
+<li><a href="https://ads.openai.com/customers/loop">耳栓ブランドAV</a>（市場ごとのフィード、欧州の商品フィードのキャンペーン）</li>
+</ul>
+<p>いずれも2026年10月29日に本文を確認しています。</p>
+<h3 id="s21"><strong>変更履歴</strong></h3>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>日付</strong></p>
+</th><th scope="col"><p><strong>内容</strong></p>
+</th></tr>
+<tr><td><p>2026年10月29日</p>
+</td><td><p>初版。公式ヘルプ8本、開発者向けドキュメント6本、広告ポリシー、2026年9月16日の公式発表、公式の事例1本を本文確認</p>
+</td></tr>
+</table></div>
+<p><strong>次回確認予定：2026年11月上旬。</strong> 日本のアカウントでの商品フィードの提供状況、商品ファイルの仕様の米国向けの既定、商品URLのトラッキングの移行期限（11月5日）後の記述を確認します。</p>
+</article></div><section class="consult"><div><span class="eyebrow">NEXT STEP</span><h2>自社の商材なら、<br>何から試す？</h2></div><div><p>商材・主要な成果・検証予算から、準備することを整理します。<br>広告や計測のどこから手をつけるか、まずはご相談ください。</p><a href="/#cta" class="button">ChatGPT広告の出稿・運用を相談する <span aria-hidden="true">↗</span></a><p class="small-text">GPT広告専門店の20分無料相談</p></div></section><section class="related"><div class="section-top"><p class="eyebrow">RELATED ARTICLES</p><h2>次に読む記事</h2></div><div class="cards two"><a class="article-card" href="/articles/chatgpt-ads-ec-case/"><div class="card-visual"><img src="/articles/assets/ec-structure.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">11 / EC・商品フィード</span><h3>ChatGPT広告のEC事例｜商品フィードとセール施策から学ぶ設計</h3><p>ChatGPT広告で公開されているEC事例のなかで、売上に対する成果まで公表されている数少ない例が、海外のPCパーツ・家電EC事業者のものです。</p><span class="card-bottom">2026.09.20 <span>記事を読む ↗</span></span></div></a><a class="article-card" href="/articles/chatgpt-ads-shopify/"><div class="card-visual"><img src="/articles/assets/shopify-setup.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">21 / Shopify連携</span><h3>ShopifyでChatGPT広告を始めるには｜公式アプリと商品連携・計測の準備</h3><p>OpenAIはShopify向けの公式アプリ「ChatGPT Ads」を提供しています。アプリでできること、日本のストアで使う前に確認したい提供状況、商品データ・計測・データの扱いの準備、商品フィード広告の配信の制約を、公式発表とアプリの掲載内容をもとに整理します。</p><span class="card-bottom">2026.09.26 <span>記事を読む ↗</span></span></div></a><a class="article-card" href="/articles/chatgpt-ads-holiday/"><div class="card-visual"><img src="/articles/assets/holiday.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">43 / 年末商戦</span><h3>年末商戦のChatGPT広告｜準備の順番と¥35,000広告クレジットの条件</h3><p>OpenAIの年末商戦向けページは、ChatGPT広告を初めて使う広告主に「¥35,000を使うと¥35,000分の広告クレジット」を案内しています。</p><span class="card-bottom">2026.10.29 <span>記事を読む ↗</span></span></div></a><a class="article-card" href="/articles/chatgpt-ads-plugin/"><div class="card-visual"><img src="/articles/assets/plugin.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">44 / Ads Managerプラグイン</span><h3>ChatGPT広告のAds Managerプラグイン｜ChatGPT・Codexから広告を作る・分析する</h3><p>OpenAIの「ChatGPT Ads Manager」プラグインを使うと、ChatGPTやCodexとの会話で、広告案の作成、設定の変更、成果の分析、配信しない原因の切り分けができます。</p><span class="card-bottom">2026.10.29 <span>記事を読む ↗</span></span></div></a></div></section></div></main><footer class="site-footer"><div class="wrap"><a class="brand" href="/">GPT広告専門店<span>.</span></a><p>運営：株式会社Ikigai<br>本サービスはOpenAIの公式・公認・提携サービスではありません。</p><div class="footer-links"><a href="/articles/">記事一覧</a><a href="/">サービス・料金</a><a href="https://ikigaiinc.com/privacypolicy">プライバシーポリシー</a><a href="https://ikigaiinc.com">会社情報</a></div><small>© 2026 株式会社Ikigai. ChatGPT・OpenAIは各権利者の商標です。</small></div></footer><script>(function(){var K=['utm_source','utm_medium','utm_campaign','utm_content','utm_term'],q=new URLSearchParams(location.search),u={},any=false;K.forEach(function(k){var v=q.get(k);if(v){u[k]=v;any=true;}});try{if(any){sessionStorage.setItem('lp_utm',JSON.stringify(u));}}catch(e){}})();</script></body></html>
