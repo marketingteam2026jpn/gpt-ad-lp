@@ -1,0 +1,298 @@
+<!doctype html><html lang="ja"><head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W62G2NT3');</script>
+<!-- End Google Tag Manager -->
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>【2026年10月最新版】ChatGPT広告のConversions API｜Pixelとの併用・重複の防ぎ方・実装前の準備｜GPT広告専門店</title><meta name="description" content="ChatGPT広告のConversions API（CAPI）は、注文の確定などをサーバーから送る計測の方法です。Pixelとの違いと併用の判断、二重に数えないためのイベントIDの決め方、送る項目と顧客情報のハッシュ化、送るタイミングと再送、実装の分担と実装前に決めることを公式資料で整理します。"><link rel="canonical" href="https://ads.ikigaiinc.com/articles/chatgpt-ads-conversions-api/"><meta property="og:locale" content="ja_JP"><meta property="og:type" content="article"><meta property="og:site_name" content="GPT広告専門店"><meta property="og:title" content="【2026年10月最新版】ChatGPT広告のConversions API｜Pixelとの併用・重複の防ぎ方・実装前の準備"><meta property="og:description" content="ChatGPT広告のConversions API（CAPI）は、注文の確定などをサーバーから送る計測の方法です。Pixelとの違いと併用の判断、二重に数えないためのイベントIDの決め方、送る項目と顧客情報のハッシュ化、送るタイミングと再送、実装の分担と実装前に決めることを公式資料で整理します。"><meta property="og:url" content="https://ads.ikigaiinc.com/articles/chatgpt-ads-conversions-api/"><meta property="og:image" content="https://ads.ikigaiinc.com/articles/assets/conversions-api.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="760"><meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#10131A"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Noto+Sans+JP:wght@400;500;700;900&amp;display=swap" rel="stylesheet"><link rel="stylesheet" href="/articles/assets/style.css"><script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "【2026年10月最新版】ChatGPT広告のConversions API｜Pixelとの併用・重複の防ぎ方・実装前の準備", "description": "ChatGPT広告のConversions API（CAPI）は、注文の確定などをサーバーから送る計測の方法です。Pixelとの違いと併用の判断、二重に数えないためのイベントIDの決め方、送る項目と顧客情報のハッシュ化、送るタイミングと再送、実装の分担と実装前に決めることを公式資料で整理します。", "mainEntityOfPage": "https://ads.ikigaiinc.com/articles/chatgpt-ads-conversions-api/", "url": "https://ads.ikigaiinc.com/articles/chatgpt-ads-conversions-api/", "datePublished": "2026-10-29T00:00:00+09:00", "dateModified": "2026-10-29T00:00:00+09:00", "inLanguage": "ja", "author": {"@type": "Organization", "name": "GPT広告専門店（株式会社Ikigai）", "url": "https://ads.ikigaiinc.com/"}, "publisher": {"@type": "Organization", "name": "株式会社Ikigai", "url": "https://ikigaiinc.com"}, "image": "https://ads.ikigaiinc.com/articles/assets/conversions-api.png"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://ads.ikigaiinc.com/"}, {"@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://ads.ikigaiinc.com/articles/"}, {"@type": "ListItem", "position": 3, "name": "ChatGPT広告のConversions API｜Pixelとの併用・重複の防ぎ方・実装前の準備", "item": "https://ads.ikigaiinc.com/articles/chatgpt-ads-conversions-api/"}]}]}</script></head><body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W62G2NT3"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<a class="skip" href="#main">本文へ移動</a><header class="site-header"><div class="wrap header-inner"><a class="brand" href="/">GPT広告専門店<span>.</span><small>by 株式会社Ikigai</small></a><nav aria-label="メインナビゲーション"><a href="/articles/">記事一覧</a><a class="button small" href="/#cta">無料相談 <span aria-hidden="true">↗</span></a></nav></div></header><main id="main"><div class="wrap"><nav class="breadcrumbs" aria-label="パンくず"><a href="/">ホーム</a><span>/</span><a href="/articles/">記事一覧</a><span>/</span><span>Conversions API</span></nav><header class="article-heading"><p class="eyebrow">CHATGPT ADS GUIDE <span>49 / Conversions API</span></p><p class="edition">2026年10月最新版</p><h1>ChatGPT広告のConversions API｜Pixelとの併用・重複の防ぎ方・実装前の準備</h1><div class="byline"><span>企画・編集：GPT広告専門店（株式会社Ikigai）</span><time datetime="2026-10-29">公開：2026年10月29日／情報確認：2026年10月29日</time></div><p class="lead">ChatGPT広告のConversions API（CAPI）は、注文の確定などをサーバーから送る計測の方法です。</p><p class="case-note">本記事は、OpenAIの開発者向けドキュメントとヘルプセンター（いずれも2026年10月29日に本文を確認）に基づいています。10月7日時点との比較は、当社が同日に保存した本文との比較です。コードは開発者向けドキュメントの例をそのまま引用しています。実装の分担と判断の基準は株式会社Ikigaiの見解です。</p></header><div class="reading-layout"><aside class="toc"><details open><summary>この記事の内容</summary><ol><li><a href="#s1">この記事の要点</a></li><li><a href="#s2">Pixelとの違いと、併用するかの判断</a></li><li><a href="#s3">重複を防ぐ：イベントIDの決め方</a></li><li><a href="#s4">送る項目と、クリックの参照値</a></li><li><a href="#s7">顧客情報の送り方：正規化とハッシュ化</a></li><li><a href="#s8">送るタイミングと再送</a></li><li><a href="#s9">実装の分担：社内開発・計測パートナー・実装ツール</a></li><li><a href="#s10">テストと確認の手順</a></li><li><a href="#s11">この記事で分からないこと</a></li><li><a href="#s12">実装前に決めることのチェックリスト</a></li><li><a href="#s13">よくある質問</a></li><li><a href="#s14">まとめ</a></li></ol></details><a class="toc-back" href="/articles/">← すべての記事を見る</a></aside><article class="prose" aria-label="記事本文"><h2 id="s1"><strong>この記事の要点</strong></h2>
+<ol>
+<li><strong>Conversions API（CAPI）は、Pixelの代わりではなく、Pixelを補うものとして案内されています。</strong> 開発者向けドキュメントは、2026年10月29日時点で「両方を使い、ブラウザの行動とサーバーで確定した成果を組み合わせる」と書いています。サーバーだけで送る場合もPixel IDが必要で、クリックの参照値（oppref）は自分で受け取って渡す必要があります。</li>
+<li><strong>同じ成果を両方で送るときは、Pixel ID・イベント名・イベントIDをそろえます。</strong> OpenAIは最初に届いた1件を使い、後から届いた重複は無視します。再送するときも同じイベントIDと元の時刻を使います。注文IDなど、社内で一意に決まる値をイベントIDにするのが分かりやすい方法です。</li>
+<li><strong>実装の前に、「何を・いつ・どの経路で・どの情報と一緒に」送るかを決めます。</strong> 送れるのは行動から7日以内のイベントで、イベント品質の評価は行動から1時間以内に届いたかを見ます。メールアドレスなどの顧客情報は正規化してからハッシュ化し、1つのリストに入れる値は3つまでです（超えるとHTTP 400のエラー）。</li>
+</ol>
+<p class="case-note"><strong>読んでほしい人</strong>：ChatGPT広告の成果をサーバーや顧客管理の仕組みから送ることを検討している広告担当者・開発者、実装を外部に依頼する担当者。 <br><strong>この記事で扱わないこと</strong>：ブラウザのPixelの設置は<a href="/articles/chatgpt-ads-pixel/">Pixelの記事</a>、アプリのインストールの計測とMMP連携は<a href="/articles/chatgpt-ads-app/">アプリの記事</a>、計測の全体像は<a href="/articles/chatgpt-ads-measurement/">効果測定の記事</a>で扱います。</p>
+<h2 id="s2"><strong>Pixelとの違いと、併用するかの判断</strong></h2>
+<p>Conversions APIは、自社のサーバーから成果のイベントをOpenAIへ直接送る仕組みです。例えば、バックエンドで購入が確定したときに送ります。ブラウザから送るPixelとは、送る場所と得意な成果が違います。</p>
+<figure><a aria-label="図を拡大する" href="/articles/assets/conversions-api.png"><img alt="図1：PixelとConversions APIの違い。OpenAIの開発者向けドキュメントとヘルプセンターをもとに当社作成。" height="760" loading="lazy" src="/articles/assets/conversions-api.svg" width="1200"/></a><figcaption>図1：PixelとConversions APIの違い。OpenAIの開発者向けドキュメントとヘルプセンターをもとに当社作成。</figcaption></figure>
+<p>開発者向けドキュメントは、CAPIでできることとして、ブラウザからの送信だけに頼らずに成果を測ること、対応する顧客情報で照合を改善すること、送信と再送をサーバーで管理することを挙げています。</p>
+<p>位置づけの説明は、2026年10月7日から29日の間に変わりました。10月7日時点のCAPIのページは「Pixelだけより信頼できる計測元で、可能ならCAPIを使う」と書いていました。10月29日時点では「Pixelを補うもの。両方を使い、ブラウザの行動とバックエンドで確定した成果を組み合わせる」に書き換わっています。なお、開発者向けの成果最適化のページには「Pixelだけより信頼できる」という表現が残っています。ヘルプ（Conversion Measurement）も、より安定した計測のために両方を使えると書いています。</p>
+<p>どの組み合わせにするかの考え方は、次のとおりです（当社の見解）。</p>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>状況</strong></p>
+</th><th scope="col"><p><strong>当社が勧める組み合わせ</strong></p>
+</th><th scope="col"><p><strong>理由</strong></p>
+</th></tr>
+<tr><td><p>成果がWebサイトの中で完結し、サーバー側の開発の余裕がない</p>
+</td><td><p><span style="white-space:nowrap">Pixel</span>のみから始める</p>
+</td><td><p><span style="white-space:nowrap">oppref</span>の保存や自動詳細マッチングを<span style="white-space:nowrap">Pixel</span>が自動で行う</p>
+</td></tr>
+<tr><td><p>注文や申込がサーバーで確定し、ブラウザの完了ページを通らないことがある</p>
+</td><td><p><span style="white-space:nowrap">Pixel</span>と併用</p>
+</td><td><p>ブラウザの行動と確定した成果の両方を送れる。重複はイベントIDで防ぐ</p>
+</td></tr>
+<tr><td><p>外部のフォームや予約システムで、完了ページにタグを置けない</p>
+</td><td><p>CAPI（またはその仕組みに対応した連携）</p>
+</td><td><p>受け付けたデータをサーバーから送れる。<span style="white-space:nowrap">oppref</span>の受け渡しを設計に含める</p>
+</td></tr>
+<tr><td><p>成果がアプリの中で起きる</p>
+</td><td><p>CAPIかMMP連携</p>
+</td><td><p>アプリのイベントは<span style="white-space:nowrap">Pixel</span>で送れない</p>
+</td></tr>
+</table></div>
+<p>CAPIだけで送る場合も、データソースのPixel IDが必要です。ブラウザにPixelを設置する必要はありません。同じWebサイトでPixelと併用する場合は、データソースを分けずに使い回します。</p>
+<h2 id="s3"><strong>重複を防ぐ：イベントIDの決め方</strong></h2>
+<p>同じ購入をPixelとCAPIの両方で送ると、何もしなければ2件に見える恐れがあります。開発者向けドキュメントによると、OpenAIは「Pixel ID・イベント名・イベントID」の組み合わせで重複を見分け、最初に届いたイベントを使って、後から届いた重複を無視します。カスタムイベントでは、イベント名の代わりにカスタムイベントの名前で見分けます。</p>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>そろえるもの</strong></p>
+</th><th scope="col"><p><strong><span style="white-space:nowrap">Pixel</span>側</strong></p>
+</th><th scope="col"><p><strong>CAPI側</strong></p>
+</th></tr>
+<tr><td><p><span style="white-space:nowrap">Pixel</span> ID</p>
+</td><td><p>init の <span style="white-space:nowrap">pixelId</span></p>
+</td><td><p>リクエストの pid</p>
+</td></tr>
+<tr><td><p>イベント名</p>
+</td><td><p><span style="white-space:nowrap">measure</span> の2番目の引数（<span style="white-space:nowrap">order</span>_<span style="white-space:nowrap">created</span> など）</p>
+</td><td><p>type</p>
+</td></tr>
+<tr><td><p>イベントID</p>
+</td><td><p>オプションの <span style="white-space:nowrap">event</span>_id</p>
+</td><td><p>id</p>
+</td></tr>
+<tr><td><p>カスタムイベントの名前</p>
+</td><td><p><span style="white-space:nowrap">custom</span>_<span style="white-space:nowrap">event</span>_name</p>
+</td><td><p><span style="white-space:nowrap">custom</span>_<span style="white-space:nowrap">event</span>_name</p>
+</td></tr>
+</table></div>
+<p>イベントIDの決め方の原則は2つです。同じ行動には同じIDを使う（ブラウザとサーバーの両方、再送のときも）。別の行動には別のIDを使う。開発者向けドキュメントは「実際の注文IDか、ほかの一意のイベントID」を使うよう書き、例では注文ID（order_12345）をそのままイベントIDにしています。ただし、ブラウザ側が画像タグの場合は、URLのパラメータに注文IDを入れないよう書かれているため、注文番号以外のIDにします（<a href="/articles/chatgpt-ads-pixel/">Pixelの記事</a>）。</p>
+<p>「最初に届いた1件を使う」ことから、注意点が出てきます。ヘルプは、元のイベントの金額や照合の情報を変えるために重複を送り直さないよう書き、ブラウザとサーバーで同じ注文金額を送ること、Pixelにある参照値や顧客情報がサーバーのイベントに欠けていないかを別々に確かめることを求めています。後から届いた側の情報は使われないため、照合に使う情報はそれぞれの送信に入れておく、と当社は読んでいます。</p>
+<p>重複は、PixelとCAPIの間だけで起きるわけではありません。ヘルプは、重複したタグ、ページの再読み込みや処理の呼び直し、同じイベントをすでに送っている計測パートナーの連携も確かめるよう挙げています。Shopifyのアプリなど、別の連携が同じ成果を送っていないかも確かめます。</p>
+<h2 id="s4"><strong>送る項目と、クリックの参照値</strong></h2>
+<p>CAPIのリクエストは、Pixel IDを付けた送信先に、Conversions APIのキーで認証して送ります。1回に送れるイベントは1,000件までで、1件でも不正なイベントがあると、そのまとまり全体が失敗します。開発者向けドキュメントの購入の例（イベントの部分）は次のとおりです。</p>
+<pre class="case-note" style="white-space:pre-wrap;overflow-wrap:anywhere;font-family:inherit;font-size:14px;line-height:1.9;margin:24px 0">{
+  "events": [
+    {
+      "id": "order_12345",
+      "type": "order_created",
+      "timestamp_ms": ${EVENT_TIMESTAMP_MS},
+      "action_source": "web",
+      "source_url": "https://shop.example.com/checkout/confirmation",
+      "data": {
+        "type": "contents",
+        "amount": 8900,
+        "currency": "USD"
+      }
+    }
+  ]
+}</pre>
+<p>主な項目は次のとおりです。</p>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>項目</strong></p>
+</th><th scope="col"><p><strong>必須か</strong></p>
+</th><th scope="col"><p><strong>内容</strong></p>
+</th></tr>
+<tr><td><p>id</p>
+</td><td><p>必須</p>
+</td><td><p>イベントを見分けるID。再送や別の経路で同じ成果を送るときは同じ値にする</p>
+</td></tr>
+<tr><td><p>type</p>
+</td><td><p>必須</p>
+</td><td><p>イベント名（<span style="white-space:nowrap">order</span>_<span style="white-space:nowrap">created</span>、lead_<span style="white-space:nowrap">created</span> など）</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">timestamp</span>_ms</p>
+</td><td><p>必須</p>
+</td><td><p>行動が起きた時刻（Unix時間のミリ秒）。直近7日以内で、未来は10分まで</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">action</span>_<span style="white-space:nowrap">source</span></p>
+</td><td><p>場合による</p>
+</td><td><p>web・<span style="white-space:nowrap">mobile</span>_app・<span style="white-space:nowrap">offline</span>・<span style="white-space:nowrap">physical</span>_<span style="white-space:nowrap">store</span>・<span style="white-space:nowrap">phone</span>_call・<span style="white-space:nowrap">email</span>・<span style="white-space:nowrap">other</span>。アプリのイベントは <span style="white-space:nowrap">mobile</span>_app</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">source</span>_url</p>
+</td><td><p>場合による</p>
+</td><td><p><span style="white-space:nowrap">action</span>_<span style="white-space:nowrap">source</span> が web のとき必須。スキームとホストを含むURL</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">oppref</span></p>
+</td><td><p>任意</p>
+</td><td><p>広告のクリックの参照値。受け取った文字列を変えずに渡す</p>
+</td></tr>
+<tr><td><p>user</p>
+</td><td><p>任意</p>
+</td><td><p>照合に使う顧客情報（次の節）</p>
+</td></tr>
+<tr><td><p>data</p>
+</td><td><p>必須</p>
+</td><td><p>成果の内容。データの種類、金額と通貨、商品など</p>
+</td></tr>
+</table></div>
+<p>金額の送り方はPixelと同じで、通貨の最小単位の整数です（8,900円は8900）。商品ごとの金額は1単位の価格で、数量は別に送ります（10月7日時点の「商品ごとの金額」から書き換わった説明。詳しくは<a href="/articles/chatgpt-ads-pixel/">Pixelの記事</a>）。上の例の時刻（${EVENT_TIMESTAMP_MS}）は原典ではシェルの変数で、実際には行動の時刻をミリ秒の整数で入れます。</p>
+<h3 id="s5"><strong>opprefは自分で受け取って渡す</strong></h3>
+<p>広告がクリックされると、LPのURLの末尾にクリックの参照値（oppref）が付きます。Pixelはこれを自動で取ってCookieに保存しますが、CAPIは自動では取りません。LPで受け取ったopprefを、フォームの送信や注文のデータと一緒にサーバーへ渡し、元の値のままイベントに入れる仕組みが必要です。ヘルプは、転送やLP内の移動でopprefを落とさないこと、値を作ったり他の訪問者の値を使ったりしないことを求めています。</p>
+<p>PixelとCAPIを併用する場合は、Pixelが保存する __obref というCookieの値（ブラウザの参照値）をブラウザで読み、サーバーへ渡して user の obref に入れることもできます。opprefはイベントの項目、obrefは user の中の項目です。obrefも、同意の要件に従って扱い、同意が取り消されたら送るのをやめます。</p>
+<h3 id="s6"><strong>opprefのない成果も送る</strong></h3>
+<p>10月29日時点の開発者向けドキュメントとヘルプは、opprefの付いた成果だけでなく、送ることが許された成果をすべて送るよう勧めています。開発者向けドキュメントは、その理由を、ビュー経由の成果をキャンペーンの数字に入れるためと書いています。この勧めは、10月7日時点の両方の資料にはなかった記載です。opprefがあるイベントだけを選んで送る実装は見直します（当社の提案）。</p>
+<h2 id="s7"><strong>顧客情報の送り方：正規化とハッシュ化</strong></h2>
+<p>user の項目は任意ですが、照合を助けます。メールアドレス・電話番号・自社の顧客ID・名・姓は、正規化してからUTF-8でSHA-256のハッシュにし、小文字の64桁の16進数で送ります。元の値は送りません。地域の情報（国・都道府県・市区町村・郵便番号）、IPアドレス、ユーザーエージェント、Pixelのobref、Androidの広告ID（GAID）はハッシュ化せずに送ります。iOSの広告ID（IDFA）は対応していません。</p>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>情報</strong></p>
+</th><th scope="col"><p><strong>正規化の規則（開発者向けドキュメント）</strong></p>
+</th><th scope="col"><p><strong>日本のデータでの例（当社の当てはめ）</strong></p>
+</th></tr>
+<tr><td><p>メールアドレス</p>
+</td><td><p>前後の空白を除き、小文字にする</p>
+</td><td><p>Taro.<span style="white-space:nowrap">Yamada</span>@<span style="white-space:nowrap">Example</span>.jp → taro.<span style="white-space:nowrap">yamada</span>@<span style="white-space:nowrap">example</span>.jp</p>
+</td></tr>
+<tr><td><p>電話番号</p>
+</td><td><p>国番号を残し、空白・括弧・ピリオド・ハイフンを除き、先頭の＋と0を除いた8〜15桁</p>
+</td><td><p>090-1234-5678 → 819012345678（国番号81を付けて先頭の0を除く。当社の解釈）</p>
+</td></tr>
+<tr><td><p>自社の顧客ID</p>
+</td><td><p>前後の空白を除く。大文字と小文字などはそのまま</p>
+</td><td><p>会員番号をそのまま使う</p>
+</td></tr>
+<tr><td><p>名・姓</p>
+</td><td><p>小文字にし、空白と<span style="white-space:nowrap">ASCII</span>の記号を除く。<span style="white-space:nowrap">ASCII</span>以外の文字はそのまま</p>
+</td><td><p>姓と名を分けて送る。漢字・かなはそのまま</p>
+</td></tr>
+<tr><td><p>国</p>
+</td><td><p>2文字の国コード</p>
+</td><td><p>JP</p>
+</td></tr>
+</table></div>
+<p>電話番号は注意が必要です。原典の例は米国の番号（+1 (415) 555-2671 → 14155552671）だけです。国内の表記には国番号がないため、規則をそのまま当てはめると「9012345678」になり、国番号が欠けます。当社は、国番号81を付けた形にしてから規則を当てはめるのが趣旨に合うと考えます。日本語の氏名を漢字・かな・ローマ字のどれで送ると照合に役立つかは書かれていません。</p>
+<p>各項目は、複数の値をリストで送れます。ただし、1つのリストに入れられるのは3つまでで、超えるとHTTP 400のエラーになり、値は切り詰められません。10月7日時点のドキュメントは「先頭の有効な3つを使い、残りは無視して受け付ける」と書いていたため、扱いが変わっています。1件の不正なイベントでまとまり全体が失敗するため、メールアドレスを4つ持つ顧客が1人いるだけで、同じまとまりで送った他の成果も受け付けられなくなります（当社の注意）。送る前に3つまでに絞る処理を入れます。</p>
+<p>IPアドレスとユーザーエージェントは、成果を起こした利用者の端末のものを送ります。イベント品質のヘルプは、サーバー自身のアドレスや汎用のユーザーエージェントで代用しないよう書いています。同じ人には同じ顧客IDを使い、共有の値や仮の値を複数の人に使い回さないことも求めています。</p>
+<p>顧客情報を送るのは、許可されている場合だけです。ヘルプは、集めるデータを利用者に分かりやすく説明し、法令で必要な同意を得てから送るよう求めています。国内の法令（個人情報の第三者への提供や外部への送信の扱い）への対応は、OpenAIの説明とは別に、自社の法務・プライバシーポリシーと合わせて確かめます。</p>
+<h2 id="s8"><strong>送るタイミングと再送</strong></h2>
+<p>CAPIでは、送るタイミングを自社で決めます。公式資料には、3つの時間の条件があります。</p>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>条件</strong></p>
+</th><th scope="col"><p><strong>内容</strong></p>
+</th><th scope="col"><p><strong>出典</strong></p>
+</th></tr>
+<tr><td><p>受け付けられる時刻</p>
+</td><td><p>行動の時刻が直近7日以内で、未来は10分まで</p>
+</td><td><p>開発者向けドキュメント</p>
+</td></tr>
+<tr><td><p>イベント品質の評価</p>
+</td><td><p>行動から1時間以内に届いたかを確かめる</p>
+</td><td><p>イベント品質のヘルプ</p>
+</td></tr>
+<tr><td><p>帰属期間</p>
+</td><td><p>7日の受付の条件とは別。クリックからの期間で成果を数える</p>
+</td><td><p>計測のトラブル対応のヘルプ</p>
+</td></tr>
+</table></div>
+<p>ヘルプは、実際の行動が確定したらすぐに送るよう勧め、遅れているときは、定時の一括送信、待ち行列、失敗した送信、再送の間隔を確かめるよう書いています。夜間にまとめて送る運用は、1時間の基準を超えるため「遅れている」という警告の対象になり得ると当社は見ています。7日を超えた成果は受け付けられません。当社は、成果が確定した時点で送る仕組みを勧めます。</p>
+<p>再送の扱いも決めておきます。時間切れやサーバーのエラーでは、届いたかどうか分からないことがあります。ヘルプは、同じ行動を再送するときは元のイベントIDと元の時刻を使うよう求めています。新しいIDにすると、別の行動に見えるためです。古いイベントを受け付けさせるために時刻を書き換えないことも求めています。エラーの応答コード、エラーの文面、送った時刻、イベントIDは記録します。</p>
+<p>B2Bの受注のように、クリックから成果まで時間がかかる場合の考え方です。7日の条件は「行動が起きてから送るまで」の期間なので、受注が確定した時点で送れば受け付けられます。ただし、Ads Managerのクリックの帰属期間は7日・14日・30日から選ぶため、クリックから30日を超えた受注は、そのクリックの成果として数えられないと当社は考えます。受注までを追う方法は<a href="/articles/chatgpt-ads-hubspot/">HubSpot連携の記事</a>と<a href="/articles/chatgpt-ads-b2b-case/">B2B事例の記事</a>で扱っています。</p>
+<h2 id="s9"><strong>実装の分担：社内開発・計測パートナー・実装ツール</strong></h2>
+<p>CAPIの実装は、自社の開発者が直接作るほかに、OpenAIのヘルプが挙げる連携先や実装ツールを使う方法があります。</p>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>方法</strong></p>
+</th><th scope="col"><p><strong>向く会社（当社の見解）</strong></p>
+</th><th scope="col"><p><strong>公式の記載</strong></p>
+</th><th scope="col"><p><strong>注意</strong></p>
+</th></tr>
+<tr><td><p>自社のサーバーから直接送る</p>
+</td><td><p>注文や申込のデータを自社のシステムで持つ</p>
+</td><td><p><span style="white-space:nowrap">Pixel</span> IDと<span style="white-space:nowrap">Conversions</span> APIのキーで送る</p>
+</td><td><p>キーの保管、再送、監視を自社で担う</p>
+</td></tr>
+<tr><td><p>サーバー側のGTM（<span style="white-space:nowrap">Stape</span>のテンプレート）</p>
+</td><td><p>すでにGTMのサーバー側の仕組みを使っている</p>
+</td><td><p>第三者の<span style="white-space:nowrap">Stape</span>が、<span style="white-space:nowrap">Pixel</span>とCAPIのGTMテンプレートを提供。両方の重複除外も設定できる</p>
+</td><td><p>第三者の開発・保守。手順は提供元のガイド</p>
+</td></tr>
+<tr><td><p>データ連携（<span style="white-space:nowrap">Hightouch</span>・<span style="white-space:nowrap">LiveRamp</span>など）</p>
+</td><td><p>顧客データの基盤に成果が集まっている</p>
+</td><td><p><span style="white-space:nowrap">Hightouch</span>は<span style="white-space:nowrap">Pixel</span> IDとAPIキーで送信先を作る。<span style="white-space:nowrap">LiveRamp</span>は店舗での購入などオフラインの成果の手順もある</p>
+</td><td><p>各社の契約と手順による</p>
+</td></tr>
+<tr><td><p>計測パートナー（<span style="white-space:nowrap">Rockerbox</span>など）</p>
+</td><td><p>計測ツールで広告の効果をまとめて見ている</p>
+</td><td><p><span style="white-space:nowrap">Rockerbox</span>は、注文IDなど成果の識別子を<span style="white-space:nowrap">Pixel</span>のイベントと自社データで一致させて重複を除く</p>
+</td><td><p>できることはパートナーごとに違う</p>
+</td></tr>
+<tr><td><p>代理店・APIパートナー</p>
+</td><td><p>運用を外部に任せている</p>
+</td><td><p>承認されたAPIパートナーは、顧客のアカウントのAPIキーで<span style="white-space:nowrap">Pixel</span> IDとCAPIのキーを作れる</p>
+</td><td><p>顧客のアカウントで機能が有効になっている必要がある</p>
+</td></tr>
+</table></div>
+<p>Stape（実装ツール）とDatahashの記載は、10月7日時点のヘルプにはなく、10月29日時点で加わったものです。OpenAIの10月5日の発表は、Hightouch・Tealium・LiveRampとの連携で既存のシステムから成果を送りやすくなると書いていますが、ヘルプに設定の手順があるのはHightouchとLiveRampです。</p>
+<p>鍵の管理は、どの方法でも同じ原則です。Conversions APIのキーは成果を送るためだけの鍵で、キャンペーンの管理に使うAdvertiser APIのキーとは別物です。どちらもサーバーで保管します。開発者向けドキュメントは、CAPIのキーをブラウザのコード、利用者から見える環境変数、ログ、ソースコードの管理に置かないよう書いています。サポートに問い合わせるときもキーを送りません。Pixel IDとCAPIのキーは、Ads Managerの成果（Conversions）の画面で用意できます。APIではキーに名前を付けて作れるため、送る仕組みごとに分けておくと、どこからの送信かを区別しやすくなります（当社の見解）。代理店などが顧客に代わって送る場合は、毎回のリクエストに integration_source という項目で、自社を示す一定の名前を入れます。</p>
+<h2 id="s10"><strong>テストと確認の手順</strong></h2>
+<ol>
+<li><strong>検証だけを行う。</strong> リクエストに validate_only を true で付けると、イベントを保存せずに形式を検証できます。この送信は、直近のイベントの確認には表れません</li>
+<li><strong>実際の行動で送る。</strong> 本番の成果を1件起こし、イベントID・行動の時刻（タイムゾーンも）・応答を記録します。テストであることを社内の記録に残します</li>
+<li><strong>受信を確かめる。</strong> 利用できるアカウントでは、Advertiser APIのキーで直近のイベント（およそ15分の見本）を取り、イベントの種類・データソース・経路を確かめます。サーバーからのイベントは server_to_server と表示されます</li>
+<li><strong>計上を確かめる。</strong> 24〜48時間ほど後に、Ads Managerの成果の列で、広告のクリック（または対象の表示）の後に起きた成果が載るかを見ます。受け付けられたことは、広告に計上されたことを意味しません</li>
+<li><strong>イベント品質を見る。</strong> 「CAPIのイベントが遅れている」「広告のクリックの情報がない」「照合の情報が少ない」などの警告を確かめます</li>
+</ol>
+<p>エラーで拒否された、時間切れになった、サーバーのエラーが返ったときは、24〜48時間の反映を待たずにすぐ調べるようヘルプは書いています。サポートに問い合わせるときは、応答コード、エラーの文面、送った時刻、返されたリクエストIDやCF-Ray、キーや不要な顧客情報を消した送信内容を添えます。</p>
+<h2 id="s11"><strong>この記事で分からないこと</strong></h2>
+<ul>
+<li><strong>オフラインの成果（電話・来店など）が、どのように広告に結びつけられるか。</strong> action_source には phone_call や physical_store があり、LiveRampにはオフラインの成果の手順がありますが、帰属の扱いは書かれていません</li>
+<li><strong>日本語の氏名や国内の電話番号の、照合に適した形。</strong> 原典の例は米国の値だけです</li>
+<li><strong>サーバー側で、Pixelが保存する __oppref のCookieを読んで使ってよいか。</strong> __obref については読んで渡す手順がありますが、__oppref については書かれていません</li>
+<li><strong>成果の合計にビュー経由を含めるか。</strong> 開発者向けのCAPIのページは「キャンペーン単位の別の指標で、合計には含めない」、ヘルプは「ビューの帰属期間が1日なら含める」と書いており、10月29日時点でも食い違っています（<a href="/articles/chatgpt-ads-view-through/">ビュースルーの記事</a>）</li>
+<li><strong>CAPIのキーを無効にする手順。</strong> 確認した範囲には書かれていません</li>
+</ul>
+<h2 id="s12"><strong>実装前に決めることのチェックリスト</strong></h2>
+<ul>
+<li>[ ] 送る成果と、その「確定」の時点を決めた（注文の作成・決済の完了・申込の受付など）</li>
+<li>[ ] Pixelのみ・CAPIのみ・併用のどれにするかを決め、データソース（Pixel ID）を1つにした</li>
+<li>[ ] イベントIDの作り方を決めた（注文IDなど一意の値。ブラウザとサーバー、再送で同じ値）</li>
+<li>[ ] LPで受け取ったopprefを、フォームや注文のデータと一緒にサーバーへ渡す流れを設計した</li>
+<li>[ ] opprefの有無にかかわらず、送ってよい成果はすべて送る</li>
+<li>[ ] 送る顧客情報と正規化の方法を決め、各リストを3つまでに絞る処理を入れた</li>
+<li>[ ] 利用者の端末のIPアドレスとユーザーエージェントを渡せるか確かめた</li>
+<li>[ ] 金額の定義（円の整数、税・送料・割引の扱い）をPixelとそろえた</li>
+<li>[ ] 成果が確定した時点で送り、失敗したら同じIDと元の時刻で再送する仕組みにした</li>
+<li>[ ] キーの保管場所と担当者を決め、ブラウザのコードに出していない</li>
+<li>[ ] validate_only での検証と、実際の行動でのテストの手順と記録の方法を決めた</li>
+<li>[ ] 同意の扱いとプライバシーポリシーの記載を確かめた</li>
+</ul>
+<h2 id="s13"><strong>よくある質問</strong></h2>
+<p><strong>Q. PixelなしでCAPIだけでも計測できますか。</strong> できます。データソースのPixel IDは必要ですが、ブラウザにPixelを設置する必要はありません。ただし、Pixelが自動で行うopprefの受け取りと保存、自動詳細マッチングはなくなります。opprefをLPからサーバーまで受け渡す仕組みを自分で作ることになります。開発者向けドキュメントとヘルプは、両方を使うことを勧めています。</p>
+<p><strong>Q. 電話での問い合わせや店舗での購入も送れますか。</strong> action_source には phone_call（電話）・physical_store（店舗）・offline などの値があり、送ること自体はできる形になっています。LiveRampの連携には、店舗での購入などオフラインの成果の手順もあります。ただし、こうした成果がどのように広告のクリックや表示に結びつけられるかは書かれていません。当社は、まずWebで起きる成果で計測を固め、オフラインの成果は別の指標として扱うことを勧めます。</p>
+<p><strong>Q. 顧客情報を送らないと、成果は計上されませんか。</strong> user の項目は任意で、送らなくてもイベントは受け付けられます。広告への結びつけには、opprefや照合の情報などが使われます。ただし、イベント品質の評価では、メールアドレスや顧客IDが少ないと警告が出ることがあります。送るかどうかは、照合の改善と、プライバシーポリシー・同意の設計を合わせて判断します（当社の見解）。</p>
+<p><strong>Q. 送信に失敗したイベントは、どうすればよいですか。</strong> エラーの内容を記録し、形式・Pixel ID・キーを確かめます。1件の不正なイベントでまとまり全体が失敗するため、どのイベントが原因かを調べ、直してから送ります。届いたか分からない場合に再送するときは、元のイベントIDと元の時刻を使います。新しいIDにすると、別の成果として数えられる恐れがあります。</p>
+<p><strong>Q. 代理店に実装を任せるとき、何を渡せばよいですか。</strong> 送るのに必要なのは、Pixel IDとConversions APIのキーです。キャンペーンの管理に使うAdvertiser APIのキーとは別物で、成果を送るだけならAdvertiser APIのキーは要りません。代理店が顧客に代わって送る場合は、integration_source に自社を示す一定の名前を入れるよう開発者向けドキュメントは求めています。キーは送る仕組みを持つ側のサーバーで保管してもらい、メールやチャットに貼らない運用を決めておきます（当社の提案）。</p>
+<h2 id="s14"><strong>まとめ</strong></h2>
+<ul>
+<li>CAPIはPixelを補うもの。10月29日時点のドキュメントは、両方を使ってブラウザの行動と確定した成果を組み合わせるよう案内している</li>
+<li>両方で送るときは、Pixel ID・イベント名・イベントIDをそろえる。最初に届いた1件が使われ、後の重複は無視される</li>
+<li>opprefは自分で受け取って渡す。opprefのない成果も、送ってよいものはすべて送る</li>
+<li>顧客情報は正規化してハッシュ化し、各リストは3つまで。超えるとエラーになり、まとまり全体が失敗する</li>
+<li>行動から7日以内に送る。品質の評価は1時間以内に届いたかを見る。再送は同じIDと元の時刻で</li>
+<li>鍵はサーバーで保管し、送る仕組みごとに分けて管理する</li>
+</ul>
+<p>サーバーから成果を送る設計を一緒に整理したい場合は、成果が確定する仕組み（注文・申込・顧客管理のシステム）、現在のPixelの設置状況、送れる顧客情報の範囲をお手元に用意のうえ<a href="https://ads.ikigaiinc.com/#cta">20分の無料相談</a>をご利用ください。</p>
+<h3 id="s15"><strong>出典</strong></h3>
+<ul>
+<li><a href="https://developers.openai.com/ads/conversions-api">Conversions API</a>（位置づけ、すべての成果を送る勧め、送信先と1,000件・まとまり全体の失敗、項目と時刻の条件、action_source、opprefとobref、user の項目と正規化・ハッシュ化、3つまでの制限とHTTP 400、IPアドレス、integration_source、重複の見分け方、ビュー経由の記述）</li>
+<li><a href="https://developers.openai.com/ads/conversion-tracking">Conversion Tracking</a>（Pixel IDとキー、サーバーだけでもPixel IDが要る、送信の例、validate_only、opprefを自動で取らない、直近のイベントの確認、8,900円の例）</li>
+<li><a href="https://developers.openai.com/ads/supported-events">Supported Events</a>（イベント名、金額の単位、1単位の価格と合計）</li>
+<li><a href="https://developers.openai.com/ads/measurement-pixel">Measurement Pixel</a>（Pixelが自動で行う処理、__obref、event_id）</li>
+<li><a href="https://developers.openai.com/ads/conversion-optimized-campaigns">Conversion-Optimized Campaigns（開発者向け）</a>（「Pixelだけより信頼できる」の表現）</li>
+<li><a href="https://developers.openai.com/ads/api-partner-setup">API Partner Setup</a>（APIパートナーによるPixelとキーの作成、機能の有効化、integration_source）</li>
+<li><a href="https://developers.openai.com/ads/api-reference/conversion-setup">Conversion Setup（API Reference）</a>（キーの作成と名前、キーを置いてはいけない場所、直近のイベントの確認は有効なアカウントのみ）</li>
+<li><a href="https://help.openai.com/en/articles/20001409-conversion-measurement">Conversion Measurement</a>（両方の併用、oppref、すべての成果を送る、同意）</li>
+<li><a href="https://help.openai.com/en/articles/20001604-troubleshooting-conversion-tracking-for-chatgpt-ads">Troubleshooting conversion tracking for ChatGPT Ads</a>（キーの種類、エラー時の確認と再送、7日と帰属期間の関係、受け付けと計上の違い、重複、同意、サポートに伝えること）</li>
+<li><a href="https://help.openai.com/en/articles/20001513-understanding-and-improving-event-quality">Understanding and improving event quality</a>（1時間以内の評価、IPアドレスとユーザーエージェント、顧客IDの扱い、照合の情報）</li>
+<li><a href="https://help.openai.com/en/articles/20001416-set-up-measurement-partner-integrations">Set up Measurement Partner Integrations</a>（Hightouch・LiveRamp・Rockerbox・Stape・Datahash）</li>
+<li><a href="https://ads.openai.com/blog/more-ways-to-measure">More ways to measure ChatGPT Ads</a>（2026年10月5日。Hightouch・Tealium・LiveRampとの連携）</li>
+</ul>
+<p>いずれも2026年10月29日に本文を確認しています。2026年10月7日時点との比較は、当社が同日に保存した本文との比較です。</p>
+<h3 id="s16"><strong>変更履歴</strong></h3>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>日付</strong></p>
+</th><th scope="col"><p><strong>内容</strong></p>
+</th></tr>
+<tr><td><p>2026年10月29日</p>
+</td><td><p>初版。開発者向けドキュメント7本、ヘルプセンター4本、公式ブログ1本の本文を確認</p>
+</td></tr>
+</table></div>
+<p><strong>次回確認予定：2026年11月上旬。</strong> CAPIのページのビュー経由の記述、顧客情報のリストの上限、オフラインの成果の扱い、実装ツールの追加を確認します。</p>
+</article></div><section class="consult"><div><span class="eyebrow">NEXT STEP</span><h2>自社の商材なら、<br>何から試す？</h2></div><div><p>商材・主要な成果・検証予算から、準備することを整理します。<br>広告や計測のどこから手をつけるか、まずはご相談ください。</p><a href="/#cta" class="button">ChatGPT広告の出稿・運用を相談する <span aria-hidden="true">↗</span></a><p class="small-text">GPT広告専門店の20分無料相談</p></div></section><section class="related"><div class="section-top"><p class="eyebrow">RELATED ARTICLES</p><h2>次に読む記事</h2></div><div class="cards two"><a class="article-card" href="/articles/chatgpt-ads-pixel/"><div class="card-visual"><img src="/articles/assets/pixel.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">48 / Pixelの設置</span><h3>ChatGPT広告のPixel設置方法｜GTM・直接設置・イベントの選び方と動作確認</h3><p>ChatGPT広告のPixelは、ページに入れるだけでは成果が計上されません。Pixel IDの作成、設置、成果の地点でのイベント送信、成果イベントの設定とキャンペーンへの紐づけの4つの手順と、GTMで設置する条件、イベントの選び方、動作確認の順番、同意・CSPの注意を公式資料をもとに整理します。</p><span class="card-bottom">2026.10.29 <span>記事を読む ↗</span></span></div></a><a class="article-card" href="/articles/chatgpt-ads-measurement/"><div class="card-visual"><img src="/articles/assets/measurement-roles.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">10 / 効果測定</span><h3>ChatGPT広告の効果測定｜Pixel・UTM・GA4で何を確認するか</h3><p>ChatGPT広告で最も多いつまずきは、配信そのものではなく計測です。クリックは取れているのに、その先が分からない。イベントは飛んでいるのに管理画面では0のまま。数字がGA4と合わない。</p><span class="card-bottom">2026.09.20 <span>記事を読む ↗</span></span></div></a><a class="article-card" href="/articles/chatgpt-ads-app/"><div class="card-visual"><img src="/articles/assets/app-measurement.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">40 / アプリ</span><h3>アプリのChatGPT広告｜インストール計測とMMP連携（AppsFlyer・Adjustなど7社）の準備</h3><p>ChatGPT広告でアプリのインストールを測るには、MMP連携（AppsFlyer・Adjustなど7社）かConversions APIを使います。</p><span class="card-bottom">2026.10.08 <span>記事を読む ↗</span></span></div></a><a class="article-card" href="/articles/chatgpt-ads-hubspot/"><div class="card-visual"><img src="/articles/assets/hubspot-flow.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">22 / HubSpot連携</span><h3>ChatGPT広告とHubSpotの連携｜広告から問い合わせ・受注まで追う方法</h3><p>OpenAIの公式連携で、HubSpotからChatGPT広告のアカウント接続・キャンペーン作成・成果確認ができます。</p><span class="card-bottom">2026.09.26 <span>記事を読む ↗</span></span></div></a></div></section></div></main><footer class="site-footer"><div class="wrap"><a class="brand" href="/">GPT広告専門店<span>.</span></a><p>運営：株式会社Ikigai<br>本サービスはOpenAIの公式・公認・提携サービスではありません。</p><div class="footer-links"><a href="/articles/">記事一覧</a><a href="/">サービス・料金</a><a href="https://ikigaiinc.com/privacypolicy">プライバシーポリシー</a><a href="https://ikigaiinc.com">会社情報</a></div><small>© 2026 株式会社Ikigai. ChatGPT・OpenAIは各権利者の商標です。</small></div></footer><script>(function(){var K=['utm_source','utm_medium','utm_campaign','utm_content','utm_term'],q=new URLSearchParams(location.search),u={},any=false;K.forEach(function(k){var v=q.get(k);if(v){u[k]=v;any=true;}});try{if(any){sessionStorage.setItem('lp_utm',JSON.stringify(u));}}catch(e){}})();</script></body></html>

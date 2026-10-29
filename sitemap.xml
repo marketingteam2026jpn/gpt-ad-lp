@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://ads.ikigaiinc.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://ads.ikigaiinc.com/articles/</loc><lastmod>2026-10-08</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ads.ikigaiinc.com/articles/</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://ads.ikigaiinc.com/articles/chatgpt-ads-start/</loc><lastmod>2026-10-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ads.ikigaiinc.com/articles/chatgpt-ads-cases/</loc><lastmod>2026-10-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ads.ikigaiinc.com/articles/chatgpt-ads-japan/</loc><lastmod>2026-10-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -42,4 +42,14 @@
   <url><loc>https://ads.ikigaiinc.com/articles/chatgpt-ads-health-beauty/</loc><lastmod>2026-10-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ads.ikigaiinc.com/articles/chatgpt-ads-local-business/</loc><lastmod>2026-10-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ads.ikigaiinc.com/articles/chatgpt-ads-app/</loc><lastmod>2026-10-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ads.ikigaiinc.com/articles/chatgpt-ads-creative-enhancements/</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ads.ikigaiinc.com/articles/chatgpt-ads-multi-image/</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ads.ikigaiinc.com/articles/chatgpt-ads-holiday/</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ads.ikigaiinc.com/articles/chatgpt-ads-plugin/</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ads.ikigaiinc.com/articles/chatgpt-ads-ai-platforms/</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ads.ikigaiinc.com/articles/chatgpt-ads-manager/</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ads.ikigaiinc.com/articles/chatgpt-ads-account-structure/</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ads.ikigaiinc.com/articles/chatgpt-ads-pixel/</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ads.ikigaiinc.com/articles/chatgpt-ads-conversions-api/</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ads.ikigaiinc.com/articles/chatgpt-ads-ga4/</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>
