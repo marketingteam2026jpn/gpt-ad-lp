@@ -1,0 +1,342 @@
+<!doctype html><html lang="ja"><head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W62G2NT3');</script>
+<!-- End Google Tag Manager -->
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>【2026年11月最新版】AIクローラーの許可設定｜GPTBot・OAI-SearchBot・Google-Extended・PerplexityBot｜GPT広告専門店</title><meta name="description" content="AIのクローラーは、学習用・検索や回答用・利用者の操作による取得の3種類に分かれます。OpenAI・Google・Anthropic・Perplexity・Apple・Microsoftの公式資料から、名前ごとの用途、学習は止めて回答には出る設定、robots.txtの例、WAF・CDNで止める問題を整理します。"><link rel="canonical" href="https://ads.ikigaiinc.com/seo-llmo/articles/ai-crawlers-robots-txt/"><meta property="og:locale" content="ja_JP"><meta property="og:type" content="article"><meta property="og:site_name" content="GPT広告専門店"><meta property="og:title" content="【2026年11月最新版】AIクローラーの許可設定｜GPTBot・OAI-SearchBot・Google-Extended・PerplexityBot"><meta property="og:description" content="AIのクローラーは、学習用・検索や回答用・利用者の操作による取得の3種類に分かれます。OpenAI・Google・Anthropic・Perplexity・Apple・Microsoftの公式資料から、名前ごとの用途、学習は止めて回答には出る設定、robots.txtの例、WAF・CDNで止める問題を整理します。"><meta property="og:url" content="https://ads.ikigaiinc.com/seo-llmo/articles/ai-crawlers-robots-txt/"><meta property="og:image" content="https://ads.ikigaiinc.com/seo-llmo/articles/assets/ai-crawlers.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="760"><meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#10131A"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Noto+Sans+JP:wght@400;500;700;900&amp;display=swap" rel="stylesheet"><link rel="stylesheet" href="/seo-llmo/articles/assets/style.css"><script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "【2026年11月最新版】AIクローラーの許可設定｜GPTBot・OAI-SearchBot・Google-Extended・PerplexityBot", "description": "AIのクローラーは、学習用・検索や回答用・利用者の操作による取得の3種類に分かれます。OpenAI・Google・Anthropic・Perplexity・Apple・Microsoftの公式資料から、名前ごとの用途、学習は止めて回答には出る設定、robots.txtの例、WAF・CDNで止める問題を整理します。", "mainEntityOfPage": "https://ads.ikigaiinc.com/seo-llmo/articles/ai-crawlers-robots-txt/", "url": "https://ads.ikigaiinc.com/seo-llmo/articles/ai-crawlers-robots-txt/", "datePublished": "2026-11-04T00:00:00+09:00", "dateModified": "2026-11-04T00:00:00+09:00", "inLanguage": "ja", "author": {"@type": "Organization", "name": "GPT広告専門店（株式会社Ikigai）", "url": "https://ads.ikigaiinc.com/seo-llmo/"}, "publisher": {"@type": "Organization", "name": "株式会社Ikigai", "url": "https://ikigaiinc.com"}, "image": "https://ads.ikigaiinc.com/seo-llmo/articles/assets/ai-crawlers.png"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SEO・LLMO運用", "item": "https://ads.ikigaiinc.com/seo-llmo/"}, {"@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://ads.ikigaiinc.com/seo-llmo/articles/"}, {"@type": "ListItem", "position": 3, "name": "AIクローラーの許可設定｜GPTBot・OAI-SearchBot・Google-Extended・PerplexityBot", "item": "https://ads.ikigaiinc.com/seo-llmo/articles/ai-crawlers-robots-txt/"}]}]}</script><link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" type="image/png" sizes="32x32" href="/assets/icon-32.png"><link rel="icon" type="image/png" sizes="192x192" href="/assets/icon-192.png"><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"></head><body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W62G2NT3"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<a class="skip" href="#main">本文へ移動</a><header class="site-header"><div class="wrap header-inner"><a class="brand" href="/seo-llmo/">GPT広告専門店<span>.</span><small>by 株式会社Ikigai</small></a><nav aria-label="メインナビゲーション"><a href="/seo-llmo/articles/">記事一覧</a><a class="button small" href="/seo-llmo/#cta">半額を確認する <span aria-hidden="true">↗</span></a></nav></div></header><main id="main"><div class="wrap"><nav class="breadcrumbs" aria-label="パンくず"><a href="/seo-llmo/">SEO・LLMO運用</a><span>/</span><a href="/seo-llmo/articles/">記事一覧</a><span>/</span><span>AIクローラー</span></nav><header class="article-heading"><p class="eyebrow">SEO / LLMO GUIDE <span>03 / AIクローラー</span></p><p class="edition">2026年11月最新版</p><h1>AIクローラーの許可設定｜GPTBot・OAI-SearchBot・Google-Extended・PerplexityBot</h1><div class="byline"><span>企画・編集：GPT広告専門店（株式会社Ikigai）</span><time datetime="2026-11-04">公開：2026年11月4日／情報確認：2026年11月4日</time></div><p class="lead">AIのクローラーは、学習用・検索や回答用・利用者の操作による取得の3種類に分かれます。OpenAI・Google・Anthropic・Perplexity・Apple・Microsoftの公式資料から、名前ごとの用途、学習は止めて回答には出る設定、robots.txtの例、WAF・CDNで止める問題を整理します。</p><p class="case-note">本記事は、OpenAI・Google・Anthropic・Perplexity・Apple・Common Crawl のクローラーの公式資料、Microsoft（Bing）の公式ブログ、robots.txt の標準（RFC 9309）に基づいています（いずれも2026年11月4日に本文を確認）。robots.txt の例と設定の考え方は株式会社Ikigaiの見解で、各社の資料の範囲で作っています。</p></header><div class="reading-layout"><aside class="toc"><details open><summary>この記事の内容</summary><ol><li><a href="#s1">この記事の要点</a></li><li><a href="#s2">AIクローラーは「何のために来るか」で3種類に分かれる</a></li><li><a href="#s3">主なクローラーの一覧（2026年11月4日時点）</a></li><li><a href="#s4">Google-Extended と Googlebot の関係</a></li><li><a href="#s5">「学習は止めたいが、検索・回答には出たい」場合</a></li><li><a href="#s6">robots.txt の書き方の例</a></li><li><a href="#s7">robots.txt で止められないもの・効かないもの</a></li><li><a href="#s8">WAF・CDNのボット対策で止めてしまう問題</a></li><li><a href="#s10">この記事で分からないこと</a></li><li><a href="#s11">Web担当・セキュリティ担当に渡すチェックリスト</a></li><li><a href="#s12">よくある質問</a></li><li><a href="#s13">まとめ</a></li></ol></details><a class="toc-back" href="/seo-llmo/articles/">← すべての記事を見る</a></aside><article class="prose" aria-label="記事本文"><h2 id="s1"><strong>この記事の要点</strong></h2>
+<ol>
+<li><strong>AIのクローラーは、目的で3種類に分かれます。</strong> AIの学習用（GPTBot・ClaudeBot など）、検索や回答のための巡回用（OAI-SearchBot・Claude-SearchBot・PerplexityBot など）、利用者の操作に応じた取得（ChatGPT-User・Perplexity-User など）です。多くの事業者が、これらを別々の名前で管理できるようにしています。</li>
+<li><strong>「学習には使われたくないが、回答には出たい」は、多くの事業者で設定を分けられます。</strong> ただし、名前の使い方は事業者ごとに違います。Googleの Google-Extended は Google 検索の掲載や順位に影響しないと明記されており、止めても AI による概要からは外れません。</li>
+<li><strong>robots.txt だけでは足りません。</strong> WAF・CDN・ボット対策が検索用のクローラーを止めていることがあり、利用者の操作による取得には robots.txt が当てはまらないこともあります。設定は、各社の公開するIPアドレスの一覧と組み合わせて確かめます。</li>
+</ol>
+<p class="case-note"><strong>読んでほしい人</strong>：AIの学習への利用を止めるべきか、AIの検索・回答には出したいかを、社内で決める必要があるWeb担当・情報システム担当・マーケティング責任者。 <br><strong>この記事で扱わないこと</strong>：ChatGPT広告の審査に必要な OAI-AdsBot の設定は、目的が違うため<a href="/articles/chatgpt-ads-crawler/">ChatGPT広告のクローラー許可の記事</a>で扱います。</p>
+<h2 id="s2"><strong>AIクローラーは「何のために来るか」で3種類に分かれる</strong></h2>
+<p>クローラーは、Webのページを自動で取りに来るプログラムです。AIの事業者は、目的ごとに名前（ユーザーエージェント）を分けています。</p>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>種類</strong></p>
+</th><th scope="col"><p><strong>何のためか</strong></p>
+</th><th scope="col"><p><strong>止めたときの影響（各社の説明の要約）</strong></p>
+</th><th scope="col"><p><strong>例</strong></p>
+</th></tr>
+<tr><td><p>学習用</p>
+</td><td><p>AIのモデルの学習に使い得る内容を集める</p>
+</td><td><p>学習に使わないでほしいという意思表示になる</p>
+</td><td><p><span style="white-space:nowrap">GPTBot</span>、<span style="white-space:nowrap">ClaudeBot</span></p>
+</td></tr>
+<tr><td><p>検索・回答用</p>
+</td><td><p>AIの検索や回答で、サイトを表示・リンクするための巡回</p>
+</td><td><p>検索の回答に出ない、または出にくくなる</p>
+</td><td><p>OAI-<span style="white-space:nowrap">SearchBot</span>、<span style="white-space:nowrap">Claude</span>-<span style="white-space:nowrap">SearchBot</span>、<span style="white-space:nowrap">PerplexityBot</span></p>
+</td></tr>
+<tr><td><p>利用者の操作による取得</p>
+</td><td><p>利用者の質問に応じて、その場でページを開く</p>
+</td><td><p>事業者によって <span style="white-space:nowrap">robots</span>.txt が当てはまらないことがある</p>
+</td><td><p><span style="white-space:nowrap">ChatGPT</span>-User、<span style="white-space:nowrap">Perplexity</span>-User、<span style="white-space:nowrap">Claude</span>-User</p>
+</td></tr>
+</table></div>
+<p>これとは別に、<strong>クロールをせず、集めた内容の使い道だけを指定する名前</strong>もあります。Googleの Google-Extended と、Apple の Applebot-Extended です。どちらも、既存のクローラー（Google の既存のクローラー、Applebot）が集めた内容を、学習などに使ってよいかを指定するための名前です。</p>
+<h2 id="s3"><strong>主なクローラーの一覧（2026年11月4日時点）</strong></h2>
+<p>各社の公式資料に載っている名前と用途です。名前は robots.txt の User-agent に書く文字列です。</p>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>事業者</strong></p>
+</th><th scope="col"><p><strong>名前</strong></p>
+</th><th scope="col"><p><strong>用途（公式の説明）</strong></p>
+</th><th scope="col"><p><strong>止めたとき（公式の説明）</strong></p>
+</th></tr>
+<tr><td><p><span style="white-space:nowrap">OpenAI</span></p>
+</td><td><p><span style="white-space:nowrap">GPTBot</span></p>
+</td><td><p>生成AIの基盤モデルの学習に使い得る内容を集める</p>
+</td><td><p>学習に使うべきでないという意思表示</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">OpenAI</span></p>
+</td><td><p>OAI-<span style="white-space:nowrap">SearchBot</span></p>
+</td><td><p><span style="white-space:nowrap">ChatGPT</span> の検索機能でサイトを表示する</p>
+</td><td><p>検索の回答に出ない。案内のリンクとしては出得る</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">OpenAI</span></p>
+</td><td><p><span style="white-space:nowrap">ChatGPT</span>-User</p>
+</td><td><p>利用者の操作に応じてページを開く。自動の巡回には使わない</p>
+</td><td><p>利用者の操作のため <span style="white-space:nowrap">robots</span>.txt が当てはまらないことがある</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">Google</span></p>
+</td><td><p><span style="white-space:nowrap">Googlebot</span></p>
+</td><td><p><span style="white-space:nowrap">Google</span> 検索（AIによる概要・AIモードを含む）のクロール</p>
+</td><td><p>検索に出にくくなる</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">Google</span></p>
+</td><td><p><span style="white-space:nowrap">Google</span>-<span style="white-space:nowrap">Extended</span></p>
+</td><td><p><span style="white-space:nowrap">Gemini</span> の学習と、<span style="white-space:nowrap">Gemini</span> アプリなどでのグラウンディング（回答の根拠に使うこと）の管理。クロールは既存の <span style="white-space:nowrap">Google</span> のクローラーが行う</p>
+</td><td><p><span style="white-space:nowrap">Google</span> 検索の掲載や順位には影響しない</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">Anthropic</span></p>
+</td><td><p><span style="white-space:nowrap">ClaudeBot</span></p>
+</td><td><p>学習に使い得る内容を集める</p>
+</td><td><p>今後の内容を学習用データから外す意思表示</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">Anthropic</span></p>
+</td><td><p><span style="white-space:nowrap">Claude</span>-<span style="white-space:nowrap">SearchBot</span></p>
+</td><td><p>検索の回答の関連性と正確さを高める</p>
+</td><td><p>検索の結果での見え方と正確さが下がり得る</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">Anthropic</span></p>
+</td><td><p><span style="white-space:nowrap">Claude</span>-User</p>
+</td><td><p>利用者の質問に応じてページを取りに行く</p>
+</td><td><p>利用者の検索での見え方が下がり得る</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">Perplexity</span></p>
+</td><td><p><span style="white-space:nowrap">PerplexityBot</span></p>
+</td><td><p><span style="white-space:nowrap">Perplexity</span> の検索結果でサイトを表示・リンクする。基盤モデルの学習には使わない</p>
+</td><td><p>検索結果に出るために許可を推奨</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">Perplexity</span></p>
+</td><td><p><span style="white-space:nowrap">Perplexity</span>-User</p>
+</td><td><p>利用者の操作に応じてページを開く。学習には使わない</p>
+</td><td><p>利用者の要求のため、<span style="white-space:nowrap">robots</span>.txt を概ね無視する</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">Apple</span></p>
+</td><td><p><span style="white-space:nowrap">Applebot</span></p>
+</td><td><p><span style="white-space:nowrap">Spotlight</span>・Siri・<span style="white-space:nowrap">Safari</span> の検索。<span style="white-space:nowrap">Apple</span> の基盤モデルの学習や、AIの回答の文脈にも使われ得る</p>
+</td><td><p>許可すると <span style="white-space:nowrap">Apple</span> の製品の検索結果に出られると説明</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">Apple</span></p>
+</td><td><p><span style="white-space:nowrap">Applebot</span>-<span style="white-space:nowrap">Extended</span></p>
+</td><td><p><span style="white-space:nowrap">Applebot</span> が集めた内容を学習に使うかの指定。クロールはしない</p>
+</td><td><p>学習から外れる。検索の掲載・順位には影響しない</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">Common</span> <span style="white-space:nowrap">Crawl</span></p>
+</td><td><p><span style="white-space:nowrap">CCBot</span></p>
+</td><td><p>誰でも利用・分析できる、Webのクロールデータの公開の保存庫を作る</p>
+</td><td><p><span style="white-space:nowrap">Common</span> <span style="white-space:nowrap">Crawl</span> に集められない</p>
+</td></tr>
+</table></div>
+<p>Microsoft は、クローラーで集めたWebの内容を、学習や、Bing・Copilot・Microsoft 365 の回答の根拠に使うと説明しています。2026年10月30日の Bing の公式ブログによると、学習（AI Training）と回答の根拠（AI Grounding）を別々に指定する新しい方法を、2027年2月1日からクロールの際に尊重します。学習はサイト・パス単位なら robots.txt の共通の名前（<code>__usage_ai-training</code>）、ページ単位なら Bingbot 向けの meta タグか X-Robots-Tag で、回答の根拠はページ単位だけで指定します。これまでの NoArchive・NoCache の指定は置き換えられ、2027年3月1日以降は学習・回答の根拠の指定として読まれなくなります。</p>
+<figure><a aria-label="図を拡大する" href="/seo-llmo/articles/assets/ai-crawlers.png"><img alt="図1：主なAIクローラーを「学習に使う名前」と「検索・回答に使う名前」に分けた一覧。各社の公式資料をもとに当社作成。" height="760" loading="lazy" src="/seo-llmo/articles/assets/ai-crawlers.svg" width="1200"/></a><figcaption>図1：主なAIクローラーを「学習に使う名前」と「検索・回答に使う名前」に分けた一覧。各社の公式資料をもとに当社作成。</figcaption></figure>
+<p>なお、OpenAI には広告の審査のための OAI-AdsBot もあります。これは ChatGPT 広告として提出されたページだけを訪れ、集めたデータは学習に使わないと説明されているクローラーで、AIの検索や学習の方針とは別に決めます（<a href="/articles/chatgpt-ads-crawler/">ChatGPT広告のクローラー許可の記事</a>）。</p>
+<h2 id="s4"><strong>Google-Extended と Googlebot の関係</strong></h2>
+<p>名前から AI による概要の設定と取り違えやすいのが、Google-Extended です。Googleのクローラーの資料は、次のように書いています。</p>
+<ul>
+<li>Google-Extended には、独自のユーザーエージェントの文字列がない。クロールは既存の Google のクローラーで行い、robots.txt の名前は「指定のため」に使う</li>
+<li>対象は、Gemini アプリと Vertex AI の Gemini API を支える将来の Gemini モデルの学習と、Gemini アプリ・Vertex AI の「Grounding with Google Search」でのグラウンディング</li>
+<li><strong>Google-Extended は、Google 検索でのサイトの掲載に影響せず、Google 検索の順位の要因としても使われない</strong></li>
+</ul>
+<p>つまり、Google-Extended を止めても、Google 検索の AI による概要・AI モードからは外れません。Google の「AI 機能とウェブサイト」のページも、AI は検索に組み込まれているため、検索のクロールの管理は Googlebot 向けの robots.txt で行うと書いています。AI による概要などに出したくない場合は、Search Console の「検索の生成 AI 設定」や nosnippet を使います（<a href="/seo-llmo/articles/aio-ai-overviews/">AIO対策の記事</a>）。逆に、Search Console の生成AIの設定で除外しても、AIの学習には影響しないとヘルプは書いています。学習を止めたいなら Google-Extended、AI による概要に出したくないなら生成AIの設定、と分けて考えます。</p>
+<p>Googleは、2027年初頭に、業界で共通の学習の指定（AIPREF。robots.txt に「user-agent: __usage_ai-training」と書く形）に対応する予定だとも書いています。Microsoft も、同じ <code>__usage_ai-training</code> の指定を2027年2月1日からクロールの際に尊重するとしています。これはインターネットの標準を決める IETF の作業部会の草案（Internet-Draft）に基づくもので、最終的な標準に向けた作業は続いていると Microsoft は書いています。OpenAI も2026年10月30日に、robots.txt で基盤モデルの学習への使用について意向を示す共通の指定に従うと発表しました。実装は「今後数か月のうち」とされ、詳細は実装の際に改めて知らせるとしています。この指定は、GPTBot など既存の robots.txt での設定を置き換えるものではなく、既存の設定も引き続き適用されると書いています。</p>
+<h2 id="s5"><strong>「学習は止めたいが、検索・回答には出たい」場合</strong></h2>
+<p>各社の資料の範囲で、学習と検索・回答を分けられるかを整理しました。</p>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>事業者</strong></p>
+</th><th scope="col"><p><strong>学習を止める</strong></p>
+</th><th scope="col"><p><strong>検索・回答には出す</strong></p>
+</th><th scope="col"><p><strong>補足</strong></p>
+</th></tr>
+<tr><td><p><span style="white-space:nowrap">OpenAI</span></p>
+</td><td><p><span style="white-space:nowrap">GPTBot</span> を不許可</p>
+</td><td><p>OAI-<span style="white-space:nowrap">SearchBot</span> を許可</p>
+</td><td><p>設定は互いに独立。両方許可していると、1回のクロールの結果を両方に使うことがある</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">Google</span></p>
+</td><td><p><span style="white-space:nowrap">Google</span>-<span style="white-space:nowrap">Extended</span> を不許可</p>
+</td><td><p><span style="white-space:nowrap">Googlebot</span> を許可（AIによる概要・AIモードを含む）</p>
+</td><td><p><span style="white-space:nowrap">Google</span>-<span style="white-space:nowrap">Extended</span> の不許可は、<span style="white-space:nowrap">Gemini</span> アプリなどでのグラウンディングにも及ぶ</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">Anthropic</span></p>
+</td><td><p><span style="white-space:nowrap">ClaudeBot</span> を不許可</p>
+</td><td><p><span style="white-space:nowrap">Claude</span>-<span style="white-space:nowrap">SearchBot</span>・<span style="white-space:nowrap">Claude</span>-User を許可</p>
+</td><td><p>3つとも <span style="white-space:nowrap">robots</span>.txt を尊重すると説明</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">Apple</span></p>
+</td><td><p><span style="white-space:nowrap">Applebot</span>-<span style="white-space:nowrap">Extended</span> を不許可</p>
+</td><td><p><span style="white-space:nowrap">Applebot</span> を許可</p>
+</td><td><p><span style="white-space:nowrap">Applebot</span> が集めた内容を AI の回答の文脈に使わせたくない場合は、<span style="white-space:nowrap">nosnippet</span></p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">Perplexity</span></p>
+</td><td><p>（学習用の名前は資料にない）</p>
+</td><td><p><span style="white-space:nowrap">PerplexityBot</span> を許可</p>
+</td><td><p><span style="white-space:nowrap">PerplexityBot</span>・<span style="white-space:nowrap">Perplexity</span>-User とも学習には使わないと説明</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">Microsoft</span></p>
+</td><td><p><span style="white-space:nowrap">robots</span>.txt の <code>__<span style="white-space:nowrap">usage</span>_ai-<span style="white-space:nowrap">training</span></code> か、ページ単位の AI <span style="white-space:nowrap">Training</span> の指定で不許可（2027年2月1日から尊重）</p>
+</td><td><p><span style="white-space:nowrap">Bingbot</span> を許可し、AI <span style="white-space:nowrap">Grounding</span> は既定の「許可」のまま</p>
+</td><td><p>指定は内容の使い方の管理で、クロールの許可とは別</p>
+</td></tr>
+</table></div>
+<p>当社の見解では、企業のサイトで最初に決めたいのは「学習を止めるか」ではなく、<strong>「AIの検索・回答に出たいか」</strong>です。検索・回答用のクローラーを止めると、OpenAIは検索の回答に出ないと、Anthropic は検索の結果での見え方が下がり得ると書いています。学習を止める方針の会社でも、検索・回答用の名前は分けて許可するのが、各社の資料から素直に読める組み合わせです。</p>
+<p>Common Crawl については、ページの説明は「誰でも利用・分析できる公開の保存庫」までで、データを誰が何に使うかは書かれていません。止めるかどうかは、自社の方針で判断します。</p>
+<h2 id="s6"><strong>robots.txt の書き方の例</strong></h2>
+<p>学習用は止め、検索・回答用は許可する例です。各社の資料にある書き方をもとに、当社がまとめました。<strong>自社のサイトにそのまま使う前に、各社の最新の資料で名前を確かめてください。</strong></p>
+<pre class="case-note" style="white-space:pre-wrap;overflow-wrap:anywhere;font-family:inherit;font-size:14px;line-height:1.9;margin:24px 0"># 学習用・学習の指定（止める）
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+# Common Crawl（公開の保存庫。止めるかは自社の方針で）
+User-agent: CCBot
+Disallow: /
+
+# 検索・回答用（許可する）
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# それ以外のクローラー
+User-agent: *
+Allow: /</pre>
+<p>書くときに見落としやすい点です（いずれも robots.txt の標準 RFC 9309 と各社の資料による）。</p>
+<ul>
+<li><strong>標準では、クローラーは自分の名前に一致するグループだけに従い、一致がないときだけ「User-agent: *」に従います。</strong> 「*」で全体を止めているサイトでは、検索用のクローラーの名前で「Allow」のグループを作らない限り、そのクローラーも止まります</li>
+<li><strong>robots.txt はホスト（サブドメイン）ごとに置きます。</strong> Anthropic も、止めたいサブドメインごとに書くよう求めています</li>
+<li><strong>一部だけ止めることもできます。</strong> 許可と不許可が重なるときは、パスに最も長く一致する規則が使われます。Google-Extended の資料にも、/archive/ を止めつつ一部だけ許可する例があります</li>
+<li><strong>Apple は、Applebot の名前が無く Googlebot の名前がある場合、Googlebot 向けの規則に従います。</strong> Googlebot だけを止めると、Apple の検索にも影響し得ます</li>
+<li><strong>Crawl-delay（取りに来る間隔の指定）は、対応が分かれます。</strong> Anthropic は対応、Apple は従わないと書いています</li>
+</ul>
+<p>共通の学習の指定（<code>User-agent: __usage_ai-training</code>）は、Microsoft が2027年2月1日からクロールの際に尊重し、Google は2027年初頭に対応する予定です。OpenAI も2026年10月30日に、共通の指定に従うと発表しましたが、実装の時期と方法の詳細はまだ示されていません。本記事で確認したほかの事業者（Anthropic・Perplexity・Apple・Common Crawl）の資料には、この指定への対応の記載はありません。当面は、上の例のように各社の名前ごとの指定が必要です。</p>
+<h2 id="s7"><strong>robots.txt で止められないもの・効かないもの</strong></h2>
+<p>robots.txt は、クローラーに「来ないでほしい」と伝える仕組みで、アクセスを防ぐ仕組みではありません。Googleも、robots.txt はクローラーの振る舞いを強制できず、守るかはクローラー次第だと書いています。</p>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>場面</strong></p>
+</th><th scope="col"><p><strong>各社の説明</strong></p>
+</th><th scope="col"><p><strong>どうするか（当社の見解）</strong></p>
+</th></tr>
+<tr><td><p>利用者の操作による取得</p>
+</td><td><p><span style="white-space:nowrap">OpenAI</span>：<span style="white-space:nowrap">ChatGPT</span>-User には <span style="white-space:nowrap">robots</span>.txt が当てはまらないことがある。<span style="white-space:nowrap">Perplexity</span>：<span style="white-space:nowrap">Perplexity</span>-User は概ね無視する。<span style="white-space:nowrap">Anthropic</span>：<span style="white-space:nowrap">Claude</span>-User も <span style="white-space:nowrap">robots</span>.txt を尊重する</p>
+</td><td><p>会員限定などの情報は、<span style="white-space:nowrap">robots</span>.txt ではなくログインで守る</p>
+</td></tr>
+<tr><td><p>検索結果から完全に外したい</p>
+</td><td><p><span style="white-space:nowrap">Google</span>：<span style="white-space:nowrap">robots</span>.txt で止めても、ほかのサイトからリンクされていれば URL が索引に入り得る。外すなら <span style="white-space:nowrap">noindex</span> かパスワード</p>
+</td><td><p>検索から外す目的なら <span style="white-space:nowrap">noindex</span> を使い、クロールは許可する</p>
+</td></tr>
+<tr><td><p>AIの回答での使われ方を絞りたい</p>
+</td><td><p><span style="white-space:nowrap">Google</span>：<span style="white-space:nowrap">nosnippet</span>・max-<span style="white-space:nowrap">snippet</span>・data-<span style="white-space:nowrap">nosnippet</span>。<span style="white-space:nowrap">Apple</span>：<span style="white-space:nowrap">nosnippet</span> で広い知識の回答に使わない</p>
+</td><td><p>ページ単位の指定を使う</p>
+</td></tr>
+<tr><td><p>IPアドレスで止める</p>
+</td><td><p><span style="white-space:nowrap">Anthropic</span>：IP の遮断は <span style="white-space:nowrap">robots</span>.txt を読めなくするため、正しく効かない、または指定として続かないことがある</p>
+</td><td><p>方針の表明は <span style="white-space:nowrap">robots</span>.txt で行う</p>
+</td></tr>
+<tr><td><p>名前を偽ったアクセス</p>
+</td><td><p><span style="white-space:nowrap">Google</span>・<span style="white-space:nowrap">Common</span> <span style="white-space:nowrap">Crawl</span>：ユーザーエージェントは偽装され得る</p>
+</td><td><p>IP の一覧や逆引き DNS で本物か確かめる</p>
+</td></tr>
+</table></div>
+<h2 id="s8"><strong>WAF・CDNのボット対策で止めてしまう問題</strong></h2>
+<p>robots.txt で許可していても、WAF（Webアプリケーションのファイアウォール）やCDNのボット対策が、検索用のクローラーを止めていることがあります。Googleは、AI による概要・AI モードに向けたSEOの基本として、robots.txt と、CDN・ホスティングの両方でクロールを許可することを挙げています。OpenAIも、ホストやCDNが OpenAI の公開する IP アドレスからのアクセスを通しているかを確かめるよう書いています。</p>
+<p>Perplexity の資料には、具体的な設定の手順があります。Cloudflare では、ユーザーエージェントと各ボットのIP範囲を組み合わせたルールで、ほかの防御のルールをスキップさせ、そのルールをブロックするルールより上に置きます。ただし、Cloudflare の Bot Fight Mode はこのルールではスキップできないとも書いています。AWS WAF では、IP の一覧とユーザーエージェントの一致を組み合わせた許可のルールを、ブロックのルールより先に評価させます。</p>
+<p>各社が公開する確認の手段は次のとおりです。</p>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>事業者</strong></p>
+</th><th scope="col"><p><strong>本物か確かめる手段（公式の資料）</strong></p>
+</th></tr>
+<tr><td><p><span style="white-space:nowrap">OpenAI</span></p>
+</td><td><p><span style="white-space:nowrap">searchbot</span>.json・<span style="white-space:nowrap">gptbot</span>.json・<span style="white-space:nowrap">chatgpt</span>-user.json（IPの一覧）</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">Google</span></p>
+</td><td><p><span style="white-space:nowrap">common</span>-<span style="white-space:nowrap">crawlers</span>.json（IPの一覧）、逆引き DNS</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">Anthropic</span></p>
+</td><td><p>bots.json（IPの一覧）</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">Perplexity</span></p>
+</td><td><p><span style="white-space:nowrap">perplexitybot</span>.json・<span style="white-space:nowrap">perplexity</span>-user.json（IPの一覧）</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">Apple</span></p>
+</td><td><p>逆引き DNS（<span style="white-space:nowrap">applebot</span>.<span style="white-space:nowrap">apple</span>.com）、<span style="white-space:nowrap">applebot</span>.json</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">Common</span> <span style="white-space:nowrap">Crawl</span></p>
+</td><td><p>逆引き DNS、<span style="white-space:nowrap">ccbot</span>.json</p>
+</td></tr>
+</table></div>
+<p>当社の見解では、ユーザーエージェントだけで例外を作るのは避け、IPの一覧か逆引き DNS と組み合わせます。Perplexity も、ユーザーエージェントとIPの両方で確かめることを勧め、IPの一覧は定期的に更新されるため、自動で取り込む仕組みを作るよう書いています。</p>
+<h3 id="s9"><strong>変更が反映されるまでの時間</strong></h3>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>対象</strong></p>
+</th><th scope="col"><p><strong>目安（公式の説明）</strong></p>
+</th></tr>
+<tr><td><p><span style="white-space:nowrap">ChatGPT</span> の検索結果</p>
+</td><td><p><span style="white-space:nowrap">robots</span>.txt の更新から約24時間</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">Perplexity</span></p>
+</td><td><p>変更の反映に最大24時間</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">robots</span>.txt の標準</p>
+</td><td><p>取得した <span style="white-space:nowrap">robots</span>.txt は原則24時間を超えて使い回さない（RFC 9309）</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">Microsoft</span> の AI の指定</p>
+</td><td><p>ページが再びクロールされて初めて反映される</p>
+</td></tr>
+</table></div>
+<h2 id="s10"><strong>この記事で分からないこと</strong></h2>
+<ul>
+<li><strong>学習を止める前に集められた内容の扱い。</strong> 各社の資料は、今後のクロールへの指定として説明しています。</li>
+<li><strong>Common Crawl のデータを、どの事業者が何に使っているか。</strong> Common Crawl のページには書かれていません。</li>
+<li><strong>Bing のヘルプに書かれた細かい設定。</strong> Bing のヘルプのページは、本記事の取得の方法では本文を確認できなかったため、公式ブログの範囲で書いています。</li>
+<li><strong>本記事で扱っていない事業者のクローラー。</strong> 本記事は、OpenAI・Google・Anthropic・Perplexity・Apple・Common Crawl・Microsoft の公式資料の範囲です。</li>
+<li><strong>AIの検索・回答用のクローラーを許可したときに、引用がどれだけ増えるか。</strong> 許可は条件であって、表示は各社とも保証していません。</li>
+</ul>
+<h2 id="s11"><strong>Web担当・セキュリティ担当に渡すチェックリスト</strong></h2>
+<ul>
+<li>[ ] 社内で「AIの検索・回答に出たいか」と「学習への利用を止めたいか」を分けて決めた</li>
+<li>[ ] robots.txt で、OAI-SearchBot・Claude-SearchBot・PerplexityBot・Googlebot・Applebot を意図せず止めていない（「User-agent: *」の不許可も確認）</li>
+<li>[ ] 学習を止める場合、GPTBot・ClaudeBot・Google-Extended・Applebot-Extended などを名前で指定した</li>
+<li>[ ] Google-Extended を止めても AI による概要からは外れないこと、外したいなら Search Console の設定を使うことを共有した</li>
+<li>[ ] すべてのサブドメインに robots.txt がある（または意図して置いていない）</li>
+<li>[ ] WAF・CDN・ボット対策で、検索用のクローラーの公開IPを止めていない。許可のルールはIPの一覧と組み合わせている</li>
+<li>[ ] 会員限定・社外秘の情報は、robots.txt ではなくログインで守っている</li>
+<li>[ ] NoArchive・NoCache を使っている場合、2027年3月1日までの Microsoft の移行の手順を確認した</li>
+</ul>
+<h2 id="s12"><strong>よくある質問</strong></h2>
+<p><strong>Q. robots.txt に何も書いていない場合、AIのクローラーはどう扱われますか。</strong> robots.txt の標準（RFC 9309）では、当てはまるグループも規則もなければ、どの規則も適用されず、アクセスは許可されたものとして扱われます。Microsoft も、学習と回答の根拠の指定はどちらも、指定がなければ「許可」が既定だと書いています。何も書かないことは、学習・検索の両方を許可しているのと同じ状態だと当社は考えます。</p>
+<p><strong>Q. GPTBot を止めると、ChatGPT で自社が紹介されなくなりますか。</strong> OpenAI の資料では、ChatGPT の検索の回答に出るかどうかは OAI-SearchBot の設定で管理し、GPTBot の設定とは独立しています。GPTBot だけを止め、OAI-SearchBot を許可していれば、検索の回答の対象からは外れません。ただし、表示は保証されません。</p>
+<p><strong>Q. CMS（WordPress や Wix など）で robots.txt を直接編集できません。</strong> Googleの robots.txt の資料も、CMS によっては robots.txt を直接編集できず、検索の設定の画面など別の方法が用意されていることがあると書いています。使っている CMS の説明で、robots.txt の追記の方法を確かめてください。</p>
+<p><strong>Q. AIのクローラーのアクセスが多く、サーバーが重くなります。</strong> Anthropic は非標準の Crawl-delay に対応しています。Apple は Crawl-delay に従わない一方、サイトが遅くなったりエラーを返したりすると自動で巡回の速度を落とすと書いています。止める前に、どのクローラーのアクセスが多いかをサーバーのログで確かめ、名前とIPで本物かを見分けます。</p>
+<p><strong>Q. 一度止めたクローラーを、あとから許可し直せますか。</strong> robots.txt を書き換えれば許可し直せます。反映には時間がかかり、ChatGPT の検索結果は約24時間、Perplexity は最大24時間が目安とされています。検索の回答に再び出るかどうかは、各社とも保証していません。</p>
+<h2 id="s13"><strong>まとめ</strong></h2>
+<ul>
+<li>AIのクローラーは、学習用・検索や回答用・利用者の操作による取得の3種類。名前ごとに分けて考える</li>
+<li>学習は止めて回答には出す組み合わせは、OpenAI（GPTBot／OAI-SearchBot）、Anthropic（ClaudeBot／Claude-SearchBot）、Apple（Applebot-Extended／Applebot）などで分けられる</li>
+<li>Google-Extended は Google 検索の掲載・順位に影響しない。AI による概要に出したくないなら Search Console の設定か nosnippet</li>
+<li>「User-agent: *」の不許可、サブドメインごとの robots.txt、Apple が Googlebot の規則に従う点に注意する</li>
+<li>WAF・CDN のボット対策で検索用のクローラーを止めていないかを、IPの一覧と組み合わせて確かめる。Microsoft は2027年2月1日から新しい指定に移る</li>
+</ul>
+<p>いまのSEO・LLMOの外注費と作業範囲を見直したい場合は、<a href="https://ads.ikigaiinc.com/seo-llmo/">GPT広告専門店のSEO・LLMO運用</a>をご覧ください。月額30万円以上で外注中の企業を対象に、現契約の見積書をもとに同じ本数・同じ範囲を半額で引き受けています（条件と例外はページに記載しています）。</p>
+<h3 id="s14"><strong>出典</strong></h3>
+<ul>
+<li><a href="https://developers.openai.com/api/docs/bots">Overview of OpenAI Crawlers</a>（GPTBot・OAI-SearchBot・ChatGPT-User・OAI-AdsBot の用途、設定の独立、公開IP、約24時間）</li>
+<li><a href="https://openai.com/index/helping-websites-express-ai-training-preferences/">Making it easier for websites to express AI training preferences</a>（2026年10月30日。共通の学習の指定に従う方針、実装は今後数か月、既存の設定は引き続き適用）</li>
+<li><a href="https://help.openai.com/en/articles/9237897-chatgpt-search">Searching the web with ChatGPT</a>（検索結果の対象になる条件、CDNでのIPの許可）</li>
+<li><a href="https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers">List of Google's common crawlers</a>（Googlebot、Google-Extended の対象と Google 検索への影響、AIPREF への対応の予定。英語版2026年10月30日・日本語版2026年11月3日更新）</li>
+<li><a href="https://developers.google.com/search/docs/crawling-indexing/robots/intro">Introduction to robots.txt</a>（robots.txt の目的と限界）</li>
+<li><a href="https://developers.google.com/search/docs/appearance/ai-features">AI features and your website</a>（CDN・ホスティングでのクロールの許可、AI機能の制御）</li>
+<li><a href="https://support.google.com/webmasters/answer/16908024">Search generative AI control</a>（生成AIの設定は学習に影響しないこと）</li>
+<li><a href="https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler">Does Anthropic crawl data from the web, and how can site owners block the crawler?</a>（ClaudeBot・Claude-User・Claude-SearchBot、Crawl-delay、サブドメイン、IPでの遮断）</li>
+<li><a href="https://docs.perplexity.ai/guides/bots">Perplexity Crawlers</a>（PerplexityBot・Perplexity-User、反映の時間、Cloudflare・AWS WAF の設定、IPの一覧）</li>
+<li><a href="https://support.apple.com/en-us/119829">About Applebot</a>（Applebot・Applebot-Extended、nosnippet、Googlebot の規則に従う場合、Crawl-delay）</li>
+<li><a href="https://commoncrawl.org/ccbot">CCBot</a>（Common Crawl、robots.txt の例、偽装への注意、逆引き DNS）</li>
+<li><a href="https://blogs.bing.com/search/2026/10/your-content-your-choice-clearer-preferences-for-training-and-grounding/">Your content, your choice: clearer preferences for training and grounding</a>（Bing の公式ブログ、2026年10月30日。AI Training・AI Grounding、2027年からの日程）</li>
+<li><a href="https://www.rfc-editor.org/rfc/rfc9309.html">RFC 9309: Robots Exclusion Protocol</a>（グループの選び方、ホストごとのファイル、最も長く一致する規則、キャッシュ）</li>
+</ul>
+<p>いずれも2026年11月4日に本文を確認しています。</p>
+<h3 id="s15"><strong>変更履歴</strong></h3>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>日付</strong></p>
+</th><th scope="col"><p><strong>内容</strong></p>
+</th></tr>
+<tr><td><p>2026年11月4日</p>
+</td><td><p>初版。<span style="white-space:nowrap">OpenAI</span> 3本（共通の学習の指定についての2026年10月30日の発表を含む）、<span style="white-space:nowrap">Google</span> 4本（クローラーの資料は英語版・日本語版）、<span style="white-space:nowrap">Anthropic</span>・<span style="white-space:nowrap">Perplexity</span>・<span style="white-space:nowrap">Apple</span>・<span style="white-space:nowrap">Common</span> <span style="white-space:nowrap">Crawl</span> 各1本、<span style="white-space:nowrap">Microsoft</span> の公式ブログ1本、RFC 9309 の本文を確認</p>
+</td></tr>
+</table></div>
+<p><strong>次回確認予定：2026年12月上旬。</strong> 各社のクローラーの名前と用途の変更、Microsoft の新しい指定（2026年12月15日の一時的な設定の開始）、Google の AIPREF への対応の進み具合を確認します。</p>
+</article></div><section class="consult"><div><span class="eyebrow">NEXT STEP</span><h2>いまのSEO・LLMO、<br>半額で引き受けます。</h2></div><div><p>現在の見積書を見せてください。<br>同じ本数・同じ範囲を、現契約の半額で。</p><a href="/seo-llmo/#cta" class="button">見積書を送って半額を確認する <span aria-hidden="true">↗</span></a><p class="small-text">半額の条件はサービスページに記載しています</p></div></section><section class="related"><div class="section-top"><p class="eyebrow">RELATED ARTICLES</p><h2>次に読む記事</h2></div><div class="cards two"><a class="article-card" href="/seo-llmo/articles/what-is-llmo/"><div class="card-visual"><img src="/seo-llmo/articles/assets/llmo-basics.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">01 / LLMO対策とは</span><h3>LLMO対策とは｜SEOとの違いと、やること・やらなくてよいこと</h3><p>LLMO対策は、AIの回答の中で自社が言及・引用されるようにサイトと情報を整える取り組みです。Googleは、AIによる概要・AIモードのための特別な対策は不要で、SEOの基本がそのまま当てはまると説明しています。</p><span class="card-bottom">2026.11.04 <span>記事を読む ↗</span></span></div></a><a class="article-card" href="/seo-llmo/articles/aio-ai-overviews/"><div class="card-visual"><img src="/seo-llmo/articles/assets/aio.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">02 / AIO対策</span><h3>AIO対策とは｜AIによる概要・AIモードで引用されるために、Googleが示す条件</h3><p>AIO対策は「AI Overviews対策」と「AI最適化の総称」の両方の意味で使われます。GoogleのAIによる概要・AIモードのための特別な最適化は不要で、索引登録とスニペット表示、Search Consoleの生成AIの設定が条件です。</p><span class="card-bottom">2026.11.04 <span>記事を読む ↗</span></span></div></a><a class="article-card" href="/seo-llmo/articles/llms-txt/"><div class="card-visual"><img src="/seo-llmo/articles/assets/llms-txt.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">04 / llms.txt</span><h3>llms.txtとは｜書き方と、効果について分かっていること</h3><p>llms.txtは、AIエージェントにサイトの概要と主要なページを示すMarkdownのファイルの提案です。</p><span class="card-bottom">2026.11.04 <span>記事を読む ↗</span></span></div></a><a class="article-card" href="/articles/chatgpt-ads-crawler/"><div class="card-visual"><img src="/articles/assets/crawler.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">57 / クローラー許可</span><h3>ChatGPT広告のクローラー許可｜OAI-AdsBotを止めない設定と、LPが読めないときの対処</h3><p>ChatGPT広告の審査では、OpenAIのクローラーOAI-AdsBotがリンク先を読めることが必須です。</p><span class="card-bottom">2026.10.29 <span>記事を読む ↗</span></span></div></a></div></section></div></main><footer class="site-footer"><div class="wrap"><a class="brand" href="/seo-llmo/">GPT広告専門店<span>.</span></a><p>SEO・LLMO 半額乗り換え／運営：株式会社Ikigai<br>本サービスはOpenAI・Googleの公式・公認・提携サービスではありません。</p><div class="footer-links"><a href="/seo-llmo/articles/">記事一覧</a><a href="/seo-llmo/">サービス・料金</a><a href="https://ikigaiinc.com/privacypolicy">プライバシーポリシー</a><a href="https://ikigaiinc.com">会社情報</a></div><small>© 2026 株式会社Ikigai. ChatGPT・OpenAI・Google・Geminiは各権利者の商標です。</small></div></footer><script>(function(){var K=['utm_source','utm_medium','utm_campaign','utm_content','utm_term'],q=new URLSearchParams(location.search),u={},any=false;K.forEach(function(k){var v=q.get(k);if(v){u[k]=v;any=true;}});try{if(any){sessionStorage.setItem('lp_utm',JSON.stringify(u));}}catch(e){}})();</script></body></html>
