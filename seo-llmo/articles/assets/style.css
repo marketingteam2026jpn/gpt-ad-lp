@@ -4,3 +4,5 @@
 /* SEO・LLMO：ヘッダーのボタン文言（半額を確認する）が既存記事より長いため、スマホで折り返さないよう詰める */
 .site-header nav>a{white-space:nowrap}
 @media(max-width:480px){.site-header nav{gap:10px}.site-header .button.small{padding:8px 10px;gap:6px}.brand{font-size:17px}}
+/* 本文中のコード表記（robots.txt・llms.txt の例など） */
+.prose code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em;background:#F5F6F9;padding:.1em .35em;border-radius:4px;overflow-wrap:anywhere}

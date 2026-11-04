@@ -1,0 +1,280 @@
+<!doctype html><html lang="ja"><head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W62G2NT3');</script>
+<!-- End Google Tag Manager -->
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>【2026年11月最新版】ChatGPT広告とLLMOを併用するときの設計｜役割・予算・計測の分け方｜GPT広告専門店</title><meta name="description" content="ChatGPT広告は回答に影響しないため、LLMOとは別の仕組みです。共通になるのはサイト・クローラー・計測です。相談の段階ごとの役割の分け方、予算の考え方、GA4の「AIアシスタント」のチャネルと広告のUTMの分け方、同じLPを使うときの注意を整理します。"><link rel="canonical" href="https://ads.ikigaiinc.com/articles/chatgpt-ads-with-llmo/"><meta property="og:locale" content="ja_JP"><meta property="og:type" content="article"><meta property="og:site_name" content="GPT広告専門店"><meta property="og:title" content="【2026年11月最新版】ChatGPT広告とLLMOを併用するときの設計｜役割・予算・計測の分け方"><meta property="og:description" content="ChatGPT広告は回答に影響しないため、LLMOとは別の仕組みです。共通になるのはサイト・クローラー・計測です。相談の段階ごとの役割の分け方、予算の考え方、GA4の「AIアシスタント」のチャネルと広告のUTMの分け方、同じLPを使うときの注意を整理します。"><meta property="og:url" content="https://ads.ikigaiinc.com/articles/chatgpt-ads-with-llmo/"><meta property="og:image" content="https://ads.ikigaiinc.com/articles/assets/ads-with-llmo.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="760"><meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#10131A"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Noto+Sans+JP:wght@400;500;700;900&amp;display=swap" rel="stylesheet"><link rel="stylesheet" href="/articles/assets/style.css"><script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "【2026年11月最新版】ChatGPT広告とLLMOを併用するときの設計｜役割・予算・計測の分け方", "description": "ChatGPT広告は回答に影響しないため、LLMOとは別の仕組みです。共通になるのはサイト・クローラー・計測です。相談の段階ごとの役割の分け方、予算の考え方、GA4の「AIアシスタント」のチャネルと広告のUTMの分け方、同じLPを使うときの注意を整理します。", "mainEntityOfPage": "https://ads.ikigaiinc.com/articles/chatgpt-ads-with-llmo/", "url": "https://ads.ikigaiinc.com/articles/chatgpt-ads-with-llmo/", "datePublished": "2026-11-04T00:00:00+09:00", "dateModified": "2026-11-04T00:00:00+09:00", "inLanguage": "ja", "author": {"@type": "Organization", "name": "GPT広告専門店（株式会社Ikigai）", "url": "https://ads.ikigaiinc.com/"}, "publisher": {"@type": "Organization", "name": "株式会社Ikigai", "url": "https://ikigaiinc.com"}, "image": "https://ads.ikigaiinc.com/articles/assets/ads-with-llmo.png"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://ads.ikigaiinc.com/"}, {"@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://ads.ikigaiinc.com/articles/"}, {"@type": "ListItem", "position": 3, "name": "ChatGPT広告とLLMOを併用するときの設計｜役割・予算・計測の分け方", "item": "https://ads.ikigaiinc.com/articles/chatgpt-ads-with-llmo/"}]}]}</script><link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" type="image/png" sizes="32x32" href="/assets/icon-32.png"><link rel="icon" type="image/png" sizes="192x192" href="/assets/icon-192.png"><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"></head><body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W62G2NT3"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<a class="skip" href="#main">本文へ移動</a><header class="site-header"><div class="wrap header-inner"><a class="brand" href="/">GPT広告専門店<span>.</span><small>by 株式会社Ikigai</small></a><nav aria-label="メインナビゲーション"><a href="/articles/">記事一覧</a><a class="button small" href="/#cta">無料相談 <span aria-hidden="true">↗</span></a></nav></div></header><main id="main"><div class="wrap"><nav class="breadcrumbs" aria-label="パンくず"><a href="/">ホーム</a><span>/</span><a href="/articles/">記事一覧</a><span>/</span><span>LLMOとの併用</span></nav><header class="article-heading"><p class="eyebrow">CHATGPT ADS GUIDE <span>70 / LLMOとの併用</span></p><p class="edition">2026年11月最新版</p><h1>ChatGPT広告とLLMOを併用するときの設計｜役割・予算・計測の分け方</h1><div class="byline"><span>企画・編集：GPT広告専門店（株式会社Ikigai）</span><time datetime="2026-11-04">公開：2026年11月4日／情報確認：2026年11月4日</time></div><p class="lead">ChatGPT広告は回答に影響しないため、LLMOとは別の仕組みです。共通になるのはサイト・クローラー・計測です。</p><p class="case-note">本記事は、OpenAIのヘルプセンターとクローラーの資料、Googleアナリティクスのヘルプ（いずれも2026年11月4日に本文を確認）に基づいています。役割・予算・報告の分け方は株式会社Ikigaiの提案で、LLMOの施策の効果を示すものではありません。</p></header><div class="reading-layout"><aside class="toc"><details open><summary>この記事の内容</summary><ol><li><a href="#s1">この記事の要点</a></li><li><a href="#s2">前提：分かれているもの、共通のもの</a></li><li><a href="#s3">役割を決める：相談の段階ごとの分担（当社の提案）</a></li><li><a href="#s4">質問の一覧を1つにする</a></li><li><a href="#s5">予算の分け方</a></li><li><a href="#s6">計測の設計：GA4のチャネルと広告のUTM</a></li><li><a href="#s10">同じLPを使うときの注意</a></li><li><a href="#s11">体制と報告</a></li><li><a href="#s12">この記事で分からないこと</a></li><li><a href="#s13">併用を始める前のチェックリスト</a></li><li><a href="#s14">よくある質問</a></li><li><a href="#s15">まとめ</a></li></ol></details><a class="toc-back" href="/articles/">← すべての記事を見る</a></aside><article class="prose" aria-label="記事本文"><h2 id="s1"><strong>この記事の要点</strong></h2>
+<ol>
+<li><strong>広告とLLMOは別の仕組みですが、サイト・クローラー・計測は共通です。</strong> OpenAIは、広告はChatGPTの回答に影響しないと明記しています。一方、広告の審査のクローラー（OAI-AdsBot）も、ChatGPTの検索のクローラー（OAI-SearchBot）も、同じサイトを読みます。併用の設計で決めるのは、この共通の部分の扱いです。</li>
+<li><strong>役割は、顧客の相談の段階と、広告が届かない相手で分けます（当社の提案）。</strong> 顧客の質問を1つの一覧にまとめ、回答の中で触れられたい質問と、広告で接点を作る質問を決めます。広告はPlus・Pro・Business・Enterprise・Eduのプランには表示されないため、その層とのChatGPTの中での接点は、回答の中の言及・引用になります。</li>
+<li><strong>計測は、広告のURLのUTMで分けます。</strong> GA4は2026年5月13日から、ChatGPTなどからの流入を「AIアシスタント」のチャネルに分けています。GA4の既定の規則では、メディアが有料の値の流入は有料のチャネルに入るため、広告のURLに有料のメディアのUTMを付けて分けることを勧めます。予算と報告も別の行にして、数字を足し合わせません（いずれも当社の提案）。</li>
+</ol>
+<p class="case-note"><strong>読んでほしい人</strong>：ChatGPT広告とLLMO（AIの回答での自社の言及・引用を目指す取り組み）を両方進める、または進めようとしている企業のマーケティング責任者・広告担当・Web担当。 <br><strong>この記事で扱わないこと</strong>：両者の違いそのものは<a href="/articles/chatgpt-ads-vs-llmo/">ChatGPT広告とLLMO・GEOの違いの記事</a>、LLMOの進め方は<a href="/seo-llmo/articles/what-is-llmo/">LLMO対策とはの記事</a>で扱います。本稿は、両方を進めるときの設計に絞ります。</p>
+<h2 id="s2"><strong>前提：分かれているもの、共通のもの</strong></h2>
+<p>LLMOは業界の呼び方で、定義は人によって違います。本記事では「ChatGPTなどのAIの回答の中で、自社が言及されたり、自社のページが出典としてリンクされたりするように、サイトと情報を整える取り組み」の意味で使います。</p>
+<p>まず、公式の資料から言える「分かれているもの」と「共通のもの」を整理します。</p>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>項目</strong></p>
+</th><th scope="col"><p><strong>分かれている／共通</strong></p>
+</th><th scope="col"><p><strong>公式の資料に書かれていること</strong></p>
+</th></tr>
+<tr><td><p>回答への影響</p>
+</td><td><p>分かれている</p>
+</td><td><p>広告は回答に影響せず、回答とは別のシステムで動き、広告主は回答を形作ったり順位を付けたり変えたりできない</p>
+</td></tr>
+<tr><td><p>商品フィード</p>
+</td><td><p>分かれている</p>
+</td><td><p>ベータの間、フィードの商品は広告にだけ使われ、通常の<span style="white-space:nowrap">ChatGPT</span>の会話には表示されない</p>
+</td></tr>
+<tr><td><p>広告主が受け取る情報</p>
+</td><td><p>分かれている</p>
+</td><td><p>広告主が受け取るのは、表示やクリックの合計のような、個人を特定しない集計の情報だけ。会話の内容は受け取らない</p>
+</td></tr>
+<tr><td><p>サイトを読むクローラー</p>
+</td><td><p>共通</p>
+</td><td><p>広告のLPは OAI-<span style="white-space:nowrap">AdsBot</span> が確認し、<span style="white-space:nowrap">ChatGPT</span>の検索の結果に出すには OAI-<span style="white-space:nowrap">SearchBot</span> が使われる。<span style="white-space:nowrap">GPTBot</span> は学習のためのクローラーで、OAI-<span style="white-space:nowrap">SearchBot</span> と <span style="white-space:nowrap">GPTBot</span> の設定は互いに独立している</p>
+</td></tr>
+<tr><td><p>LPの内容</p>
+</td><td><p>共通</p>
+</td><td><p>OAI-<span style="white-space:nowrap">AdsBot</span> はLPの内容を、広告を出す場面の判断にも使うことがある。クリエイティブ強化もLPの内容を材料にする</p>
+</td></tr>
+<tr><td><p>計測の場所</p>
+</td><td><p>共通</p>
+</td><td><p>広告のクリックも、回答のリンクからの訪問も、同じサイトの分析ツールに記録される</p>
+</td></tr>
+</table></div>
+<p>広告費で、回答の中の露出を買うことはできません。反対に、回答の中で言及されていることが広告の配信にどう関わるかは、公式に説明されていません。併用の設計は「片方の結果で、もう片方を良くする」ことではなく、「共通の部分を一度に整え、数字は分けて読む」ことだと当社は考えます。</p>
+<figure><a aria-label="図を拡大する" href="/articles/assets/ads-with-llmo.png"><img alt="図1：ChatGPT広告とLLMOを併用するときの分け方。OpenAIのヘルプ・クローラーの資料とGoogleアナリティクスのヘルプをもとに当社作成。" height="760" loading="lazy" src="/articles/assets/ads-with-llmo.svg" width="1200"/></a><figcaption>図1：ChatGPT広告とLLMOを併用するときの分け方。OpenAIのヘルプ・クローラーの資料とGoogleアナリティクスのヘルプをもとに当社作成。</figcaption></figure>
+<h2 id="s3"><strong>役割を決める：相談の段階ごとの分担（当社の提案）</strong></h2>
+<p>役割は、顧客がどの段階の相談をしているかで分けると決めやすくなります。次の表は当社の提案で、どの段階でどちらが効くかを公式が示しているわけではありません。</p>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>相談の段階（例）</strong></p>
+</th><th scope="col"><p><strong>回答の中で目指すこと（LLMO）</strong></p>
+</th><th scope="col"><p><strong>広告で担うこと</strong></p>
+</th><th scope="col"><p><strong>主に見る数字</strong></p>
+</th></tr>
+<tr><td><p>仕組みや基礎を知りたい</p>
+</td><td><p>説明の出典として自社のページがリンクされる</p>
+</td><td><p>原則は主役にしない。講座・資料など、学びの続きを示せる商材なら試す</p>
+</td><td><p>回答の中の言及・引用、AIアシスタントからの流入</p>
+</td></tr>
+<tr><td><p>選び方・比べ方を知りたい</p>
+</td><td><p>比べる観点の説明で、自社の考え方が触れられる</p>
+</td><td><p>比べる観点に合う広告文とLPで、検討の材料を渡す</p>
+</td><td><p>広告のクリックとLPでの行動</p>
+</td></tr>
+<tr><td><p>どこに頼むか・何を買うかを決めたい</p>
+</td><td><p>候補として自社の名前が挙がる</p>
+</td><td><p>回答で挙がりにくい場面に、広告で接点を作る</p>
+</td><td><p>広告の成果（申込・購入）</p>
+</td></tr>
+<tr><td><p>新商品・期間限定のキャンペーン</p>
+</td><td><p>ページを公開し、情報を最新に保つ</p>
+</td><td><p>始める時期と止める時期を決めて出す</p>
+</td><td><p>期間中の広告の成果</p>
+</td></tr>
+</table></div>
+<p>もう1つの分け方は「広告が届かない相手」です。広告が表示され得るのはFree・Goプランの利用者で、Plus・Pro・Business・Enterprise・Eduのアカウントと、18歳未満と判定されたアカウントには表示されません（<a href="/articles/chatgpt-ads-audience-privacy/">表示対象とプライバシーの記事</a>）。仕事で有料のプランを使う人が顧客の中心なら、その人たちとの接点は回答の中の言及だけです。顧客のプランは分からないことが多いですが、少なくとも「広告だけでは届かない層がある」ことを前提に、LLMOの比重を決めます（当社の見解）。</p>
+<p>ポリシーは、センシティブな会話に広告が表示されないよう安全策を設けているとしています。個人的で重大な相談や、感情的に弱っている状況の相談が多い商材も、広告より回答の中での見え方が中心になると当社は考えます。</p>
+<h2 id="s4"><strong>質問の一覧を1つにする</strong></h2>
+<p>両方を進めるなら、顧客の質問の一覧を1つにまとめ、広告とLLMOの両方の土台にすることを勧めます（当社の提案）。</p>
+<ol>
+<li><strong>顧客の質問を集める。</strong> 営業・問い合わせ・サポートの記録から、顧客が実際に聞く質問を書き出します</li>
+<li><strong>質問ごとに段階を付ける。</strong> 上の表の段階（基礎・比較・決定・期間限定）を付けます</li>
+<li><strong>LLMOの側は、質問に答えるページを決める。</strong> その質問に一次情報で答えているページがあるか、なければ作るかを決めます（<a href="/seo-llmo/articles/what-is-llmo/">LLMO対策とはの記事</a>）</li>
+<li><strong>広告の側は、質問を広告グループとコンテキストヒントにする。</strong> ヒントは「何を・誰に・いつ役立つか」を文で書きます。ヒントは関連性の手がかりで、特定の会話への配信を保証するものではありません（<a href="/articles/chatgpt-ads-context-hints/">コンテキストヒントの記事</a>）</li>
+<li><strong>同じ質問に、同じ事実で答える。</strong> 価格・対象・条件が、ページ・広告文・ヒントで食い違わないようにします</li>
+</ol>
+<p>注意したいのは、広告の結果から「どの質問で反応があったか」は分からないことです。ヘルプは、広告主が会話の内容を受け取らず、受け取るのは表示やクリックの合計のような集計の情報だけだと書いています。分かるのは、広告グループやヒントの単位の成果です。広告で反応のあった広告グループの題材を、LLMOのページの優先度を決める参考にするのは考えられますが、回答の中での言及が増えるかは別に確かめます（当社の見解）。</p>
+<h2 id="s5"><strong>予算の分け方</strong></h2>
+<p>広告とLLMOは、お金のかかり方が違います。</p>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>項目</strong></p>
+</th><th scope="col"><p><strong><span style="white-space:nowrap">ChatGPT</span>広告</strong></p>
+</th><th scope="col"><p><strong>LLMO・SEO</strong></p>
+</th></tr>
+<tr><td><p>主な費用</p>
+</td><td><p>広告費（表示かクリックで課金）と、運用の工数</p>
+</td><td><p>ページの制作・改善と、確認の工数。広告費はかからない</p>
+</td></tr>
+<tr><td><p>予算の決め方</p>
+</td><td><p>日予算か総額予算。最低の日予算は日本円で2,500円</p>
+</td><td><p>作業の範囲（ページの本数・期限）で決める（当社の提案）</p>
+</td></tr>
+<tr><td><p>止めたとき</p>
+</td><td><p>配信が止まる（停止後も最大24時間ほど表示されることがある）</p>
+</td><td><p>公開したページは残る。効果が続くかは分からない</p>
+</td></tr>
+<tr><td><p>判断の時期</p>
+</td><td><p>決めた判断額・期間ごと（<a href="/articles/chatgpt-ads-test-plan/">テスト運用の記事</a>）</p>
+</td><td><p>月次の定点確認で変化を見る（当社の提案）</p>
+</td></tr>
+</table></div>
+<p>当社は、予算を次のように決めることを勧めます。</p>
+<ul>
+<li><strong>広告は、判断に必要な額と期間を先に決める。</strong> 日予算は1日に最大2倍まで使われ得るため、上限を見込んで組みます（<a href="/articles/chatgpt-ads-budget-pacing/">予算の消化の記事</a>、<a href="/articles/chatgpt-ads-cost/">費用の記事</a>）</li>
+<li><strong>LLMOは、作業の範囲で決める。</strong> 質問の一覧のうち、何本のページを、いつまでに整えるかで決めます</li>
+<li><strong>片方の数字で、もう片方の予算を動かさない。</strong> 例えば、AIアシスタントからの流入が増えた月に広告を減らす、といった判断は、両者の関係が分からないまま行うことになります</li>
+</ul>
+<h2 id="s6"><strong>計測の設計：GA4のチャネルと広告のUTM</strong></h2>
+<h3 id="s7"><strong>GA4の「AIアシスタント」のチャネル</strong></h3>
+<p>Googleアナリティクス（GA4）は、2026年5月13日に、既定のチャネルグループに「AI アシスタント（AI Assistant）」のチャネルを加えました。ヘルプによると、ChatGPT・Gemini・Deepseek・Copilot・Grokなどから来た流入が対象です。参照元がAIアシスタントの一覧に一致すると、メディアが「ai-assistant」、キャンペーンが「(ai-assistant)」になります。メディアが「ai-assistant」と完全に一致する場合も、このチャネルです。GoogleのAIによる概要とAIモードは含まれず、オーガニック検索に入ります。</p>
+<p>一方、既定のチャネルの規則では、メディアが「cpc」「ppc」「paid」などの有料の値に一致する流入は、有料のチャネル（参照元が検索・ソーシャルなどの一覧に当たらなければ「Paid Other」）に入ります。</p>
+<h3 id="s8"><strong>広告のURLには、有料のメディアのUTMを付ける</strong></h3>
+<p>ここから、当社は次の設計を勧めます。</p>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>流入</strong></p>
+</th><th scope="col"><p><strong>見分ける手がかり</strong></p>
+</th><th scope="col"><p><strong>GA4の既定のチャネルでの見え方</strong></p>
+</th></tr>
+<tr><td><p><span style="white-space:nowrap">ChatGPT</span>広告のクリック（広告専用のUTMあり）</p>
+</td><td><p>UTM（例：utm_<span style="white-space:nowrap">source</span>=<span style="white-space:nowrap">chatgpt</span>、utm_<span style="white-space:nowrap">medium</span>=cpc）と、LPのURLに付く <span style="white-space:nowrap">oppref</span></p>
+</td><td><p>有料のチャネル（Paid <span style="white-space:nowrap">Other</span> など）</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">ChatGPT</span>広告のクリック（UTMなし）</p>
+</td><td><p><span style="white-space:nowrap">oppref</span> だけ</p>
+</td><td><p>参照元の記録によっては、AIアシスタントに入り得る（当社の見解）</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">ChatGPT</span>の回答・検索のリンクからの訪問</p>
+</td><td><p>参照元</p>
+</td><td><p>参照元がAIアシスタントの一覧に一致すれば、AIアシスタント</p>
+</td></tr>
+<tr><td><p>広告の審査のクローラーの訪問</p>
+</td><td><p>ユーザーエージェント（OAI-<span style="white-space:nowrap">AdsBot</span>）</p>
+</td><td><p>計測用のパラメータつきで訪れ、有料の流入に分類されることがある。課金されるクリックではない</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">Google</span>のAIによる概要・AIモード</p>
+</td><td><p>分けられない</p>
+</td><td><p>オーガニック検索</p>
+</td></tr>
+</table></div>
+<p>設計の要点は3つです（当社の提案）。</p>
+<ul>
+<li><strong>広告のURLには必ず広告専用のUTMを付け、メディアを有料の値（例：cpc）にする。</strong> 広告のURLにUTMを付ける方法は、ヘルプにも書かれています。メディアに「ai-assistant」を使うと、広告のクリックがAIアシスタントのチャネルに入ってしまいます。なお、既定の規則では、メディアが「cpm」の流入は Display の条件に当たります</li>
+<li><strong>UTMの値の規則を、広告とLLMOの担当で共有する。</strong> utm_campaign の値に {campaign_id} などのマクロを使うと、広告のどのキャンペーンからの訪問かも追えます（<a href="/articles/chatgpt-ads-measurement/">効果測定の記事</a>）</li>
+<li><strong>実際の記録を確かめる。</strong> 広告のクリックがGA4のどのチャネルに入ったかを、公開の後に自社の画面で確かめます。業界では「ChatGPTの検索のリンクには utm_source=chatgpt.com が付く」と説明されることがありますが、確認したOpenAIの現在の資料には、この記載は見つかりませんでした</li>
+</ul>
+<p>AIアシスタントからの流入の測り方の詳細は、<a href="/seo-llmo/articles/measure-ai-citations/">AI回答での自社表示の測り方の記事</a>で扱っています。</p>
+<h3 id="s9"><strong>成果の数え方も分ける</strong></h3>
+<p>広告の成果は、Ads Managerの成果（PixelとConversions APIのイベントを、帰属期間の中のクリックや表示に結びつけたもの）で見ます。GA4をAds Managerに接続して取り込んだ活動は、そのプロパティのすべての流入元のイベントを含み、キャンペーンに帰属した成果ではない、とヘルプは書いています（<a href="/articles/chatgpt-ads-ga4/">GA4連携の記事</a>）。AIアシスタントからの流入の成果は、GA4のチャネル別の成果で見ます。2つを足して「ChatGPTからの成果」とまとめないことを勧めます。</p>
+<h2 id="s10"><strong>同じLPを使うときの注意</strong></h2>
+<p>広告とLLMOで同じページを使うことは珍しくありません。そのときに確かめることです。</p>
+<ul>
+<li><strong>OAI-AdsBot を止めない。</strong> 広告のLPの確認には OAI-AdsBot の許可が必須で、OAI-SearchBot の許可も推奨されています。robots.txt のほか、WAF・CDN・ボット対策のサービスでも止まることがあります（<a href="/articles/chatgpt-ads-crawler/">クローラー許可の記事</a>）</li>
+<li><strong>学習用のクローラーの方針は、別に決められる。</strong> OpenAIは、OAI-SearchBot と GPTBot の設定は互いに独立しているとし、OAI-SearchBot を許可したまま GPTBot を止める例を挙げています。OAI-AdsBot は広告として入稿したページだけを訪れ、集めたデータは生成AIの基盤モデルの学習に使わないとされています。各社のクローラーの書き方は<a href="/seo-llmo/articles/ai-crawlers-robots-txt/">AIクローラーの許可設定の記事</a>で扱っています</li>
+<li><strong>ページの事実を最新に保つ。</strong> OAI-AdsBot はLPの内容を広告を出す場面の判断に使うことがあり、クリエイティブ強化もLPの内容をもとに見出し・説明文を調整します。終わったキャンペーンや古い価格をページに残すと、広告の調整にも古い内容が使われ得ます（当社の見解。<a href="/articles/chatgpt-ads-creative-enhancements/">クリエイティブ強化の記事</a>）</li>
+<li><strong>広告のクリックが別のページに着くことを見込む。</strong> クリエイティブ強化は、リンク先URLをサイト内の関連するページに最適化することがあり、2026年10月30日から新規・既存のセルフサーブとBPOのキャンペーンで既定で有効です（営業担当が管理するアカウントには影響しない）。LLMOのために作った解説のページに広告のクリックが着いても計測できるよう、Pixelは主なページすべてに入れておきます（当社の提案。<a href="/articles/chatgpt-ads-pixel/">Pixelの記事</a>）。リンク先を固定したい広告は、キャンペーン単位でオフにするかを決めます</li>
+<li><strong>広告専用のページを作る場合。</strong> 検索に出したくないページに noindex を付けるかはSEOの判断です。noindex のページを広告のLPにしたときに広告の審査がどう扱うかは、公式の資料に書かれていません</li>
+</ul>
+<h2 id="s11"><strong>体制と報告</strong></h2>
+<p>担当が分かれていると、共通の部分が抜けやすくなります。決める人を先に決めておきます（当社の提案）。</p>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>決めること</strong></p>
+</th><th scope="col"><p><strong>主な担当（例）</strong></p>
+</th><th scope="col"><p><strong>一緒に決める人</strong></p>
+</th></tr>
+<tr><td><p>クローラーの方針（<span style="white-space:nowrap">robots</span>.txt・WAF）</p>
+</td><td><p>Web・サイトの担当</p>
+</td><td><p>広告の担当、LLMOの担当、セキュリティの担当</p>
+</td></tr>
+<tr><td><p>UTMの値の規則とGA4のチャネルの見方</p>
+</td><td><p>計測の担当</p>
+</td><td><p>広告の担当、LLMOの担当</p>
+</td></tr>
+<tr><td><p>質問の一覧と段階</p>
+</td><td><p>LLMOの担当</p>
+</td><td><p>広告の担当、営業・サポート</p>
+</td></tr>
+<tr><td><p>価格・キャンペーンの変更の反映</p>
+</td><td><p>商品の担当</p>
+</td><td><p>広告の担当、Web・サイトの担当</p>
+</td></tr>
+<tr><td><p>月次の報告</p>
+</td><td><p>運用の責任者</p>
+</td><td><p>各担当</p>
+</td></tr>
+</table></div>
+<p>月次の報告は、次のように別の行にします。</p>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>報告の行</strong></p>
+</th><th scope="col"><p><strong>載せる数字</strong></p>
+</th><th scope="col"><p><strong>載せないもの</strong></p>
+</th></tr>
+<tr><td><p><span style="white-space:nowrap">ChatGPT</span>広告</p>
+</td><td><p>広告費、表示、クリック、Ads <span style="white-space:nowrap">Manager</span>の成果、GA4の有料のチャネルの訪問と成果</p>
+</td><td><p>AIアシスタントからの流入と成果</p>
+</td></tr>
+<tr><td><p>AIの回答からの流入（LLMO）</p>
+</td><td><p>GA4のAIアシスタントのチャネルの訪問と成果、定点確認の結果</p>
+</td><td><p>広告費、広告の成果</p>
+</td></tr>
+<tr><td><p><span style="white-space:nowrap">Google</span>の検索（AIによる概要・AIモードを含む）</p>
+</td><td><p><span style="white-space:nowrap">Search</span> <span style="white-space:nowrap">Console</span>の数字、GA4のオーガニック検索</p>
+</td><td><p>上の2つ</p>
+</td></tr>
+</table></div>
+<p>外注している場合も、この分け方と規則を各社に共有します（<a href="/articles/chatgpt-ads-inhouse-agency/">自社運用と代理店支援の記事</a>）。</p>
+<h2 id="s12"><strong>この記事で分からないこと</strong></h2>
+<ul>
+<li><strong>回答の中で言及されていることが、広告の配信や成果にどう関わるか。</strong> 公式は、広告が回答に影響しないことは書いていますが、その逆は説明していません</li>
+<li><strong>広告のクリックの参照元がGA4にどう記録されるか。</strong> UTMがない場合に、広告のクリックがAIアシスタントのチャネルに入るかは、公式の資料で確かめていません</li>
+<li><strong>ChatGPTの回答のリンクに付くパラメータ。</strong> utm_source=chatgpt.com が付くという説明は、確認したOpenAIの資料にありません</li>
+<li><strong>noindex のページを広告のLPにしたときの扱い。</strong> 公式の資料に書かれていません</li>
+<li><strong>クリエイティブ強化でリンク先が変わったときに、UTMが引き継がれるか。</strong> 公式の資料に書かれていません</li>
+<li><strong>LLMOの施策の効果。</strong> 本稿は効果を示すものではありません</li>
+</ul>
+<h2 id="s13"><strong>併用を始める前のチェックリスト</strong></h2>
+<ul>
+<li>[ ] 社内の説明で、広告は回答に影響しないことを共有した</li>
+<li>[ ] 顧客の質問を1つの一覧にまとめ、相談の段階を付けた</li>
+<li>[ ] 質問ごとに、LLMOで答えるページと、広告で接点を作るかを決めた</li>
+<li>[ ] 広告が届かない相手（Plus・Pro・Business・Enterprise・Edu、18歳未満）を前提に、LLMOの比重を決めた</li>
+<li>[ ] 広告のURLに広告専用のUTMを付け、メディアを有料の値にした（「ai-assistant」を使っていない）</li>
+<li>[ ] 公開の後に、広告のクリックがGA4のどのチャネルに入ったかを確かめた</li>
+<li>[ ] robots.txt・WAFで OAI-AdsBot を止めていない。OAI-SearchBot と GPTBot の方針を別に決めた</li>
+<li>[ ] 主なページすべてにPixelが入っている</li>
+<li>[ ] 価格・キャンペーンの変更を、ページ・広告文・ヒントに同時に反映する手順がある</li>
+<li>[ ] 月次の報告で、広告とAIの回答からの流入を別の行にし、足し合わせていない</li>
+</ul>
+<h2 id="s14"><strong>よくある質問</strong></h2>
+<p><strong>Q. 広告を出すと、LLMOの効果を測りにくくなりますか。</strong> 広告のURLに広告専用のUTMを付け、メディアを有料の値にしておけば、GA4の既定のチャネルでは広告のクリックとAIアシスタントからの流入を分けて見られます。ただし、GoogleのAIによる概要・AIモードからの流入はオーガニック検索に入り、通常の検索と分けられません。Googleの側は Search Console で見ることになります（当社の提案）。</p>
+<p><strong>Q. 広告で反応がよかった会話の内容を、LLMOのページづくりに使えますか。</strong> 会話の内容は受け取れないため、使えません。ヘルプは、広告主が会話の内容や履歴を受け取らず、受け取るのは表示やクリックの合計のような集計の情報だけだと書いています。分かるのは、広告グループやコンテキストヒントの単位の成果です。題材の優先度を考える参考にはできますが、会話の中身は分からない前提で使います。</p>
+<p><strong>Q. LLMOの方針で GPTBot を止めると、広告に影響しますか。</strong> 広告のLPの確認に必須とされているのは OAI-AdsBot で、OAI-SearchBot は推奨です。GPTBot は学習のためのクローラーで、広告の要件には挙げられていません。OpenAIは、OAI-SearchBot と GPTBot の設定は互いに独立していると書いています。止める範囲を GPTBot だけにする場合は、robots.txt とWAFの両方で、ほかのクローラーを巻き込んでいないか確かめます。</p>
+<p><strong>Q. 回答の中で自社がよく紹介されているなら、広告は止めてもよいですか。</strong> 言及の有無だけでは決められないと当社は考えます。回答の中の言及は、質問の聞き方や時期で変わり、企業が管理できません。広告は、届けたい場面と時期を決めて出せます。止めるかどうかは、広告の側の判断の基準で決めます（<a href="/articles/chatgpt-ads-test-plan/">テスト運用の記事</a>）。</p>
+<p><strong>Q. 広告とSEO・LLMOは、同じ会社に任せたほうがよいですか。</strong> どちらでも、本稿の「体制と報告」の表のように、決めることと担当がはっきりしていれば進められます（当社の見解）。別々の会社に任せる場合は、クローラーの方針、UTMの規則、月次の報告の分け方を、各社に同じ内容で渡します。用語は<a href="/articles/chatgpt-ads-glossary/">用語集</a>、日々の確認は<a href="/articles/chatgpt-ads-checklist/">運用チェックリストの記事</a>を共有すると、言葉と手順をそろえやすくなります。</p>
+<h2 id="s15"><strong>まとめ</strong></h2>
+<ul>
+<li>広告は回答に影響しない。広告とLLMOは別の仕組みで、共通なのはサイト・クローラー・計測</li>
+<li>役割は、相談の段階と、広告が届かない相手（Plus・Pro・Business・Enterprise・Edu、18歳未満）で分ける。顧客の質問を1つの一覧にして両方の土台にする（当社の提案）</li>
+<li>予算は、広告は判断の額と期間、LLMOは作業の範囲で決め、片方の数字でもう片方を動かさない</li>
+<li>GA4は2026年5月13日から「AIアシスタント」のチャネル。広告のURLには有料のメディアのUTMを付け、成果も報告も別の行にする</li>
+<li>同じLPでは、OAI-AdsBot を止めない、事実を最新に保つ、別のページに着くクリックも計測できるようにする</li>
+</ul>
+<p>広告とAIの回答からの流入の役割や、計測・報告の分け方を整理したい場合は、分析ツールの流入元の数字をお手元に用意のうえ<a href="https://ads.ikigaiinc.com/#cta">20分の無料相談</a>をご利用ください。いまのSEO・LLMOの外注費と作業範囲を見直したい場合は、<a href="https://ads.ikigaiinc.com/seo-llmo/">GPT広告専門店のSEO・LLMO運用</a>をご覧ください。月額30万円以上で外注中の企業を対象に、現契約の見積書をもとに同じ本数・同じ範囲を半額で引き受けています（条件と例外はページに記載しています）。</p>
+<h3 id="s16"><strong>出典</strong></h3>
+<ul>
+<li><a href="https://help.openai.com/en/articles/20001047-ads-in-chatgpt">Ads in ChatGPT</a>（広告は回答に影響しないこと、表示対象のプラン、広告主が受け取る集計の情報）</li>
+<li><a href="https://help.openai.com/en/articles/20001207-ads-in-chatgpt-the-basics">Ads in ChatGPT: the basics</a>（UTMの付け方、審査のクローラーの訪問が有料の流入に分類され得ること）</li>
+<li><a href="https://platform.openai.com/docs/bots">Overview of OpenAI Crawlers</a>（OAI-SearchBot・OAI-AdsBot・GPTBot・ChatGPT-User の役割、設定が互いに独立していること、OAI-AdsBot がLPの内容を使うこと）</li>
+<li><a href="https://help.openai.com/en/articles/20001243-advertiser-guidance-for-allowing-openai-web-crawlers">Advertiser guidance for allowing OpenAI web crawlers</a>（OAI-AdsBot は必須、OAI-SearchBot は推奨、WAF・CDN）</li>
+<li><a href="https://help.openai.com/en/articles/20001268-create-campaigns-from-product-feeds">Create campaigns from product feeds</a>（フィードの商品は広告にだけ使われること）</li>
+<li><a href="https://help.openai.com/en/articles/20001614-creative-enhancements-for-chatgpt-ads">Creative enhancements for ChatGPT Ads</a>（LPの内容を材料にすること、リンク先URLの最適化、既定で有効と対象）</li>
+<li><a href="https://help.openai.com/en/articles/20001214-measure-results">Measure Results</a>・<a href="https://help.openai.com/en/articles/20001604-troubleshooting-conversion-tracking-for-chatgpt-ads">Troubleshooting conversion tracking</a>（クエリパラメータとマクロ、GA4から取り込んだ活動はキャンペーンに帰属した成果ではないこと）</li>
+<li><a href="https://help.openai.com/en/articles/20001210-creating-campaigns-for-chatgpt-ads">Creating campaigns</a>・<a href="https://help.openai.com/en/articles/20001413-daily-budgets">Daily Budgets</a>・<a href="https://help.openai.com/en/articles/20001216-billing-payment">Billing &amp; Payment</a>（最低の日予算、日予算の上限、停止後の表示）</li>
+<li><a href="https://openai.com/policies/ad-policies/">OpenAI Ads Policies</a>（センシティブな会話）</li>
+<li><a href="https://support.google.com/analytics/answer/9756891">Googleアナリティクス ヘルプ：デフォルト チャネル グループ</a>（AIアシスタントのチャネルの定義と条件、有料のチャネルの条件、AIによる概要・AIモードはオーガニック検索）</li>
+<li><a href="https://support.google.com/analytics/answer/9164320">Googleアナリティクス ヘルプ：What's new</a>（2026年5月13日のAIアシスタントの流入の計測）</li>
+</ul>
+<p>いずれも2026年11月4日に本文を確認しています。</p>
+<h3 id="s17"><strong>変更履歴</strong></h3>
+<div aria-label="比較表（横にスクロールできます）" class="table-scroll" role="region" tabindex="0"><table><tr><th scope="col"><p><strong>日付</strong></p>
+</th><th scope="col"><p><strong>内容</strong></p>
+</th></tr>
+<tr><td><p>2026年11月4日</p>
+</td><td><p>初版。<span style="white-space:nowrap">OpenAI</span>のヘルプセンター10本・クローラーの資料・広告ポリシー、<span style="white-space:nowrap">Google</span>アナリティクスのヘルプ2本を確認</p>
+</td></tr>
+</table></div>
+<p><strong>次回確認予定：2026年12月上旬。</strong> 広告と回答の独立性、OpenAIのクローラーの説明、GA4のAIアシスタントのチャネルの定義、クリエイティブ強化のリンク先の扱いを確認します。</p>
+</article></div><section class="consult"><div><span class="eyebrow">NEXT STEP</span><h2>自社の商材なら、<br>何から試す？</h2></div><div><p>商材・主要な成果・検証予算から、準備することを整理します。<br>広告や計測のどこから手をつけるか、まずはご相談ください。</p><a href="/#cta" class="button">ChatGPT広告の出稿・運用を相談する <span aria-hidden="true">↗</span></a><p class="small-text">GPT広告専門店の20分無料相談</p></div></section><section class="related"><div class="section-top"><p class="eyebrow">RELATED ARTICLES</p><h2>次に読む記事</h2></div><div class="cards two"><a class="article-card" href="/articles/chatgpt-ads-vs-llmo/"><div class="card-visual"><img src="/articles/assets/paid-vs-organic.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">29 / LLMO・GEO</span><h3>ChatGPT広告とLLMO・GEOの違い｜有料広告とAI回答からの流入の役割を整理</h3><p>ChatGPT広告は回答の下に表示される有料の枠で、LLMO・GEOは回答の中で自社が言及されることを目指す取り組みです。</p><span class="card-bottom">2026.09.26 <span>記事を読む ↗</span></span></div></a><a class="article-card" href="/articles/chatgpt-ads-measurement/"><div class="card-visual"><img src="/articles/assets/measurement-roles.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">10 / 効果測定</span><h3>ChatGPT広告の効果測定｜Pixel・UTM・GA4で何を確認するか</h3><p>ChatGPT広告で最も多いつまずきは、配信そのものではなく計測です。クリックは取れているのに、その先が分からない。イベントは飛んでいるのに管理画面では0のまま。数字がGA4と合わない。</p><span class="card-bottom">2026.09.20 <span>記事を読む ↗</span></span></div></a><a class="article-card" href="/articles/chatgpt-ads-crawler/"><div class="card-visual"><img src="/articles/assets/crawler.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">57 / クローラー許可</span><h3>ChatGPT広告のクローラー許可｜OAI-AdsBotを止めない設定と、LPが読めないときの対処</h3><p>ChatGPT広告の審査では、OpenAIのクローラーOAI-AdsBotがリンク先を読めることが必須です。</p><span class="card-bottom">2026.10.29 <span>記事を読む ↗</span></span></div></a><a class="article-card" href="/articles/chatgpt-ads-ga4/"><div class="card-visual"><img src="/articles/assets/ga4.svg" width="1200" height="760" loading="lazy" alt=""></div><div class="card-content"><span class="card-label">50 / GA4連携</span><h3>ChatGPT広告とGA4の連携｜接続手順・ベータの条件・数字が合わない理由</h3><p>ChatGPT広告のAds ManagerにはGA4を接続する機能（ベータ）があります。2026年10月29日時点のヘルプをもとに、提供の条件、必要な権限と社内の承認、接続とイベントの対応づけの手順、取り込まれるデータの意味、Ads ManagerとGA4の数字が合わない理由と比べ方を整理します。</p><span class="card-bottom">2026.10.29 <span>記事を読む ↗</span></span></div></a></div></section></div></main><footer class="site-footer"><div class="wrap"><a class="brand" href="/">GPT広告専門店<span>.</span></a><p>運営：株式会社Ikigai<br>本サービスはOpenAIの公式・公認・提携サービスではありません。</p><div class="footer-links"><a href="/articles/">記事一覧</a><a href="/">サービス・料金</a><a href="https://ikigaiinc.com/privacypolicy">プライバシーポリシー</a><a href="https://ikigaiinc.com">会社情報</a></div><small>© 2026 株式会社Ikigai. ChatGPT・OpenAIは各権利者の商標です。</small></div></footer><script>(function(){var K=['utm_source','utm_medium','utm_campaign','utm_content','utm_term'],q=new URLSearchParams(location.search),u={},any=false;K.forEach(function(k){var v=q.get(k);if(v){u[k]=v;any=true;}});try{if(any){sessionStorage.setItem('lp_utm',JSON.stringify(u));}}catch(e){}})();</script></body></html>
