@@ -556,6 +556,15 @@ ul{margin:0;padding:0;list-style:none;}
   .br-pc{display:none;}
 }
 @media (max-width:374px){.logo-mk{font-size:17px;}.hd .btn{font-size:12px;padding:9px 10px;}}
+/* ---------- In-page links (tablet/smartphone) ---------- */
+html{scroll-padding-top:84px;}
+.toc{display:none;margin-top:26px;padding-top:20px;border-top:1px solid var(--line-dark);}
+.toc-h{font-size:12px;font-weight:600;letter-spacing:.06em;color:var(--tx-on-dark-sub);margin-bottom:10px;}
+.toc ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px;}
+.toc a{display:inline-block;padding:7px 13px;border-radius:100px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.05);color:#E8ECF3;font-size:13.5px;font-weight:600;text-decoration:none;line-height:1.4;}
+.toc a:hover{border-color:#fff;}
+.toc a.toc-cta{background:var(--acc);border-color:var(--acc);color:#fff;}
+@media (max-width:1024px){.toc{display:block;}}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;}
   html{scroll-behavior:auto;}
@@ -617,7 +626,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="hero" id="top">
   <div class="wrap hero-in">
     <div>
-      <span class="badge"><span class="pulse"></span>月30万円以上でSEO・LLMOを外注している企業向け</span>
+      <span class="badge"><span class="pulse"></span>SEO会社の乗り換え・SEO費用の見直しに</span>
       <h1 class="h1-half">いまのSEO・LLMO、<br><span class="mk">半額</span>で引き受けます。</h1>
       <p class="hero-sub">
         現在の見積書を見せてください。<b>同じ本数・同じ範囲を、現契約の半額</b>で。<br class="br-pc">
@@ -628,10 +637,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a href="#cta" class="btn btn-primary btn-lg">見積書を送って半額を確認する<span class="btn-arrow">→</span></a>
         <a href="#rule" class="btn btn-ghost btn-lg">半額の条件を先に読む</a>
       </div>
-      <p class="cta-note">初期費用なし／最低契約3か月／引き継ぎ費用なし／税別</p>
+      <p class="cta-note">月30万円以上で外注中の企業が対象／初期費用なし／最低契約3か月／引き継ぎ費用なし／税別</p>
       <p class="hero-disc">
         半額の基準は、お客様が現在SEO・LLMO業務に対して支払っている月額（税別）です。例外条件は本ページ「半額の条件」に記載しています。
       </p>
+      <nav class="toc" aria-label="このページの内容">
+        <p class="toc-h">このページの内容</p>
+        <ul>
+          <li><a href="#rule">半額の条件</a></li>
+          <li><a href="#why">なぜ半額か</a></li>
+          <li><a href="#scope">やること</a></li>
+          <li><a href="#proof">実績</a></li>
+          <li><a href="#flow">乗り換えの流れ</a></li>
+          <li><a href="#faq">よくある質問</a></li>
+          <li><a href="#cta" class="toc-cta">見積書を送る</a></li>
+        </ul>
+      </nav>
     </div>
 
     <div>
