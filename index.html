@@ -551,6 +551,15 @@ ul{margin:0;padding:0;list-style:none;}
   .br-pc{display:none;}
 }
 @media (max-width:374px){.logo-mk{font-size:17px;}.hd .btn{font-size:12px;padding:9px 10px;}}
+/* ---------- In-page links (tablet/smartphone) ---------- */
+html{scroll-padding-top:84px;}
+.toc{display:none;margin-top:26px;padding-top:20px;border-top:1px solid var(--line-dark);}
+.toc-h{font-size:12px;font-weight:600;letter-spacing:.06em;color:var(--tx-on-dark-sub);margin-bottom:10px;}
+.toc ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px;}
+.toc a{display:inline-block;padding:7px 13px;border-radius:100px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.05);color:#E8ECF3;font-size:13.5px;font-weight:600;text-decoration:none;line-height:1.4;}
+.toc a:hover{border-color:#fff;}
+.toc a.toc-cta{background:var(--acc);border-color:var(--acc);color:#fff;}
+@media (max-width:1024px){.toc{display:block;}}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;}
   html{scroll-behavior:auto;}
@@ -591,17 +600,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h1>ChatGPT広告を、<br><span class="mk">爆速検証</span>。</h1>
       <p class="hero-sub">
         検索では拾えない「<b>迷っている会話</b>」に、広告を出す。<br class="br-pc">
-        会話意図の設計から広告制作・計測・週次改善まで一気通貫。<br class="br-pc">
+        ChatGPT広告の運用代行。会話意図の設計から改善まで一気通貫。<br class="br-pc">
         大きな予算を投じる前に、続ける価値があるかを30日で見極めます。
       </p>
       <div class="cta-row">
         <a href="#cta" class="btn btn-primary btn-lg">30日トライアルを相談する<span class="btn-arrow">→</span></a>
         <a href="#doc" class="btn btn-ghost btn-lg">事例集（PDF）を無料で受け取る</a>
       </div>
-      <p class="cta-note">支援費12万円〜＋広告費10万円〜／初期費用なし／自動更新なし</p>
+      <p class="cta-note">費用は支援費12万円〜＋広告費10万円〜／初期費用なし／自動更新なし</p>
       <p class="hero-disc">
         本サービスはOpenAIの公式・公認・提携サービスではありません。ChatGPT、OpenAIは各権利者の商標です。
       </p>
+      <nav class="toc" aria-label="このページの内容">
+        <p class="toc-h">このページの内容</p>
+        <ul>
+          <li><a href="#what">ChatGPT広告とは</a></li>
+          <li><a href="#fit">対象</a></li>
+          <li><a href="#flow">30日の進め方</a></li>
+          <li><a href="#price">料金</a></li>
+          <li><a href="#doc">事例集</a></li>
+          <li><a href="#faq">よくある質問</a></li>
+          <li><a href="#cta" class="toc-cta">相談する</a></li>
+        </ul>
+      </nav>
     </div>
 
     <div>
