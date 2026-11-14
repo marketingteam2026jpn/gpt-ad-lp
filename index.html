@@ -508,10 +508,6 @@ ul{margin:0;padding:0;list-style:none;}
 }
 .sticky .btn{width:100%;font-size:17px;padding:17px 20px;}
 
-/* ---------- Reveal ---------- */
-.rv{opacity:0;transform:translateY(22px);transition:opacity .6s cubic-bezier(.2,.7,.3,1),transform .6s cubic-bezier(.2,.7,.3,1);}
-.rv.on{opacity:1;transform:none;}
-
 /* ---------- Responsive ---------- */
 @media (max-width:1024px){
   :root{--sec:84px;}
@@ -565,7 +561,6 @@ html{scroll-padding-top:84px;}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;}
   html{scroll-behavior:auto;}
-  .rv{opacity:1;transform:none;}
 }
 </style>
 <link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" type="image/png" sizes="32x32" href="/assets/icon-32.png"><link rel="icon" type="image/png" sizes="192x192" href="/assets/icon-192.png"><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest">
@@ -1473,19 +1468,6 @@ var LEAD_ENDPOINT = "https://script.google.com/macros/s/AKfycbz6eKJ_JmCXvelbbRC2
   });
 })();
 
-(function(){
-  var els = document.querySelectorAll('.rv');
-  if(!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-    els.forEach(function(e){e.classList.add('on');});
-    return;
-  }
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(en){
-      if(en.isIntersecting){ en.target.classList.add('on'); io.unobserve(en.target); }
-    });
-  },{threshold:.12, rootMargin:'0px 0px -8% 0px'});
-  els.forEach(function(e){io.observe(e);});
-})();
 </script>
 </body>
 </html>
