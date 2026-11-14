@@ -512,10 +512,6 @@ ul{margin:0;padding:0;list-style:none;}
 }
 .sticky .btn{width:100%;font-size:17px;padding:17px 20px;}
 
-/* ---------- Reveal ---------- */
-.rv{opacity:0;transform:translateY(22px);transition:opacity .6s cubic-bezier(.2,.7,.3,1),transform .6s cubic-bezier(.2,.7,.3,1);}
-.rv.on{opacity:1;transform:none;}
-
 /* ---------- Responsive ---------- */
 @media (max-width:1024px){
   :root{--sec:84px;}
@@ -569,7 +565,6 @@ html{scroll-padding-top:84px;}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;}
   html{scroll-behavior:auto;}
-  .rv{opacity:1;transform:none;}
 }
 /* ---------- SEO/LLMO page additions ---------- */
 .proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
@@ -630,7 +625,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span class="badge"><span class="pulse"></span>SEO会社の乗り換え・SEO費用の見直しに</span>
       <h1 class="h1-half">いまのSEO・LLMO、<br><span class="mk">半額</span>で引き受けます。</h1>
       <p class="hero-sub">
-        現在の見積書を見せてください。<b>同じ本数・同じ範囲を、現契約の半額</b>で。<br class="br-pc">
+        現在の見積書を見せてください。<br class="br-pc"><b>同じ本数・同じ範囲を、現契約の半額</b>で。<br class="br-pc">
         月30本までの記事制作なら、確約します。<br class="br-pc">
         SEO歴10年の代表が監修し、専任の担当チームが運用します。
       </p>
@@ -1315,19 +1310,6 @@ var PLAN_LABEL = "SEO/LLMO 半額乗り換え";
   });
 })();
 
-(function(){
-  var els = document.querySelectorAll('.rv');
-  if(!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-    els.forEach(function(e){e.classList.add('on');});
-    return;
-  }
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(en){
-      if(en.isIntersecting){ en.target.classList.add('on'); io.unobserve(en.target); }
-    });
-  },{threshold:.12, rootMargin:'0px 0px -8% 0px'});
-  els.forEach(function(e){io.observe(e);});
-})();
 </script>
 </body>
 </html>
