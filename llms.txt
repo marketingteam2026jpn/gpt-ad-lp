@@ -1,0 +1,16 @@
+# GPT広告専門店（株式会社Ikigai）
+
+> ChatGPT広告の出稿・運用代行、SEO・LLMO対策の代行、AIの回答に自社が出ているかを測るツール「AI回答の露出レポート」を提供しています。運営は株式会社Ikigai（東京都新宿区）。
+
+## サービス
+- [ChatGPT広告 運用代行](https://ads.ikigaiinc.com/): ChatGPT広告の出稿・運用・計測の支援
+- [SEO・LLMO 運用代行](https://ads.ikigaiinc.com/seo-llmo/): 検索とAIの回答の両方で選ばれるための記事制作・内部対策・計測
+- [AI回答の露出レポート](https://ads.ikigaiinc.com/ai-visibility/): LLMO対策の計測と改善のサービス。見込み客がChatGPT・Claudeに聞きそうな質問30問で、自社と競合が回答に出る割合（言及率・引用率）を毎週または毎月計測し、AIが引用しているページを調べた改善策を毎月届ける。月19,800円（月1回計測）／39,800円（週1回計測）。無料診断あり
+- [AI回答の露出レポート 月次レポートのサンプル](https://ads.ikigaiinc.com/ai-visibility/sample/): 架空の会社のデータで作った月次レポートの見本
+
+## 記事
+- [ChatGPT広告の記事一覧](https://ads.ikigaiinc.com/articles/): 始め方・費用・計測・業種別の事例など
+- [SEO・LLMOの記事一覧](https://ads.ikigaiinc.com/seo-llmo/articles/): LLMO対策とは、AIO対策、AI回答での自社表示の測り方、llms.txt、構造化データなど
+
+## 会社情報
+- 株式会社Ikigai　代表取締役 三神 勇治　〒160-0023 東京都新宿区西新宿3-3-13 西新宿水間ビル2F　お問い合わせ news@ikigaiinc.com

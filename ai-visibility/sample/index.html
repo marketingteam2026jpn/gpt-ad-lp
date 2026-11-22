@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-W62G2NT3');</script>
+<!-- End Google Tag Manager -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LLMO対策の月次レポート サンプル｜AI回答の露出レポート</title>
+<meta name="description" content="LLMO対策（AIの回答に自社が出るための対策）の月次レポートのサンプルです。ChatGPT・Claudeでの言及率の週次推移、競合比較、AIが引用しているサイト、改善策とその効果を、架空の会社のデータで実際の画面と同じ形で見られます。">
+<link rel="canonical" href="https://ads.ikigaiinc.com/ai-visibility/sample/">
+<meta property="og:title" content="LLMO対策の月次レポート サンプル｜AI回答の露出レポート">
+<meta property="og:description" content="ChatGPT・Claudeでの言及率を毎週測り、改善策と効果を毎月まとめたレポートの見本です。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ads.ikigaiinc.com/ai-visibility/sample/">
+<meta property="og:image" content="https://ads.ikigaiinc.com/ai-visibility/img/dashboard.webp">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="app.css?v=1795335526">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "LLMO対策の月次レポート サンプル", "description": "ChatGPT・Claudeでの言及率を毎週測り、改善策と効果を毎月まとめたレポートの見本（架空の会社のデータ）", "author": {"@type": "Organization", "name": "株式会社Ikigai（GPT広告専門店）", "url": "https://ads.ikigaiinc.com/"}, "publisher": {"@type": "Organization", "name": "株式会社Ikigai"}, "datePublished": "2026-11-22", "inLanguage": "ja", "mainEntityOfPage": "https://ads.ikigaiinc.com/ai-visibility/sample/", "image": "https://ads.ikigaiinc.com/ai-visibility/img/dashboard.webp"}</script>
+<style>
+.sample-bar{background:#11133A;color:#E4E6F5;font-size:14px;text-align:center;padding:10px 16px;line-height:1.6}
+.sample-bar b{color:#fff}
+@media (max-width:640px){.pub-top .logo small{display:none}.pub-top .logo b{font-size:13px}}
+.sample-bar a{color:#C7C9FF}
+.cycle{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:0 0 16px}
+.cycle .st{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;box-shadow:var(--sh)}
+.cycle .st .n{display:inline-block;font-family:var(--num);font-size:12px;font-weight:700;color:var(--pri-tx);background:var(--pri-soft);border-radius:999px;padding:1px 10px;margin-bottom:8px}
+.cycle .st h3{margin:0 0 6px;font-size:16px}
+.cycle .st p{margin:0;font-size:14px;color:var(--sub)}
+.cycle .st b{color:var(--ink)}
+.cycle .st:not(:last-child)::after{content:"";position:absolute;right:-13px;top:50%;width:10px;height:10px;border-top:2px solid var(--pri);border-right:2px solid var(--pri);transform:translateY(-50%) rotate(45deg);z-index:1}
+.ev{display:flex;gap:16px;flex-wrap:wrap;margin:10px 0 0;font-size:13px;color:var(--sub)}
+.ev span{display:inline-flex;align-items:center;gap:6px}
+.ev i{width:14px;border-top:2px dashed var(--pri)}
+.done-memo{background:var(--ok-soft);color:var(--ok);border-radius:8px;padding:8px 12px;font-size:14px;font-weight:500;margin:4px 0 0}
+.endcta{background:radial-gradient(700px 300px at 85% 0,rgba(124,92,240,.35),transparent 60%),#11133A;color:#fff;border-radius:16px;padding:32px;margin:28px 0 0;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.endcta h2{color:#fff;font-size:22px;margin:0 0 6px}
+.endcta p{color:#C9CCE3;margin:0}
+@media (max-width:860px){.cycle{grid-template-columns:1fr}.cycle .st:not(:last-child)::after{right:50%;top:auto;bottom:-12px;transform:translateX(50%) rotate(135deg)}}
+</style>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W62G2NT3" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div class="sample-bar"><b>サンプルレポートです。</b>架空の会社「サンプル英会話」のデータで、実際の画面と同じ形で作っています。<a href="/ai-visibility/#start">御社の状態は無料診断で</a></div>
+<header class="pub-top"><div class="in">
+  <a class="logo" href="/ai-visibility/"><span class="mk"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18V9M10 18V5M16 18v-6M22 18H2"/></svg></span><span><b>AI回答の露出レポート</b><small>LLMO対策の計測と改善（GPT広告専門店）</small></span></a>
+  <nav><a href="/ai-visibility/" class="hide-sp">サービス紹介</a><a href="/ai-visibility/#start" class="btn sm" style="color:#fff;white-space:nowrap">無料診断</a></nav>
+</div></header>
+<main class="pub">
+<div class="phead">
+  <div><span class="eyebrow">月次レポートのサンプル</span><h1 style="margin-top:8px">LLMO対策 月次レポート 2026年11月</h1>
+  <div class="sub">サンプル英会話・sample-eikaiwa.jp・スタンダード（毎週計測）・質問30問を ChatGPT と Claude に2回ずつ</div></div>
+</div>
+
+<h2 style="margin:0 0 12px">今月の改善サイクル</h2>
+<div class="cycle">
+  <div class="st"><span class="n">測る</span><h3>毎週、同じ質問で計測</h3><p>10月第1週から<b>8回</b>計測。質問30問 × ChatGPT・Claude × 各2回＝<b>1回120回答</b></p></div>
+  <div class="st"><span class="n">直す</span><h3>根拠のある改善を実施</h3><p><b>10/24</b> 料金ページによくある質問を公開<br><b>10/31</b> 比較記事2本に掲載</p></div>
+  <div class="st"><span class="n">確かめる</span><h3>次の計測で効果を確認</h3><p>言及率 ChatGPT <b>4%→12%</b>、Claude <b>18%→35%</b>。料金の質問（Claude）は <b>0%→67%</b></p></div>
+</div>
+
+
+
+<div class="kpis">
+  
+  <div class="kpi">
+    <div class="k"><span class="dot gpt"></span>ChatGPT の言及率</div>
+    <div class="v">12<small>%</small></div>
+    <div class="d"><span class="delta up">▲ 1pt</span>前回の計測と比べて</div>
+  </div>
+  
+  <div class="kpi">
+    <div class="k"><span class="dot cla"></span>Claude の言及率</div>
+    <div class="v">35<small>%</small></div>
+    <div class="d"><span class="delta up">▲ 2pt</span>前回の計測と比べて</div>
+  </div>
+  
+  <div class="kpi">
+    <div class="k"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>引用された割合</div>
+    <div class="v">14<small>%</small></div>
+    <div class="d">ChatGPT 6%・Claude 21%</div>
+  </div>
+  <div class="kpi">
+    <div class="k"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg>競合の中での順位</div>
+    <div class="v">2<small>位 / 8社</small></div>
+    <div class="d">2つのAIの言及率の合計で並べた順位</div>
+  </div>
+</div>
+
+<div class="cols">
+  <div class="card">
+    <div class="card-h"><div><h2>言及率の推移（毎週）</h2><p>実線＝回答の本文に名前が出た割合／破線＝出典リンクに選ばれた割合</p></div></div>
+    <div style="position:relative;height:300px"><canvas id="trend" aria-label="言及率の推移のグラフ。10月初めから11月下旬にかけて、ChatGPTは4%から12%、Claudeは18%から35%に上昇"></canvas></div>
+    <div class="ev"><span><i></i>① 10/24 料金ページによくある質問を公開</span><span><i></i>② 10/31 比較記事2本に掲載</span></div>
+  </div>
+  <div class="card">
+    <div class="card-h"><div><h2>AIがよく引用する他サイト</h2><p>御社の代わりに出典に選ばれているサイト（引用回数）</p></div></div>
+    
+      <div class="seg"><span class="dot gpt"></span>ChatGPT</div>
+      <ul class="hosts"><li><span class="h">news-release.jp</span><span class="c">14回</span></li><li><span class="h">a-coaching.jp</span><span class="c">4回</span></li><li><span class="h">c-english.jp</span><span class="c">3回</span></li><li><span class="h">hikaku-guide.jp</span><span class="c">2回</span></li><li><span class="h">b-online.jp</span><span class="c">2回</span></li></ul>
+    
+      <div class="seg"><span class="dot cla"></span>Claude</div>
+      <ul class="hosts"><li><span class="h">hikaku-media.com</span><span class="c">11回</span></li><li><span class="h">ranking-navi.com</span><span class="c">9回</span></li><li><span class="h">kuchikomi-eigo.jp</span><span class="c">8回</span></li><li><span class="h">eigo-matome.com</span><span class="c">8回</span></li><li><span class="h">study-blog.jp</span><span class="c">6回</span></li></ul>
+    
+  </div>
+</div>
+
+<article class="card report" style="padding:28px 32px;max-width:none">
+  <div style="max-width:960px"><div class="concl"><h2>今月の結論</h2>
+<p>言及率は、計測を始めた10月初めと比べて、ChatGPTで4%から12%（3倍）、Claudeで18%から35%（約2倍）に上がりました。</p>
+<p>効いたのは、10月下旬に公開した料金ページのよくある質問と、比較記事2本への掲載です。料金の質問と比較・おすすめの質問で、名前が挙がる回数が増えました。</p>
+<p>来月は、ChatGPTが最も多く引用しているプレスリリースの配信サイトへの対応を優先します。</p>
+</div>
+<h2>AIの回答での露出</h2>
+<p class="note">※質問30問を各AIに2回ずつ、毎週聞いた結果です。社名を含む指名の質問は除いています。</p>
+<h3>AI別（10月第1週 → 11月第3週）</h3>
+<p>・ChatGPT：言及率 4% → 12%、引用率 2% → 6%</p>
+<p>・Claude：言及率 18% → 35%、引用率 8% → 21%</p>
+<h3>質問の種類別（Claude）</h3>
+<p>・料金・費用：0% → 67%。10/24に料金ページのよくある質問を公開した翌週から出始めました</p>
+<p>・比較・おすすめ：25% → 42%。比較記事2本に掲載された10/31以降に上がりました</p>
+<p>・悩み・方法：両AIとも0%のまま。御社のサイトに、この種類の問いへ正面から答えるページがありません</p>
+<h2>競合との比較</h2>
+<p>・Claudeの言及率は、A社 英語コーチング（38%）に次ぐ2位です。10月初めは5位でした</p>
+<p>・ChatGPTでは、A社（21%）、C社（14%）に次いで、B社と並ぶ3位です</p>
+<p>・出典に選ばれた割合（引用率）は、Claudeで8社の中の1位です</p>
+<h2>AIが代わりに引用しているページ</h2>
+<h3>ChatGPT</h3>
+<p>・プレスリリースの配信サイト（14回）が最多です。御社のリリースは1年以上出ていません</p>
+<h3>Claude</h3>
+<p>・比較・ランキングの記事が中心です（上位5サイトのうち4つ）。掲載されていない記事が3本残っています</p>
+<h2>来月の改善のご提案</h2>
+<p>・優先度A：プレスリリースの配信サイトに、受講者の継続率を発表する</p>
+<p>・優先度B：初心者向けの質問に正面から答えるページを新しく作る</p>
+<p>・優先度B：料金表記が古い比較記事2本に、情報の更新を依頼する</p>
+<p class="note">※各提案の根拠・作業・期待できることは、改善アクションの画面に載せています。</p></div>
+</article>
+
+<div class="card flush">
+  <div class="card-h"><div><h2>競合との比較</h2><p>最新の計測（11月第3週）。1番手＝登録したブランドの中で、回答に最初に名前が出た割合</p></div></div>
+  <div class="tbl"><table>
+    <thead><tr><th class="c">順位</th><th>ブランド</th><th><span class="dot gpt"></span> ChatGPT<span class="hide-sp"> 言及率</span></th><th><span class="dot cla"></span> Claude<span class="hide-sp"> 言及率</span></th><th class="n hide-md">ChatGPT 1番手</th><th class="n hide-md">Claude 1番手</th></tr></thead>
+    <tbody>
+    
+    <tr class="">
+      <td class="c"><span class="rank">1</span></td>
+      <td><span class="brand-cell">A社 英語コーチング</span></td>
+      <td><div class="meter gpt"><div class="bar"><i style="width:21%"></i></div><b>21%</b></div></td><td><div class="meter cla"><div class="bar"><i style="width:38%"></i></div><b>38%</b></div></td>
+      <td class="n hide-md">14%</td><td class="n hide-md">19%</td>
+    </tr>
+    
+    <tr class="own">
+      <td class="c"><span class="rank">2</span></td>
+      <td><span class="brand-cell">サンプル英会話<span class="pill b">自社</span></span></td>
+      <td><div class="meter gpt"><div class="bar"><i style="width:12%"></i></div><b>12%</b></div></td><td><div class="meter cla"><div class="bar"><i style="width:35%"></i></div><b>35%</b></div></td>
+      <td class="n hide-md">8%</td><td class="n hide-md">15%</td>
+    </tr>
+    
+    <tr class="">
+      <td class="c"><span class="rank">3</span></td>
+      <td><span class="brand-cell">B社 オンライン英会話</span></td>
+      <td><div class="meter gpt"><div class="bar"><i style="width:12%"></i></div><b>12%</b></div></td><td><div class="meter cla"><div class="bar"><i style="width:27%"></i></div><b>27%</b></div></td>
+      <td class="n hide-md">8%</td><td class="n hide-md">10%</td>
+    </tr>
+    
+    <tr class="">
+      <td class="c"><span class="rank">4</span></td>
+      <td><span class="brand-cell">C社 イングリッシュ</span></td>
+      <td><div class="meter gpt"><div class="bar"><i style="width:14%"></i></div><b>14%</b></div></td><td><div class="meter cla"><div class="bar"><i style="width:21%"></i></div><b>21%</b></div></td>
+      <td class="n hide-md">0%</td><td class="n hide-md">0%</td>
+    </tr>
+    
+    <tr class="">
+      <td class="c"><span class="rank">5</span></td>
+      <td><span class="brand-cell">D社 ビジネス英語</span></td>
+      <td><div class="meter gpt"><div class="bar"><i style="width:10%"></i></div><b>10%</b></div></td><td><div class="meter cla"><div class="bar"><i style="width:25%"></i></div><b>25%</b></div></td>
+      <td class="n hide-md">4%</td><td class="n hide-md">4%</td>
+    </tr>
+    
+    <tr class="">
+      <td class="c"><span class="rank">6</span></td>
+      <td><span class="brand-cell">E社 英語塾</span></td>
+      <td><div class="meter gpt"><div class="bar"><i style="width:4%"></i></div><b>4%</b></div></td><td><div class="meter cla"><div class="bar"><i style="width:19%"></i></div><b>19%</b></div></td>
+      <td class="n hide-md">0%</td><td class="n hide-md">2%</td>
+    </tr>
+    
+    <tr class="">
+      <td class="c"><span class="rank">7</span></td>
+      <td><span class="brand-cell">F社 英会話</span></td>
+      <td><div class="meter gpt"><div class="bar"><i style="width:10%"></i></div><b>10%</b></div></td><td><div class="meter cla"><div class="bar"><i style="width:6%"></i></div><b>6%</b></div></td>
+      <td class="n hide-md">8%</td><td class="n hide-md">2%</td>
+    </tr>
+    
+    <tr class="">
+      <td class="c"><span class="rank">8</span></td>
+      <td><span class="brand-cell">G社 English</span></td>
+      <td><div class="meter gpt"><div class="bar"><i style="width:2%"></i></div><b>2%</b></div></td><td><div class="meter cla"><div class="bar"><i style="width:10%"></i></div><b>10%</b></div></td>
+      <td class="n hide-md">0%</td><td class="n hide-md">0%</td>
+    </tr>
+    
+    </tbody>
+  </table></div>
+</div>
+
+<div class="card flush">
+  <div class="card-h"><div><h2>質問ごとの結果（一部）</h2><p>「1/2」は2回聞いて1回出たという意味です。実際の画面では30問すべてと回答の文面を見られます</p></div></div>
+  <div class="tbl"><table>
+    <thead><tr><th>質問</th><th class="hide-sp">種類</th><th class="c"><span class="dot gpt"></span> 言及</th><th class="c cite"><span class="dot gpt"></span> 引用</th><th class="c"><span class="dot cla"></span> 言及</th><th class="c cite lastv"><span class="dot cla"></span> 引用</th></tr></thead>
+    <tbody><tr><td class="q">英語コーチングの料金相場ってどれくらい？</td><td class="hide-sp"><span class="pill">料金・費用</span></td>
+      <td class="c"><span class="hit n">0/2</span></td><td class="c cite"><span class="hit n">0/2</span></td>
+      <td class="c lastv"><span class="hit n">0/2</span></td><td class="c cite"><span class="hit n">0/2</span></td></tr><tr><td class="q">月3万円くらいで受けられる英語コーチングはある？</td><td class="hide-sp"><span class="pill">料金・費用</span></td>
+      <td class="c"><span class="hit p">1/2</span></td><td class="c cite"><span class="hit n">0/2</span></td>
+      <td class="c lastv"><span class="hit y">2/2</span></td><td class="c cite"><span class="hit y">2/2</span></td></tr><tr><td class="q">入会金や初期費用がかからない英語コーチングを教えて</td><td class="hide-sp"><span class="pill">料金・費用</span></td>
+      <td class="c"><span class="hit y">2/2</span></td><td class="c cite"><span class="hit y">2/2</span></td>
+      <td class="c lastv"><span class="hit y">2/2</span></td><td class="c cite"><span class="hit y">2/2</span></td></tr><tr><td class="q">英語コーチングって高いけど、値段に見合う効果はあるの？</td><td class="hide-sp"><span class="pill">料金・費用</span></td>
+      <td class="c"><span class="hit n">0/2</span></td><td class="c cite"><span class="hit n">0/2</span></td>
+      <td class="c lastv"><span class="hit n">0/2</span></td><td class="c cite"><span class="hit n">0/2</span></td></tr><tr><td class="q">社会人向けの英語コーチングでおすすめのところを教えて</td><td class="hide-sp"><span class="pill">比較・おすすめ</span></td>
+      <td class="c"><span class="hit n">0/2</span></td><td class="c cite"><span class="hit n">0/2</span></td>
+      <td class="c lastv"><span class="hit y">2/2</span></td><td class="c cite"><span class="hit y">2/2</span></td></tr><tr><td class="q">料金が安くて、ちゃんと効果もある英語コーチングはどこ？</td><td class="hide-sp"><span class="pill">比較・おすすめ</span></td>
+      <td class="c"><span class="hit n">0/2</span></td><td class="c cite"><span class="hit n">0/2</span></td>
+      <td class="c lastv"><span class="hit y">2/2</span></td><td class="c cite"><span class="hit n">0/2</span></td></tr><tr><td class="q">主な英語コーチングサービスを比較して、違いを表にまとめて</td><td class="hide-sp"><span class="pill">比較・おすすめ</span></td>
+      <td class="c"><span class="hit n">0/2</span></td><td class="c cite"><span class="hit n">0/2</span></td>
+      <td class="c lastv"><span class="hit p">1/2</span></td><td class="c cite"><span class="hit p">1/2</span></td></tr><tr><td class="q">英語を話せるようになりたい30代の会社員に向いてる英語コーチングは？</td><td class="hide-sp"><span class="pill">比較・おすすめ</span></td>
+      <td class="c"><span class="hit p">1/2</span></td><td class="c cite"><span class="hit n">0/2</span></td>
+      <td class="c lastv"><span class="hit p">1/2</span></td><td class="c cite"><span class="hit n">0/2</span></td></tr><tr><td class="q">英語が初心者で何度も挫折してきた人でも続けやすい英語コーチングは？</td><td class="hide-sp"><span class="pill">比較・おすすめ</span></td>
+      <td class="c"><span class="hit n">0/2</span></td><td class="c cite"><span class="hit n">0/2</span></td>
+      <td class="c lastv"><span class="hit n">0/2</span></td><td class="c cite"><span class="hit n">0/2</span></td></tr><tr><td class="q">社会人が英語を話せるようになるには、何から始めればいい？</td><td class="hide-sp"><span class="pill">悩み・方法</span></td>
+      <td class="c"><span class="hit n">0/2</span></td><td class="c cite"><span class="hit n">0/2</span></td>
+      <td class="c lastv"><span class="hit n">0/2</span></td><td class="c cite"><span class="hit n">0/2</span></td></tr><tr><td class="q">英語の勉強がいつも三日坊主で終わる。習慣にするコツは？</td><td class="hide-sp"><span class="pill">悩み・方法</span></td>
+      <td class="c"><span class="hit n">0/2</span></td><td class="c cite"><span class="hit n">0/2</span></td>
+      <td class="c lastv"><span class="hit n">0/2</span></td><td class="c cite"><span class="hit n">0/2</span></td></tr><tr><td class="q">オンライン英会話を続けてるのに話せるようにならないのはなぜ？</td><td class="hide-sp"><span class="pill">悩み・方法</span></td>
+      <td class="c"><span class="hit n">0/2</span></td><td class="c cite"><span class="hit n">0/2</span></td>
+      <td class="c lastv"><span class="hit n">0/2</span></td><td class="c cite"><span class="hit n">0/2</span></td></tr></tbody>
+  </table></div>
+</div>
+
+<h2 style="margin:28px 0 12px">改善アクション</h2>
+
+<details class="card action" open>
+  <summary>
+    <span class="pill a">優先度 A</span>
+    <span class="t">料金ページに比較表とよくある質問を足す</span>
+    <span class="pill ok">完了</span>
+    <span class="chev"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span>
+  </summary>
+  <div class="body">
+    <dl>
+      <dt>根拠</dt><dd>料金の質問6問で、ChatGPT・Claudeとも御社は0回。代わりに競合2社の料金ページが引用されていた</dd>
+      <dt>やること</dt><dd>料金ページに、プラン別の金額・含まれる内容・よくある質問を表で書く。同じ内容を構造化データでも示す</dd>
+      <dt>期待できること</dt><dd>料金の質問で引用される候補に入る</dd>
+      <dt>結果</dt><dd><p class="done-memo">10/24 公開。料金の質問の言及率（Claude）は 0% → 67%</p></dd>
+    </dl>
+  </div>
+</details>
+
+<details class="card action" open>
+  <summary>
+    <span class="pill a">優先度 A</span>
+    <span class="t">引用の多い比較・ランキング記事5本への掲載を依頼する</span>
+    <span class="pill ok">完了</span>
+    <span class="chev"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span>
+  </summary>
+  <div class="body">
+    <dl>
+      <dt>根拠</dt><dd>Claudeが引用したサイトの上位5つのうち4つが比較・ランキング記事で、御社は2本にしか載っていなかった</dd>
+      <dt>やること</dt><dd>掲載されていない3本の運営者に、最新の料金と特徴をまとめた資料を添えて掲載を依頼する</dd>
+      <dt>期待できること</dt><dd>比較・おすすめの質問で名前が挙がる回数が増える</dd>
+      <dt>結果</dt><dd><p class="done-memo">10/31 2本に掲載。比較・おすすめの質問の言及率（Claude）は 25% → 42%</p></dd>
+    </dl>
+  </div>
+</details>
+
+<details class="card action" >
+  <summary>
+    <span class="pill a">優先度 A</span>
+    <span class="t">ChatGPTが引用するプレスリリース配信サイトに、受講者の継続率を発表する</span>
+    <span class="pill warn">対応中</span>
+    <span class="chev"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span>
+  </summary>
+  <div class="body">
+    <dl>
+      <dt>根拠</dt><dd>ChatGPTが最も多く引用していたのはプレスリリースの配信サイト（14回）。御社のリリースは1年以上出ていない</dd>
+      <dt>やること</dt><dd>受講者の継続率など、数字で示せる事実を1本のリリースにまとめて配信する</dd>
+      <dt>期待できること</dt><dd>ChatGPTの回答で、御社が根拠つきで挙がる候補に入る</dd>
+      
+    </dl>
+  </div>
+</details>
+
+<details class="card action" >
+  <summary>
+    <span class="pill b">優先度 B</span>
+    <span class="t">初心者向けの質問に正面から答えるページを新しく作る</span>
+    <span class="pill ">未着手</span>
+    <span class="chev"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span>
+  </summary>
+  <div class="body">
+    <dl>
+      <dt>根拠</dt><dd>「初心者でも続けられる」系の質問4問で、両AIとも御社は0回。回答は学習ブログの記事を引用していた</dd>
+      <dt>やること</dt><dd>初心者のつまずきと続け方を、自社の指導の流れに沿って1ページにまとめる。冒頭に結論、末尾によくある質問</dd>
+      <dt>期待できること</dt><dd>悩み・方法の質問で引用される候補に入る</dd>
+      
+    </dl>
+  </div>
+</details>
+
+<details class="card action" >
+  <summary>
+    <span class="pill b">優先度 B</span>
+    <span class="t">比較記事で料金表記が古い掲載先に、情報の更新を依頼する</span>
+    <span class="pill ">未着手</span>
+    <span class="chev"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span>
+  </summary>
+  <div class="body">
+    <dl>
+      <dt>根拠</dt><dd>Claudeが引用した比較記事2本で、御社の料金が旧価格のまま書かれていた</dd>
+      <dt>やること</dt><dd>掲載先の問い合わせ窓口に、最新の料金と内容を伝えて更新を依頼する</dd>
+      <dt>期待できること</dt><dd>誤った料金がAIの回答に引き継がれるのを防ぐ</dd>
+      
+    </dl>
+  </div>
+</details>
+
+
+<div class="endcta">
+  <div><h2>御社のLLMO対策も、測るところから。</h2><p>見込み客が聞きそうな質問を5問作り、ChatGPTとClaudeに聞いて、いまの状態を数分でお見せします。無料です。</p></div>
+  <a class="btn lg" href="/ai-visibility/#start">無料で診断する</a>
+</div>
+</main>
+<footer class="foot"><div class="in">
+  <a href="/ai-visibility/">サービス紹介</a><a href="/seo-llmo/articles/">SEO・LLMOの記事</a><a href="https://app.ikigaiinc.com/terms">利用規約</a><a href="https://app.ikigaiinc.com/privacy">プライバシーポリシー</a>
+  <p style="margin:8px 0 0">運営：株式会社Ikigai（GPT広告専門店）。このページの会社名・サイト名・数字は説明用の架空のものです。OpenAI・Anthropicの公式・提携サービスではありません。</p>
+</div></footer>
+<script>
+(function(){var s={"ChatGPT": [{"x": "2026-10-03", "m": 0.04, "c": 0.02}, {"x": "2026-10-10", "m": 0.05, "c": 0.02}, {"x": "2026-10-17", "m": 0.05, "c": 0.03}, {"x": "2026-10-24", "m": 0.06, "c": 0.03}, {"x": "2026-10-31", "m": 0.08, "c": 0.04}, {"x": "2026-11-07", "m": 0.09, "c": 0.05}, {"x": "2026-11-14", "m": 0.11, "c": 0.05}, {"x": "2026-11-21", "m": 0.12, "c": 0.06}], "Claude": [{"x": "2026-10-03", "m": 0.18, "c": 0.08}, {"x": "2026-10-10", "m": 0.19, "c": 0.09}, {"x": "2026-10-17", "m": 0.21, "c": 0.1}, {"x": "2026-10-24", "m": 0.24, "c": 0.12}, {"x": "2026-10-31", "m": 0.27, "c": 0.15}, {"x": "2026-11-07", "m": 0.3, "c": 0.17}, {"x": "2026-11-14", "m": 0.33, "c": 0.19}, {"x": "2026-11-21", "m": 0.35, "c": 0.21}]};var ev=[{"x": "2026-10-24", "n": "①"}, {"x": "2026-10-31", "n": "②"}];var el=document.getElementById('trend');if(!el||!window.Chart)return;
+var colors={'ChatGPT':'#0E8A6A','Claude':'#C8572C'};var labels=[];Object.values(s).forEach(function(a){a.forEach(function(p){if(labels.indexOf(p.x)<0)labels.push(p.x)})});labels.sort();
+var ds=[];Object.keys(s).forEach(function(k){var m={},c={};s[k].forEach(function(p){m[p.x]=p.m*100;c[p.x]=p.c*100});var col=colors[k];
+ds.push({label:k+' 言及',data:labels.map(function(l){return m[l]}),borderColor:col,backgroundColor:col,borderWidth:2.5,pointRadius:3.5,tension:.3});
+ds.push({label:k+' 引用',data:labels.map(function(l){return c[l]}),borderColor:col,backgroundColor:col,borderWidth:1.5,borderDash:[5,4],pointRadius:0,tension:.3})});
+var marks={id:'marks',afterDraw:function(ch){var x=ch.scales.x,y=ch.scales.y,g=ch.ctx;ev.forEach(function(e){var i=labels.indexOf(e.x);if(i<0)return;var px=x.getPixelForValue(i);g.save();g.strokeStyle='#4A50DC';g.setLineDash([4,4]);g.lineWidth=1.5;g.beginPath();g.moveTo(px,y.top);g.lineTo(px,y.bottom);g.stroke();g.setLineDash([]);g.fillStyle='#3A40C2';g.font='600 11px Inter,"Noto Sans JP",sans-serif';g.textAlign='center';g.fillText(e.n,px,y.top+12);g.restore()})}};
+Chart.defaults.font.family='Inter,"Noto Sans JP",sans-serif';Chart.defaults.color='#6B7385';
+new Chart(el,{type:'line',data:{labels:labels.map(function(l){return l.slice(5).replace('-','/')}),datasets:ds},plugins:[marks],options:{maintainAspectRatio:false,interaction:{mode:'index',intersect:false},animation:window.matchMedia('(prefers-reduced-motion: reduce)').matches?false:{},
+scales:{x:{grid:{display:false},border:{display:false}},y:{min:0,max:50,border:{display:false},grid:{color:'#EEF0F4'},ticks:{stepSize:10,callback:function(v){return v+'%'}}}},
+plugins:{legend:{position:'bottom',labels:{usePointStyle:true,pointStyle:'line',boxWidth:24,padding:16}},tooltip:{backgroundColor:'#0B0D12',padding:10,callbacks:{label:function(c){return ' '+c.dataset.label+' '+Math.round(c.parsed.y)+'%'}}}}}})})();
+</script>
+</body>
+</html>
